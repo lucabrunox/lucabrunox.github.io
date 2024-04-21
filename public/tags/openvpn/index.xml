@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Openvpn on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/openvpn/</link>
+    <description>Recent content in Openvpn on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Aug 2018 12:16:00 -0700</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/openvpn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenVPN configuration for server and multiple clients</title>
+      <link>https://lucabrun.github.io/2018/08/openvpn-server-with-multiple-clients.html</link>
+      <pubDate>Tue, 14 Aug 2018 12:16:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2018/08/openvpn-server-with-multiple-clients.html</guid>
+      <description>This is a simple post showing a basic configuration for setting up OpenVPN server accepting multiple clients with TLS.&#xA;First of all generate self-signed server and client private key and certificates, and dh params. Make sure to write the Organization Name AND Common Name (CN) when asked, otherwise openvpn will fail to verify the certificates.&#xA;openssl req -newkey rsa:2048 -nodes -keyout serverkey.pem -x509 -days 365000 -out servercert.pem openssl req -newkey rsa:2048 -nodes -keyout clientkey.</description>
+    </item>
+  </channel>
+</rss>

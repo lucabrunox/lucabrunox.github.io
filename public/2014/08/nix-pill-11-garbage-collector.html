@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Nix pill 11: the garbage collector | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Welcome to the 11th Nix pill. In the previous 10th pill we managed to obtain a self-contained environment for developing a project. The concept is that whereas nix-build is able to build a derivation in isolation, nix-shell is able to drop us in a shell with (almost) the same environment used by nix-build. This allows us to debug, modify and manually build software.
+Today we stop packaging and look at a mandatory nix component, the garbage collector.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2014/08/nix-pill-11-garbage-collector.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2014/08/nix-pill-11-garbage-collector.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Nix pill 11: the garbage collector">
+  <meta property="og:description" content="Welcome to the 11th Nix pill. In the previous 10th pill we managed to obtain a self-contained environment for developing a project. The concept is that whereas nix-build is able to build a derivation in isolation, nix-shell is able to drop us in a shell with (almost) the same environment used by nix-build. This allows us to debug, modify and manually build software.
+Today we stop packaging and look at a mandatory nix component, the garbage collector.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-08-21T02:40:00-07:00">
+    <meta property="article:modified_time" content="2014-08-21T02:40:00-07:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixpills">
+    <meta property="article:tag" content="Nixos">
+
+  <meta itemprop="name" content="Nix pill 11: the garbage collector">
+  <meta itemprop="description" content="Welcome to the 11th Nix pill. In the previous 10th pill we managed to obtain a self-contained environment for developing a project. The concept is that whereas nix-build is able to build a derivation in isolation, nix-shell is able to drop us in a shell with (almost) the same environment used by nix-build. This allows us to debug, modify and manually build software.
+Today we stop packaging and look at a mandatory nix component, the garbage collector.">
+  <meta itemprop="datePublished" content="2014-08-21T02:40:00-07:00">
+  <meta itemprop="dateModified" content="2014-08-21T02:40:00-07:00">
+  <meta itemprop="wordCount" content="1393">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 11: the garbage collector">
+<meta name="twitter:description" content="Welcome to the 11th Nix pill. In the previous 10th pill we managed to obtain a self-contained environment for developing a project. The concept is that whereas nix-build is able to build a derivation in isolation, nix-shell is able to drop us in a shell with (almost) the same environment used by nix-build. This allows us to debug, modify and manually build software.
+Today we stop packaging and look at a mandatory nix component, the garbage collector.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Nix pill 11: the garbage collector</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-08-21T02:40:00-07:00">August 21, 2014</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Welcome to the 11th Nix pill. In the previous <a href="http://lethalman.blogspot.it/2014/08/nix-pill-10-developing-with-nix-shell.html">10th pill</a> we managed to obtain a self-contained environment for developing a project. The concept is that whereas nix-build is able to build a derivation in isolation, nix-shell is able to drop us in a shell with (almost) the same environment used by nix-build. This allows us to debug, modify and manually build software.</p>
+<p>Today we stop packaging and look at a mandatory nix component, the garbage collector. When using nix tools, often derivations are built. This include both .drv files and out paths. These artifacts go in the nix store, and we never cared about deleting them until now.</p>
+<h3 id="how-does-it-work">How does it work</h3>
+<p>Other package managers, like dpkg, have somehow a way to remove unused software. However, nix is much more precise compared to other systems.<br>
+I bet with dpkg, rpm or anything else, you end up with having some unnecessary package installed or dangling files. With nix this does not happen.</p>
+<p>How do we determine whether a store path is still needed? The same way programming languages with a garbage collector decide whether an object is still alive.</p>
+<p>Programming languages with a garbage collector have an important concept in order to keep track of live objects: GC roots. A GC root is an object that is always alive (unless explicitly removed as GC root). All objects recursively referred to by a GC root are live.</p>
+<p>Therefore, the garbage collection process starts from GC roots, and recursively mark referenced objects as live. All other objects can be collected and deleted.</p>
+<p>In Nix there&rsquo;s this same concept. Instead of being objects, of course, <a href="http://nixos.org/nix/manual/#ssec-gc-roots">GC roots are store paths</a>. The implementation is very simple and transparent to the user. GC roots are stored under /nix/var/nix/gcroots. If there&rsquo;s a symlink to a store path, then that store path is a GC root.<br>
+Nix allows this directory to have subdirectories: it will simply recurse directories in search of symlinks to store paths.</p>
+<p>So we have a list of GC roots. At this point, deleting dead store paths is as easy as you can imagine. We have the list of all live store paths, hence the rest of the store paths are dead.<br>
+In particular, Nix first moves dead store paths to /nix/store/trash which is an atomic operation. Afterwards, the trash is emptied.</p>
+<h3 id="playing-with-the-gc">Playing with the GC</h3>
+<p>Before playing with the GC, first run the <a href="http://nixos.org/nix/manual/#sec-nix-collect-garbage">nix garbage collector</a> once, so that we have a cleaned up playground for our experiments:</p>
+<pre tabindex="0"><code>$ nix-collect-garbage
+finding garbage collector roots...
+\[...\]
+deleting unused links...
+note: currently hard linking saves -0.00 MiB
+1169 store paths deleted, 228.43 MiB freed
+</code></pre><p>Perfect, if you run it again it won&rsquo;t find anything new to delete, as expected.<br>
+What&rsquo;s left in the nix store is everything being referenced from the GC roots.</p>
+<p>Let&rsquo;s install for a moment bsd-games:</p>
+<pre tabindex="0"><code>$ nix-env -iA nixpkgs.bsdgames
+$ readlink -f \`which fortune\`
+/nix/store/b3lxx3d3ggxcggvjw5n0m1ya1gcrmbyn-**bsd-games-2.17**/bin/fortune
+$ nix-store -q --roots \`which fortune\`
+/nix/var/nix/profiles/default-9-link
+$ nix-env --list-generations
+\[...\]
+   9   2014-08-20 12:44:14   (current)
+</code></pre><p>The nix-store command can be used to query the GC roots that refer to a given derivation. In this case, our current user environment does refer to bsd-games.</p>
+<p>Now remove it, collect garbage and note that bsd-games is still in the nix store:</p>
+<pre tabindex="0"><code>$ nix-env -e bsd-games
+uninstalling \`bsd-games-2.17&#39;
+$ nix-collect-garbage
+\[...\]
+$ ls /nix/store/b3lxx3d3ggxcggvjw5n0m1ya1gcrmbyn-**bsd-games-2.17**
+bin  share
+</code></pre><p>That&rsquo;s because the old generation is still in the nix store because it&rsquo;s a GC root. As we&rsquo;ll see below, all profiles and their generations are GC roots.</p>
+<p>Removing a GC root is simple. Let&rsquo;s try deleting the generation that refers to bsd-games, collect garbage, and note that now bsd-games is no longer in the nix store:</p>
+<pre tabindex="0"><code>$ rm /nix/var/nix/profiles/default-9-link
+$ nix-env --list-generations
+\[...\]
+   8   2014-07-28 10:23:24   
+  10   2014-08-20 12:47:16   (current)
+$ nix-collect-garbage
+\[...\]
+$ ls /nix/store/b3lxx3d3ggxcggvjw5n0m1ya1gcrmbyn-**bsd-games-2.17**
+ls: cannot access /nix/store/b3lxx3d3ggxcggvjw5n0m1ya1gcrmbyn-**bsd-games-2.17**: No such file or directory
+</code></pre><p>Note: nix-env &ndash;list-generations does not rely on any particular metadata. It is able to list generations based solely on the file names under the profiles directory.</p>
+<p>However we removed the link from /nix/var/nix/profiles, not from /nix/var/nix/gcroots. Turns out, that /nix/var/nix/gcroots/profiles is a symlink to /nix/var/nix/profiles. That is very handy. It means any profile and its generations are GC roots.</p>
+<p>It&rsquo;s as simple as that, anything under /nix/var/nix/gcroots is a GC root. And anything not being garbage collected is because it&rsquo;s referred from one of the GC roots.</p>
+<h3 id="indirect-roots">Indirect roots</h3>
+<p>I remind you that building the GNU hello world package with nix-build produces a result symlink in the current directory. Despite the collected garbage done above, the hello program is still working: therefore it has not been garbage collected. Clearly, since there&rsquo;s no other derivation that depends upon the GNU hello world package, it must be a GC root.</p>
+<p>In fact, nix-build automatically adds the result symlink as a GC root. Yes, not the built derivation, but the symlink. These GC roots are added under /nix/var/nix/gcroots/auto .</p>
+<pre tabindex="0"><code>$ ls -l /nix/var/nix/gcroots/auto/
+total 8
+drwxr-xr-x 2 nix nix 4096 Aug 20 10:24 ./
+drwxr-xr-x 3 nix nix 4096 Jul 24 10:38 ../
+lrwxrwxrwx 1 nix nix   16 Jul 31 10:51 xlgz5x2ppa0m72z5qfc78b8wlciwvgiz -&gt; **/home/nix/result/**
+</code></pre><p>Don&rsquo;t care about the name of the symlink. What&rsquo;s important is that a symlink exists that point to /home/nix/result. This is called an <strong>indirect GC root</strong>. That is, the GC root is effectively specified outside of /nix/var/nix/gcroots. Whatever result points to, it will not be garbage collected.</p>
+<p>How do we remove the derivation then? There are two possibilities:</p>
+<ul>
+<li>Remove the indirect GC root from /nix/var/nix/gcroots/auto.</li>
+<li>Remove the result symlink.</li>
+</ul>
+<p>In the first case, the derivation will be deleted from the nix store, and result becomes a dangling symlink. In the second case, the derivation is removed as well as the indirect root in /nix/var/nix/gcroots/auto .</p>
+<p>Running nix-collect-garbage after deleting the GC root or the indirect GC root, will remove the derivation from the store.</p>
+<h3 id="cleanup-everything">Cleanup everything</h3>
+<p>What&rsquo;s the main source of software duplication in the nix store? Clearly, GC roots due to nix-build and profile generations. Doing a nix-build results in a GC root for a build that somehow will refer to a specific version of glibc, and other libraries. After an upgrade, if that build is not deleted by the user, it will not be garbage collected. Thus the old dependencies referred to by the build will not be deleted either.</p>
+<p>Same goes for profiles. Manipulating the nix-env profile will create further generations. Old generations refer to old software, thus increasing duplication in the nix store after an upgrade.</p>
+<p>What are the basic steps for upgrading and removing everything old, including old generations? In other words, do an upgrade similar to other systems, where they forget everything about the older state:</p>
+<pre tabindex="0"><code>$ nix-channel --update
+$ nix-env -u --always
+$ rm /nix/var/nix/gcroots/auto/\*
+$ nix-collect-garbage -d
+</code></pre><p>First, we download a new version of the nixpkgs channel, which holds the description of all the software. Then we upgrade our installed packages with nix-env -u. That will bring us into a fresh new generation with all updated software.</p>
+<p>Then we remove all the indirect roots generated by nix-build: beware, this will result in dangling symlinks. You may be smarter and also remove the target of those symlinks.</p>
+<p>Finally, the -d option of nix-collect-garbage is used to delete old generations of all profiles, then collect garbage. After this, you lose the ability to rollback to any previous generation. So make sure the new generation is working well before running the command.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Garbage collection in Nix is a powerful mechanism to cleanup your system. The nix-store commands allows us to know why a certain derivation is in the nix store.</p>
+<p>Cleaning up everything down to the oldest bit of software after an upgrade seems a bit contrived, but that&rsquo;s the price of having multiple generations, multiple profiles, multiple versions of software, thus rollbacks etc.. The price of having many possibilities.</p>
+<h3 id="next-pill">Next pill</h3>
+<p>&hellip;we will package another project and introduce what I call the &ldquo;inputs&rdquo; design pattern. We only played with a single derivation until now, however we&rsquo;d like to start organizing a small repository of software. The &ldquo;inputs&rdquo; pattern is widely used in nixpkgs; it allows us to decouple derivations from the repository itself and increase customization opportunities.</p>
+<p>Pill 12 is available for <a href="http://lethalman.blogspot.it/2014/08/nix-pill-12-inputs-design-pattern.html">reading here</a>.</p>
+<p>To be notified about the new pill, stay tuned on <a href="https://twitter.com/search?src=typd&amp;q=%23NixPills">#NixPills</a>, follow <a href="https://twitter.com/lethalman">@lethalman</a> or subscribe to the <a href="http://lethalman.blogspot.com/feeds/posts/default/-/nixpills">nixpills rss</a>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixpills/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpills</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-10-developing-with-nix-shell.html">Nix pill 10: developing with nix-shell</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-9-automatic-runtime.html">Nix pill 9: automatic runtime dependencies</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-8-generic-builders.html">Nix pill 8: generic builders</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-7-working-derivation.html">Nix pill 7: a working derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-6-our-first-derivation.html">Nix pill 6: our first derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-5-functions-and-imports.html">Nix pill 5: functions and imports</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-4-basics-of-language.html">Nix pill 4: the basics of the language</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-3-enter-environment.html">Nix pill 3: enter the environment</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-2-install-on-your-running.html">Nix pill 2: install on your running system</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-1-why-you-should-give-it-try.html">Nix pill 1: why you should give it a try</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html">Debugging and fixing a wmctrl bug in NixOS</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

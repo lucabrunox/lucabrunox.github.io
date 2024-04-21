@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vala on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/vala/</link>
+    <description>Recent content in Vala on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Mar 2014 16:10:00 -0700</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/vala/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gtk3 hit-a-hint: mouseless navigation module</title>
+      <link>https://lucabrun.github.io/2014/03/gtk3-hit-hint-mouseless-navigation.html</link>
+      <pubDate>Sun, 23 Mar 2014 16:10:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/03/gtk3-hit-hint-mouseless-navigation.html</guid>
+      <description>I present gtkhah, a gtk module for hit-a-hint mouseless navigation of gtk3 applications.&#xA;It&amp;rsquo;s been inspired by the various hit-a-hint browser extensions.&#xA;Usage at the project homepage. Here&amp;rsquo;s a quick screenshot of Gedit:</description>
+    </item>
+    <item>
+      <title>Build Vala applications with Shake build system</title>
+      <link>https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html</link>
+      <pubDate>Sat, 06 Apr 2013 14:18:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html</guid>
+      <description>I&amp;rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.&#xA;First of all, you need to know that Shake is a library written in Haskell, and it&amp;rsquo;s meant to be a better replacement for make. Let&amp;rsquo;s start by installing cabal and then shake:&#xA;apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.</description>
+    </item>
+    <item>
+      <title>Grab focus on Gtk Widget</title>
+      <link>https://lucabrun.github.io/2012/11/grab-focus-on-gtk-widget.html</link>
+      <pubDate>Thu, 22 Nov 2012 11:49:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2012/11/grab-focus-on-gtk-widget.html</guid>
+      <description>Many times I had to give focus to a newly created Gtk widget that still had to be mapped to screen. Since widget.grab_focus() does not work if the widget is not displayed on the screen, then I always used an idle source to delay the operation.&#xA;Today I noticed that the idle may be too late: if the user is writing something, then some key strokes may be lost because the idle runs slightly after the widget has been mapped.</description>
+    </item>
+    <item>
+      <title>Vala language introduction on IRC</title>
+      <link>https://lucabrun.github.io/2011/09/vala-language-introduction-on-irc.html</link>
+      <pubDate>Thu, 08 Sep 2011 03:09:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2011/09/vala-language-introduction-on-irc.html</guid>
+      <description>Hi,&#xA;I&amp;rsquo;ve lately held an talk on IRC about the Vala programming language for the Ubuntu App Developer Week. I&amp;rsquo;ve introduced the basics of the Vala language and its features.&#xA;You can read the log of the talk here.</description>
+    </item>
+    <item>
+      <title>Python/Ruby like generators in Vala</title>
+      <link>https://lucabrun.github.io/2011/07/pythonruby-like-generators-in-vala.html</link>
+      <pubDate>Sat, 09 Jul 2011 00:42:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2011/07/pythonruby-like-generators-in-vala.html</guid>
+      <description>Hello,&#xA;the post below is copied straight from here.&#xA;Here I&amp;rsquo;ll show a cool snippet code making use Vala async functions and iterators for emulating Python/Ruby generators. Creating a generator is as simple as extending the Generator class and implementing the generate() method.&#xA;abstract class Generator { private bool consumed; private G value; private SourceFunc callback; public Generator () { helper (); } private async void helper () { yield generate (); consumed \= true; } protected abstract async void generate (); protected async void feed (G value) { this.</description>
+    </item>
+    <item>
+      <title>Valag 1.2 released</title>
+      <link>https://lucabrun.github.io/2011/05/vala-12-released.html</link>
+      <pubDate>Sat, 14 May 2011 03:11:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2011/05/vala-12-released.html</guid>
+      <description>Hello,&#xA;I&amp;rsquo;ve just released the 1.2 version of Valag, the graph generator for analyzing Vala code trees. Only relevant change is the fact that it now builds against libvala-0.14.&#xA;More information and download at the Valag homepage.</description>
+    </item>
+    <item>
+      <title>Rubik&#39;s Cube 3D Game in Vala/Clutter</title>
+      <link>https://lucabrun.github.io/2011/02/rubiks-cube-game-in-valaclutter.html</link>
+      <pubDate>Wed, 09 Feb 2011 00:37:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2011/02/rubiks-cube-game-in-valaclutter.html</guid>
+      <description>Hello,&#xA;I&amp;rsquo;ve written a simple program for playing with a Rubik&amp;rsquo;s Cube using Vala and Clutter.&#xA;It features:&#xA;high simplicity in rotating cube slices and rotating the cube itself in a very natural manner shuffle the cube autosave the game Download and more usage information at the homepage&amp;hellip; have fun :)</description>
+    </item>
+    <item>
+      <title>Base64 and Quoted-Printable GConverters for GMua</title>
+      <link>https://lucabrun.github.io/2011/01/base64-and-quoted-printable-gconverters.html</link>
+      <pubDate>Fri, 14 Jan 2011 23:55:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2011/01/base64-and-quoted-printable-gconverters.html</guid>
+      <description>Hello,&#xA;lately I&amp;rsquo;m writing GMua for educational purposes and for evaluating Vala, whose purpose is to simplify writing Mail User Agents or simple scripts, ala Java Mail.&#xA;It currently parses IMAP (not yet complete) and has a graphical interface called Gutt (yes, inspired by Mutt) for testing.&#xA;In order to parse MIME parts with base64 or quopri content-transfer-encoding I chose to implement a couple of GConverter (will use GMime a day, maybe when they switch to gio, not yet needed) in Vala that you can find here:</description>
+    </item>
+    <item>
+      <title>Valag 1.1 released, graph generator for the Vala AST</title>
+      <link>https://lucabrun.github.io/2010/12/valag-11-released.html</link>
+      <pubDate>Sun, 19 Dec 2010 04:19:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2010/12/valag-11-released.html</guid>
+      <description>Hello,&#xA;a new version of Valag, a graphviz generator for the Vala language AST, has been released.&#xA;Changes since 1.0 version:&#xA;Add &amp;ndash;format and &amp;ndash;prefix options. Update to latest libvala-0.12. Bug fixes. This new version also distributes the xdot.py program as a viewer for the generated graphs.&#xA;More information and download at the Valag homepage.</description>
+    </item>
+    <item>
+      <title>Maja - The Vala to Javascript compiler</title>
+      <link>https://lucabrun.github.io/2010/12/maja-vala-to-javascript-compiler.html</link>
+      <pubDate>Fri, 17 Dec 2010 10:42:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2010/12/maja-vala-to-javascript-compiler.html</guid>
+      <description>Hello,&#xA;I&amp;rsquo;ve just released the first version of Maja, the Vala to Javascript compiler. The mapping is not quite complete but you can do pretty much everything you could do with javascript directly. There are (still incomplete) bindings for the qooxdoo framework and the demo browser is being ported to vala successfully.&#xA;Maja can be used in any environments, not only web browsers.&#xA;Programming in Vala saves you from lots of type safety troubles (Javascript), lot of typing (Java) and the syntax is really enjoyable as it is quite close to the Javascript model.</description>
+    </item>
+    <item>
+      <title>Using Mash with Vala</title>
+      <link>https://lucabrun.github.io/2010/07/using-mash-with-vala.html</link>
+      <pubDate>Thu, 29 Jul 2010 06:22:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2010/07/using-mash-with-vala.html</guid>
+      <description>Hello,&#xA;recently Mash has been released. It is a library for reading models in PLY format and creating Clutter actors from them. For reference, Blender is able to export to PLY. It means you can draw your models with Blender and use Clutter as rendering engine.&#xA;Clutter is a 3D canvas and animation toolkit while Blender is a 3D modelling suite.&#xA;What I&amp;rsquo;ve tested so far is porting the Monkey Viewer C example to Vala: code snippet and monkey PLY here.</description>
+    </item>
+    <item>
+      <title>Mipsdis MIPS32 disassembler</title>
+      <link>https://lucabrun.github.io/2010/07/mipsdis-mips32-disassembler.html</link>
+      <pubDate>Thu, 29 Jul 2010 02:28:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2010/07/mipsdis-mips32-disassembler.html</guid>
+      <description>Hello,&#xA;I&amp;rsquo;ve written a MIPS32 (Release 2) disassembler for ELF files. It is not a simple disassembler, it&amp;rsquo;s mostly made for reverse engineering proprietary boxes for educational purposes. It has been successfully tested on Vodafone Station which has Broadcom binaries. These boxes don&amp;rsquo;t have a sections table, therefore normal disassemblers don&amp;rsquo;t work. Mipsdis instead will guess the bounds of those sections (most important ones are TEXT and RODATA for strings).</description>
+    </item>
+    <item>
+      <title>Valagtkdoc 1.0</title>
+      <link>https://lucabrun.github.io/2010/04/valagtkdoc-10.html</link>
+      <pubDate>Fri, 02 Apr 2010 08:14:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2010/04/valagtkdoc-10.html</guid>
+      <description>Hello,&#xA;yes&amp;hellip; this is the nth program I&amp;rsquo;m writing in this period. I hope this is the last one :)&#xA;Valagtkdoc is a tool that integrates Vala with GTK-Doc for documentation generation.&#xA;You can find download and example usage at the homepage.&#xA;I think it&amp;rsquo;s far from being perfect, and actually I haven&amp;rsquo;t tried integrating it with autotools, but it shouldn&amp;rsquo;t be that hard. Unfortunately, you have to somehow break the gtk-doc rule &amp;ldquo;do not run it manually&amp;rdquo; because valagtkdoc goes in the middle between gtkdoc-scan and gtkdoc-mkdb.</description>
+    </item>
+    <item>
+      <title>Vala and Graphviz</title>
+      <link>https://lucabrun.github.io/2010/03/vala-and-graphviz.html</link>
+      <pubDate>Sun, 14 Mar 2010 04:37:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2010/03/vala-and-graphviz.html</guid>
+      <description>Hello,&#xA;it&amp;rsquo;s often useful for Vala hackers to have a graphical representation of the code tree and control flow blocks. Therefore I&amp;rsquo;ve created a simple application called Valag which generates four types of diagrams using Graphviz for each state of the Vala compiler.&#xA;This is the first release, there&amp;rsquo;re many things to fix and enhance (like command line options) but it is working quite good already to give support when hacking Vala.</description>
+    </item>
+    <item>
+      <title>Vala 0.7.10 released</title>
+      <link>https://lucabrun.github.io/2010/02/vala-0710-released.html</link>
+      <pubDate>Thu, 04 Feb 2010 12:43:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2010/02/vala-0710-released.html</guid>
+      <description>Hello,&#xA;I&amp;rsquo;m lately following the Vala development and finally we got a new release with plenty of bug fixes and enhancements which makes Vala even more interesting and usable as general purpose language.&#xA;Here&amp;rsquo;s the announcement.&#xA;I&amp;rsquo;d like to point you to the new Vala journal, a good resource to stay tuned with Vala changes periodically.&#xA;News:&#xA;* Support coalescing operator ??.&#xA;* Support to_string and bitwise complement with enums.</description>
+    </item>
+    <item>
+      <title>Fetch web page with Vala and Soup</title>
+      <link>https://lucabrun.github.io/2010/01/fetch-web-page-with-vala-and-soup.html</link>
+      <pubDate>Sun, 24 Jan 2010 03:04:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2010/01/fetch-web-page-with-vala-and-soup.html</guid>
+      <description>Hello,&#xA;I&amp;rsquo;m lately using the Vala language widely. I find it a great and well designed language.&#xA;You may know I&amp;rsquo;m the maintainer of Freespeak. This program is written in Python. Now I&amp;rsquo;m rewriting it in Vala, both for providing a good and really simple API in C and for learning Vala.&#xA;I will now paste a snippet from the new freespeak code that I use for creating a cancellable asyncronous operation for fetching a web page using libsoup either with a GET or a POST method.</description>
+    </item>
+  </channel>
+</rss>

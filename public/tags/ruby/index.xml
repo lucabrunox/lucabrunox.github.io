@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/ruby/</link>
+    <description>Recent content in Ruby on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Jul 2011 00:42:00 -0700</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python/Ruby like generators in Vala</title>
+      <link>https://lucabrun.github.io/2011/07/pythonruby-like-generators-in-vala.html</link>
+      <pubDate>Sat, 09 Jul 2011 00:42:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2011/07/pythonruby-like-generators-in-vala.html</guid>
+      <description>Hello,&#xA;the post below is copied straight from here.&#xA;Here I&amp;rsquo;ll show a cool snippet code making use Vala async functions and iterators for emulating Python/Ruby generators. Creating a generator is as simple as extending the Generator class and implementing the generate() method.&#xA;abstract class Generator { private bool consumed; private G value; private SourceFunc callback; public Generator () { helper (); } private async void helper () { yield generate (); consumed \= true; } protected abstract async void generate (); protected async void feed (G value) { this.</description>
+    </item>
+  </channel>
+</rss>

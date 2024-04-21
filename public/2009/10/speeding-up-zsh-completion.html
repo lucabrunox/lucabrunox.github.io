@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Speeding up zsh completion | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Hello,
+since I&rsquo;ve started using zsh, a great shell with great out of the box completion, one of the most boring issues was having a really slow completion. I can understand it could be slow to get a list of packages, remote files or command line options, but also paths were often slow to be completed. After lots of searches I&rsquo;ve ended up in adding this magic line to my ~/.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2009/10/speeding-up-zsh-completion.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2009/10/speeding-up-zsh-completion.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Speeding up zsh completion">
+  <meta property="og:description" content="Hello,
+since I&amp;rsquo;ve started using zsh, a great shell with great out of the box completion, one of the most boring issues was having a really slow completion. I can understand it could be slow to get a list of packages, remote files or command line options, but also paths were often slow to be completed. After lots of searches I&amp;rsquo;ve ended up in adding this magic line to my ~/.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2009-10-07T14:23:00-07:00">
+    <meta property="article:modified_time" content="2009-10-07T14:23:00-07:00">
+    <meta property="article:tag" content="Zsh">
+    <meta property="article:tag" content="Completion">
+    <meta property="article:tag" content="Performance">
+
+  <meta itemprop="name" content="Speeding up zsh completion">
+  <meta itemprop="description" content="Hello,
+since I&rsquo;ve started using zsh, a great shell with great out of the box completion, one of the most boring issues was having a really slow completion. I can understand it could be slow to get a list of packages, remote files or command line options, but also paths were often slow to be completed. After lots of searches I&rsquo;ve ended up in adding this magic line to my ~/.">
+  <meta itemprop="datePublished" content="2009-10-07T14:23:00-07:00">
+  <meta itemprop="dateModified" content="2009-10-07T14:23:00-07:00">
+  <meta itemprop="wordCount" content="136">
+  <meta itemprop="keywords" content="Zsh,Completion,Performance"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Speeding up zsh completion">
+<meta name="twitter:description" content="Hello,
+since I&rsquo;ve started using zsh, a great shell with great out of the box completion, one of the most boring issues was having a really slow completion. I can understand it could be slow to get a list of packages, remote files or command line options, but also paths were often slow to be completed. After lots of searches I&rsquo;ve ended up in adding this magic line to my ~/.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Speeding up zsh completion</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2009-10-07T14:23:00-07:00">October 7, 2009</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Hello,</p>
+<p>since I&rsquo;ve started using <a href="http://www.zsh.org/">zsh</a>, a great shell with great out of the box completion, one of the most boring issues was having a really slow completion. I can understand it could be slow to get a list of packages, remote files or command line options, but also paths were often slow to be completed. After lots of searches I&rsquo;ve ended up in adding this magic line to my ~/.zshrc:</p>
+<blockquote>
+<p>zstyle &lsquo;:completion:*&rsquo; accept-exact &lsquo;*(N)&rsquo;</p>
+</blockquote>
+<p>This way you tell zsh comp to take the first part of the path to be exact, and to avoid partial globs. Now path completions became nearly immediate.</p>
+<p>Another important speed up is using the cache for packages and other stuff:</p>
+<blockquote>
+<p>zstyle &lsquo;:completion:*&rsquo; use-cache on</p>
+<p>zstyle &lsquo;:completion:*&rsquo; cache-path ~/.zsh/cache</p>
+</blockquote>
+<p>If you know how to boost up options/remote files, please share :)</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/zsh/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Zsh</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/completion/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Completion</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/performance/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Performance</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2009/06/less-consuming-radio-player-ever.html">The less consuming radio player ever</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

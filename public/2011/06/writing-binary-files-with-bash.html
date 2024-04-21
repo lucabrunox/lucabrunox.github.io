@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Writing binary files with bash | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Hello,
+I&rsquo;m trying to see if I&rsquo;m able to write some binary file using bash. So, when writing a binary file you often want to write a number into binary format. I ended up with this simple function for writing numbers in little endian:
+function num2bin() { printf $(printf %.$(($2\*2))x\\\\n $1| sed &#39;s/\\(\[0-9a-f\]\[0-9a-f\]\\)/\\\\x\\1/g&#39;)| awk -F &#39;&#39; &#39;{ printf $4$3$2$1 }&#39; } The first parameter is the number to write, the second is the number of bytes (up to 4).">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2011/06/writing-binary-files-with-bash.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2011/06/writing-binary-files-with-bash.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Writing binary files with bash">
+  <meta property="og:description" content="Hello,
+I&amp;rsquo;m trying to see if I&amp;rsquo;m able to write some binary file using bash. So, when writing a binary file you often want to write a number into binary format. I ended up with this simple function for writing numbers in little endian:
+function num2bin() { printf $(printf %.$(($2\*2))x\\\\n $1| sed &amp;#39;s/\\(\[0-9a-f\]\[0-9a-f\]\\)/\\\\x\\1/g&amp;#39;)| awk -F &amp;#39;&amp;#39; &amp;#39;{ printf $4$3$2$1 }&amp;#39; } The first parameter is the number to write, the second is the number of bytes (up to 4).">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2011-06-02T03:04:00-07:00">
+    <meta property="article:modified_time" content="2011-06-02T03:04:00-07:00">
+    <meta property="article:tag" content="Audio">
+    <meta property="article:tag" content="Wav">
+    <meta property="article:tag" content="Bash">
+    <meta property="article:tag" content="Development">
+
+  <meta itemprop="name" content="Writing binary files with bash">
+  <meta itemprop="description" content="Hello,
+I&rsquo;m trying to see if I&rsquo;m able to write some binary file using bash. So, when writing a binary file you often want to write a number into binary format. I ended up with this simple function for writing numbers in little endian:
+function num2bin() { printf $(printf %.$(($2\*2))x\\\\n $1| sed &#39;s/\\(\[0-9a-f\]\[0-9a-f\]\\)/\\\\x\\1/g&#39;)| awk -F &#39;&#39; &#39;{ printf $4$3$2$1 }&#39; } The first parameter is the number to write, the second is the number of bytes (up to 4).">
+  <meta itemprop="datePublished" content="2011-06-02T03:04:00-07:00">
+  <meta itemprop="dateModified" content="2011-06-02T03:04:00-07:00">
+  <meta itemprop="wordCount" content="136">
+  <meta itemprop="keywords" content="Audio,Wav,Bash,Development"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Writing binary files with bash">
+<meta name="twitter:description" content="Hello,
+I&rsquo;m trying to see if I&rsquo;m able to write some binary file using bash. So, when writing a binary file you often want to write a number into binary format. I ended up with this simple function for writing numbers in little endian:
+function num2bin() { printf $(printf %.$(($2\*2))x\\\\n $1| sed &#39;s/\\(\[0-9a-f\]\[0-9a-f\]\\)/\\\\x\\1/g&#39;)| awk -F &#39;&#39; &#39;{ printf $4$3$2$1 }&#39; } The first parameter is the number to write, the second is the number of bytes (up to 4).">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Writing binary files with bash</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2011-06-02T03:04:00-07:00">June 2, 2011</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Hello,<br>
+I&rsquo;m trying to see if I&rsquo;m able to write some binary file using bash. So, when writing a binary file you often want to write a number into binary format. I ended up with this simple function for writing numbers in little endian:</p>
+<pre tabindex="0"><code>function num2bin() {  
+   printf $(printf %.$(($2\*2))x\\\\n $1|  
+        sed &#39;s/\\(\[0-9a-f\]\[0-9a-f\]\\)/\\\\x\\1/g&#39;)|  
+        awk -F &#39;&#39; &#39;{ printf $4$3$2$1 }&#39;  
+}
+</code></pre><p>The first parameter is the number to write, the second is the number of bytes (up to 4). For example &ldquo;num2bin 40 4&rdquo; will output a 4-byte long string containing the number 40 in little endian.</p>
+<p>How do we use it? I wrote an example script for creating a wav file with noise (according to <a href="http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/WAVE.html">wav specifications</a>) that you can <a href="http://www.refactory.org/s/writing_wav_files_with_bash/view/latest">read here</a>.</p>
+<p>Let me know if you have a simpler version of the num2bin function.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/audio/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Audio</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/wav/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Wav</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/bash/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Bash</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/development/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Development</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2011/05/complete-variables-with-cd-command-in.html">Complete variables with cd command in bash</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2011/05/enforce-facebook-chat-through-ssl.html">Enforce facebook chat through SSL</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2011/05/vala-12-released.html">Valag 1.2 released</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2011/01/base64-and-quoted-printable-gconverters.html">Base64 and Quoted-Printable GConverters for GMua</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/12/valag-11-released.html">Valag 1.1 released, graph generator for the Vala AST</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/12/maja-vala-to-javascript-compiler.html">Maja - The Vala to Javascript compiler</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/07/using-mash-with-vala.html">Using Mash with Vala</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/06/idea-duplicated-again.html">Idea duplicated again</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/04/valagtkdoc-10.html">Valagtkdoc 1.0</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/03/vala-and-graphviz.html">Vala and Graphviz</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/03/debiangnome-bug-triage-ended.html">Debian/GNOME bug triage ended</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/02/vala-0710-released.html">Vala 0.7.10 released</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2009/11/mimaggia-cairo-tester.html">Mimaggia, cairo tester</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2009/11/there-are-many-python-toolkits-for.html">Python and RSA</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2009/10/debianapachetomcataxis.html">Debian&#43;Apache&#43;Tomcat&#43;Axis</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

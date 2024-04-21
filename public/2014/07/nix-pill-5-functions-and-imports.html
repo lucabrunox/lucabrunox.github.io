@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Nix pill 5: functions and imports | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Welcome to the fifth Nix pill. In the previous fourth pill we touched the Nix language for a moment. We introduced basic types and values of the Nix language, and basic expressions such as &ldquo;if&rdquo;, &ldquo;with&rdquo; and &ldquo;let&rdquo;. I invite you to re-read about these expressions and play with them in the repl.
+Functions help to build reusable components in a big repository like nixpkgs. The Nix manual has a great explanation of functions.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2014/07/nix-pill-5-functions-and-imports.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2014/07/nix-pill-5-functions-and-imports.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Nix pill 5: functions and imports">
+  <meta property="og:description" content="Welcome to the fifth Nix pill. In the previous fourth pill we touched the Nix language for a moment. We introduced basic types and values of the Nix language, and basic expressions such as &amp;ldquo;if&amp;rdquo;, &amp;ldquo;with&amp;rdquo; and &amp;ldquo;let&amp;rdquo;. I invite you to re-read about these expressions and play with them in the repl.
+Functions help to build reusable components in a big repository like nixpkgs. The Nix manual has a great explanation of functions.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-07-28T06:36:00-07:00">
+    <meta property="article:modified_time" content="2014-07-28T06:36:00-07:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixpills">
+    <meta property="article:tag" content="Nixos">
+
+  <meta itemprop="name" content="Nix pill 5: functions and imports">
+  <meta itemprop="description" content="Welcome to the fifth Nix pill. In the previous fourth pill we touched the Nix language for a moment. We introduced basic types and values of the Nix language, and basic expressions such as &ldquo;if&rdquo;, &ldquo;with&rdquo; and &ldquo;let&rdquo;. I invite you to re-read about these expressions and play with them in the repl.
+Functions help to build reusable components in a big repository like nixpkgs. The Nix manual has a great explanation of functions.">
+  <meta itemprop="datePublished" content="2014-07-28T06:36:00-07:00">
+  <meta itemprop="dateModified" content="2014-07-28T06:36:00-07:00">
+  <meta itemprop="wordCount" content="1203">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 5: functions and imports">
+<meta name="twitter:description" content="Welcome to the fifth Nix pill. In the previous fourth pill we touched the Nix language for a moment. We introduced basic types and values of the Nix language, and basic expressions such as &ldquo;if&rdquo;, &ldquo;with&rdquo; and &ldquo;let&rdquo;. I invite you to re-read about these expressions and play with them in the repl.
+Functions help to build reusable components in a big repository like nixpkgs. The Nix manual has a great explanation of functions.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Nix pill 5: functions and imports</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-07-28T06:36:00-07:00">July 28, 2014</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Welcome to the fifth Nix pill. In the previous <a href="http://lethalman.blogspot.it/2014/07/nix-pill-4-basics-of-language.html">fourth pill</a> we touched the Nix language for a moment. We introduced basic types and values of the Nix language, and basic expressions such as &ldquo;if&rdquo;, &ldquo;with&rdquo; and &ldquo;let&rdquo;. I invite you to re-read about these expressions and play with them in the repl.</p>
+<p>Functions help to build reusable components in a big repository like <a href="https://github.com/NixOS/nixpkgs/">nixpkgs</a>. The Nix manual has a <a href="http://nixos.org/nix/manual/#idm47361539166560">great explanation of functions</a>. Let&rsquo;s go: pill on one hand, Nix manual on the other hand.</p>
+<p>I remind you how to enter the Nix environment: source ~/.nix-profile/etc/profile.d/nix.sh</p>
+<h3 id="nameless-and-single-parameter">Nameless and single parameter</h3>
+<p>Functions are anonymous (lambdas), and only have a single parameter. The syntax is extremely simple. Type the parameter name, then &ldquo;:&rdquo;, then the body of the function.</p>
+<pre tabindex="0"><code>nix-repl&gt; x: x\*2
+«lambda»
+</code></pre><p>So here we defined a function that takes a parameter x, and returns x*2. The problem is that we cannot use it in any way, because it&rsquo;s unnamed&hellip; joke!</p>
+<p>We can store functions in variables.</p>
+<pre tabindex="0"><code>nix-repl&gt; double = x: x\*2
+nix-repl&gt; double
+«lambda»
+nix-repl&gt; double 3
+6
+</code></pre><p>As usual, please ignore the special syntax for assignments inside nix-repl.</p>
+<p>So, we defined a function x: x*2 that takes one parameter x, and returns x*2. This function is then assigned to the variable double.</p>
+<p>Finally we did our first function call: double 3.</p>
+<p>Big note: it&rsquo;s not like many other programming languages where you write double(3). It really is double 3.</p>
+<p>In summary: to call a function, name the variable, then space, then the argument. Nothing else to say, it&rsquo;s as easy as that.</p>
+<h3 id="more-than-one-parameter">More than one parameter</h3>
+<p>How do we create a function that accepts more than one parameter? For people not used to functional programming, this may take a while to grasp. Let&rsquo;s do it step by step.</p>
+<pre tabindex="0"><code>nix-repl&gt; mul = a: (b: a\*b)
+nix-repl&gt; mul
+«lambda»
+nix-repl&gt; mul 3
+«lambda»
+nix-repl&gt; (mul 3) 4
+12
+</code></pre><p>We defined a function that takes the parameter &ldquo;a&rdquo;, the body returns another function. This other function takes a parameter &ldquo;b&rdquo; and returns a*b.</p>
+<p>Therefore, calling &ldquo;mul 3&rdquo; returns this kind of function: b: 3*b. In turn, we call the returned function with 4, and get the expected result.</p>
+<p>You don&rsquo;t have to use parenthesis at all, Nix has sane priorities when parsing the code:</p>
+<pre tabindex="0"><code>nix-repl&gt; mul = a: b: a\*b
+nix-repl&gt; mul
+«lambda»
+nix-repl&gt; mul 3
+«lambda»
+nix-repl&gt; mul 3 4
+12
+nix-repl&gt; mul (6+7) (8+9)
+221
+</code></pre><p>Much more readable, you don&rsquo;t even notice that functions only receive one argument.</p>
+<p>Since the argument is separated by a space, to pass more complex expressions you need parenthesis. In other common languages you would write  mul(6+7, 8+9).</p>
+<p>Given that functions have only one parameter, it is straightforward to use <strong>partial application</strong>:</p>
+<pre tabindex="0"><code>nix-repl&gt; foo = mul 3
+nix-repl&gt; foo 4
+12
+nix-repl&gt; foo 5
+15
+</code></pre><p>We stored the function returned by mul 3 into a variable foo, then reused it.</p>
+<h3 id="arguments-set">Arguments set</h3>
+<p>Now this is a very cool feature of Nix. It is possible to pattern match over a set in the parameter. We write an alternative version of mul = a: b: a*b first by using a set as argument, then using pattern matching.</p>
+<pre tabindex="0"><code>nix-repl&gt; mul = s: s.a\*s.b
+nix-repl&gt; mul { a = 3; b = 4; }
+12
+nix-repl&gt; mul = { a, b }: a\*b
+nix-repl&gt; mul { a = 3; b = 4; }
+12
+</code></pre><p>In the first case we defined a function that accepts a single parameter. We then access attributes &ldquo;a&rdquo; and &ldquo;b&rdquo; from the given set.</p>
+<p>Note how the parenthesis-less syntax for function calls is very elegant in this case, instead of doing mul({ a=3; b=4; }) in other languages.</p>
+<p>In the second case we defined an arguments set. It&rsquo;s like defining a set, except without values. We require that the passed set contains the keys &ldquo;a&rdquo; and &ldquo;b&rdquo;. Then we can use those &ldquo;a&rdquo; and &ldquo;b&rdquo; in the function body directly.</p>
+<pre tabindex="0"><code>nix-repl&gt; mul { a = 3; b = 4; c = 6; }
+error: anonymous function at (string):1:2 called with unexpected argument \`c&#39;, at (string):1:1
+nix-repl&gt; mul { a = 3; }
+error: anonymous function at (string):1:2 called without required argument \`b&#39;, at (string):1:1
+</code></pre><p>Only a set with exactly the attributes required by the function is accepted, nothing more, nothing less.</p>
+<h3 id="default-and-variadic-attributes">Default and variadic attributes</h3>
+<p>It is possible to specify <strong>default values</strong> of attributes in the arguments set:</p>
+<pre tabindex="0"><code>nix-repl&gt; mul = { a, b ? 2 }: a\*b
+nix-repl&gt; mul { a = 3; }
+6
+nix-repl&gt; mul { a = 3; b = 4; }
+12
+</code></pre><p>Also you can allow passing more attributes (<strong>variadic</strong>) than the expected ones:</p>
+<pre tabindex="0"><code>nix-repl&gt; mul = { a, b, ... }: a\*b
+nix-repl&gt; mul { a = 3; b = 4; c = 2; }
+</code></pre><p>However, in the function body you cannot access the &ldquo;c&rdquo; attribute. The solution is to give a name to the given set with the <strong>@-pattern</strong>:</p>
+<pre tabindex="0"><code>nix-repl&gt; mul = s@{ a, b, ... }: a\*b\*s.c
+nix-repl&gt; mul { a = 3; b = 4; c = 2; }
+24
+</code></pre><p>That&rsquo;s it, you give a name to the whole parameter with name@ before the set pattern.</p>
+<p>Advantages of using argument sets:</p>
+<ul>
+<li>Named unordered arguments: you don&rsquo;t have to remember the order of the arguments.</li>
+<li>You can pass sets, that adds a whole new layer of flexibility and convenience. </li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>Partial application does not work with argument sets. You have to specify the whole attribute set, not part of it.</li>
+</ul>
+<p>You may find similarities with <a href="https://docs.python.org/2/faq/programming.html#how-can-i-pass-optional-or-keyword-parameters-from-one-function-to-another">Python **kwargs</a>.</p>
+<h3 id="imports">Imports</h3>
+<p>The &ldquo;import&rdquo; function is built-in and provides a way to parse a .nix file. The natural approach is to define each component in a .nix file, then compose by importing these files.</p>
+<p>Let&rsquo;s start with the bare metal.</p>
+<p>a.nix:</p>
+<pre tabindex="0"><code>3
+</code></pre><p>b.nix:</p>
+<pre tabindex="0"><code>4
+</code></pre><p>mul.nix:</p>
+<pre tabindex="0"><code>a: b: a\*b
+</code></pre><pre tabindex="0"><code>nix-repl&gt; a = import ./a.nix
+nix-repl&gt; b = import ./b.nix
+nix-repl&gt; mul = import ./mul.nix
+nix-repl&gt; mul a b
+12
+</code></pre><p>Yes it&rsquo;s really that straight. You import a file, and it gets parsed as expression. Note that the scope of the imported file does not inherit the scope of the importer.</p>
+<p>test.nix:</p>
+<pre tabindex="0"><code>x
+</code></pre><pre tabindex="0"><code>nix-repl&gt; let x = 5; in import ./test.nix
+error: undefined variable \`x&#39; at /home/lethal/test.nix:1:1
+</code></pre><p>So how do we pass information to the module? Use functions, like we did with mul.nix .<br>
+A more complex example:</p>
+<p>test.nix:</p>
+<pre tabindex="0"><code>{ a, b ? 3, trueMsg ? &#34;yes&#34;, falseMsg ? &#34;no&#34; }:
+if a &gt; b
+  then builtins.trace trueMsg true
+  else builtins.trace falseMsg false
+</code></pre><pre tabindex="0"><code>nix-repl&gt; import ./test.nix { a = 5; trueMsg = &#34;ok&#34;; }
+trace: ok
+true
+</code></pre><p>Explaining:</p>
+<ul>
+<li>In test.nix we return a function. It accepts a set, with default attributes b, trueMsg and falseMsg.</li>
+<li>builtins.trace is a <a href="http://nixos.org/nix/manual/#ssec-builtins">built-in function</a> that takes two arguments. The first is the message to display, the second is the value to return. It&rsquo;s usually used for debugging purposes.</li>
+<li>Then we import test.nix, and call the function with that set.</li>
+</ul>
+<p>So when is the message shown? Only when it&rsquo;s in need to be evaluated.</p>
+<h3 id="next-pill">Next pill</h3>
+<p>&hellip;we will finally write our first derivation.</p>
+<p>Nix pill 6 is available for <a href="http://lethalman.blogspot.it/2014/07/nix-pill-6-our-first-derivation.html">reading here</a>.</p>
+<p>To be notified about the new pill, stay tuned on <a href="https://twitter.com/search?src=typd&amp;q=%23NixPills">#NixPills</a>, follow <a href="https://twitter.com/lethalman">@lethalman</a> or subscribe to the <a href="http://lethalman.blogspot.com/feeds/posts/default/-/nixpills">nixpills rss</a>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixpills/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpills</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-4-basics-of-language.html">Nix pill 4: the basics of the language</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-3-enter-environment.html">Nix pill 3: enter the environment</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-2-install-on-your-running.html">Nix pill 2: install on your running system</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-1-why-you-should-give-it-try.html">Nix pill 1: why you should give it a try</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html">Debugging and fixing a wmctrl bug in NixOS</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

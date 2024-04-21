@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Using Mash with Vala | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Hello,
+recently Mash has been released. It is a library for reading models in PLY format and creating Clutter actors from them. For reference, Blender is able to export to PLY. It means you can draw your models with Blender and use Clutter as rendering engine.
+Clutter is a 3D canvas and animation toolkit while Blender is a 3D modelling suite.
+What I&rsquo;ve tested so far is porting the Monkey Viewer C example to Vala: code snippet and monkey PLY here.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2010/07/using-mash-with-vala.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2010/07/using-mash-with-vala.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Using Mash with Vala">
+  <meta property="og:description" content="Hello,
+recently Mash has been released. It is a library for reading models in PLY format and creating Clutter actors from them. For reference, Blender is able to export to PLY. It means you can draw your models with Blender and use Clutter as rendering engine.
+Clutter is a 3D canvas and animation toolkit while Blender is a 3D modelling suite.
+What I&amp;rsquo;ve tested so far is porting the Monkey Viewer C example to Vala: code snippet and monkey PLY here.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2010-07-29T06:22:00-07:00">
+    <meta property="article:modified_time" content="2010-07-29T06:22:00-07:00">
+    <meta property="article:tag" content="Gnome">
+    <meta property="article:tag" content="Development">
+    <meta property="article:tag" content="Vala">
+    <meta property="article:tag" content="Clutter">
+
+  <meta itemprop="name" content="Using Mash with Vala">
+  <meta itemprop="description" content="Hello,
+recently Mash has been released. It is a library for reading models in PLY format and creating Clutter actors from them. For reference, Blender is able to export to PLY. It means you can draw your models with Blender and use Clutter as rendering engine.
+Clutter is a 3D canvas and animation toolkit while Blender is a 3D modelling suite.
+What I&rsquo;ve tested so far is porting the Monkey Viewer C example to Vala: code snippet and monkey PLY here.">
+  <meta itemprop="datePublished" content="2010-07-29T06:22:00-07:00">
+  <meta itemprop="dateModified" content="2010-07-29T06:22:00-07:00">
+  <meta itemprop="wordCount" content="89">
+  <meta itemprop="keywords" content="Gnome,Development,Vala,Clutter"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Using Mash with Vala">
+<meta name="twitter:description" content="Hello,
+recently Mash has been released. It is a library for reading models in PLY format and creating Clutter actors from them. For reference, Blender is able to export to PLY. It means you can draw your models with Blender and use Clutter as rendering engine.
+Clutter is a 3D canvas and animation toolkit while Blender is a 3D modelling suite.
+What I&rsquo;ve tested so far is porting the Monkey Viewer C example to Vala: code snippet and monkey PLY here.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Using Mash with Vala</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2010-07-29T06:22:00-07:00">July 29, 2010</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Hello,<br>
+recently <a href="http://git.clutter-project.org/mash/">Mash</a> has been released. It is a library for reading models in <a href="http://en.wikipedia.org/wiki/PLY_(file_format)">PLY format</a> and creating <a href="http://www.clutter-project.org/">Clutter</a> actors from them. For reference, <a href="http://www.blender.org/">Blender</a> is able to export to PLY. It means you can draw your models with Blender and use Clutter as rendering engine.<br>
+Clutter is a 3D canvas and animation toolkit while Blender is a 3D modelling suite.</p>
+<p>What I&rsquo;ve tested so far is porting the <a href="http://git.clutter-project.org/mash/tree/example/viewer.c">Monkey Viewer C example</a> to <a href="http://live.gnome.org/Vala">Vala</a>: <a href="http://live.gnome.org/action/edit/Vala/ClutterSamples#Blender_models">code snippet and monkey PLY here</a>.</p>
+<p><a href="http://live.gnome.org/Vala/ClutterSamples?action=AttachFile&amp;do=get&amp;target=mash-monkey.png"><img src="http://live.gnome.org/Vala/ClutterSamples?action=AttachFile&amp;do=get&amp;target=mash-monkey.png" alt=""></a></p>
+<p>That is going to be awesome, stay tuned!</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/gnome/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Gnome</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/development/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Development</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/vala/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Vala</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/clutter/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Clutter</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2010/03/vala-and-graphviz.html">Vala and Graphviz</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/02/vala-0710-released.html">Vala 0.7.10 released</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/04/valagtkdoc-10.html">Valagtkdoc 1.0</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/03/debiangnome-bug-triage-ended.html">Debian/GNOME bug triage ended</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2009/07/aruanne-pdf-reporting-framework.html">Aruanne, pdf reporting framework</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2009/04/create-cairo-surface-from-pixbuf.html">Create a cairo surface from a pixbuf</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2009/01/freespeak-030-has-been-released.html">FreeSpeak 0.3.0 has been released</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/12/global-keybinding-on-x.html">Global keybinding on X</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/12/aptitude-gtk-progress.html">Aptitude-gtk progress</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/11/replace-gtk-with-clutter-for-fun.html">Replace GTK&#43; with Clutter for fun</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/11/single-app-instances-python-and-dbus.html">Single app instances, Python and DBus</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/10/freespeak-gtkgnome-translator.html">FreeSpeak, a GTK&#43;/GNOME translator</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/09/gtk-apps-to-replace-gnome-files.html">GTK Apps to replace Gnome Files</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/05/syx-gtk-and-threading.html">Syx, GTK&#43; and threading</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/07/mipsdis-mips32-disassembler.html">Mipsdis MIPS32 disassembler</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

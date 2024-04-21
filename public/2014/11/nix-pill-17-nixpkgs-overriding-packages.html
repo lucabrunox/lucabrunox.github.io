@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Nix pill 17: nixpkgs, overriding packages | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Welcome to the 17th Nix pill. In the previous 16th pill we have started to dive into the nixpkgs repository. Nixpkgs is a function, and we&rsquo;ve looked at some parameters like system and config.
+Today we&rsquo;ll talk about a special attribute: config.packageOverrides. Overriding packages in a set with fixed point can be considered another design pattern in nixpkgs.
+Overriding a package I recall the override design pattern from the nix pill 14.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2014/11/nix-pill-17-nixpkgs-overriding-packages.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2014/11/nix-pill-17-nixpkgs-overriding-packages.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Nix pill 17: nixpkgs, overriding packages">
+  <meta property="og:description" content="Welcome to the 17th Nix pill. In the previous 16th pill we have started to dive into the nixpkgs repository. Nixpkgs is a function, and we&amp;rsquo;ve looked at some parameters like system and config.
+Today we&amp;rsquo;ll talk about a special attribute: config.packageOverrides. Overriding packages in a set with fixed point can be considered another design pattern in nixpkgs.
+Overriding a package I recall the override design pattern from the nix pill 14.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-11-10T02:00:00-08:00">
+    <meta property="article:modified_time" content="2014-11-10T02:00:00-08:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixpills">
+    <meta property="article:tag" content="Nixos">
+
+  <meta itemprop="name" content="Nix pill 17: nixpkgs, overriding packages">
+  <meta itemprop="description" content="Welcome to the 17th Nix pill. In the previous 16th pill we have started to dive into the nixpkgs repository. Nixpkgs is a function, and we&rsquo;ve looked at some parameters like system and config.
+Today we&rsquo;ll talk about a special attribute: config.packageOverrides. Overriding packages in a set with fixed point can be considered another design pattern in nixpkgs.
+Overriding a package I recall the override design pattern from the nix pill 14.">
+  <meta itemprop="datePublished" content="2014-11-10T02:00:00-08:00">
+  <meta itemprop="dateModified" content="2014-11-10T02:00:00-08:00">
+  <meta itemprop="wordCount" content="967">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 17: nixpkgs, overriding packages">
+<meta name="twitter:description" content="Welcome to the 17th Nix pill. In the previous 16th pill we have started to dive into the nixpkgs repository. Nixpkgs is a function, and we&rsquo;ve looked at some parameters like system and config.
+Today we&rsquo;ll talk about a special attribute: config.packageOverrides. Overriding packages in a set with fixed point can be considered another design pattern in nixpkgs.
+Overriding a package I recall the override design pattern from the nix pill 14.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Nix pill 17: nixpkgs, overriding packages</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-11-10T02:00:00-08:00">November 10, 2014</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Welcome to the 17th Nix pill. In the previous <a href="http://lethalman.blogspot.it/2014/11/nix-pill-16-nixpkgs-parameters.html">16th pill</a> we have started to dive into the <a href="http://github.com/NixOS/nixpkgs">nixpkgs repository</a>. Nixpkgs is a function, and we&rsquo;ve looked at some parameters like <code>system</code> and <code>config</code>.</p>
+<p>Today we&rsquo;ll talk about a special attribute: <code>config.packageOverrides</code>. Overriding packages in a set with fixed point can be considered another design pattern in nixpkgs.</p>
+<h3 id="overriding-a-package">Overriding a package</h3>
+<p>I recall the override design pattern from the <a href="http://lethalman.blogspot.it/2014/09/nix-pill-14-override-design-pattern.html">nix pill 14</a>. Instad of calling a function with parameters directly, we make the call (function + parameters) overridable.<br>
+We put the override function in the returned attribute set of the original function call.</p>
+<p>Take for example <code>graphviz</code>. It has an input parameter <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/tools/graphics/graphviz/default.nix#L2"><em>xlibs</em></a>. If it&rsquo;s null, then graphviz will build <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/tools/graphics/graphviz/default.nix#L17">without X support</a>.</p>
+<pre tabindex="0"><code>$ nix-repl
+nix-repl&gt; :l &lt;nixpkgs&gt;
+Added 4360 variables.
+nix-repl&gt; :b graphviz.override { xlibs = null; } 
+</code></pre><p>This will build graphviz without X support, it&rsquo;s as simple as that.</p>
+<p>However let&rsquo;s say a package P depends on graphviz, how do we make P depend on the new graphviz without X support?</p>
+<h3 id="in-an-imperative-world">In an imperative world&hellip;</h3>
+<p>&hellip;you could do something like this:</p>
+<pre tabindex="0"><code>pkgs = import &lt;nixpkgs&gt; {};
+pkgs.graphviz = pkgs.graphviz.override { xlibs = null; };
+build(pkgs.P) 
+</code></pre><p>Given pkgs.P depends on pkgs.graphviz, it&rsquo;s easy to build P with the replaced graphviz. On a pure functional language it&rsquo;s not that easy because you can assign to variables only once.</p>
+<h3 id="fixed-point">Fixed point</h3>
+<p>The fixed point with lazy evaluation is crippling but about necessary in a language like Nix. It lets us achieve something similar to what we&rsquo;d do imperatively.<br>
+Follows the definition of fixed point in <a href="https://github.com/NixOS/nixpkgs/blob/master/lib/trivial.nix#L21">nixpkgs</a>:</p>
+<pre tabindex="0"><code># Take a function and evaluate it with its own returned value.
+fix = f: let result = f result; in result; 
+</code></pre><p>It&rsquo;s a function that accepts a function <code>f</code>, calls <code>f result</code> on the result just returned by <code>f result</code> and returns it. In other words it&rsquo;s <code>f(f(f(...</code>.<br>
+At first sight, it&rsquo;s an infinite loop. With lazy evaluation it isn&rsquo;t, because the call is done only when needed.</p>
+<pre tabindex="0"><code>nix-repl&gt; fix = f: let result = f result; in result
+nix-repl&gt; pkgs = self: { a = 3; b = 4; c = self.a+self.b; }
+nix-repl&gt; fix pkgs
+{ a = 3; b = 4; c = 7; } 
+</code></pre><p>Without the <code>rec</code> keyword, we were able to refer to <code>a</code> and <code>b</code> of the same set.</p>
+<ol>
+<li>First pkgs gets called with an unevaluated thunk (<code>pkgs(pkgs(...</code>)</li>
+<li>To set the value of <code>c</code> then <code>self.a</code> and <code>self.b</code> are evaluated.</li>
+<li>The pkgs function gets called again to get the value of <code>a</code> and <code>b</code>.</li>
+</ol>
+<p>The trick is that <code>c</code> is not needed to be evaluated in the inner call, thus it doesn&rsquo;t go in an infinite loop.</p>
+<p>Won&rsquo;t go further with the explanation here. A good post about fixed point and Nix can be <a href="http://r6.ca/blog/20140422T142911Z.html">found here</a>.</p>
+<h4 id="overriding-a-set-with-fixed-point">Overriding a set with fixed point</h4>
+<p>Given that <code>self.a</code> and <code>self.b</code> refer to the <em>passed</em> set and not to the <em>literal</em> set in the function, we&rsquo;re able to override both a and b and get a new value for c:</p>
+<pre tabindex="0"><code>nix-repl&gt; overrides = { a = 1; b = 2; }
+nix-repl&gt; let newpkgs = pkgs (newpkgs // overrides); in newpkgs
+{ a = 3; b = 4; c = 3; }
+nix-repl&gt; let newpkgs = pkgs (newpkgs // overrides); in newpkgs // overrides
+{ a = 1; b = 2; c = 3; } 
+</code></pre><p>In the first case we computed <code>pkgs</code> with the overrides, in the second case we also included the overriden attributes in the result.</p>
+<h3 id="overriding-nixpkgs-packages">Overriding nixpkgs packages</h3>
+<p>We&rsquo;ve seen how to override attributes in a set such that they get recursively picked by dependant attributes. This approach can be used for derivations too, after all nixpkgs is a giant set of attributes that depend on each other.</p>
+<p>To do this, nixpkgs offers <code>config.packageOverrides</code>. So nixpkgs returns a fixed point of the package set, and <code>packageOverrides</code> is used to inject the overrides.</p>
+<p>Create a <code>config.nix</code> file like this somewhere:</p>
+<pre tabindex="0"><code>{
+  packageOverrides = pkgs: {
+    graphviz = pkgs.graphviz.override { xlibs = null; };
+  };
+} 
+</code></pre><p>Now we can build e.g. <code>asciidocFull</code> and it will automatically use the overridden graphviz:</p>
+<pre tabindex="0"><code>nix-repl&gt; pkgs = import &lt;nixpkgs&gt; { config = import ./config.nix; }
+nix-repl&gt; :b pkgs.asciidocFull 
+</code></pre><p>Note how we pass the config with <code>packageOverrides</code> when importing nixpkgs. Then <code>pkgs.asciidocFull</code> is a derivation that has graphviz input (<code>pkgs.asciidoc</code> is the lighter version and doesn&rsquo;t use graphviz at all).</p>
+<p>Since there&rsquo;s no version of asciidoc with graphviz without X support in the binary cache, Nix will recompile the needed stuff for you.</p>
+<h3 id="the-nixpkgsconfignix-file">The ~/.nixpkgs/config.nix file</h3>
+<p>In the previous pill we already talked about this file. The above <code>config.nix</code> that we just wrote could be the content of <code>~/.nixpkgs/config.nix</code>.</p>
+<p>Instead of passing it explicitly whenever we import nixpkgs, it will be automatically <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/top-level/all-packages.nix#L54">imported by nixpkgs</a>.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>We&rsquo;ve learned about a new design pattern: using fixed point for overriding packages in a package set.</p>
+<p>Whereas in an imperative setting, like with other package managers, a library is installed replacing the old version and applications will use it, in Nix it&rsquo;s not that straight and simple. But it&rsquo;s more precise.</p>
+<p>Nix applications will depend on specific versions of libraries, hence the reason why we have to recompile asciidoc to use the new graphviz library.</p>
+<p>The newly built asciidoc will depend on the new graphviz, and old asciidoc will keep using the old graphviz undisturbed.</p>
+<h3 id="next-pill">Next pill</h3>
+<p>&hellip;we will stop diving nixpkgs for a moment and talk about store paths. How does Nix compute the path in the store where to place the result of builds? How to add files to the store for which we have an integrity hash?</p>
+<p>Pill 18 is available for <a href="http://lethalman.blogspot.it/2015/01/nix-pill-18-nix-store-paths.html">reading here</a>.</p>
+<p>To be notified about the new pill, stay tuned on <a href="https://twitter.com/search?src=typd&amp;q=%23NixPills">#NixPills</a>, follow <a href="https://twitter.com/lethalman">@lethalman</a> or subscribe to the <a href="http://lethalman.blogspot.com/feeds/posts/default/-/nixpills">nixpills rss</a>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixpills/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpills</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2014/11/nix-pill-16-nixpkgs-parameters.html">Nix pill 16: nixpkgs, the parameters</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/09/nix-pill-15-nix-search-paths.html">Nix pill 15: nix search paths</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/09/nix-pill-14-override-design-pattern.html">Nix pill 14: the override design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/09/nix-pill-13-callpackage-design-pattern.html">Nix pill 13: the callPackage design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-12-inputs-design-pattern.html">Nix pill 12: the inputs design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-11-garbage-collector.html">Nix pill 11: the garbage collector</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-10-developing-with-nix-shell.html">Nix pill 10: developing with nix-shell</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-9-automatic-runtime.html">Nix pill 9: automatic runtime dependencies</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-8-generic-builders.html">Nix pill 8: generic builders</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-7-working-derivation.html">Nix pill 7: a working derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-6-our-first-derivation.html">Nix pill 6: our first derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-5-functions-and-imports.html">Nix pill 5: functions and imports</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-4-basics-of-language.html">Nix pill 4: the basics of the language</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-3-enter-environment.html">Nix pill 3: enter the environment</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-2-install-on-your-running.html">Nix pill 2: install on your running system</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

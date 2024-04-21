@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sslguard on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/sslguard/</link>
+    <description>Recent content in Sslguard on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 May 2011 14:59:00 -0700</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/sslguard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enforce facebook chat through SSL</title>
+      <link>https://lucabrun.github.io/2011/05/enforce-facebook-chat-through-ssl.html</link>
+      <pubDate>Sun, 22 May 2011 14:59:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2011/05/enforce-facebook-chat-through-ssl.html</guid>
+      <description>Hello,&#xA;since a few days facebook is supporting SSL for the chat. The problem is that it can&amp;rsquo;t be enabled.&#xA;Until facebook enables this you can use the SSLGuard plugin for firefox, which enforces SSL for a list of web sites, including all facebook pages and the chat as well.&#xA;We have some good ideas for sslguard that we&amp;rsquo;d like to get in for the next releases&amp;hellip; stay tuned.</description>
+    </item>
+    <item>
+      <title>Idea duplicated again</title>
+      <link>https://lucabrun.github.io/2010/06/idea-duplicated-again.html</link>
+      <pubDate>Fri, 18 Jun 2010 01:08:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2010/06/idea-duplicated-again.html</guid>
+      <description>Hello,&#xA;I&amp;rsquo;d like to point you to this firefox extension HTTPS Everywhere (June 17th, 2010) and SSLGuard which is also a firefox extension (first released Oct 14th, 2009).&#xA;The code of the former extension is a lot more complicated and the result is not always quite the same as SSLGuard. In fact, while they support secure cookies and per-website custom rules, SSLGuard lets you add custom websites to be secured directly from a friendly graphical dialog.</description>
+    </item>
+  </channel>
+</rss>

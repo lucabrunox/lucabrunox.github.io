@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Cheap Docker images with Nix | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Let&rsquo;s talk about Docker and Nix today. Before explaining what Nix is, if you don&rsquo;t know yet, and before going into the details, I will show you a snippet similar to a Dockerfile for creating a Redis image equivalent to the one in docker hub.
+The final image will be around 42mb (or 25mb) in size, compared to 177mb.
+EDIT: as mentioned on HN, alpine-based images can even go around 15mb in size.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2016/04/cheap-docker-images-with-nix_15.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2016/04/cheap-docker-images-with-nix_15.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Cheap Docker images with Nix">
+  <meta property="og:description" content="Let&amp;rsquo;s talk about Docker and Nix today. Before explaining what Nix is, if you don&amp;rsquo;t know yet, and before going into the details, I will show you a snippet similar to a Dockerfile for creating a Redis image equivalent to the one in docker hub.
+The final image will be around 42mb (or 25mb) in size, compared to 177mb.
+EDIT: as mentioned on HN, alpine-based images can even go around 15mb in size.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2016-04-15T01:42:00-07:00">
+    <meta property="article:modified_time" content="2016-04-15T01:42:00-07:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixos">
+
+  <meta itemprop="name" content="Cheap Docker images with Nix">
+  <meta itemprop="description" content="Let&rsquo;s talk about Docker and Nix today. Before explaining what Nix is, if you don&rsquo;t know yet, and before going into the details, I will show you a snippet similar to a Dockerfile for creating a Redis image equivalent to the one in docker hub.
+The final image will be around 42mb (or 25mb) in size, compared to 177mb.
+EDIT: as mentioned on HN, alpine-based images can even go around 15mb in size.">
+  <meta itemprop="datePublished" content="2016-04-15T01:42:00-07:00">
+  <meta itemprop="dateModified" content="2016-04-15T01:42:00-07:00">
+  <meta itemprop="wordCount" content="1091">
+  <meta itemprop="keywords" content="Nixpkgs,Docker,Nix,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Cheap Docker images with Nix">
+<meta name="twitter:description" content="Let&rsquo;s talk about Docker and Nix today. Before explaining what Nix is, if you don&rsquo;t know yet, and before going into the details, I will show you a snippet similar to a Dockerfile for creating a Redis image equivalent to the one in docker hub.
+The final image will be around 42mb (or 25mb) in size, compared to 177mb.
+EDIT: as mentioned on HN, alpine-based images can even go around 15mb in size.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Cheap Docker images with Nix</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2016-04-15T01:42:00-07:00">April 15, 2016</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Let&rsquo;s talk about <a href="https://www.docker.com/">Docker</a> and <a href="http://nixos.org/nix/">Nix</a> today. Before explaining what Nix is, if you don&rsquo;t know yet, and before going into the details, I will show you a snippet similar to a Dockerfile for creating a Redis image equivalent to the one in <a href="https://github.com/docker-library/redis/blob/master/3.0/Dockerfile">docker hub</a>.</p>
+<p>The final image will be around <strong>42mb</strong> (or <strong>25mb</strong>) in size, compared to 177mb.</p>
+<p>EDIT: as mentioned on HN, <a href="https://github.com/docker-library/redis/blob/7dec62fe6de187165dce3f771efa57ce4e5d7a32/3.0/alpine/Dockerfile">alpine-based images</a> can even go around 15mb in size.</p>
+<p>If you want to try this, the first step is to <a href="http://nixos.org/nix/download.html">install Nix</a>.</p>
+<p>Here&rsquo;s the <code>redis.nix</code> snippet:</p>
+<p>Build it with: <code>nix-build redis.nix</code><br>
+Load it with: <code>docker load &lt; result</code></p>
+<p>Once loaded, you can see with <code>docker images</code> that it takes about 42mb of space.</p>
+<h2 id="fundamental-differences-with-classic-docker-builds">Fundamental differences with classic docker builds</h2>
+<ul>
+<li>We do not use any base image, like it&rsquo;s done for most docker images including <a href="https://hub.docker.com/_/redis/">redis from the hub</a>. It starts from scratch. In fact, we set up some basic shadow-related files with the <code>shadowSetup</code> utility, enough to add the redis user and make <code>gosu</code> work.</li>
+<li>The Redis package is not being compiled inside Docker. It&rsquo;s being done by Nix, just like any other package.</li>
+<li>The built image has only one layer, compared to dozens usually spitted by a readable <code>Dockerfile</code>. In our case, having multiple layers is useless because caching is handled by Nix, and not by Docker.</li>
+</ul>
+<h2 id="a-smaller-image">A smaller image</h2>
+<p>We can cut the size down to <strong>25mb</strong> by avoid using id from coreutils. As an example we&rsquo;ll always launch redis without the entrypoint:</p>
+<p>You might ask: but coreutils is still needed for the <code>chown</code>, <code>mkdir</code> and other commands like that!</p>
+<p>The secret is that those commands are only used at build time and are not required at runtime in the container. Nix is able to detect that automatically for us.</p>
+<p>It means we don&rsquo;t need to manually remove packages after the container is built, like with other package managers! See <a href="https://github.com/docker-library/redis/blob/master/3.0/Dockerfile#L40">this line</a> in Redis <code>Dockerfile</code> for example.</p>
+<h2 id="using-a-different-redis-version">Using a different redis version</h2>
+<p>Let&rsquo;s say we want to build a Docker image with Redis 2.8.23. First we want to write a package (or <em>derivation</em> in Nix land) for it, and then use that inside the image:</p>
+<p>Note we also added the tag 2.8.23 to the resulting image. And that&rsquo;s it. The beauty is that we reuse the same redis expression from nixpkgs, but we override only the version to build.</p>
+<h2 id="a-generic-build">A generic build</h2>
+<p>There&rsquo;s more you can do with Nix. Being a language, it&rsquo;s possible to create a generic function for building Redis images given a specific package:</p>
+<p>We created a &ldquo;redisImage&rdquo; function that takes a &ldquo;redis&rdquo; parameter as input, and returns a Docker image as output.</p>
+<p>Build it with:</p>
+<ul>
+<li><code>nix-build redis-generic.nix -A redisDocker_3_0_7</code> </li>
+<li><code>nix-build redis-generic.nix -A redisDocker_2_8_23</code></li>
+</ul>
+<h2 id="building-off-a-base-image">Building off a base image</h2>
+<p>One of the selling points of Docker is reusing an existing image to add more stuff on top of it.</p>
+<p>Nix comes with a completely different set of packages compared to other distros, with its own toolchain and glibc version. This doesn&rsquo;t mean it&rsquo;s not possible to base a new image off an existing Debian image for instance.</p>
+<p>By using <code>dockerTools.pullImage</code> it&rsquo;s also possible to pull images from the Docker hub.</p>
+<p>Build it with: <code>nix-build redis-generic.nix -A redisOnDebian</code>.</p>
+<p>Note that we added a couple of things. We pass the base image (<code>debianImage</code>), to our generic <code>redisImage</code> function, and that we only initialize shadow-utils if the base image is null.</p>
+<p>The result is a Docker image based off latest Debian but running Redis compiled with nixpkgs toolchain and using nixpkgs glibc. It&rsquo;s about 150mb. It has all the layers from the base image, plus the new single layer for Redis.</p>
+<p>That said, it&rsquo;s as well possible to use one of the previously defined Redis images as base image. The result of `pullImage` and `buildImage` is a .tar.gz docker image in both cases.</p>
+<p>You realize it&rsquo;s possible to build something quite similar to <a href="https://github.com/docker-library">docker-library</a> using only Nix expressions. It might be an interesting project.</p>
+<p><em>Be aware that things like PAM configurations, or other stuff, created to be suitable for Debian may not work with Nix programs that use a different glibc.</em></p>
+<h2 id="other-random-details">Other random details</h2>
+<p>The code above has been made possible by using nixpkgs commit 3ae4d2afe (2016-04-14) onwards, commit at which I&rsquo;ve finally packaged <code>gosu</code> and since the size of the derivations have been notably reduced.</p>
+<p>Building the image is done without using any of the Docker commands. The way it works is as follows:</p>
+<ol>
+<li>Create a layer directory with all the produced contents inside. This includes the filesystem as well as the json metadata. This process will use certain build dependencies (like <code>coreutils</code>, <code>shadow-utils</code>, <code>bash</code>, <code>redis</code>, <code>gosu</code>, &hellip;).</li>
+<li>Ask Nix what are the runtime dependencies of the layer directory (like <code>redis</code>, <code>gosu</code>). Such dependencies will be always a subset of the build dependencies.</li>
+<li>Add such runtime dependencies to the layer directory.</li>
+<li>Pack the layer in a .tar.gz by following the <a href="https://github.com/docker/docker/blob/master/image/spec/v1.md">Docker specification</a>.</li>
+</ol>
+<p>I&rsquo;d like to state that <strong>Nix has a safer and easier caching</strong> of operations while building the image.<br>
+As for Docker, great care has to be taken in order to use the layer cache correctly, because such caching is solely based on the <code>RUN</code> command string. This <a href="http://thenewstack.io/understanding-the-docker-cache-for-faster-builds/">blog post</a> explains it well.<br>
+This is not the case for Nix, because every output depends on a set of exact inputs. If any of the inputs change, the output will be rebuilt.</p>
+<h2 id="so-what-is-nix">So what is Nix?</h2>
+<p><a href="http://nixos.org/nix/">Nix</a> is a language and deployment tool, often used as package manager or configuration builder and system provisioning. The operating system <a href="http://nixos.org/nixos">NixOS</a> is based on it.</p>
+<p>The code shown above is Nix. We have used the <a href="https://github.com/NixOS/nixpkgs">nixpkgs</a> repository which provides several reusable Nix expressions like <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/servers/nosql/redis/default.nix">redis</a> and <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/docker/default.nix">dockerTools</a>.</p>
+<p>The Nix concept is simple: write a Nix expression, build it. This is how the building process works at a high-level:</p>
+<ol>
+<li>Read a Nix expression</li>
+<li>Evaluate it and determine the thing (called <em>derivation</em>) to be built.</li>
+<li>By evaluating the code, Nix is able to determine exactly the build inputs needed for such derivation.</li>
+<li>Build (or fetch from cache) all the needed inputs.</li>
+<li>Build (or fetch from the cache) the final derivation.</li>
+</ol>
+<p>Nix stores all such derivations in a common nix store (usually <code>/nix/store</code>), identified by an hash. Each derivation may have dependencies to other paths in the same store. Each derivation is stored in a separate directory from other derivations.</p>
+<p>Won&rsquo;t go deeper as there&rsquo;s plenty of documentation about how Nix works and how its storage works.</p>
+<p>Hope you enjoyed the reading, and that you may give Nix a shot.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/docker/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Docker</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2015/08/nix-pill-19-fundamentals-of-stdenv.html">Nix pill 19: fundamentals of stdenv</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2015/02/developing-in-golang-with-nix-package.html">Developing in golang with Nix package manager</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2015/01/nix-pill-18-nix-store-paths.html">Nix pill 18: nix store paths</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/11/nix-pill-17-nixpkgs-overriding-packages.html">Nix pill 17: nixpkgs, overriding packages</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/11/nix-pill-16-nixpkgs-parameters.html">Nix pill 16: nixpkgs, the parameters</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/09/nix-pill-15-nix-search-paths.html">Nix pill 15: nix search paths</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/09/nix-pill-14-override-design-pattern.html">Nix pill 14: the override design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/09/nix-pill-13-callpackage-design-pattern.html">Nix pill 13: the callPackage design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-12-inputs-design-pattern.html">Nix pill 12: the inputs design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-11-garbage-collector.html">Nix pill 11: the garbage collector</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-10-developing-with-nix-shell.html">Nix pill 10: developing with nix-shell</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-9-automatic-runtime.html">Nix pill 9: automatic runtime dependencies</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-8-generic-builders.html">Nix pill 8: generic builders</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-7-working-derivation.html">Nix pill 7: a working derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-6-our-first-derivation.html">Nix pill 6: our first derivation</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

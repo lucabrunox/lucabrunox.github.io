@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nixpkgs on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/nixpkgs/</link>
+    <description>Recent content in Nixpkgs on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Apr 2016 01:42:00 -0700</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/nixpkgs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cheap Docker images with Nix</title>
+      <link>https://lucabrun.github.io/2016/04/cheap-docker-images-with-nix_15.html</link>
+      <pubDate>Fri, 15 Apr 2016 01:42:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2016/04/cheap-docker-images-with-nix_15.html</guid>
+      <description>Let&amp;rsquo;s talk about Docker and Nix today. Before explaining what Nix is, if you don&amp;rsquo;t know yet, and before going into the details, I will show you a snippet similar to a Dockerfile for creating a Redis image equivalent to the one in docker hub.&#xA;The final image will be around 42mb (or 25mb) in size, compared to 177mb.&#xA;EDIT: as mentioned on HN, alpine-based images can even go around 15mb in size.</description>
+    </item>
+    <item>
+      <title>Nix pill 19: fundamentals of stdenv</title>
+      <link>https://lucabrun.github.io/2015/08/nix-pill-19-fundamentals-of-stdenv.html</link>
+      <pubDate>Mon, 24 Aug 2015 09:48:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2015/08/nix-pill-19-fundamentals-of-stdenv.html</guid>
+      <description>Welcome to the 19th Nix pill. In the previous 18th pill we did dive into the algorithm used by Nix to compute the store paths, and also introduced fixed-output store paths.&#xA;This time we will instead look into nixpkgs, in particular one of its core derivation: stdenv .&#xA;The stdenv is not a special derivation, but it&amp;rsquo;s very important for the nixpkgs repository. It serves as base for packaging software. It is used to pull in dependencies such as the GCC toolchain, GNU make, core utilities, patch and diff utilities, and so on.</description>
+    </item>
+    <item>
+      <title>Developing in golang with Nix package manager</title>
+      <link>https://lucabrun.github.io/2015/02/developing-in-golang-with-nix-package.html</link>
+      <pubDate>Sun, 08 Feb 2015 03:33:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2015/02/developing-in-golang-with-nix-package.html</guid>
+      <description>I&amp;rsquo;ve been using Go since several months. It&amp;rsquo;s a pleasant language, even though it has its own drawbacks.&#xA;In our Nixpkgs repository we have support for several programming languages: perl, python, ruby, haskell, lua, &amp;hellip; We&amp;rsquo;ve merged a better support for Go.&#xA;What kind of support are we talking about? In Nix, you never install libraries. Instead, you define an environment in which to use a certain library compiled for a certain version of the language.</description>
+    </item>
+    <item>
+      <title>Nix pill 18: nix store paths</title>
+      <link>https://lucabrun.github.io/2015/01/nix-pill-18-nix-store-paths.html</link>
+      <pubDate>Mon, 12 Jan 2015 04:48:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2015/01/nix-pill-18-nix-store-paths.html</guid>
+      <description>Welcome to the 18th Nix pill. In the previous 17th pill we have scratched the surface of the nixpkgs repository structure. It is a set of packages, and it&amp;rsquo;s possible to override such packages so that all other packages will use the overrides.&#xA;Before reading existing derivations, I&amp;rsquo;d like to talk about store paths and how they are computed. In particular we are interested in fixed store paths that depend on an integrity hash (e.</description>
+    </item>
+    <item>
+      <title>Nix pill 17: nixpkgs, overriding packages</title>
+      <link>https://lucabrun.github.io/2014/11/nix-pill-17-nixpkgs-overriding-packages.html</link>
+      <pubDate>Mon, 10 Nov 2014 02:00:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2014/11/nix-pill-17-nixpkgs-overriding-packages.html</guid>
+      <description>Welcome to the 17th Nix pill. In the previous 16th pill we have started to dive into the nixpkgs repository. Nixpkgs is a function, and we&amp;rsquo;ve looked at some parameters like system and config.&#xA;Today we&amp;rsquo;ll talk about a special attribute: config.packageOverrides. Overriding packages in a set with fixed point can be considered another design pattern in nixpkgs.&#xA;Overriding a package I recall the override design pattern from the nix pill 14.</description>
+    </item>
+    <item>
+      <title>Nix pill 16: nixpkgs, the parameters</title>
+      <link>https://lucabrun.github.io/2014/11/nix-pill-16-nixpkgs-parameters.html</link>
+      <pubDate>Tue, 04 Nov 2014 03:36:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2014/11/nix-pill-16-nixpkgs-parameters.html</guid>
+      <description>Welcome to the 16th Nix pill. In the previous 15th pill we&amp;rsquo;ve realized how nix finds expressions with the angular brackets syntax, so that we finally know where is located on our system.&#xA;We can start diving into the nixpkgs repository, through all the various tools and design patterns. Please note that also nixpkgs has its own manual, underlying the difference between the general &amp;ldquo;nix&amp;rdquo; language and the &amp;ldquo;nixpkgs&amp;rdquo; repository.</description>
+    </item>
+    <item>
+      <title>Nix pill 15: nix search paths</title>
+      <link>https://lucabrun.github.io/2014/09/nix-pill-15-nix-search-paths.html</link>
+      <pubDate>Tue, 16 Sep 2014 02:28:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/09/nix-pill-15-nix-search-paths.html</guid>
+      <description>Welcome to the 15th Nix pill. In the previous 14th pill we have introduced the &amp;ldquo;override&amp;rdquo; pattern, useful for writing variants of derivations by passing different inputs.&#xA;Assuming you followed the previous posts, I hope you are now ready to understand nixpkgs. But we have to find nixpkgs in our system first! So this is the step: introducing some options and environment variables used by nix tools.&#xA;The NIX_PATH The NIX_PATH environment variable is very important.</description>
+    </item>
+    <item>
+      <title>Nix pill 14: the override design pattern</title>
+      <link>https://lucabrun.github.io/2014/09/nix-pill-14-override-design-pattern.html</link>
+      <pubDate>Wed, 10 Sep 2014 04:38:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/09/nix-pill-14-override-design-pattern.html</guid>
+      <description>Welcome to the 14th Nix pill. In the previous 13th pill we have introduced the callPackage pattern, used to simplify the composition of software in a repository.&#xA;The next design pattern is less necessary but useful in many cases and it&amp;rsquo;s a good exercise to learn more about Nix.&#xA;About composability Functional languages are known for being able to compose functions. In particular, you gain a lot from functions that are able to manipulate the original value into a new value having the same structure.</description>
+    </item>
+    <item>
+      <title>Nix pill 13: the callPackage design pattern</title>
+      <link>https://lucabrun.github.io/2014/09/nix-pill-13-callpackage-design-pattern.html</link>
+      <pubDate>Thu, 04 Sep 2014 06:01:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/09/nix-pill-13-callpackage-design-pattern.html</guid>
+      <description>Welcome to the 13th Nix pill. In the previous 12th pill we have introduced the first basic design pattern for organizing a repository of software. In addition we packaged graphviz to have at least another package for our little repository.&#xA;The next design pattern worth noting is what I&amp;rsquo;d like to call the callPackage pattern. This technique is extensively used in nixpkgs, it&amp;rsquo;s the current standard for importing packages in a repository.</description>
+    </item>
+    <item>
+      <title>Nix pill 12: the inputs design pattern</title>
+      <link>https://lucabrun.github.io/2014/08/nix-pill-12-inputs-design-pattern.html</link>
+      <pubDate>Thu, 28 Aug 2014 08:08:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/08/nix-pill-12-inputs-design-pattern.html</guid>
+      <description>Welcome to the 12th Nix pill. In the previous 11th pill we stopped packaging and cleaned up the system with the garbage collector.&#xA;We restart our packaging, but we will improve a different aspect. We only packaged an hello world program so far, what if we want to create a repository of multiple packages?&#xA;Repositories in Nix Nix is a tool for build and deployment, it does not enforce any particular repository format.</description>
+    </item>
+    <item>
+      <title>Nix pill 11: the garbage collector</title>
+      <link>https://lucabrun.github.io/2014/08/nix-pill-11-garbage-collector.html</link>
+      <pubDate>Thu, 21 Aug 2014 02:40:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/08/nix-pill-11-garbage-collector.html</guid>
+      <description>Welcome to the 11th Nix pill. In the previous 10th pill we managed to obtain a self-contained environment for developing a project. The concept is that whereas nix-build is able to build a derivation in isolation, nix-shell is able to drop us in a shell with (almost) the same environment used by nix-build. This allows us to debug, modify and manually build software.&#xA;Today we stop packaging and look at a mandatory nix component, the garbage collector.</description>
+    </item>
+    <item>
+      <title>Nix pill 10: developing with nix-shell</title>
+      <link>https://lucabrun.github.io/2014/08/nix-pill-10-developing-with-nix-shell.html</link>
+      <pubDate>Tue, 19 Aug 2014 03:21:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/08/nix-pill-10-developing-with-nix-shell.html</guid>
+      <description>Welcome to the 10th Nix pill. In the previous 9th pill we have seen one of the powerful features of nix, automatic discovery of runtime dependencies and finalized the GNU hello world package.&#xA;In return from vacation, we want to hack a little the GNU hello world program. The nix-build tool creates an isolated environment for building the derivation, we want to do the same in order to modify some source files of the project.</description>
+    </item>
+    <item>
+      <title>Nix pill 9: automatic runtime dependencies</title>
+      <link>https://lucabrun.github.io/2014/08/nix-pill-9-automatic-runtime.html</link>
+      <pubDate>Fri, 08 Aug 2014 01:11:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/08/nix-pill-9-automatic-runtime.html</guid>
+      <description>Welcome to the 9th Nix pill. In the previous 8th pill we wrote a generic builder for autotools projects. We feed build dependencies, a source tarball, and we get a Nix derivation as a result.&#xA;Today we stop by the GNU hello world program to analyze build and runtime dependencies, and enhance the builder in order to avoid unnecessary runtime dependencies.&#xA;Build dependencies Let&amp;rsquo;s start analyzing build dependencies for our GNU hello world package:</description>
+    </item>
+    <item>
+      <title>Nix pill 8: generic builders</title>
+      <link>https://lucabrun.github.io/2014/08/nix-pill-8-generic-builders.html</link>
+      <pubDate>Fri, 01 Aug 2014 08:28:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/08/nix-pill-8-generic-builders.html</guid>
+      <description>Welcome to the 8th Nix pill. In the previous 7th pill we successfully built a derivation. We wrote a builder script that compiled a C file and installed the binary under the nix store.&#xA;In this post, we will generalize the builder script, write a Nix expression for GNU hello world and create a wrapper around the derivation built-in function.&#xA;Packaging GNU hello world In the previous pill we packaged a simple .</description>
+    </item>
+    <item>
+      <title>Nix pill 7: a working derivation</title>
+      <link>https://lucabrun.github.io/2014/07/nix-pill-7-working-derivation.html</link>
+      <pubDate>Thu, 31 Jul 2014 01:58:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/07/nix-pill-7-working-derivation.html</guid>
+      <description>Welcome to the seventh Nix pill. In the previous sixth pill we introduced the notion of derivation in the Nix language. How to define a raw derivation and how to (try) to build it.&#xA;In this post, we will continue along the path, by creating a derivation that successfully builds something.&#xA;Then we try to package a real program: we compile a simple C file and create a derivation out of it, given a blessed toolchain.</description>
+    </item>
+    <item>
+      <title>Nix pill 6: our first derivation</title>
+      <link>https://lucabrun.github.io/2014/07/nix-pill-6-our-first-derivation.html</link>
+      <pubDate>Tue, 29 Jul 2014 08:41:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/07/nix-pill-6-our-first-derivation.html</guid>
+      <description>Welcome to the sixth Nix pill. In the previous fifth pill we introduced functions and imports. Functions and imports are very simple concepts that allows for building complex abstractions and composition of modules to build a flexible Nix system.&#xA;In this post we finally arrived to writing a derivation. Derivations are the building blocks of a Nix system, from a file system view point. The Nix language is used to describe such derivations.</description>
+    </item>
+    <item>
+      <title>Nix pill 5: functions and imports</title>
+      <link>https://lucabrun.github.io/2014/07/nix-pill-5-functions-and-imports.html</link>
+      <pubDate>Mon, 28 Jul 2014 06:36:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/07/nix-pill-5-functions-and-imports.html</guid>
+      <description>Welcome to the fifth Nix pill. In the previous fourth pill we touched the Nix language for a moment. We introduced basic types and values of the Nix language, and basic expressions such as &amp;ldquo;if&amp;rdquo;, &amp;ldquo;with&amp;rdquo; and &amp;ldquo;let&amp;rdquo;. I invite you to re-read about these expressions and play with them in the repl.&#xA;Functions help to build reusable components in a big repository like nixpkgs. The Nix manual has a great explanation of functions.</description>
+    </item>
+    <item>
+      <title>Nix pill 4: the basics of the language</title>
+      <link>https://lucabrun.github.io/2014/07/nix-pill-4-basics-of-language.html</link>
+      <pubDate>Sat, 26 Jul 2014 10:52:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/07/nix-pill-4-basics-of-language.html</guid>
+      <description>Welcome to the fourth Nix pill. In the previous third pill we entered the Nix environment. We installed software as user, managed the profile, switched between generations, and queried the nix store. That&amp;rsquo;s the very basics of nix administration somehow.&#xA;The Nix language is used to write derivations. The nix-build tool is used to build derivations. Even as a system administrator that wants to customize the installation, it&amp;rsquo;s necessary to master Nix.</description>
+    </item>
+    <item>
+      <title>Nix pill 3: enter the environment</title>
+      <link>https://lucabrun.github.io/2014/07/nix-pill-3-enter-environment.html</link>
+      <pubDate>Fri, 25 Jul 2014 07:37:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/07/nix-pill-3-enter-environment.html</guid>
+      <description>Welcome to the third Nix pill. In the previous second pill we have installed Nix on our running system. Now we can finally play with it a little, things also apply to NixOS users.&#xA;Enter the environment In the previous pill we created a nix user, so let&amp;rsquo;s start by switching user with su - nix. If your ~/.profile got evaluated, then you should now be able to run commands like nix-env and nix-store.</description>
+    </item>
+    <item>
+      <title>Nix pill 2: install on your running system</title>
+      <link>https://lucabrun.github.io/2014/07/nix-pill-2-install-on-your-running.html</link>
+      <pubDate>Thu, 24 Jul 2014 08:38:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/07/nix-pill-2-install-on-your-running.html</guid>
+      <description>Welcome to the second Nix pill. In the first pill we briefly described Nix.&#xA;Now we&amp;rsquo;ll install Nix on our running system and understand what changed in our system after the installation.&#xA;Nix installation is as easy as installing any other package. It will not revolutionize our system, it will stay in its own place out of our way.&#xA;Download You can grab the last stable tarball (nix 1.7 during this writing) or the package for your distro here: http://hydra.</description>
+    </item>
+    <item>
+      <title>Nix pill 1: why you should give it a try</title>
+      <link>https://lucabrun.github.io/2014/07/nix-pill-1-why-you-should-give-it-try.html</link>
+      <pubDate>Wed, 23 Jul 2014 07:11:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/07/nix-pill-1-why-you-should-give-it-try.html</guid>
+      <description>Introduction&#xA;Welcome to the first post of the Nix in pills series. Nix is a purely functional package manager and deployment system for POSIX. There&amp;rsquo;s a lot of documentation that describes what Nix, NixOS and related projects are.&#xA;The purpose of this post is to convince you to give Nix a try. Installing NixOS is not required, but sometimes I may refer to NixOS as a real world example of Nix usage for building a whole operating system.</description>
+    </item>
+    <item>
+      <title>Debugging and fixing a wmctrl bug in NixOS</title>
+      <link>https://lucabrun.github.io/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html</link>
+      <pubDate>Wed, 09 Jul 2014 14:05:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html</guid>
+      <description>Without wmctrl I&amp;rsquo;m lost. I use it together with xbindkeys so that pressing a combination of keys will raise a window of the desktop (editor, shell, browser, chat, &amp;hellip;).&#xA;It turns out however that in NixOS wmctrl didn&amp;rsquo;t work well. I had 3 windows opened, and wmctrl -l only showed one. Since gnome3 is still young in nixos, the first thought was that mutter did something wrong when returning the list of clients, due to some possible packaging mistake.</description>
+    </item>
+  </channel>
+</rss>

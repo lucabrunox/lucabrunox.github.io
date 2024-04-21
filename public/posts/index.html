@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+    
+      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Luca Bruno blog" />
+      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="Luca Bruno blog" />
+      
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/posts/">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/posts/">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Posts">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Posts">
+  <meta itemprop="dateModified" content="2018-08-14T12:16:00-07:00"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Posts">
+<meta name="twitter:description" content="">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Posts
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2018/08/openvpn-server-with-multiple-clients.html" class="link black dim">
+        OpenVPN configuration for server and multiple clients
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This is a simple post showing a basic configuration for setting up OpenVPN server accepting multiple clients with TLS.
+First of all generate self-signed server and client private key and certificates, and dh params. Make sure to write the Organization Name AND Common Name (CN) when asked, otherwise openvpn will fail to verify the certificates.
+openssl req -newkey rsa:2048 -nodes -keyout serverkey.pem -x509 -days 365000 -out servercert.pem openssl req -newkey rsa:2048 -nodes -keyout clientkey.
+    </div>
+    <a href="/2018/08/openvpn-server-with-multiple-clients.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2016/04/cheap-docker-images-with-nix_15.html" class="link black dim">
+        Cheap Docker images with Nix
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Let&rsquo;s talk about Docker and Nix today. Before explaining what Nix is, if you don&rsquo;t know yet, and before going into the details, I will show you a snippet similar to a Dockerfile for creating a Redis image equivalent to the one in docker hub.
+The final image will be around 42mb (or 25mb) in size, compared to 177mb.
+EDIT: as mentioned on HN, alpine-based images can even go around 15mb in size.
+    </div>
+    <a href="/2016/04/cheap-docker-images-with-nix_15.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2016/01/typescript-and-nodejs-im-sold.html" class="link black dim">
+        TypeScript and NodeJS, I&#39;m sold
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      TypeScript is a typed superset of JavaScript that compiles to plain JavaScript, the way you expect it to be.
+I’ve heard of it a long time ago, but recently with TypeScript 1.7 it got async functions, which means you can awaitasynchronous function calls, similarly to C#, Vala, Go and other languages with syntax support for concurrency. That makes coroutines a pleasant experience compared to plain JavaScript. That’s also the main reason why I didn’t choose Dart.
+    </div>
+    <a href="/2016/01/typescript-and-nodejs-im-sold.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2015/08/nix-pill-19-fundamentals-of-stdenv.html" class="link black dim">
+        Nix pill 19: fundamentals of stdenv
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Welcome to the 19th Nix pill. In the previous 18th pill we did dive into the algorithm used by Nix to compute the store paths, and also introduced fixed-output store paths.
+This time we will instead look into nixpkgs, in particular one of its core derivation: stdenv .
+The stdenv is not a special derivation, but it&rsquo;s very important for the nixpkgs repository. It serves as base for packaging software. It is used to pull in dependencies such as the GCC toolchain, GNU make, core utilities, patch and diff utilities, and so on.
+    </div>
+    <a href="/2015/08/nix-pill-19-fundamentals-of-stdenv.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2015/02/nixos-consul-nginx-and-containers.html" class="link black dim">
+        NixOS, Consul, Nginx and containers
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This is a follow up post on https://medium.com/@dan.ellis/you-dont-need-1mm-for-a-distributed-system-70901d4741e1 . I think the post was well written, so I decided to write a variant using NixOS.
+We&rsquo;ll be using declarative nixos containers, which do not use docker but systemd-nspawn. Also systemd is started as init system inside containers.
+Please note that this configuration can be applied to any nixos machine, and also the containers configuration could be applied to real servers or other kinds of virtualization, e.
+    </div>
+    <a href="/2015/02/nixos-consul-nginx-and-containers.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2015/02/developing-in-golang-with-nix-package.html" class="link black dim">
+        Developing in golang with Nix package manager
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I&rsquo;ve been using Go since several months. It&rsquo;s a pleasant language, even though it has its own drawbacks.
+In our Nixpkgs repository we have support for several programming languages: perl, python, ruby, haskell, lua, &hellip; We&rsquo;ve merged a better support for Go.
+What kind of support are we talking about? In Nix, you never install libraries. Instead, you define an environment in which to use a certain library compiled for a certain version of the language.
+    </div>
+    <a href="/2015/02/developing-in-golang-with-nix-package.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2015/01/nix-pill-18-nix-store-paths.html" class="link black dim">
+        Nix pill 18: nix store paths
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Welcome to the 18th Nix pill. In the previous 17th pill we have scratched the surface of the nixpkgs repository structure. It is a set of packages, and it&rsquo;s possible to override such packages so that all other packages will use the overrides.
+Before reading existing derivations, I&rsquo;d like to talk about store paths and how they are computed. In particular we are interested in fixed store paths that depend on an integrity hash (e.
+    </div>
+    <a href="/2015/01/nix-pill-18-nix-store-paths.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2014/11/nix-pill-17-nixpkgs-overriding-packages.html" class="link black dim">
+        Nix pill 17: nixpkgs, overriding packages
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Welcome to the 17th Nix pill. In the previous 16th pill we have started to dive into the nixpkgs repository. Nixpkgs is a function, and we&rsquo;ve looked at some parameters like system and config.
+Today we&rsquo;ll talk about a special attribute: config.packageOverrides. Overriding packages in a set with fixed point can be considered another design pattern in nixpkgs.
+Overriding a package I recall the override design pattern from the nix pill 14.
+    </div>
+    <a href="/2014/11/nix-pill-17-nixpkgs-overriding-packages.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2014/11/nix-pill-16-nixpkgs-parameters.html" class="link black dim">
+        Nix pill 16: nixpkgs, the parameters
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Welcome to the 16th Nix pill. In the previous 15th pill we&rsquo;ve realized how nix finds expressions with the angular brackets syntax, so that we finally know where is located on our system.
+We can start diving into the nixpkgs repository, through all the various tools and design patterns. Please note that also nixpkgs has its own manual, underlying the difference between the general &ldquo;nix&rdquo; language and the &ldquo;nixpkgs&rdquo; repository.
+    </div>
+    <a href="/2014/11/nix-pill-16-nixpkgs-parameters.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2014/09/nix-pill-15-nix-search-paths.html" class="link black dim">
+        Nix pill 15: nix search paths
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Welcome to the 15th Nix pill. In the previous 14th pill we have introduced the &ldquo;override&rdquo; pattern, useful for writing variants of derivations by passing different inputs.
+Assuming you followed the previous posts, I hope you are now ready to understand nixpkgs. But we have to find nixpkgs in our system first! So this is the step: introducing some options and environment variables used by nix tools.
+The NIX_PATH The NIX_PATH environment variable is very important.
+    </div>
+    <a href="/2014/09/nix-pill-15-nix-search-paths.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+    <ul class="pagination pagination-default">
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/13/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul></article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

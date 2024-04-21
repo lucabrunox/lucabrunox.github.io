@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lua on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/lua/</link>
+    <description>Recent content in Lua on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Dec 2009 04:15:00 -0800</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/lua/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lua for Pythoners - Dictionary</title>
+      <link>https://lucabrun.github.io/2009/12/lua-for-pythoners-dictionary.html</link>
+      <pubDate>Mon, 14 Dec 2009 04:15:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2009/12/lua-for-pythoners-dictionary.html</guid>
+      <description>Hello,&#xA;as promised this is the second post, this time for dictionaries. The most important thing to notice is that tbl[key]=nil means deleting the entry from the table, while in python dict[key]=None is still a valid entry with None value.&#xA;Here&amp;rsquo;s the snippet you can launch in a lua interpreter and this is the catalog of python dictionary examples.</description>
+    </item>
+    <item>
+      <title>Lua for Pythoners - Lists</title>
+      <link>https://lucabrun.github.io/2009/12/lua-for-pythoners-lists.html</link>
+      <pubDate>Sun, 13 Dec 2009 05:58:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2009/12/lua-for-pythoners-lists.html</guid>
+      <description>Hello,&#xA;lately I&amp;rsquo;m discovering Lua as general purpose language. Many people don&amp;rsquo;t agree with lua being used as a general purpose language, many others (including a newbie like me) think Lua has such a simple syntax and powerful tables to become a full fledged language.&#xA;I use a lot of Python, so I start from here: what Python does that Lua can&amp;rsquo;t do almost in the same way? Read the question as it is, don&amp;rsquo;t read &amp;ldquo;what Python does that Lua can&amp;rsquo;t do&amp;rdquo;, it&amp;rsquo;s different.</description>
+    </item>
+  </channel>
+</rss>

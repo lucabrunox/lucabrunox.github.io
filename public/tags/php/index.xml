@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/php/</link>
+    <description>Recent content in Php on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Jun 2013 07:53:00 -0700</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Accessing simple private fields in PHP</title>
+      <link>https://lucabrun.github.io/2013/06/accessing-simple-private-fields-in-php.html</link>
+      <pubDate>Wed, 05 Jun 2013 07:53:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2013/06/accessing-simple-private-fields-in-php.html</guid>
+      <description>A way of accessing private fields in PHP is by changing the accessibility of the fields themselves with http://php.net/manual/en/reflectionproperty.setaccessible.php.&#xA;However this approach requires PHP 5.3.&#xA;For PHP &amp;lt; 5.3 there&amp;rsquo;s another subtle way of accessing private properties:&#xA;function getPrivateProperty($fixture, $propname) {&#xA;try {&#xA;$arr = (array)$fixture;&#xA;} catch (Exception $e) {&#xA;}&#xA;$class = get_class($fixture);&#xA;$privname = &amp;ldquo;\0$class\0$propname&amp;rdquo;;&#xA;return $arr[$privname];&#xA;}&#xA;Usage is pretty straightforward, pass in the object and the property name as string.</description>
+    </item>
+  </channel>
+</rss>

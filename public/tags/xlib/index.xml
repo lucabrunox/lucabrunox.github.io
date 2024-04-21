@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xlib on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/xlib/</link>
+    <description>Recent content in Xlib on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Dec 2008 01:52:00 -0800</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/xlib/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Global keybinding on X</title>
+      <link>https://lucabrun.github.io/2008/12/global-keybinding-on-x.html</link>
+      <pubDate>Sun, 21 Dec 2008 01:52:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2008/12/global-keybinding-on-x.html</guid>
+      <description>Hello,&#xA;lately I&amp;rsquo;ve been looking for a way to create a desktop-wide keybinding for FreeSpeak.&#xA;I first looked into Tomboy and Deskbar source codes but the egg was too huge to be adopted, and it would have brought C dependency which isn&amp;rsquo;t always nice for a Python project.&#xA;Then fargiolas pointed me to a blog post where I could find about gnome keybindings owned by gnome control center. Well that was only a mirage as it doesn&amp;rsquo;t really grab the key but it&amp;rsquo;s only a visual entry in the keyboard shortcuts preferences.</description>
+    </item>
+  </channel>
+</rss>

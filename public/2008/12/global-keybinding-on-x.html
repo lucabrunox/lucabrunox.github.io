@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Global keybinding on X | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Hello,
+lately I&rsquo;ve been looking for a way to create a desktop-wide keybinding for FreeSpeak.
+I first looked into Tomboy and Deskbar source codes but the egg was too huge to be adopted, and it would have brought C dependency which isn&rsquo;t always nice for a Python project.
+Then fargiolas pointed me to a blog post where I could find about gnome keybindings owned by gnome control center. Well that was only a mirage as it doesn&rsquo;t really grab the key but it&rsquo;s only a visual entry in the keyboard shortcuts preferences.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2008/12/global-keybinding-on-x.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2008/12/global-keybinding-on-x.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Global keybinding on X">
+  <meta property="og:description" content="Hello,
+lately I&amp;rsquo;ve been looking for a way to create a desktop-wide keybinding for FreeSpeak.
+I first looked into Tomboy and Deskbar source codes but the egg was too huge to be adopted, and it would have brought C dependency which isn&amp;rsquo;t always nice for a Python project.
+Then fargiolas pointed me to a blog post where I could find about gnome keybindings owned by gnome control center. Well that was only a mirage as it doesn&amp;rsquo;t really grab the key but it&amp;rsquo;s only a visual entry in the keyboard shortcuts preferences.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2008-12-21T01:52:00-08:00">
+    <meta property="article:modified_time" content="2008-12-21T01:52:00-08:00">
+    <meta property="article:tag" content="Gnome">
+    <meta property="article:tag" content="Gtk">
+    <meta property="article:tag" content="Xlib">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Development">
+
+  <meta itemprop="name" content="Global keybinding on X">
+  <meta itemprop="description" content="Hello,
+lately I&rsquo;ve been looking for a way to create a desktop-wide keybinding for FreeSpeak.
+I first looked into Tomboy and Deskbar source codes but the egg was too huge to be adopted, and it would have brought C dependency which isn&rsquo;t always nice for a Python project.
+Then fargiolas pointed me to a blog post where I could find about gnome keybindings owned by gnome control center. Well that was only a mirage as it doesn&rsquo;t really grab the key but it&rsquo;s only a visual entry in the keyboard shortcuts preferences.">
+  <meta itemprop="datePublished" content="2008-12-21T01:52:00-08:00">
+  <meta itemprop="dateModified" content="2008-12-21T01:52:00-08:00">
+  <meta itemprop="wordCount" content="178">
+  <meta itemprop="keywords" content="Gnome,Gtk,Xlib,Python,Development"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Global keybinding on X">
+<meta name="twitter:description" content="Hello,
+lately I&rsquo;ve been looking for a way to create a desktop-wide keybinding for FreeSpeak.
+I first looked into Tomboy and Deskbar source codes but the egg was too huge to be adopted, and it would have brought C dependency which isn&rsquo;t always nice for a Python project.
+Then fargiolas pointed me to a blog post where I could find about gnome keybindings owned by gnome control center. Well that was only a mirage as it doesn&rsquo;t really grab the key but it&rsquo;s only a visual entry in the keyboard shortcuts preferences.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Global keybinding on X</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2008-12-21T01:52:00-08:00">December 21, 2008</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Hello,<br>
+lately I&rsquo;ve been looking for a way to create a desktop-wide keybinding for <a href="http://freespeak.berlios.de/">FreeSpeak</a>.<br>
+I first looked into Tomboy and Deskbar source codes but the egg was too huge to be adopted, and it would have brought C dependency which isn&rsquo;t always nice for a Python project.<br>
+Then fargiolas pointed me to a <a href="http://blogs.gnome.org/brunobol/2008/12/14/global-keybindings-in-gtk/">blog post</a> where I could find about <a href="http://live.gnome.org/ControlCenter/ApplicationDefinedKeybindings">gnome keybindings</a> owned by gnome control center. Well that was only a mirage as it doesn&rsquo;t really grab the key but it&rsquo;s only a visual entry in the keyboard shortcuts preferences.<br>
+After a few days I&rsquo;ve finally found a not-so-hackish solution in about one hundred lines of Python code.</p>
+<p>Here is the <a href="https://www.siafoo.net/snippet/239">snippet</a> (<a href="https://www.siafoo.net/snippet/239/download/globalkeybinding.py">download</a>), only using <a href="http://python-xlib.sourceforge.net/">Xlib</a> and GTK+ Python bindings.</p>
+<p>Sample usage:</p>
+<pre tabindex="0"><code>  
+def callback (keybinding):  
+   print &#39;Callback!&#39;  
+   gtk.main\_quit ()  
+  
+gtk.gdk.threads\_init ()  
+keybinding = GlobalKeyBinding (&#34;/apps/appdir&#34;, &#34;key\_binding&#34;)  
+keybinding.connect (&#39;activate&#39;, callback)  
+keybinding.grab ()  
+keybinding.start ()  
+gtk.main ()  
+</code></pre><p>The only problem is that it doesn&rsquo;t make use of GDK filters because PyGTK doesn&rsquo;t provide such function wrappers and there&rsquo;s no GDK-to-Xlib mapping available.<br>
+But yes, it works very good.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/gnome/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Gnome</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/gtk/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Gtk</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/xlib/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Xlib</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/python/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/development/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Development</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2008/11/single-app-instances-python-and-dbus.html">Single app instances, Python and DBus</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/12/aptitude-gtk-progress.html">Aptitude-gtk progress</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/11/freespeak-gains-translation-suggestions.html">FreeSpeak gains translation suggestions</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/11/freespeak-020-has-been-released.html">FreeSpeak 0.2.0 has been released</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/11/replace-gtk-with-clutter-for-fun.html">Replace GTK&#43; with Clutter for fun</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/10/freespeak-gtkgnome-translator.html">FreeSpeak, a GTK&#43;/GNOME translator</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/09/gtk-apps-to-replace-gnome-files.html">GTK Apps to replace Gnome Files</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/05/syx-gtk-and-threading.html">Syx, GTK&#43; and threading</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/08/vagalume-gtk-and-lastfm.html">Vagalume, GTK&#43; and Last.fm</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/08/gnome-main-menu.html">Gnome main menu</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/10/how-to-contribute-to-apt.html">How to contribute to APT</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/08/compiz-with-ati-rs480-on-debian.html">Compiz with ATI RS480 on Debian</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/07/syx-gaining-more-stability-and-speed.html">Syx gaining more stability and speed</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/07/identica-is-worse.html">identi.ca is worse</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2008/06/new-debian-tool-proposal.html">New debian tool proposal</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

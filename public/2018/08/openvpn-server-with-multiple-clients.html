@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>OpenVPN configuration for server and multiple clients | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="This is a simple post showing a basic configuration for setting up OpenVPN server accepting multiple clients with TLS.
+First of all generate self-signed server and client private key and certificates, and dh params. Make sure to write the Organization Name AND Common Name (CN) when asked, otherwise openvpn will fail to verify the certificates.
+openssl req -newkey rsa:2048 -nodes -keyout serverkey.pem -x509 -days 365000 -out servercert.pem openssl req -newkey rsa:2048 -nodes -keyout clientkey.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2018/08/openvpn-server-with-multiple-clients.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2018/08/openvpn-server-with-multiple-clients.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="OpenVPN configuration for server and multiple clients">
+  <meta property="og:description" content="This is a simple post showing a basic configuration for setting up OpenVPN server accepting multiple clients with TLS.
+First of all generate self-signed server and client private key and certificates, and dh params. Make sure to write the Organization Name AND Common Name (CN) when asked, otherwise openvpn will fail to verify the certificates.
+openssl req -newkey rsa:2048 -nodes -keyout serverkey.pem -x509 -days 365000 -out servercert.pem openssl req -newkey rsa:2048 -nodes -keyout clientkey.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2018-08-14T12:16:00-07:00">
+    <meta property="article:modified_time" content="2018-08-14T12:16:00-07:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Openvpn">
+
+  <meta itemprop="name" content="OpenVPN configuration for server and multiple clients">
+  <meta itemprop="description" content="This is a simple post showing a basic configuration for setting up OpenVPN server accepting multiple clients with TLS.
+First of all generate self-signed server and client private key and certificates, and dh params. Make sure to write the Organization Name AND Common Name (CN) when asked, otherwise openvpn will fail to verify the certificates.
+openssl req -newkey rsa:2048 -nodes -keyout serverkey.pem -x509 -days 365000 -out servercert.pem openssl req -newkey rsa:2048 -nodes -keyout clientkey.">
+  <meta itemprop="datePublished" content="2018-08-14T12:16:00-07:00">
+  <meta itemprop="dateModified" content="2018-08-14T12:16:00-07:00">
+  <meta itemprop="wordCount" content="177">
+  <meta itemprop="keywords" content="Linux,Openvpn"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="OpenVPN configuration for server and multiple clients">
+<meta name="twitter:description" content="This is a simple post showing a basic configuration for setting up OpenVPN server accepting multiple clients with TLS.
+First of all generate self-signed server and client private key and certificates, and dh params. Make sure to write the Organization Name AND Common Name (CN) when asked, otherwise openvpn will fail to verify the certificates.
+openssl req -newkey rsa:2048 -nodes -keyout serverkey.pem -x509 -days 365000 -out servercert.pem openssl req -newkey rsa:2048 -nodes -keyout clientkey.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">OpenVPN configuration for server and multiple clients</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2018-08-14T12:16:00-07:00">August 14, 2018</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>This is a simple post showing a basic configuration for setting up OpenVPN server accepting multiple clients with TLS.</p>
+<p>First of all generate self-signed server and client private key and certificates, and dh params. <strong>Make sure to write the Organization Name AND Common Name (CN) when asked</strong>, otherwise openvpn will fail to verify the certificates.</p>
+<p><code>openssl req -newkey rsa:2048 -nodes -keyout serverkey.pem -x509 -days 365000 -out servercert.pem   openssl req -newkey rsa:2048 -nodes -keyout clientkey.pem -out client.csr   openssl x509 -req -days 365000 -in client.csr -CA servercert.pem -CAkey serverkey.pem -set_serial 01 -out clientcert.pem   openssl dhparam -outform PEM -out dh.pem 1024   </code></p>
+<p>Server configuration:</p>
+<p><code>dev tun   mode server   tls-server   server 10.8.0.0 255.255.255.0   ca servercert.pem   cert servercert.pem   key serverkey.pem   dh dh.pem   duplicate-cn   topology subnet   keepalive 10 60   ping-timer-rem   persist-tun   persist-key   </code></p>
+<p>If you plan to use the server as gateway like configured below, don&rsquo;t forget to enable IP forwarding and masquerading:</p>
+<p><code>sysctl net.ipv4.ip_forward=1   iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -j MASQUERADE   </code><br>
+Client configuration:</p>
+<p><code>client   redirect-gateway   tls-client   key clientkey.pem   cert clientcert.pem   ca servercert.pem   keepalive 10 60   dev tun   </code></p>
+<p>Have fun, tune as needed.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/linux/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Linux</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/openvpn/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Openvpn</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2013/03/switch-window-by-name-on-linux.html">Switch window by name on Linux - alternative to Alt&#43;Tab</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

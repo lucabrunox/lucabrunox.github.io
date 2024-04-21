@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Nix pill 15: nix search paths | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Welcome to the 15th Nix pill. In the previous 14th pill we have introduced the &ldquo;override&rdquo; pattern, useful for writing variants of derivations by passing different inputs.
+Assuming you followed the previous posts, I hope you are now ready to understand nixpkgs. But we have to find nixpkgs in our system first! So this is the step: introducing some options and environment variables used by nix tools.
+The NIX_PATH The NIX_PATH environment variable is very important.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2014/09/nix-pill-15-nix-search-paths.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2014/09/nix-pill-15-nix-search-paths.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Nix pill 15: nix search paths">
+  <meta property="og:description" content="Welcome to the 15th Nix pill. In the previous 14th pill we have introduced the &amp;ldquo;override&amp;rdquo; pattern, useful for writing variants of derivations by passing different inputs.
+Assuming you followed the previous posts, I hope you are now ready to understand nixpkgs. But we have to find nixpkgs in our system first! So this is the step: introducing some options and environment variables used by nix tools.
+The NIX_PATH The NIX_PATH environment variable is very important.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-09-16T02:28:00-07:00">
+    <meta property="article:modified_time" content="2014-09-16T02:28:00-07:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixpills">
+    <meta property="article:tag" content="Nixos">
+
+  <meta itemprop="name" content="Nix pill 15: nix search paths">
+  <meta itemprop="description" content="Welcome to the 15th Nix pill. In the previous 14th pill we have introduced the &ldquo;override&rdquo; pattern, useful for writing variants of derivations by passing different inputs.
+Assuming you followed the previous posts, I hope you are now ready to understand nixpkgs. But we have to find nixpkgs in our system first! So this is the step: introducing some options and environment variables used by nix tools.
+The NIX_PATH The NIX_PATH environment variable is very important.">
+  <meta itemprop="datePublished" content="2014-09-16T02:28:00-07:00">
+  <meta itemprop="dateModified" content="2014-09-16T02:28:00-07:00">
+  <meta itemprop="wordCount" content="1337">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 15: nix search paths">
+<meta name="twitter:description" content="Welcome to the 15th Nix pill. In the previous 14th pill we have introduced the &ldquo;override&rdquo; pattern, useful for writing variants of derivations by passing different inputs.
+Assuming you followed the previous posts, I hope you are now ready to understand nixpkgs. But we have to find nixpkgs in our system first! So this is the step: introducing some options and environment variables used by nix tools.
+The NIX_PATH The NIX_PATH environment variable is very important.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Nix pill 15: nix search paths</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-09-16T02:28:00-07:00">September 16, 2014</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Welcome to the 15th Nix pill. In the previous <a href="http://lethalman.blogspot.it/2014/09/nix-pill-14-override-design-pattern.html">14th pill</a> we have introduced the &ldquo;override&rdquo; pattern, useful for writing variants of derivations by passing different inputs.</p>
+<p>Assuming you followed the previous posts, I hope you are now ready to understand nixpkgs. But we have to find nixpkgs in our system first! So this is the step: introducing some options and environment variables used by nix tools.</p>
+<h3 id="the-nix_path">The NIX_PATH</h3>
+<p>The <a href="http://nixos.org/nix/manual/#sec-common-env">NIX_PATH environment variable</a> is very important. It&rsquo;s very similar to the PATH environment variable. The syntax is similar, several paths are separated by a colon &ldquo;:&rdquo;. Nix will then search for something in those paths from left to right.</p>
+<p>Who uses NIX_PATH? The nix expressions! Yes, NIX_PATH is not of much use by the nix tools themselves, rather it&rsquo;s used when writing nix expressions.</p>
+<p>In the shell for example, when you execute the command &ldquo;ping&rdquo;, it&rsquo;s being searched in the PATH directories. The first one found is the one being used.</p>
+<p>In nix it&rsquo;s exactly the same, however the syntax is different. Instead of just typing &ldquo;ping&rdquo; you have to type <!-- raw HTML omitted -->. Yes, I know&hellip; you are already thinking of <!-- raw HTML omitted -->.<br>
+However don&rsquo;t stop reading here, let&rsquo;s keep going.</p>
+<p>What&rsquo;s NIX_PATH good for? Nix expressions may refer to an &ldquo;abstract&rdquo; path such as <!-- raw HTML omitted -->, and it&rsquo;s possible to override it from the command line.</p>
+<p>For ease we will use nix-instantiate &ndash;eval to do our tests. I remind you, <a href="http://nixos.org/nix/manual/#sec-nix-instantiate">nix-instantiate</a> is used to evaluate nix expressions and generate the .drv files. Here we are not interested in building derivations, so evaluation is enough. It can be used for one-shot expressions.</p>
+<h3 id="fake-it-a-little">Fake it a little</h3>
+<p>It&rsquo;s useless from a nix view point, but I think it&rsquo;s useful for your own understanding. Let&rsquo;s use PATH itself as NIX_PATH, and try to locate ping (or another binary if you don&rsquo;t have it).</p>
+<pre tabindex="0"><code>$ nix-instantiate --eval -E &#39;&lt;ping&gt;&#39;
+error: file \`ping&#39; was not found in the Nix search path (add it using $NIX\_PATH or -I)
+$ NIX\_PATH=$PATH nix-instantiate --eval -E &#39;&lt;ping&gt;&#39;
+/bin/ping
+$ nix-instantiate -I /bin --eval -E &#39;&lt;ping&gt;&#39;
+/bin/ping
+</code></pre><p>Great. At first attempt nix obviously said  could not be found anywhere in the search path. Note that the -I option accepts a single directory. Paths added with -I take precedence over NIX_PATH.</p>
+<p>The NIX_PATH also accepts a different yet very handy syntax: &ldquo;somename=somepath&rdquo;. That is, instead of searching inside a directory for a name, we specify exactly the value of that name.</p>
+<pre tabindex="0"><code>$ NIX\_PATH=&#34;ping=/bin/ping&#34; nix-instantiate --eval -E &#39;&lt;ping&gt;&#39;
+/bin/ping
+$ NIX\_PATH=&#34;ping=/bin/foo&#34; nix-instantiate --eval -E &#39;&lt;ping&gt;&#39;
+error: file \`ping&#39; was not found in the Nix search path (add it using $NIX\_PATH or -I)
+</code></pre><p>Note in the second case how Nix checks whether the path exists or not.</p>
+<h3 id="the-path-to-repository">The path to repository</h3>
+<p>You are out of curiosity, right?</p>
+<pre tabindex="0"><code>$ nix-instantiate --eval -E &#39;&lt;nixpkgs&gt;&#39;
+/home/nix/.nix-defexpr/channels/nixpkgs
+$ echo $NIX\_PATH
+nixpkgs=/home/nix/.nix-defexpr/channels/nixpkgs
+</code></pre><p>You may have a different path, depending on how you added channels etc.. Anyway that&rsquo;s the whole point. The <!-- raw HTML omitted --> stranger that we used in our nix expressions, is referring to a path in the filesystem specified by NIX_PATH.<br>
+You can list that directory and realize it&rsquo;s simply a checkout of the <a href="https://github.com/NixOS/nixpkgs">nixpkgs</a> repository at a specific commit (hint: .version-suffix).<br>
+The NIX_PATH variable is exported by nix.sh, and that&rsquo;s the reason why I always asked you to <a href="http://nixos.org/nix/manual/#idm47361539530016">source nix.sh</a> at the beginning of my posts.</p>
+<p>You may wonder: then I can also specify a different nixpkgs path to, e.g., a git checkout of <a href="https://github.com/NixOS/nixpkgs">nixpkgs</a>? Yes, you can and I encourage doing that. We&rsquo;ll talk about this in the next pill.</p>
+<p>Let&rsquo;s define a path for our repository, then! Let&rsquo;s say all the default.nix, graphviz.nix etc. are under /home/nix/mypkgs:</p>
+<pre tabindex="0"><code>$ export NIX\_PATH=mypkgs=/home/nix/mypkgs:$NIX\_PATH
+$ nix-instantiate --eval &#39;&lt;mypkgs&gt;&#39;
+{ graphviz = &lt;code&gt;; graphvizCore = &lt;code&gt;; hello = &lt;code&gt;; mkDerivation = &lt;code&gt;; }
+</code></pre><p>As expected we got the set of our packages (well except the mkDerivation utility), that&rsquo;s our repository.</p>
+<p>Until now we used <a href="http://nixos.org/nix/manual/#sec-nix-build">nix-build</a> directly in the directory of default.nix. However nix-build generally needs a .nix to be specified to the command line:</p>
+<pre tabindex="0"><code>$ nix-build /home/nix/mypkgs -A graphviz
+/nix/store/dhps2c1fnsfxssdri3yxbdiqmnhzg6yr-graphviz
+$ nix-build &#39;&lt;mypkgs&gt;&#39; -A graphviz
+/nix/store/dhps2c1fnsfxssdri3yxbdiqmnhzg6yr-graphviz
+</code></pre><p>Yes, nix-build also accepts paths with angular brackets. We first evaluate the whole repository (default.nix) and then peek the graphviz attribute.</p>
+<h3 id="a-big-word-about-nix-env">A big word about nix-env</h3>
+<p>The <a href="http://nixos.org/nix/manual/#sec-nix-env">nix-env</a> command is a little different than nix-instantiate and nix-build. Whereas nix-instantiate and nix-build require a starting nix expression, nix-env does not.</p>
+<p>You may be crippled by this concept at the beginning, you may think nix-env uses NIX_PATH to find the nixpkgs repository. But that&rsquo;s not it.</p>
+<p>The nix-env command uses ~/.nix-defexpr, which is also part of NIX_PATH by default, but that&rsquo;s only a coincidence. If you empty NIX_PATH, nix-env will still be able to find derivations because of ~/.nix-defexpr.</p>
+<p>So if you run nix-env -i graphviz inside your repository, it will install the nixpkgs one. Same if you set NIX_PATH to point to your repository.</p>
+<p>In order to specify an alternative to ~/.nix-defexpr it&rsquo;s possible to use the -f option:</p>
+<pre tabindex="0"><code>$ nix-env -f &#39;&lt;mypkgs&gt;&#39; -i graphviz
+warning: there are multiple derivations named \`graphviz&#39;; using the first one
+replacing old \`graphviz&#39;
+installing \`graphviz&#39;
+</code></pre><p>Oh why did it say there&rsquo;s another derivation named graphviz? Because both graphviz and graphvizCore attributes in our repository have the name &ldquo;graphviz&rdquo; for the derivation:</p>
+<pre tabindex="0"><code>$ nix-env -f &#39;&lt;mypkgs&gt;&#39; -qaP
+graphviz      graphviz
+graphvizCore  graphviz
+hello         hello
+</code></pre><p>By default nix-env parses all derivations and use the derivation names to interpret the command line. So in this case &ldquo;graphviz&rdquo; matched two derivations. Alternatively, like for nix-build, one can use -A to specify an attribute name instead of a derivation name:</p>
+<pre tabindex="0"><code>$ nix-env -f &#39;&lt;mypkgs&gt;&#39; -i -A graphviz
+replacing old \`graphviz&#39;
+installing \`graphviz&#39;
+</code></pre><p>This form, other than being more precise, it&rsquo;s also faster because nix-env does not have to parse all the derivations.</p>
+<p>For completeness: you may install graphvizCore with -A, since without the -A switch it&rsquo;s ambiguous.</p>
+<p>In summary, it may happen when playing with nix that nix-env** peeks a different derivation than nix-build.** In such case you probably specified NIX_PATH, but nix-env is instead looking into ~/.nix-defexpr.</p>
+<p>Why is nix-env having this different behavior? I don&rsquo;t know specifically by myself either, but the answers could be:</p>
+<ul>
+<li>nix-env tries to be generic, thus it does not look for &ldquo;nixpkgs&rdquo; in NIX_PATH, rather it looks in ~/.nix-defexpr.</li>
+<li>nix-env is able to merge multiple trees in ~/.nix-defexpr by looking at all the possible derivations</li>
+</ul>
+<p>It may also happen to you that you <strong>cannot</strong> <strong>match a derivation name when installing</strong>, because of the derivation name vs -A switch described above. Maybe nix-env wanted to be more friendly in this case for default user setups.</p>
+<p>It may or may not make sense for you, or it&rsquo;s like that for historical reasons, but that&rsquo;s how it works currently, unless somebody comes up with a better idea.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>The NIX_PATH variable is the search path used by nix when using the angular brackets syntax. It&rsquo;s possible to refer to &ldquo;abstract&rdquo; paths inside nix expressions and define the &ldquo;concrete&rdquo; path by means of NIX_PATH, or the usual -I flag in nix tools.</p>
+<p>We&rsquo;ve also explained some of the uncommon nix-env behaviors for newcomers. The nix-env tool does not use NIX_PATH to search for packages, but rather for ~/.nix-defexpr. Beware of that!</p>
+<p>In general do not abuse NIX_PATH, when possible use relative paths when writing your own nix expressions. Of course, in the case of <!-- raw HTML omitted --> in our repository, that&rsquo;s a perfectly fine usage of NIX_PATH. Instead, inside our repository itself, refer to expressions with relative paths like ./hello.nix.</p>
+<h3 id="next-pill">Next pill</h3>
+<p>&hellip;we will finally dive into nixpkgs. Most of the techniques we have developed in this series are already in nixpkgs, like mkDerivation, callPackage, override, etc., but of course better. With time, those base utilities get enhanced by the community with more features in order to handle more and more use cases and in a more general way.</p>
+<p>Pill 16 is available for <a href="http://lethalman.blogspot.it/2014/11/nix-pill-16-nixpkgs-parameters.html">reading here</a>.</p>
+<p>To be notified about the new pill, stay tuned on <a href="https://twitter.com/search?src=typd&amp;q=%23NixPills">#NixPills</a>, follow <a href="https://twitter.com/lethalman">@lethalman</a> or subscribe to the <a href="http://lethalman.blogspot.com/feeds/posts/default/-/nixpills">nixpills rss</a>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixpills/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpills</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2014/09/nix-pill-14-override-design-pattern.html">Nix pill 14: the override design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/09/nix-pill-13-callpackage-design-pattern.html">Nix pill 13: the callPackage design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-12-inputs-design-pattern.html">Nix pill 12: the inputs design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-11-garbage-collector.html">Nix pill 11: the garbage collector</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-10-developing-with-nix-shell.html">Nix pill 10: developing with nix-shell</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-9-automatic-runtime.html">Nix pill 9: automatic runtime dependencies</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-8-generic-builders.html">Nix pill 8: generic builders</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-7-working-derivation.html">Nix pill 7: a working derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-6-our-first-derivation.html">Nix pill 6: our first derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-5-functions-and-imports.html">Nix pill 5: functions and imports</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-4-basics-of-language.html">Nix pill 4: the basics of the language</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-3-enter-environment.html">Nix pill 3: enter the environment</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-2-install-on-your-running.html">Nix pill 2: install on your running system</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-1-why-you-should-give-it-try.html">Nix pill 1: why you should give it a try</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html">Debugging and fixing a wmctrl bug in NixOS</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

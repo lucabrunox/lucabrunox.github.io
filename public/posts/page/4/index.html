@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+    
+      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Luca Bruno blog" />
+      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="Luca Bruno blog" />
+      
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/posts/">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/posts/">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Posts">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Posts">
+  <meta itemprop="dateModified" content="2018-08-14T12:16:00-07:00"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Posts">
+<meta name="twitter:description" content="">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Posts
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2013/06/inline-commenting-system-for-blog-sites.html" class="link black dim">
+        Inline commenting system for blog sites
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      One side of the idea:
+Lately I&rsquo;ve seen some comment systems that inline comments in the text itself, see an example here.
+Other side of the idea:
+I&rsquo;ve implemented a couple of unsupervised algorithms for news text extraction from web pages in Javascript, and they work generally well. They&rsquo;re also capable of splitting the news text into paragraphs and avoid image captions or other unrelated text.
+The idea:
+Merge the two ideas, as a new commenting service (like Disqus) for blogs, in a modern and interesting way.
+    </div>
+    <a href="/2013/06/inline-commenting-system-for-blog-sites.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2013/06/accessing-simple-private-fields-in-php.html" class="link black dim">
+        Accessing simple private fields in PHP
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      A way of accessing private fields in PHP is by changing the accessibility of the fields themselves with http://php.net/manual/en/reflectionproperty.setaccessible.php.
+However this approach requires PHP 5.3.
+For PHP &lt; 5.3 there&rsquo;s another subtle way of accessing private properties:
+function getPrivateProperty($fixture, $propname) {
+try {
+$arr = (array)$fixture;
+} catch (Exception $e) {
+}
+$class = get_class($fixture);
+$privname = &ldquo;\0$class\0$propname&rdquo;;
+return $arr[$privname];
+}
+Usage is pretty straightforward, pass in the object and the property name as string.
+    </div>
+    <a href="/2013/06/accessing-simple-private-fields-in-php.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2013/04/build-vala-applications-with-shake.html" class="link black dim">
+        Build Vala applications with Shake build system
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I&rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.
+First of all, you need to know that Shake is a library written in Haskell, and it&rsquo;s meant to be a better replacement for make. Let&rsquo;s start by installing cabal and then shake:
+apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.
+    </div>
+    <a href="/2013/04/build-vala-applications-with-shake.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2013/03/switch-window-by-name-on-linux.html" class="link black dim">
+        Switch window by name on Linux - alternative to Alt&#43;Tab
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Today I want to share a very simple script that works with most Linux window managers: switch window by name.
+It works like this: you press Ctrl+Alt+M, then a dialog appears where you write part of the name of the window, and you&rsquo;ll get switched to the window that matches the provided name.The string your provide will match part of window names in case-insensitive mode.
+That means if you have &ldquo;Foo - Mozilla Firefox&rdquo; and type in &ldquo;fire&rdquo; you&rsquo;ll switch to firefox.
+    </div>
+    <a href="/2013/03/switch-window-by-name-on-linux.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2013/03/controlling-audio-volume-in-awesome-wm.html" class="link black dim">
+        Controlling audio volume in Awesome WM
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I use awesome on my eeepc because it&rsquo;s much space and resource saving.
+There are several possibilities for controlling volume in the Awesome window manager.
+Today I&rsquo;d like to share my way of doing it: using amixer for controlling the volume, and naughty for notifying the user.
+Start by defining the following in your rc.lua (source discussion here):
+volnotify = {}
+volnotify.id = nil
+function volnotify:notify (msg)
+self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self.
+    </div>
+    <a href="/2013/03/controlling-audio-volume-in-awesome-wm.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2012/12/refactoryorg-is-down.html" class="link black dim">
+        Refactory.org is down
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Unfortunately many of my snippets in this blog have been written and uploaded exclusively on refactory.org . It was a free service for uploading snippets of any kind, with a friendly versioning system and other cool features.
+It&rsquo;s now inactive since several months. I&rsquo;m sorry for anybody stumbling upon any post that has code hosted at refactory.org . From now on I will try to put the code in the post itself whenever I can, or find better places to upload the code.
+    </div>
+    <a href="/2012/12/refactoryorg-is-down.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2012/11/grab-focus-on-gtk-widget.html" class="link black dim">
+        Grab focus on Gtk Widget
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Many times I had to give focus to a newly created Gtk widget that still had to be mapped to screen. Since widget.grab_focus() does not work if the widget is not displayed on the screen, then I always used an idle source to delay the operation.
+Today I noticed that the idle may be too late: if the user is writing something, then some key strokes may be lost because the idle runs slightly after the widget has been mapped.
+    </div>
+    <a href="/2012/11/grab-focus-on-gtk-widget.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2012/11/code-search-is-dead-long-live-code.html" class="link black dim">
+        Code Search is dead. Long live Code Search!
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I&rsquo;m bumping a breaking news from debian.net: Introducing codesearch.debian.net, a regexp code search engine
+The days of google codesearch are ended since a while, but now we have an up-to-date and open source debian codesearch.
+(from the about page):
+It searches all the open source projects which are included in the Debian archive (the &ldquo;main&rdquo; distribution only, not non-free or contrib). Currently, that includes about 18000 packages with 140 GiB of source code.
+    </div>
+    <a href="/2012/11/code-search-is-dead-long-live-code.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2011/09/vala-language-introduction-on-irc.html" class="link black dim">
+        Vala language introduction on IRC
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Hi,
+I&rsquo;ve lately held an talk on IRC about the Vala programming language for the Ubuntu App Developer Week. I&rsquo;ve introduced the basics of the Vala language and its features.
+You can read the log of the talk here.
+    </div>
+    <a href="/2011/09/vala-language-introduction-on-irc.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2011/08/probability-of-union-of-independent.html" class="link black dim">
+        Probability of a union of independent events algorithm
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Lately I was looking for a copy &rsquo;n paste algorithm to calculate the probability of a union of independent events that are not mutually exclusive (aka inclusion-exclusion principle in probability). Unfortunately I couldn&rsquo;t find any algorithm for such a basic problem.
+Therefore, I decided to write the following naive algorithm which is fast enough for my purposes (O(n2) in time and space, where n is the number of events), and share with everyone:
+    </div>
+    <a href="/2011/08/probability-of-union-of-independent.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/posts/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/3/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/6/" aria-label="Page 6" class="page-link" role="button">6</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/5/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/13/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul></article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zenity on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/zenity/</link>
+    <description>Recent content in Zenity on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Mar 2013 04:24:00 -0700</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/zenity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Switch window by name on Linux - alternative to Alt&#43;Tab</title>
+      <link>https://lucabrun.github.io/2013/03/switch-window-by-name-on-linux.html</link>
+      <pubDate>Thu, 28 Mar 2013 04:24:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2013/03/switch-window-by-name-on-linux.html</guid>
+      <description>Today I want to share a very simple script that works with most Linux window managers: switch window by name.&#xA;It works like this: you press Ctrl+Alt+M, then a dialog appears where you write part of the name of the window, and you&amp;rsquo;ll get switched to the window that matches the provided name.The string your provide will match part of window names in case-insensitive mode.&#xA;That means if you have &amp;ldquo;Foo - Mozilla Firefox&amp;rdquo; and type in &amp;ldquo;fire&amp;rdquo; you&amp;rsquo;ll switch to firefox.</description>
+    </item>
+  </channel>
+</rss>

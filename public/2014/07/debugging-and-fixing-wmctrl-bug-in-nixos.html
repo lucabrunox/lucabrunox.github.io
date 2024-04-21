@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Debugging and fixing a wmctrl bug in NixOS | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Without wmctrl I&rsquo;m lost. I use it together with xbindkeys so that pressing a combination of keys will raise a window of the desktop (editor, shell, browser, chat, &hellip;).
+It turns out however that in NixOS wmctrl didn&rsquo;t work well. I had 3 windows opened, and wmctrl -l only showed one. Since gnome3 is still young in nixos, the first thought was that mutter did something wrong when returning the list of clients, due to some possible packaging mistake.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Debugging and fixing a wmctrl bug in NixOS">
+  <meta property="og:description" content="Without wmctrl I&amp;rsquo;m lost. I use it together with xbindkeys so that pressing a combination of keys will raise a window of the desktop (editor, shell, browser, chat, &amp;hellip;).
+It turns out however that in NixOS wmctrl didn&amp;rsquo;t work well. I had 3 windows opened, and wmctrl -l only showed one. Since gnome3 is still young in nixos, the first thought was that mutter did something wrong when returning the list of clients, due to some possible packaging mistake.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-07-09T14:05:00-07:00">
+    <meta property="article:modified_time" content="2014-07-09T14:05:00-07:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Xbindkeys">
+    <meta property="article:tag" content="Wmtrl">
+    <meta property="article:tag" content="Nixos">
+
+  <meta itemprop="name" content="Debugging and fixing a wmctrl bug in NixOS">
+  <meta itemprop="description" content="Without wmctrl I&rsquo;m lost. I use it together with xbindkeys so that pressing a combination of keys will raise a window of the desktop (editor, shell, browser, chat, &hellip;).
+It turns out however that in NixOS wmctrl didn&rsquo;t work well. I had 3 windows opened, and wmctrl -l only showed one. Since gnome3 is still young in nixos, the first thought was that mutter did something wrong when returning the list of clients, due to some possible packaging mistake.">
+  <meta itemprop="datePublished" content="2014-07-09T14:05:00-07:00">
+  <meta itemprop="dateModified" content="2014-07-09T14:05:00-07:00">
+  <meta itemprop="wordCount" content="288">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Xbindkeys,Wmtrl,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Debugging and fixing a wmctrl bug in NixOS">
+<meta name="twitter:description" content="Without wmctrl I&rsquo;m lost. I use it together with xbindkeys so that pressing a combination of keys will raise a window of the desktop (editor, shell, browser, chat, &hellip;).
+It turns out however that in NixOS wmctrl didn&rsquo;t work well. I had 3 windows opened, and wmctrl -l only showed one. Since gnome3 is still young in nixos, the first thought was that mutter did something wrong when returning the list of clients, due to some possible packaging mistake.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Debugging and fixing a wmctrl bug in NixOS</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-07-09T14:05:00-07:00">July 9, 2014</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Without wmctrl I&rsquo;m lost. I use it together with xbindkeys so that pressing a combination of keys will raise a window of the desktop (editor, shell, browser, chat, &hellip;).</p>
+<p>It turns out however that in NixOS wmctrl didn&rsquo;t work well. I had 3 windows opened, and wmctrl -l only showed one. Since gnome3 is still young in nixos, the first thought was that mutter did something wrong when returning the list of clients, due to some possible packaging mistake.</p>
+<p>However, xprop -root correctly listed 3 window ids for the _NET_CLIENT_LIST atom, so mutter did its job.</p>
+<p>Therefore it might be a problem of wmctrl. I&rsquo;m always sure in these cases Debian has a patch, however I wanted to find out by myself.</p>
+<p>Let&rsquo;s prepare an environment for hacking wmctrl:</p>
+<p>$ nix-shell ~/nixpkgs -A wmctrl<br>
+$ unpackPhase<br>
+$ cd $sourceRoot<br>
+$ configurePhase<br>
+$ buildPhase<br>
+$ ./wmctrl -l</p>
+<p>Ok it runs. Now let&rsquo;s dive into the code.</p>
+<ol>
+<li>Open main.c</li>
+<li>Search for _NET_CLIENT_LIST</li>
+<li>Note the for loop in list_windows function right below, it uses client_list_size / sizeof(Window) in the condition. That may be the culprit. </li>
+<li>We make use of the most advanced debugging technique: before the for loop add a printf(&quot;%lu\n%lu\n&quot;, client_list_size, sizeof(Window));</li>
+</ol>
+<p>Now let&rsquo;s rebuild and run wmctrl:</p>
+<p>$ buildPhase<br>
+$ ./wmctrl -l</p>
+<p>Bingo! client_list_size is 12 (3 windows x 4 byte) while sizeof(Window) is 8 instead of 4. Definitely a bug for 64-bit systems.<br>
+Of course Debian has the patch: <a href="http://ftp.de.debian.org/debian/pool/main/w/wmctrl/wmctrl_1.07-7.debian.tar.gz">http://ftp.de.debian.org/debian/pool/main/w/wmctrl/wmctrl_1.07-7.debian.tar.gz</a></p>
+<ol>
+<li>Exit the nix-shell and delete the wmctrl source directory.</li>
+<li>Copy debian/patches/01_64-bit-data.patch under ~/nixpkgs/pkgs/tools/X11/wmctrl/64-bit-data.patch.</li>
+<li>Edit ~/nixpkgs/pkgs/tools/X11/wmctrl/default and add patches = [ ./64-bit-data.patch ]; in the derivation.</li>
+<li>Finally install the patched wmctrl with nix-env ~/nixpkgs -iA wmctrl and see that wmctrl -l now works.</li>
+<li>Commit, push to nixpkgs master, profit.</li>
+</ol>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/xbindkeys/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Xbindkeys</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/wmtrl/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Wmtrl</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2013/03/switch-window-by-name-on-linux.html">Switch window by name on Linux - alternative to Alt&#43;Tab</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

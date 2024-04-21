@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Build Vala applications with Shake build system | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="I&rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.
+First of all, you need to know that Shake is a library written in Haskell, and it&rsquo;s meant to be a better replacement for make. Let&rsquo;s start by installing cabal and then shake:
+apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Build Vala applications with Shake build system">
+  <meta property="og:description" content="I&amp;rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.
+First of all, you need to know that Shake is a library written in Haskell, and it&amp;rsquo;s meant to be a better replacement for make. Let&amp;rsquo;s start by installing cabal and then shake:
+apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2013-04-06T14:18:00-07:00">
+    <meta property="article:modified_time" content="2013-04-06T14:18:00-07:00">
+    <meta property="article:tag" content="Make">
+    <meta property="article:tag" content="Shake">
+    <meta property="article:tag" content="Haskell">
+    <meta property="article:tag" content="Buildsys">
+    <meta property="article:tag" content="Development">
+    <meta property="article:tag" content="Vala">
+
+  <meta itemprop="name" content="Build Vala applications with Shake build system">
+  <meta itemprop="description" content="I&rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.
+First of all, you need to know that Shake is a library written in Haskell, and it&rsquo;s meant to be a better replacement for make. Let&rsquo;s start by installing cabal and then shake:
+apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.">
+  <meta itemprop="datePublished" content="2013-04-06T14:18:00-07:00">
+  <meta itemprop="dateModified" content="2013-04-06T14:18:00-07:00">
+  <meta itemprop="wordCount" content="544">
+  <meta itemprop="keywords" content="Make,Shake,Haskell,Buildsys,Development,Vala"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Build Vala applications with Shake build system">
+<meta name="twitter:description" content="I&rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.
+First of all, you need to know that Shake is a library written in Haskell, and it&rsquo;s meant to be a better replacement for make. Let&rsquo;s start by installing cabal and then shake:
+apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Build Vala applications with Shake build system</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2013-04-06T14:18:00-07:00">April 6, 2013</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I&rsquo;m going to introduce you a very nice alternative to make: the <a href="http://hackage.haskell.org/package/shake">Shake build system</a>, by setting up a builder for your <a href="http://live.gnome.org/Vala">Vala</a> application project.</p>
+<p>First of all, you need to know that Shake is a <strong>library</strong> written in <a href="http://www.haskell.org/">Haskell</a>, and it&rsquo;s meant to be a better replacement for make. Let&rsquo;s start by installing <a href="http://www.haskell.org/cabal/">cabal</a> and then shake:</p>
+<pre tabindex="0"><code>apt-get install cabal-install
+cabal update
+cabal install shake
+</code></pre><p>TL;DR; this is the final Build.hs file:</p>
+<pre tabindex="0"><code>#!/usr/bin/env runhaskell
+import Development.Shake
+import Development.Shake.FilePath
+import Development.Shake.Sys
+import Control.Applicative hiding ((\*&gt;))
+
+app \= &#34;bestValaApp&#34;
+sources \= words &#34;file1.vala file2.vala file3.vala&#34;
+packages \= words &#34;gtk+-3.0 glib-2.0 gobject-2.0&#34;
+
+cc \= &#34;cc&#34;
+valac \= &#34;valac&#34;
+pkgconfig \= &#34;pkg-config&#34;
+
+\-- derived
+csources \= map (flip replaceExtension &#34;.c&#34;) sources
+cobjects \= map (flip replaceExtension &#34;.o&#34;) csources
+
+main \= shakeArgs shakeOptions $ do
+  want \[app\]
+  app \*\&gt; \\out \-&gt; do
+    need cobjects
+    pkgconfigflags &lt;- pkgConfig $ \[&#34;--libs&#34;\] ++ packages
+    sys cc &#34;-fPIC -o&#34; \[out\] pkgconfigflags cobjects
+  cobjects \*\*\&gt; \\out \-&gt; do
+    let cfile \= replaceExtension out &#34;.c&#34;
+    need \[cfile\]
+    pkgconfigflags &lt;- pkgConfig $ \[&#34;--cflags&#34;\] ++ packages
+    sys cc &#34;-ggdb -fPIC -c -o&#34; \[out, cfile\] pkgconfigflags
+  csources \*\&gt;&gt; \\\_ \-&gt; do
+    let valapkgflags \= prependEach &#34;--pkg&#34; packages
+    need sources
+    sys valac &#34;-C -g&#34; valapkgflags sources
+    
+\-- utilities
+prependEach x \= foldr (\\y a \-&gt; x:y:a) \[\]
+pkgConfig args \= (words . fst) &lt;$&gt; (systemOutput pkgconfig args)
+</code></pre><p>Just tweak app, sources and packages to match your needs, chmod +x Build.hs then run ./Build.hs .</p>
+<p><strong>Explanation.</strong><br>
+The words function splits a string by spaces to get a list of strings, e.g. [&ldquo;file1.vala&rdquo;, &ldquo;file2.vala&rdquo;, &ldquo;file3.vala&rdquo;].</p>
+<p>The csources variable maps .vala file names to .c file names. Same goes for cobjects. It&rsquo;s the equivalent of $(subst .vala,.c,$(SOURCES)) you&rsquo;d do with make.</p>
+<p>There it comes the main. The shakeArgs shakeOptions part will run shake with default options. Shake provides handy command line options similar to make, run ./Build.hs -h for help.</p>
+<p>The want [app] tells shake we want to build the app object by default. That&rsquo;s equivalent to the usual first make rule all: $(APP).</p>
+<p>Then we define how to build the executable app with app *&gt; \out -&gt; do. We tell shake the dependencies with need cobjects. This is similar to $(APP): $(COBJECTS) in make but not equivalent. <strong>In shake dependencies are not static</strong> like in many other build systems. This is one of the most interesting shake features.<br>
+The rest is quite straightforward to understand.</p>
+<p>Then we define how to build each .o object with cobjects **&gt; \out -&gt; do. Here the out variable contains the actual .o required to be built, equivalent to $@ in make. Then we need [cfile], in order to simulate %.o: %.c like in make.</p>
+<p>One more feature shake has out-of-the-box that make doesn&rsquo;t is how to <strong>generate more files from a single command</strong>. With make you&rsquo;d use a .stamp file due to valac generating several .c files out of .vala files. Then use the .stamp as dependency.<br>
+With shake instead we consistently define how to build .c files with csources *&raquo; \_ -&gt; do, then shake will do the rest.</p>
+<p>The shake project is very active. You can read <a href="http://www.learnyouahaskell.com/">this tutorial</a> to learn Haskell basics, and the <a href="http://hackage.haskell.org/package/shake">reference docs</a> of shake. The <a href="http://community.haskell.org/%7Endm/shake/">author homepage</a> has links to cool presentations of the shake build system.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/make/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Make</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/shake/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Shake</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/haskell/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Haskell</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/buildsys/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Buildsys</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/development/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Development</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/vala/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Vala</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2012/11/grab-focus-on-gtk-widget.html">Grab focus on Gtk Widget</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2011/09/vala-language-introduction-on-irc.html">Vala language introduction on IRC</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2011/07/pythonruby-like-generators-in-vala.html">Python/Ruby like generators in Vala</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2011/05/vala-12-released.html">Valag 1.2 released</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2011/01/base64-and-quoted-printable-gconverters.html">Base64 and Quoted-Printable GConverters for GMua</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/12/valag-11-released.html">Valag 1.1 released, graph generator for the Vala AST</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/12/maja-vala-to-javascript-compiler.html">Maja - The Vala to Javascript compiler</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/07/using-mash-with-vala.html">Using Mash with Vala</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/04/valagtkdoc-10.html">Valagtkdoc 1.0</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/03/vala-and-graphviz.html">Vala and Graphviz</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/02/vala-0710-released.html">Vala 0.7.10 released</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2012/12/refactoryorg-is-down.html">Refactory.org is down</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2011/07/why-im-still-using-emacs.html">Why I&#39;m still using Emacs</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2011/06/writing-binary-files-with-bash.html">Writing binary files with bash</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2011/05/enforce-facebook-chat-through-ssl.html">Enforce facebook chat through SSL</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

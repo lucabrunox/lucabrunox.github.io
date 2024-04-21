@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Nix pill 10: developing with nix-shell | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Welcome to the 10th Nix pill. In the previous 9th pill we have seen one of the powerful features of nix, automatic discovery of runtime dependencies and finalized the GNU hello world package.
+In return from vacation, we want to hack a little the GNU hello world program. The nix-build tool creates an isolated environment for building the derivation, we want to do the same in order to modify some source files of the project.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2014/08/nix-pill-10-developing-with-nix-shell.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2014/08/nix-pill-10-developing-with-nix-shell.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Nix pill 10: developing with nix-shell">
+  <meta property="og:description" content="Welcome to the 10th Nix pill. In the previous 9th pill we have seen one of the powerful features of nix, automatic discovery of runtime dependencies and finalized the GNU hello world package.
+In return from vacation, we want to hack a little the GNU hello world program. The nix-build tool creates an isolated environment for building the derivation, we want to do the same in order to modify some source files of the project.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-08-19T03:21:00-07:00">
+    <meta property="article:modified_time" content="2014-08-19T03:21:00-07:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixpills">
+    <meta property="article:tag" content="Nixos">
+
+  <meta itemprop="name" content="Nix pill 10: developing with nix-shell">
+  <meta itemprop="description" content="Welcome to the 10th Nix pill. In the previous 9th pill we have seen one of the powerful features of nix, automatic discovery of runtime dependencies and finalized the GNU hello world package.
+In return from vacation, we want to hack a little the GNU hello world program. The nix-build tool creates an isolated environment for building the derivation, we want to do the same in order to modify some source files of the project.">
+  <meta itemprop="datePublished" content="2014-08-19T03:21:00-07:00">
+  <meta itemprop="dateModified" content="2014-08-19T03:21:00-07:00">
+  <meta itemprop="wordCount" content="805">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 10: developing with nix-shell">
+<meta name="twitter:description" content="Welcome to the 10th Nix pill. In the previous 9th pill we have seen one of the powerful features of nix, automatic discovery of runtime dependencies and finalized the GNU hello world package.
+In return from vacation, we want to hack a little the GNU hello world program. The nix-build tool creates an isolated environment for building the derivation, we want to do the same in order to modify some source files of the project.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Nix pill 10: developing with nix-shell</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-08-19T03:21:00-07:00">August 19, 2014</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Welcome to the 10th Nix pill. In the previous <a href="http://lethalman.blogspot.it/2014/08/nix-pill-9-automatic-runtime.html">9th pill</a> we have seen one of the powerful features of nix, automatic discovery of runtime dependencies and finalized the GNU hello world package.</p>
+<p>In return from vacation, we want to hack a little the GNU hello world program. The nix-build tool creates an isolated environment for building the derivation, we want to do the same in order to modify some source files of the project.</p>
+<h3 id="whats-nix-shell">What&rsquo;s nix-shell</h3>
+<p>The <a href="http://nixos.org/nix/manual/#sec-nix-shell">nix-shell</a> tool drops us in a shell by setting up the necessary environment variables to hack a derivation. It does not build the derivation, it only serves as a preparation so that we can run the build steps manually.</p>
+<p>I remind you, in a nix environment you don&rsquo;t have access to libraries and programs unless you install them with nix-env. However installing libraries with nix-env is not good practice. We prefer to have isolated environments for development.</p>
+<pre tabindex="0"><code>$ nix-shell hello.nix
+\[nix-shell\]$ make
+bash: make: command not found
+\[nix-shell\]$ echo $baseInputs
+/nix/store/jff4a6zqi0yrladx3kwy4v6844s3swpc-**gnutar-1.27.1** \[...\]
+</code></pre><p>First thing to notice, we call nix-shell on a nix expression which returns a derivation. We then enter a new bash shell, but it&rsquo;s really useless. We expected to have the GNU hello world build inputs available in PATH, including GNU make, but it&rsquo;s not the case.<br>
+But, we have the environment variables that we set in the derivation, like $baseInputs, $buildInputs, $src and so on.</p>
+<p>That means we can source our builder.sh, and it will build the derivation. You may get an error in the installation phase, because the user may not have the permission to write to /nix/store:</p>
+<pre tabindex="0"><code>\[nix-shell\]$ source builder.sh
+...
+</code></pre><p>It didn&rsquo;t install, but it built. Things to notice:</p>
+<ul>
+<li>We sourced builder.sh, therefore it ran all the steps including setting up the PATH for us.</li>
+<li>The working directory is no more a temp directory created by nix-build, but the current directory. Therefore, hello-2.9 has been unpacked there.</li>
+</ul>
+<p>We&rsquo;re able to cd into hello-2.9 and type make, because now it&rsquo;s available.</p>
+<p>In other words, nix-shell drops us in a shell with the same (or almost) environment used to run the builder!</p>
+<h3 id="a-builder-for-nix-shell">A builder for nix-shell</h3>
+<p>The previous steps are a bit annoying of course, but we can improve our builder to be more nix-shell friendly.</p>
+<p>First of all, we were able to source builder.sh because it was in our current directory, but that&rsquo;s not nice. We want the builder.sh that is stored in the nix store, the one that would be used by nix-build. To do so, the right way is to pass the usual environment variable through the derivation.<br>
+Note: $builder is already defined, but it&rsquo;s the bash executable, not our builder.sh. Our builder.sh is an argument to bash.</p>
+<p>Second, we don&rsquo;t want to run the whole builder, we only want it to setup the necessary environment for manually building the project. So we&rsquo;ll write two files, one for setting up the environment, and the real builder.sh that runs with nix-build.</p>
+<p>Additionally, we&rsquo;ll wrap the phases in functions, it may be useful, and move the set -e to the builder instead of the setup. The set -e is annoying in nix-shell.</p>
+<p>The codebase is becoming a little long. You can find all the files in this <a href="https://gist.github.com/lethalman/97fae227329b442267bc">nixpill10 gist</a>.<br>
+Noteworthy is the setup = ./setup.sh; attribute in the derivation, which adds setup.sh to the nix store and as usual, adds a $setup environment variable in the builder.<br>
+Thanks to that, we can split builder.sh into setup.sh and builder.sh. What builder.sh does is sourcing $setup and calling the genericBuild function. Everything else is just some bash changes.</p>
+<p>Now back to nix-shell:</p>
+<pre tabindex="0"><code>$ nix-shell hello.nix
+\[nix-shell\]$ source $setup
+\[nix-shell\]$
+</code></pre><p>Now you can run, for example, unpackPhase which unpacks $src and enters the directory. And you can run commands like ./configure, make etc. manually, or run phases with their respective functions.</p>
+<p>It&rsquo;s all that straight, nix-shell builds the .drv file and its input dependencies, then drops into a shell by setting up the environment variables necessary to build the .drv, in particular those passed to the derivation function.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>With nix-shell we&rsquo;re able to drop into an isolated environment for developing a project, with the necessary dependencies just like nix-build does, except we can build and debug the project manually, step by step like you would do in any other operating system.<br>
+Note that we did never install gcc, make, etc. system-wide. These tools and libraries are available per-build.</p>
+<h3 id="heading"></h3>
+<p>Next pill</p>
+<p>&hellip;we will clean up the nix store. We wrote and built derivations, added stuff to nix store, but until now we never worried about cleaning up the used space in the store. It&rsquo;s time to collect some garbage.</p>
+<p>Pill 11 is available for <a href="http://lethalman.blogspot.it/2014/08/nix-pill-11-garbage-collector.html">reading here</a>.</p>
+<p>To be notified about the new pill, stay tuned on <a href="https://twitter.com/search?src=typd&amp;q=%23NixPills">#NixPills</a>, follow <a href="https://twitter.com/lethalman">@lethalman</a> or subscribe to the <a href="http://lethalman.blogspot.com/feeds/posts/default/-/nixpills">nixpills rss</a>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixpills/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpills</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-9-automatic-runtime.html">Nix pill 9: automatic runtime dependencies</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-8-generic-builders.html">Nix pill 8: generic builders</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-7-working-derivation.html">Nix pill 7: a working derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-6-our-first-derivation.html">Nix pill 6: our first derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-5-functions-and-imports.html">Nix pill 5: functions and imports</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-4-basics-of-language.html">Nix pill 4: the basics of the language</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-3-enter-environment.html">Nix pill 3: enter the environment</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-2-install-on-your-running.html">Nix pill 2: install on your running system</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-1-why-you-should-give-it-try.html">Nix pill 1: why you should give it a try</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html">Debugging and fixing a wmctrl bug in NixOS</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

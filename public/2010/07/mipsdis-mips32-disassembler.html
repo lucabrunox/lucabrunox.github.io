@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Mipsdis MIPS32 disassembler | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Hello,
+I&rsquo;ve written a MIPS32 (Release 2) disassembler for ELF files. It is not a simple disassembler, it&rsquo;s mostly made for reverse engineering proprietary boxes for educational purposes. It has been successfully tested on Vodafone Station which has Broadcom binaries. These boxes don&rsquo;t have a sections table, therefore normal disassemblers don&rsquo;t work. Mipsdis instead will guess the bounds of those sections (most important ones are TEXT and RODATA for strings).">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2010/07/mipsdis-mips32-disassembler.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2010/07/mipsdis-mips32-disassembler.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Mipsdis MIPS32 disassembler">
+  <meta property="og:description" content="Hello,
+I&amp;rsquo;ve written a MIPS32 (Release 2) disassembler for ELF files. It is not a simple disassembler, it&amp;rsquo;s mostly made for reverse engineering proprietary boxes for educational purposes. It has been successfully tested on Vodafone Station which has Broadcom binaries. These boxes don&amp;rsquo;t have a sections table, therefore normal disassemblers don&amp;rsquo;t work. Mipsdis instead will guess the bounds of those sections (most important ones are TEXT and RODATA for strings).">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2010-07-29T02:28:00-07:00">
+    <meta property="article:modified_time" content="2010-07-29T02:28:00-07:00">
+    <meta property="article:tag" content="Mips">
+    <meta property="article:tag" content="Mipsdis">
+    <meta property="article:tag" content="Reverse Engineering">
+    <meta property="article:tag" content="Vala">
+
+  <meta itemprop="name" content="Mipsdis MIPS32 disassembler">
+  <meta itemprop="description" content="Hello,
+I&rsquo;ve written a MIPS32 (Release 2) disassembler for ELF files. It is not a simple disassembler, it&rsquo;s mostly made for reverse engineering proprietary boxes for educational purposes. It has been successfully tested on Vodafone Station which has Broadcom binaries. These boxes don&rsquo;t have a sections table, therefore normal disassemblers don&rsquo;t work. Mipsdis instead will guess the bounds of those sections (most important ones are TEXT and RODATA for strings).">
+  <meta itemprop="datePublished" content="2010-07-29T02:28:00-07:00">
+  <meta itemprop="dateModified" content="2010-07-29T02:28:00-07:00">
+  <meta itemprop="wordCount" content="110">
+  <meta itemprop="keywords" content="Mips,Mipsdis,Reverse Engineering,Vala"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Mipsdis MIPS32 disassembler">
+<meta name="twitter:description" content="Hello,
+I&rsquo;ve written a MIPS32 (Release 2) disassembler for ELF files. It is not a simple disassembler, it&rsquo;s mostly made for reverse engineering proprietary boxes for educational purposes. It has been successfully tested on Vodafone Station which has Broadcom binaries. These boxes don&rsquo;t have a sections table, therefore normal disassemblers don&rsquo;t work. Mipsdis instead will guess the bounds of those sections (most important ones are TEXT and RODATA for strings).">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Mipsdis MIPS32 disassembler</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2010-07-29T02:28:00-07:00">July 29, 2010</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Hello,<br>
+I&rsquo;ve written a MIPS32 (Release 2) disassembler for ELF files. It is not a simple disassembler, it&rsquo;s mostly made for reverse engineering proprietary boxes for educational purposes. It has been successfully tested on Vodafone Station which has Broadcom binaries. These boxes don&rsquo;t have a sections table, therefore normal disassemblers don&rsquo;t work. Mipsdis instead will guess the bounds of those sections (most important ones are TEXT and RODATA for strings).</p>
+<p>This console program outputs a friendly assembly code, whose each instruction is commented (comments copied directly from the mips specification). It also features labels for branches and symbol resolution for strings, global variables and functions.</p>
+<p>More information and downloads <a href="http://lethalman.hostei.com/mipsdis.html">here</a>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/mips/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Mips</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/mipsdis/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Mipsdis</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/reverse-engineering/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Reverse Engineering</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/vala/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Vala</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2010/04/valagtkdoc-10.html">Valagtkdoc 1.0</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/03/vala-and-graphviz.html">Vala and Graphviz</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/02/vala-0710-released.html">Vala 0.7.10 released</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2010/01/fetch-web-page-with-vala-and-soup.html">Fetch web page with Vala and Soup</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

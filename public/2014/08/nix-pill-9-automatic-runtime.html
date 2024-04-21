@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Nix pill 9: automatic runtime dependencies | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Welcome to the 9th Nix pill. In the previous 8th pill we wrote a generic builder for autotools projects. We feed build dependencies, a source tarball, and we get a Nix derivation as a result.
+Today we stop by the GNU hello world program to analyze build and runtime dependencies, and enhance the builder in order to avoid unnecessary runtime dependencies.
+Build dependencies Let&rsquo;s start analyzing build dependencies for our GNU hello world package:">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2014/08/nix-pill-9-automatic-runtime.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2014/08/nix-pill-9-automatic-runtime.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Nix pill 9: automatic runtime dependencies">
+  <meta property="og:description" content="Welcome to the 9th Nix pill. In the previous 8th pill we wrote a generic builder for autotools projects. We feed build dependencies, a source tarball, and we get a Nix derivation as a result.
+Today we stop by the GNU hello world program to analyze build and runtime dependencies, and enhance the builder in order to avoid unnecessary runtime dependencies.
+Build dependencies Let&amp;rsquo;s start analyzing build dependencies for our GNU hello world package:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-08-08T01:11:00-07:00">
+    <meta property="article:modified_time" content="2014-08-08T01:11:00-07:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixpills">
+    <meta property="article:tag" content="Nixos">
+
+  <meta itemprop="name" content="Nix pill 9: automatic runtime dependencies">
+  <meta itemprop="description" content="Welcome to the 9th Nix pill. In the previous 8th pill we wrote a generic builder for autotools projects. We feed build dependencies, a source tarball, and we get a Nix derivation as a result.
+Today we stop by the GNU hello world program to analyze build and runtime dependencies, and enhance the builder in order to avoid unnecessary runtime dependencies.
+Build dependencies Let&rsquo;s start analyzing build dependencies for our GNU hello world package:">
+  <meta itemprop="datePublished" content="2014-08-08T01:11:00-07:00">
+  <meta itemprop="dateModified" content="2014-08-08T01:11:00-07:00">
+  <meta itemprop="wordCount" content="1041">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 9: automatic runtime dependencies">
+<meta name="twitter:description" content="Welcome to the 9th Nix pill. In the previous 8th pill we wrote a generic builder for autotools projects. We feed build dependencies, a source tarball, and we get a Nix derivation as a result.
+Today we stop by the GNU hello world program to analyze build and runtime dependencies, and enhance the builder in order to avoid unnecessary runtime dependencies.
+Build dependencies Let&rsquo;s start analyzing build dependencies for our GNU hello world package:">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Nix pill 9: automatic runtime dependencies</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-08-08T01:11:00-07:00">August 8, 2014</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="heading"></h3>
+<p>Welcome to the 9th Nix pill. In the previous <a href="http://lethalman.blogspot.it/2014/08/nix-pill-8-generic-builders.html">8th pill</a> we wrote a generic builder for autotools projects. We feed build dependencies, a source tarball, and we get a Nix derivation as a result.</p>
+<p>Today we stop by the GNU hello world program to analyze build and runtime dependencies, and enhance the builder in order to avoid unnecessary runtime dependencies.</p>
+<h3 id="build-dependencies">Build dependencies</h3>
+<p>Let&rsquo;s start analyzing build dependencies for our GNU hello world package:</p>
+<pre tabindex="0"><code>$ nix-instantiate hello.nix
+/nix/store/z77vn965a59irqnrrjvbspiyl2rph0jp-hello.drv $ nix-store -q --references /nix/store/z77vn965a59irqnrrjvbspiyl2rph0jp-hello.drv /nix/store/0q6pfasdma4as22kyaknk4kwx4h58480-hello-2.9.tar.gz /nix/store/1zcs1y4n27lqs0gw4v038i303pb89rw6-coreutils-8.21.drv /nix/store/2h4b30hlfw4fhqx10wwi71mpim4wr877-gnused-4.2.2.drv /nix/store/39bgdjissw9gyi4y5j9wanf4dbjpbl07-gnutar-1.27.1.drv /nix/store/7qa70nay0if4x291rsjr7h9lfl6pl7b1-builder.sh /nix/store/g6a0shr58qvx2vi6815acgp9lnfh9yy8-gnugrep-2.14.drv /nix/store/jdggv3q1sb15140qdx0apvyrps41m4lr-bash-4.2-p45.drv /nix/store/pglhiyp1zdbmax4cglkpz98nspfgbnwr-gnumake-3.82.drv /nix/store/q9l257jn9lndbi3r9ksnvf4dr8cwxzk7-gawk-4.1.0.drv /nix/store/rgyrqxz1ilv90r01zxl0sq5nq0cq7v3v-binutils-2.23.1.drv /nix/store/qzxhby795niy6wlagfpbja27dgsz43xk-gcc-wrapper-4.8.3.drv /nix/store/sk590g7fv53m3zp0ycnxsc41snc2kdhp-gzip-1.6.drv  
+</code></pre><p>It has exactly the derivations referenced in the derivation function, nothing more, nothing less. Some of them might not be used at all, however given that our generic mkDerivation function always pulls such dependencies (think of it like <a href="https://packages.debian.org/unstable/build-essential">build-essential</a> of Debian), for every package you build from now on, you will have these packages in the nix store.</p>
+<p>Why are we looking at .drv files? Because the hello.drv file is the representation of the build action to perform in order to build the hello out path, and as such it also contains the input derivations needed to be built before building hello.</p>
+<h3 id="digression-about-nar-files">Digression about NAR files</h3>
+<p>NAR is the Nix ARchive. First question: why not tar? Why another archiver? Because commonly used archivers are not deterministic. They add padding, they do not sort files, they add timestamps, etc.. Hence NAR, a very simple deterministic archive format being used by Nix for deployment.<br>
+NARs are also used extensively within Nix itself as we&rsquo;ll see below.</p>
+<p>For the rationale and implementation details you can find more in the <a href="http://nixos.org/~eelco/pubs/phd-thesis.pdf">Dolstra&rsquo;s PhD Thesis</a>.</p>
+<p>To create NAR archives, it&rsquo;s possible to use nix-store &ndash;dump and nix-store &ndash;restore. Those two commands work regardless of /nix/store.</p>
+<h3 id="runtime-dependencies">Runtime dependencies</h3>
+<p>Something is different for runtime dependencies however. Build dependencies are automatically recognized by Nix once they are used in any derivation call, but we never specify what are the runtime dependencies for a derivation.</p>
+<p>There&rsquo;s really black magic involved. It&rsquo;s something that at first glance makes you think &ldquo;no, this can&rsquo;t work in the long term&rdquo;, but at the same it works so well that a whole operating system is built on top of this magic.</p>
+<p>In other words, Nix automatically computes all the runtime dependencies of a derivation, and it&rsquo;s possible thanks to the hash of the store paths.</p>
+<p>Steps:</p>
+<ol>
+<li>Dump the derivation as NAR, a serialization of the derivation output. Works fine whether it&rsquo;s a single file or a directory.</li>
+<li>For each build dependency .drv and its relative out path, search the contents of the NAR for this out path.</li>
+<li>If found, then it&rsquo;s a runtime dependency.</li>
+</ol>
+<p>You get really all the runtime dependencies, and that&rsquo;s why Nix deployments are so easy.</p>
+<pre tabindex="0"><code>$ nix-instantiate hello.nix
+/nix/store/z77vn965a59irqnrrjvbspiyl2rph0jp-**hello.drv**
+$ nix-store -r /nix/store/z77vn965a59irqnrrjvbspiyl2rph0jp-**hello.drv**
+/nix/store/a42k52zwv6idmf50r9lps1nzwq9khvpf-**hello**
+$ nix-store -q --references /nix/store/a42k52zwv6idmf50r9lps1nzwq9khvpf-**hello**
+/nix/store/94n64qy99ja0vgbkf675nyk39g9b978n-**glibc-2.19**
+/nix/store/8jm0wksask7cpf85miyakihyfch1y21q-**gcc-4.8.3**
+/nix/store/a42k52zwv6idmf50r9lps1nzwq9khvpf-**hello**
+</code></pre><p>Ok glibc and gcc. Well, gcc really should not be a runtime dependency!</p>
+<pre tabindex="0"><code>$ strings result/bin/hello|grep gcc
+/nix/store/94n64qy99ja0vgbkf675nyk39g9b978n-**glibc-2.19**/lib:/nix/store/8jm0wksask7cpf85miyakihyfch1y21q-**gcc-4.8.3**/lib64
+</code></pre><p>Oh Nix added gcc because its out path is mentioned in the &ldquo;hello&rdquo; binary. Why is that? That&rsquo;s the <a href="http://en.wikipedia.org/wiki/Rpath">ld rpath</a>. It&rsquo;s the list of directories where libraries can be found at runtime. In other distributions, this is usually not abused. But in Nix, we have to refer to particular versions of libraries, thus the rpath has an important role.</p>
+<p>The build process adds that gcc lib path thinking it may be useful at runtime, but really it&rsquo;s not. How do we get rid of it? Nix authors have written another magical tool called <a href="https://nixos.org/patchelf.html">patchelf</a>, which is able to reduce the rpath to the paths that are really used by the binary.</p>
+<p>Not only, even after reducing the rpath the hello binary would still depend upon gcc. Because of debugging information. For that, the well known <a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?strip">strip</a> can be used.</p>
+<h3 id="another-phase-in-the-builder">Another phase in the builder</h3>
+<p>We will add a new phase to our autotools builder. The builder has these phases already:</p>
+<ol>
+<li>First the environment is set up</li>
+<li>Unpack phase: we unpack the sources in the current directory (remember, Nix changes dir to a temporary directory first)</li>
+<li>Change source root to the directory that has been unpacked</li>
+<li>Configure phase: ./configure</li>
+<li>Build phase: make</li>
+<li>Install phase: make install</li>
+</ol>
+<p>We add a new phase after the installation phase, which we call <strong>fixup</strong> phase. At the end of the builder.sh follows:</p>
+<pre tabindex="0"><code>find $out -type f -exec patchelf --shrink-rpath &#39;{}&#39; \\; -exec strip &#39;{}&#39; \\; 2&gt;/dev/null
+</code></pre><p>That is, for each file we run patchelf &ndash;shrink-rpath and strip. Note that we used two new commands here, find and patchelf. These two deserve a place in baseInputsof autotools.nix as findutils andpatchelf.</p>
+<p>Rebuild hello.nix and&hellip;:</p>
+<pre tabindex="0"><code>$ nix-build hello.nix
+\[...\]
+$ nix-store -q --references result
+/nix/store/94n64qy99ja0vgbkf675nyk39g9b978n-glibc-2.19
+/nix/store/md4a3zv0ipqzsybhjb8ndjhhga1dj88x-hello
+</code></pre><p>&hellip;only glibc is the runtime dependency. Exactly what we wanted.</p>
+<p>The package is self-contained, copy its closure on another machine and you will be able to run it. I remind you the very few components under the /nix/store necessary to run nix <a href="http://lethalman.blogspot.it/2014/07/nix-pill-2-install-on-your-running.html">when we installed it</a>. The hello binary will use that exact version of glibc library and interpreter, not the system one:</p>
+<pre tabindex="0"><code>$ ldd result/bin/hello
+ linux-vdso.so.1 (0x00007fff11294000)
+ libc.so.6 =&gt; /nix/store/94n64qy99ja0vgbkf675nyk39g9b978n-glibc-2.19/lib/libc.so.6 (0x00007f7ab7362000)
+ /nix/store/94n64qy99ja0vgbkf675nyk39g9b978n-glibc-2.19/lib/ld-linux-x86-64.so.2 (0x00007f7ab770f000)
+</code></pre><p>Of course, the executable runs fine as long as everything is under the /nix/store path.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Short post compared to previous ones as I&rsquo;m still on vacation, but I hope you enjoyed it. Nix provides tools with cool features. In particular, Nix is able to compute all runtime dependencies automatically for us. Not only shared libraries, but also referenced executables, scripts, Python libraries etc..</p>
+<p>This makes packages self-contained, because we&rsquo;re sure (apart data and configuration) that copying the runtime closure on another machine is sufficient to run the program. That&rsquo;s why Nix has <a href="http://nixos.org/nix/manual/#sec-one-click">one-click install</a>, or <a href="http://nixos.org/nixops/manual/#chap-introduction">reliable deployment in the cloud</a>. All with one tool.</p>
+<h3 id="heading-1"></h3>
+<p>Next pill</p>
+<p>&hellip;we will introduce nix-shell. With nix-build we build derivations always from scratch: the source gets unpacked, configured, built and installed. But this may take a long time, think of WebKit. What if we want to apply some small changes and compile incrementally instead, yet keeping a self-contained environment similar to nix-build?</p>
+<p>Pill 10 is available for <a href="http://lethalman.blogspot.it/2014/08/nix-pill-10-developing-with-nix-shell.html">reading here</a>.</p>
+<p>To be notified about the new pill, stay tuned on <a href="https://twitter.com/search?src=typd&amp;q=%23NixPills">#NixPills</a>, follow <a href="https://twitter.com/lethalman">@lethalman</a> or subscribe to the <a href="http://lethalman.blogspot.com/feeds/posts/default/-/nixpills">nixpills rss</a>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixpills/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpills</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-8-generic-builders.html">Nix pill 8: generic builders</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-7-working-derivation.html">Nix pill 7: a working derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-6-our-first-derivation.html">Nix pill 6: our first derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-5-functions-and-imports.html">Nix pill 5: functions and imports</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-4-basics-of-language.html">Nix pill 4: the basics of the language</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-3-enter-environment.html">Nix pill 3: enter the environment</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-2-install-on-your-running.html">Nix pill 2: install on your running system</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-1-why-you-should-give-it-try.html">Nix pill 1: why you should give it a try</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html">Debugging and fixing a wmctrl bug in NixOS</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

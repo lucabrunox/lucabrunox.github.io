@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Nix pill 13: the callPackage design pattern | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Welcome to the 13th Nix pill. In the previous 12th pill we have introduced the first basic design pattern for organizing a repository of software. In addition we packaged graphviz to have at least another package for our little repository.
+The next design pattern worth noting is what I&rsquo;d like to call the callPackage pattern. This technique is extensively used in nixpkgs, it&rsquo;s the current standard for importing packages in a repository.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2014/09/nix-pill-13-callpackage-design-pattern.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2014/09/nix-pill-13-callpackage-design-pattern.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Nix pill 13: the callPackage design pattern">
+  <meta property="og:description" content="Welcome to the 13th Nix pill. In the previous 12th pill we have introduced the first basic design pattern for organizing a repository of software. In addition we packaged graphviz to have at least another package for our little repository.
+The next design pattern worth noting is what I&amp;rsquo;d like to call the callPackage pattern. This technique is extensively used in nixpkgs, it&amp;rsquo;s the current standard for importing packages in a repository.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-09-04T06:01:00-07:00">
+    <meta property="article:modified_time" content="2014-09-04T06:01:00-07:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixpills">
+    <meta property="article:tag" content="Nixos">
+
+  <meta itemprop="name" content="Nix pill 13: the callPackage design pattern">
+  <meta itemprop="description" content="Welcome to the 13th Nix pill. In the previous 12th pill we have introduced the first basic design pattern for organizing a repository of software. In addition we packaged graphviz to have at least another package for our little repository.
+The next design pattern worth noting is what I&rsquo;d like to call the callPackage pattern. This technique is extensively used in nixpkgs, it&rsquo;s the current standard for importing packages in a repository.">
+  <meta itemprop="datePublished" content="2014-09-04T06:01:00-07:00">
+  <meta itemprop="dateModified" content="2014-09-04T06:01:00-07:00">
+  <meta itemprop="wordCount" content="1277">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 13: the callPackage design pattern">
+<meta name="twitter:description" content="Welcome to the 13th Nix pill. In the previous 12th pill we have introduced the first basic design pattern for organizing a repository of software. In addition we packaged graphviz to have at least another package for our little repository.
+The next design pattern worth noting is what I&rsquo;d like to call the callPackage pattern. This technique is extensively used in nixpkgs, it&rsquo;s the current standard for importing packages in a repository.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Nix pill 13: the callPackage design pattern</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-09-04T06:01:00-07:00">September 4, 2014</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Welcome to the 13th Nix pill. In the previous <a href="http://lethalman.blogspot.it/2014/08/nix-pill-12-inputs-design-pattern.html">12th pill</a> we have introduced the first basic design pattern for organizing a repository of software. In addition we packaged graphviz to have at least another package for our little repository.</p>
+<p>The next design pattern worth noting is what I&rsquo;d like to call the <strong>callPackage</strong> pattern. This technique is extensively used in <a href="https://github.com/NixOS/nixpkgs">nixpkgs</a>, it&rsquo;s the current standard for importing packages in a repository.</p>
+<h3 id="the-callpackage-convenience">The callPackage convenience</h3>
+<p>In the previous pill, we underlined the fact that the inputs pattern is great to decouple packages from the repository, in that we can pass manually the inputs to the derivation. The derivation declares its inputs, and the caller passes the arguments.<br>
+However as with usual programming languages, we declare parameter names, and then we have to pass arguments. We do the job twice.<br>
+With package management, we often see common patterns. In the case of nixpkgs it&rsquo;s the following.</p>
+<p>Some package derivation:</p>
+<pre tabindex="0"><code>{ input1, input2, ... }:
+...
+</code></pre><p>Repository derivation:</p>
+<pre tabindex="0"><code>rec {
+  lib1 = import package1.nix { inherit input1 input2 ...; };
+  program2 = import package1.nix { inherit inputX inputY lib1 ...; };
+}
+</code></pre><p>Where inputs may even be packages in the repository itself (note the <a href="http://lethalman.blogspot.it/2014/07/nix-pill-4-basics-of-language.html">rec keyword</a>). The pattern here is clear, often inputs have the same name of the attributes in the repository itself. Our desire is to pass those inputs from the repository automatically, and in case be able to specify a particular argument (that is, override the automatically passed default argument).</p>
+<p>To achieve this, we will define a callPackage function with the following synopsis:</p>
+<pre tabindex="0"><code>{
+  lib1 = callPackage package1.nix { };
+  program2 = callPackage package2.nix { someoverride = overriddenDerivation; };
+}
+</code></pre><p>What should it do?</p>
+<ul>
+<li>Import the given expression, which in turn returns a function.</li>
+<li>Determine the name of its arguments.</li>
+<li>Pass default arguments from the repository set, and let us override those arguments.</li>
+</ul>
+<h3 id="implementing-callpackage">Implementing callPackage</h3>
+<p>First of all, we need a way to introspect (reflection or whatever) at runtime the argument names of a function. That&rsquo;s because we want to automatically pass such arguments.</p>
+<p>Then callPackage requires access to the whole packages set, because it needs to find the packages to pass automatically.</p>
+<p>We start off simple with nix-repl:</p>
+<pre tabindex="0"><code>nix-repl&gt; add = { a ? 3, b }: a+b
+nix-repl&gt; builtins.functionArgs add
+{ a = true; b = false; }
+</code></pre><p>Nix provides a builtin function to introspect the names of the arguments of a function. In addition, for each argument, it tells whether the argument has a default value or not. We don&rsquo;t really care about default values in our case. We are only interested in the argument names.</p>
+<p>Now we need a set with all the values, let&rsquo;s call it values.  And a way to intersect the attributes of values with the function arguments:</p>
+<pre tabindex="0"><code>nix-repl&gt; values = { a = 3; b = 5; c = 10; }
+nix-repl&gt; builtins.intersectAttrs values (builtins.functionArgs add)
+{ a = true; b = false; }
+nix-repl&gt; builtins.intersectAttrs (builtins.functionArgs add) values
+{ a = 3; b = 5; }
+</code></pre><p>Perfect, note from the example above that the intersectAttrs returns a set whose names are the intersection, and the attribute values are taken from the second set.</p>
+<p>We&rsquo;re done, we have a way to get argument names from a function, and match with an existing set of attributes. This is our simple implementation of callPackage:</p>
+<pre tabindex="0"><code>nix-repl&gt; callPackage = set: f: f (builtins.intersectAttrs (builtins.functionArgs f) set)
+nix-repl&gt; callPackage values add
+8
+nix-repl&gt; with values; add { inherit a b; }
+8
+</code></pre><p>Clearing up the syntax:</p>
+<ul>
+<li>We define a callPackage variable which is a function.</li>
+<li>First it accepts a set, and it returns another function accepting another parameter. In other words, let&rsquo;s simplify by saying it accepts two parameters.</li>
+<li>The second parameter is the function to &ldquo;autocall&rdquo;.</li>
+<li>We take the argument names of the function and intersect with the set of all values.</li>
+<li>Finally we call the passed function f with the resulting intersection.</li>
+</ul>
+<p>In the code above, I&rsquo;ve also shown that the callPackage call is equivalent to directly calling add a b.</p>
+<p>We achieved what we wanted. <strong>Automatically call functions given a set of possible arguments</strong>. If an argument is not found in the set, that&rsquo;s nothing special. It&rsquo;s a function call with a missing parameter, and that&rsquo;s an error (unless the function has varargs &hellip; as explained in the <a href="http://lethalman.blogspot.it/2014/07/nix-pill-5-functions-and-imports.html">5th pill</a>).</p>
+<p>Or not. We missed something. Being able to override some of the parameters. We may not want to always call functions with values taken from the big set.<br>
+Then we add a further parameter, which takes a set of overrides:</p>
+<pre tabindex="0"><code>nix-repl&gt; callPackage = set: f: overrides: f ((builtins.intersectAttrs (builtins.functionArgs f) set) // overrides)
+nix-repl&gt; callPackage values add { }
+8
+nix-repl&gt; callPackage values add { b = 12; }
+15
+</code></pre><p>Apart from the increasing number of parenthesis, it should be clear that we simply do a set union between the default arguments, and the overriding set.</p>
+<h3 id="use-callpackage-to-simplify-the-repository">Use callPackage to simplify the repository</h3>
+<p>Given our brand new tool, we can simplify the repository expression (default.nix).<br>
+Let me write it down first:</p>
+<pre tabindex="0"><code>let
+  nixpkgs = import &lt;nixpkgs&gt; {};
+  allPkgs = nixpkgs // pkgs;
+  callPackage = path: overrides:
+    let f = import path;
+    in f ((builtins.intersectAttrs (builtins.functionArgs f) allPkgs) // overrides);
+  pkgs = with nixpkgs; {
+    mkDerivation = import ./autotools.nix nixpkgs;
+    hello = callPackage ./hello.nix { };
+    graphviz = callPackage ./graphviz.nix { };
+    graphvizCore = callPackage ./graphviz.nix { gdSupport = false; };
+  };
+in pkgs
+</code></pre><p>Wow, there&rsquo;s a lot to say here:</p>
+<ul>
+<li>We renamed the old pkgs of the previous pill to nixpkgs. Our package set is now instead named pkgs. Sorry for the confusion.</li>
+<li>We needed a way to pass pkgs to callPackage somehow. Instead of returning the set of packages directly from default.nix, we first assign it to a let variable and reuse it in callPackage.</li>
+<li>For convenience, in callPackage we first import the file, instead of calling it directly. Otherwise for each package we would have to write the import.</li>
+<li>Since our expressions use packages from nixpkgs, in callPackage we use allPkgs, which is the union of nixpkgs and our packages.</li>
+<li>We moved mkDerivation in pkgs itself, so that it gets also passed automatically.</li>
+</ul>
+<p>Note how easy is to override arguments in the case of graphviz without gd. But most importantly, how easy it was to merge two repositories: nixpkgs and our pkgs!</p>
+<p>The reader should notice a magic thing happening. We&rsquo;re defining pkgs in terms of callPackage, and callPackage in terms of pkgs. That magic is possible thanks to lazy evaluation. </p>
+<h3 id="conclusion">Conclusion</h3>
+<p>The &ldquo;callPackage&rdquo; pattern has simplified a lot our repository. We&rsquo;re able to import packages that require some named arguments and call them automatically, given the set of all packages.</p>
+<p>We&rsquo;ve also introduced some useful builtin functions that allows us to introspect Nix functions and manipulate attributes. These builtin functions are not usually used when packaging software, rather to provide tools for packaging. That&rsquo;s why they are not documented in the <a href="http://nixos.org/nix/manual/">nix manual</a>.</p>
+<p>Writing a repository in nix is an evolution of writing convenient functions for combining the packages. This demonstrates even more how nix is a generic tool to build and deploy something, and how suitable it is to create software repositories with your own conventions.</p>
+<h3 id="next-pill">Next pill</h3>
+<p>&hellip;we will talk about the &ldquo;override&rdquo; design pattern. The graphvizCore seems straightforward. It <em>starts from graphviz.nix</em> and builds it without gd. Now I want to give you another point of view: what if we instead wanted to <em>start from pkgs.graphviz</em> and disable gd?</p>
+<p>Pill 14 is available for <a href="http://lethalman.blogspot.it/2014/09/nix-pill-14-override-design-pattern.html">reading here</a>.</p>
+<p>To be notified about the new pill, stay tuned on <a href="https://twitter.com/search?src=typd&amp;q=%23NixPills">#NixPills</a>, follow <a href="https://twitter.com/lethalman">@lethalman</a> or subscribe to the <a href="http://lethalman.blogspot.com/feeds/posts/default/-/nixpills">nixpills rss</a>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixpills/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpills</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-12-inputs-design-pattern.html">Nix pill 12: the inputs design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-11-garbage-collector.html">Nix pill 11: the garbage collector</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-10-developing-with-nix-shell.html">Nix pill 10: developing with nix-shell</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-9-automatic-runtime.html">Nix pill 9: automatic runtime dependencies</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-8-generic-builders.html">Nix pill 8: generic builders</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-7-working-derivation.html">Nix pill 7: a working derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-6-our-first-derivation.html">Nix pill 6: our first derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-5-functions-and-imports.html">Nix pill 5: functions and imports</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-4-basics-of-language.html">Nix pill 4: the basics of the language</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-3-enter-environment.html">Nix pill 3: enter the environment</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-2-install-on-your-running.html">Nix pill 2: install on your running system</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-1-why-you-should-give-it-try.html">Nix pill 1: why you should give it a try</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html">Debugging and fixing a wmctrl bug in NixOS</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

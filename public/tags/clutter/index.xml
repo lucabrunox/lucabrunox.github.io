@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clutter on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/clutter/</link>
+    <description>Recent content in Clutter on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Feb 2011 00:37:00 -0800</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/clutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rubik&#39;s Cube 3D Game in Vala/Clutter</title>
+      <link>https://lucabrun.github.io/2011/02/rubiks-cube-game-in-valaclutter.html</link>
+      <pubDate>Wed, 09 Feb 2011 00:37:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2011/02/rubiks-cube-game-in-valaclutter.html</guid>
+      <description>Hello,&#xA;I&amp;rsquo;ve written a simple program for playing with a Rubik&amp;rsquo;s Cube using Vala and Clutter.&#xA;It features:&#xA;high simplicity in rotating cube slices and rotating the cube itself in a very natural manner shuffle the cube autosave the game Download and more usage information at the homepage&amp;hellip; have fun :)</description>
+    </item>
+    <item>
+      <title>Using Mash with Vala</title>
+      <link>https://lucabrun.github.io/2010/07/using-mash-with-vala.html</link>
+      <pubDate>Thu, 29 Jul 2010 06:22:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2010/07/using-mash-with-vala.html</guid>
+      <description>Hello,&#xA;recently Mash has been released. It is a library for reading models in PLY format and creating Clutter actors from them. For reference, Blender is able to export to PLY. It means you can draw your models with Blender and use Clutter as rendering engine.&#xA;Clutter is a 3D canvas and animation toolkit while Blender is a 3D modelling suite.&#xA;What I&amp;rsquo;ve tested so far is porting the Monkey Viewer C example to Vala: code snippet and monkey PLY here.</description>
+    </item>
+    <item>
+      <title>Create a cairo surface from a pixbuf</title>
+      <link>https://lucabrun.github.io/2009/04/create-cairo-surface-from-pixbuf.html</link>
+      <pubDate>Sat, 25 Apr 2009 02:03:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2009/04/create-cairo-surface-from-pixbuf.html</guid>
+      <description>Hello,&#xA;sometimes in the code of a couple of projects I see some hard algorithms to transform a pixbuf in a cairo surface.&#xA;Maybe most of people don&amp;rsquo;t know that GdkCairoContext, contrarily to cairo_t, is created against a cairo context not a cairo surface:&#xA;`surface = cairo.ImageSurface (cairo.FORMAT_ARGB32, pixbuf.get_width(), pixbuf.get_height())&#xA;cr = cairo.Context (surface)&#xA;gdkcr = gtk.gdk.CairoContext (cr)&#xA;gdkcr.set_source_pixbuf (pixbuf)&#xA;gdkcr.paint ()`&#xA;Notice gtk.gdk.CairoContext (cr), which cr is not the surface.</description>
+    </item>
+    <item>
+      <title>Replace GTK&#43; with Clutter for fun</title>
+      <link>https://lucabrun.github.io/2008/11/replace-gtk-with-clutter-for-fun.html</link>
+      <pubDate>Sun, 23 Nov 2008 12:38:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2008/11/replace-gtk-with-clutter-for-fun.html</guid>
+      <description>Hello,&#xA;lately I was having fun with Clutter and Python. I&amp;rsquo;ve started by creating some Gtk-like widgets (such as GtkWindow, GtkBox, and GtkButton) in Clutter.&#xA;Well, this is the result&amp;hellip; it&amp;rsquo;s a simple example of a very poor toolkit, but it works:&#xA;Try it, it&amp;rsquo;s only one .py file source code</description>
+    </item>
+  </channel>
+</rss>

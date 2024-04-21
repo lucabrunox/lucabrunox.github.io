@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graphviz on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/graphviz/</link>
+    <description>Recent content in Graphviz on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 May 2011 03:11:00 -0700</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/graphviz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Valag 1.2 released</title>
+      <link>https://lucabrun.github.io/2011/05/vala-12-released.html</link>
+      <pubDate>Sat, 14 May 2011 03:11:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2011/05/vala-12-released.html</guid>
+      <description>Hello,&#xA;I&amp;rsquo;ve just released the 1.2 version of Valag, the graph generator for analyzing Vala code trees. Only relevant change is the fact that it now builds against libvala-0.14.&#xA;More information and download at the Valag homepage.</description>
+    </item>
+    <item>
+      <title>Valag 1.1 released, graph generator for the Vala AST</title>
+      <link>https://lucabrun.github.io/2010/12/valag-11-released.html</link>
+      <pubDate>Sun, 19 Dec 2010 04:19:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2010/12/valag-11-released.html</guid>
+      <description>Hello,&#xA;a new version of Valag, a graphviz generator for the Vala language AST, has been released.&#xA;Changes since 1.0 version:&#xA;Add &amp;ndash;format and &amp;ndash;prefix options. Update to latest libvala-0.12. Bug fixes. This new version also distributes the xdot.py program as a viewer for the generated graphs.&#xA;More information and download at the Valag homepage.</description>
+    </item>
+    <item>
+      <title>Vala and Graphviz</title>
+      <link>https://lucabrun.github.io/2010/03/vala-and-graphviz.html</link>
+      <pubDate>Sun, 14 Mar 2010 04:37:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2010/03/vala-and-graphviz.html</guid>
+      <description>Hello,&#xA;it&amp;rsquo;s often useful for Vala hackers to have a graphical representation of the code tree and control flow blocks. Therefore I&amp;rsquo;ve created a simple application called Valag which generates four types of diagrams using Graphviz for each state of the Vala compiler.&#xA;This is the first release, there&amp;rsquo;re many things to fix and enhance (like command line options) but it is working quite good already to give support when hacking Vala.</description>
+    </item>
+  </channel>
+</rss>

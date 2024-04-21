@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Nix pill 3: enter the environment | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Welcome to the third Nix pill. In the previous second pill we have installed Nix on our running system. Now we can finally play with it a little, things also apply to NixOS users.
+Enter the environment In the previous pill we created a nix user, so let&rsquo;s start by switching user with su - nix. If your ~/.profile got evaluated, then you should now be able to run commands like nix-env and nix-store.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2014/07/nix-pill-3-enter-environment.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2014/07/nix-pill-3-enter-environment.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Nix pill 3: enter the environment">
+  <meta property="og:description" content="Welcome to the third Nix pill. In the previous second pill we have installed Nix on our running system. Now we can finally play with it a little, things also apply to NixOS users.
+Enter the environment In the previous pill we created a nix user, so let&amp;rsquo;s start by switching user with su - nix. If your ~/.profile got evaluated, then you should now be able to run commands like nix-env and nix-store.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-07-25T07:37:00-07:00">
+    <meta property="article:modified_time" content="2014-07-25T07:37:00-07:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixpills">
+    <meta property="article:tag" content="Nixos">
+
+  <meta itemprop="name" content="Nix pill 3: enter the environment">
+  <meta itemprop="description" content="Welcome to the third Nix pill. In the previous second pill we have installed Nix on our running system. Now we can finally play with it a little, things also apply to NixOS users.
+Enter the environment In the previous pill we created a nix user, so let&rsquo;s start by switching user with su - nix. If your ~/.profile got evaluated, then you should now be able to run commands like nix-env and nix-store.">
+  <meta itemprop="datePublished" content="2014-07-25T07:37:00-07:00">
+  <meta itemprop="dateModified" content="2014-07-25T07:37:00-07:00">
+  <meta itemprop="wordCount" content="1315">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 3: enter the environment">
+<meta name="twitter:description" content="Welcome to the third Nix pill. In the previous second pill we have installed Nix on our running system. Now we can finally play with it a little, things also apply to NixOS users.
+Enter the environment In the previous pill we created a nix user, so let&rsquo;s start by switching user with su - nix. If your ~/.profile got evaluated, then you should now be able to run commands like nix-env and nix-store.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Nix pill 3: enter the environment</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-07-25T07:37:00-07:00">July 25, 2014</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Welcome to the third Nix pill. In the previous <a href="http://lethalman.blogspot.it/2014/07/nix-pill-2-install-on-your-running.html">second pill</a> we have installed Nix on our running system. Now we can finally play with it a little, things also apply to NixOS users.</p>
+<h3 id="enter-the-environment">Enter the environment</h3>
+<p>In the previous pill we created a nix user, so let&rsquo;s start by switching user with su - nix. If your ~/.profile got evaluated, then you should now be able to run commands like nix-env and nix-store.<br>
+If that&rsquo;s not the case:</p>
+<pre tabindex="0"><code>$ source ~/.nix-profile/etc/profile.d/nix.sh
+</code></pre><p>I remind you, ~/.nix-profile/etc points to the nix-1.7 derivation. At this point, we are in our nix user profile.</p>
+<h3 id="install-something">Install something</h3>
+<p>Finally something practical! Installation in the nix environment is an interesting process. Let&rsquo;s install <a href="https://github.com/edolstra/nix-repl">nix-repl</a>, a simple command line tool for playing with the Nix language. Yes, Nix is a <a href="http://nixos.org/nix/manual/#idm47361539226272">pure, lazy, functional language,</a> not only a set of tools to manage derivations.</p>
+<p>Back to the installation:</p>
+<pre tabindex="0"><code>$ nix-env -i nix-repl  
+installing \`nix-repl-1.7-1734e8a&#39;
+these paths will be fetched (18.61 MiB download, 69.53 MiB unpacked):
+\[...\]
+building path(s) \`/nix/store/f01lfzbw7n0yzhsjd33xfj77li9raljv-**user-environment**&#39;
+created 24 symlinks in user environment
+</code></pre><p>Now you can run nix-repl. Things to notice:</p>
+<ul>
+<li>We did install software as user, only for the nix user.</li>
+<li>It created a new user environment. That&rsquo;s a new generation of our nix user profile.</li>
+<li>The <a href="http://nixos.org/nix/manual/#sec-nix-env">nix-env</a> tool manages environments, profiles and their generations.</li>
+<li>We installed nix-repl by derivation name minus the version. I repeat: we did specify the <strong>derivation name</strong> (minus the version) to install.</li>
+</ul>
+<p>We can list generations without walking through the /nix hierarchy:</p>
+<pre tabindex="0"><code>$ nix-env --list-generations
+   1   2014-07-24 09:23:30   
+   2   2014-07-25 08:45:01   (current)
+</code></pre><p>List installed derivations:</p>
+<pre tabindex="0"><code>$ nix-env -q
+nix-1.7
+nix-repl-1.7-1734e8a
+</code></pre><p>So, where did nix-repl really got installed? which nix-repl is ~/.nix-profile/bin/nix-repl which points to the store.</p>
+<p>We can also list the derivation paths with nix-env -q &ndash;out-path . So that&rsquo;s how those derivation paths are called: the <strong>output</strong> of a build.</p>
+<h3 id="path-merging">Path merging</h3>
+<p>At this point you sure have the necessity to run &ldquo;man&rdquo;. Even if you already have man system-wide outside of the nix environment, you can install and use it within nix with nix-env -i man. As usual, a new generation will be created, and ~/.nix-profile will point to it.</p>
+<p>Let&rsquo;s inspect the <a href="http://nixos.org/nix/manual/#sec-profiles">profile</a> a bit:</p>
+<pre tabindex="0"><code>$ ls -l ~/.nix-profile/
+dr-xr-xr-x 2 nix nix 4096 Jan  1  1970 bin
+lrwxrwxrwx 1 nix nix   55 Jan  1  1970 etc -&gt; /nix/store/clnpynyac3hx3a6z5lsy893p7b4rwnyf-**nix-1.7**/etc
+\[...\]
+</code></pre><p>Now that&rsquo;s interesting. When only nix-1.7 was installed, bin/ was a symlink to nix-1.7. Now it&rsquo;s a real directory, no symlink.</p>
+<pre tabindex="0"><code>$ ls -l ~/.nix-profile/bin/
+\[...\]
+man -&gt; /nix/store/83cn9ing5sc6644h50dqzzfxcs07r2jn-**man-1.6g**/bin/man
+\[...\]
+nix-env -&gt; /nix/store/clnpynyac3hx3a6z5lsy893p7b4rwnyf-**nix-1.7**/bin/nix-env
+\[...\]
+nix-repl -&gt; /nix/store/0fcl92chxbbs8axb994rg12vxddg1ivs-**nix-repl-1.7-1734e8a**/bin/nix-repl
+\[...\]
+</code></pre><p>All clear. nix-env merged the paths from the installed derivations. which man points to the nix profile, rather than the system man, because ~/.nix-profile/bin is at the head of $PATH.</p>
+<h3 id="rollback--switch-generation">Rollback / switch generation</h3>
+<p>The last command installed &ldquo;man&rdquo;. We should be at generation #3, unless you changed something in the middle. Let&rsquo;s say we want to rollback to the old generation:</p>
+<pre tabindex="0"><code>$ nix-env --rollback
+switching from generation 3 to 2
+</code></pre><p>Now nix-env -q does not list &ldquo;man&rdquo; anymore. ls -l `which man` should now be your system installed one.</p>
+<p>Enough with the joke, let&rsquo;s go back to the last generation:</p>
+<pre tabindex="0"><code>$ nix-env -G 3
+switching from generation 2 to 3
+</code></pre><p>I invite you to read the manpage of nix-env. nix-env requires an operation to perform, then there are common options for all operations, and there are options specific to an operation.</p>
+<p>You can of course also <a href="http://nixos.org/nix/manual/#idm47361539520832">delete and upgrade packages</a>.</p>
+<h3 id="querying-the-store">Querying the store</h3>
+<p>So far we learned how to query and manipulate the environment. But all of the environment components point to the store.</p>
+<p>To query and manipulate the store, there&rsquo;s the <a href="http://nixos.org/nix/manual/#sec-nix-store">nix-store</a> command. We can do neat things, but we&rsquo;ll only see some queries for now.</p>
+<p>Show direct runtime dependencies of nix-repl:</p>
+<pre tabindex="0"><code>$ nix-store -q --references \`which nix-repl\`
+/nix/store/94n64qy99ja0vgbkf675nyk39g9b978n-**glibc-2.19**
+/nix/store/8jm0wksask7cpf85miyakihyfch1y21q-**gcc-4.8.3**
+/nix/store/25lg5iqy68k25hdv17yac72kcnwlh4lm-**boehm-gc-7.2d**
+/nix/store/g21di262aql6xskx15z3qiw3zh3wmjlb-**nix-1.7**
+/nix/store/jxs2k83npdin18ysnd104xm4sy29m8xp-**readline-6.2**
+</code></pre><p>The argument to nix-store can be anything as long as it points to the nix store. It will follow symlinks.</p>
+<p>It may not make sense for you right now, but let&rsquo;s print reverse dependencies of nix-repl:</p>
+<pre tabindex="0"><code>$ nix-store -q --referrers \`which nix-repl\`
+/nix/store/8rj57vahlndqwg4q095x5qvfa1g4rmvr-**env-manifest.nix**
+/nix/store/9c8ak2h7c6vbr9kqk8i2n96bwg55br7y-**env-manifest.nix**
+/nix/store/dr1y2saask2k4y2wrmxw443302pp02z2-**user-environment**
+/nix/store/f01lfzbw7n0yzhsjd33xfj77li9raljv-**user-environment**
+</code></pre><p>Did you expect it? Our environments depend upon nix-repl. Yes, the environments are in the store, and since there are symlinks to nix-repl, therefore the environment depends upon nix-repl.</p>
+<p>It lists two environments, generation 2 and generation 3.</p>
+<p>The manifest.nix file contains metadata about the environment, such as which derivations are installed. So that nix-env can list them, upgrade or remove them. Guess what, the current manifest.nix can be found in ~/.nix-profile/manifest.nix.</p>
+<h3 id="closures">Closures</h3>
+<p>The closure of a derivation is the list of all dependencies, recursively, down to the bare minimum necessary to use that derivation.</p>
+<pre tabindex="0"><code>$ nix-store -qR \`which man\`
+\[...\]
+</code></pre><p>Copying all those derivations to the nix store of another machine makes you able to run &ldquo;man&rdquo; out of the box on that other machine. That&rsquo;s the base of nix deployment, you can already foresee the potential when deploying software in the cloud (hint: nix-copy-closure and nix-store &ndash;export).</p>
+<p>A nicer view of the closure:</p>
+<pre tabindex="0"><code>$ nix-store -qR --tree \`which man\`
+\[...\]
+</code></pre><p>With the above command, you can know exactly why a <strong>runtime</strong> dependency, being it direct or indirect, has been picked for a given derivation.</p>
+<p>Same applies to environments of course. As an exercise run nix-store -qR &ndash;tree ~/.nix-profile , see that the first children are direct dependencies of the user environment: the installed derivations, and the manifest.nix.</p>
+<h3 id="dependency-resolution">Dependency resolution</h3>
+<p>There isn&rsquo;t anything like apt which solves a SAT problem in order to satisfy dependencies with lower and upper bounds on versions. Because there&rsquo;s no need. A derivation X depends on derivation Y, always.</p>
+<h3 id="fancy-disrupt">Fancy disrupt</h3>
+<pre tabindex="0"><code>$ nix-env -e &#39;\*&#39;
+uninstalling \`man-1.6g&#39;
+uninstalling \`nix-repl-1.7-1734e8a&#39;
+uninstalling \`nix-1.7&#39;
+\[...\]
+</code></pre><p>Ops, that uninstalled all derivations from the environment, including nix. We are not able to run nix-env, what now?</p>
+<p>Environments are a convenience for the user, but Nix is still there, in the store!</p>
+<p>First pick one nix-1.7 derivation: ls /nix/store/*nix-1.7, say /nix/store/g21di262aql6xskx15z3qiw3zh3wmjlb-<strong>nix-1.7</strong>.</p>
+<p>The first possibility is to rollback:</p>
+<pre tabindex="0"><code>$ /nix/store/g21di262aql6xskx15z3qiw3zh3wmjlb-**nix-1.7**/bin/nix-env --rollback
+</code></pre><p>The second possibility is to install nix, thus creating a new generation:</p>
+<pre tabindex="0"><code>$ /nix/store/g21di262aql6xskx15z3qiw3zh3wmjlb-**nix-1.7**/bin/nix-env -i /nix/store/g21di262aql6xskx15z3qiw3zh3wmjlb-**nix-1.7**
+</code></pre><h3 id="channels"><strong>Channels</strong></h3>
+<p>So where are we getting packages from? We said something already in <a href="http://lethalman.blogspot.it/2014/07/nix-pill-2-install-on-your-running.html">pill 2</a>. There&rsquo;s a list of channels from which we get packages, usually we use a single channel. The tool to manage channels is <a href="http://nixos.org/nix/manual/#sec-nix-channel">nix-channel</a>.</p>
+<pre tabindex="0"><code>$ nix-channel --list
+nixpkgs http://nixos.org/channels/nixpkgs-unstable
+</code></pre><p>That&rsquo;s basically the contents of ~/.nix-channels. Note: ~/.nix-channels is not a symlink to the nix store!</p>
+<p>To update the channel run nix-channel &ndash;update . It will download the new nix expressions (descriptions of the packages), create a new generation of the channels profile and unpack under ~/.nix-defexpr/channels .</p>
+<p>That&rsquo;s much similar to apt-get update.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>We learned how to query the user environment and to manipulate it by installing and uninstalling software. Upgrading software is as straight as it gets by reading <a href="http://nixos.org/nix/manual/#idm47361539520832">the manual</a> (nix-env -u &lsquo;*&rsquo; will upgrade all packages in the environment).</p>
+<p>Everytime we change the environment, a new generation gets created. Switching between generations is easy and immediate.</p>
+<p>Then we queried the store. We inspected the dependencies and reverse dependencies of store paths.</p>
+<p>We still see symlinks to compose paths from the nix store, our lovely trick.</p>
+<p>Quick analogy with programming languages. You have the heap with all the objects, that&rsquo;s the nix store. You have objects that point to other objects, those are the derivations. Will be this the right path?</p>
+<h3 id="next-pill">Next pill</h3>
+<p>&hellip;we will learn the basics of the Nix language. The Nix language is used to describe how to build derivations, and it&rsquo;s the base for everything else including NixOS. Therefore it&rsquo;s very important to understand the syntax and the semantics.</p>
+<p>Nix pill 4 is available for <a href="http://lethalman.blogspot.it/2014/07/nix-pill-4-basics-of-language.html">reading here</a>.</p>
+<p>To be notified about the new pill, stay tuned on <a href="https://twitter.com/search?src=typd&amp;q=%23NixPills">#NixPills</a>, follow <a href="https://twitter.com/lethalman">@lethalman</a> or subscribe to the <a href="http://lethalman.blogspot.com/feeds/posts/default/-/nixpills">nixpills rss</a>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixpills/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpills</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-2-install-on-your-running.html">Nix pill 2: install on your running system</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-1-why-you-should-give-it-try.html">Nix pill 1: why you should give it a try</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html">Debugging and fixing a wmctrl bug in NixOS</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

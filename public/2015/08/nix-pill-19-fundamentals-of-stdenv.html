@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Nix pill 19: fundamentals of stdenv | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Welcome to the 19th Nix pill. In the previous 18th pill we did dive into the algorithm used by Nix to compute the store paths, and also introduced fixed-output store paths.
+This time we will instead look into nixpkgs, in particular one of its core derivation: stdenv .
+The stdenv is not a special derivation, but it&rsquo;s very important for the nixpkgs repository. It serves as base for packaging software. It is used to pull in dependencies such as the GCC toolchain, GNU make, core utilities, patch and diff utilities, and so on.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2015/08/nix-pill-19-fundamentals-of-stdenv.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2015/08/nix-pill-19-fundamentals-of-stdenv.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Nix pill 19: fundamentals of stdenv">
+  <meta property="og:description" content="Welcome to the 19th Nix pill. In the previous 18th pill we did dive into the algorithm used by Nix to compute the store paths, and also introduced fixed-output store paths.
+This time we will instead look into nixpkgs, in particular one of its core derivation: stdenv .
+The stdenv is not a special derivation, but it&amp;rsquo;s very important for the nixpkgs repository. It serves as base for packaging software. It is used to pull in dependencies such as the GCC toolchain, GNU make, core utilities, patch and diff utilities, and so on.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2015-08-24T09:48:00-07:00">
+    <meta property="article:modified_time" content="2015-08-24T09:48:00-07:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixpills">
+    <meta property="article:tag" content="Nixos">
+
+  <meta itemprop="name" content="Nix pill 19: fundamentals of stdenv">
+  <meta itemprop="description" content="Welcome to the 19th Nix pill. In the previous 18th pill we did dive into the algorithm used by Nix to compute the store paths, and also introduced fixed-output store paths.
+This time we will instead look into nixpkgs, in particular one of its core derivation: stdenv .
+The stdenv is not a special derivation, but it&rsquo;s very important for the nixpkgs repository. It serves as base for packaging software. It is used to pull in dependencies such as the GCC toolchain, GNU make, core utilities, patch and diff utilities, and so on.">
+  <meta itemprop="datePublished" content="2015-08-24T09:48:00-07:00">
+  <meta itemprop="dateModified" content="2015-08-24T09:48:00-07:00">
+  <meta itemprop="wordCount" content="1135">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 19: fundamentals of stdenv">
+<meta name="twitter:description" content="Welcome to the 19th Nix pill. In the previous 18th pill we did dive into the algorithm used by Nix to compute the store paths, and also introduced fixed-output store paths.
+This time we will instead look into nixpkgs, in particular one of its core derivation: stdenv .
+The stdenv is not a special derivation, but it&rsquo;s very important for the nixpkgs repository. It serves as base for packaging software. It is used to pull in dependencies such as the GCC toolchain, GNU make, core utilities, patch and diff utilities, and so on.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Nix pill 19: fundamentals of stdenv</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2015-08-24T09:48:00-07:00">August 24, 2015</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Welcome to the 19th Nix pill. In the previous <a href="http://lethalman.blogspot.it/2015/01/nix-pill-18-nix-store-paths.html">18th pill</a> we did dive into the algorithm used by Nix to compute the store paths, and also introduced fixed-output store paths.<br>
+This time we will instead look into nixpkgs, in particular one of its core derivation: <strong>stdenv</strong> .</p>
+<p>The stdenv is not a special derivation, but it&rsquo;s very important for the nixpkgs repository. It serves as base for packaging software. It is used to pull in dependencies such as the GCC toolchain, GNU make, core utilities, patch and diff utilities, and so on. Basic tools needed to compile a huge pile of software currently present in nixpkgs.</p>
+<h1 id="what-is-stdenv">What is stdenv</h1>
+<p>First of all stdenv is a derivation. And it&rsquo;s a very simple one:</p>
+<pre tabindex="0"><code>$ nix-build &#39;&lt;nixpkgs&gt;&#39; -A stdenv
+/nix/store/k4jklkcag4zq4xkqhkpy156mgfm34ipn-stdenv
+$ ls -R result/
+result/:
+nix-support/  setup
+
+result/nix-support:
+propagated-user-env-packages 
+</code></pre><p>It has just two files: <code>/setup</code> and <code>/nix-support/propagated-user-env-packages</code>. Don&rsquo;t care about the latter, it&rsquo;s even empty. The important file is <code>/setup</code>.<br>
+How can this simple derivation pull in all the toolchain and basic tools needed to compile packages? Let&rsquo;s look at the runtime dependencies:</p>
+<pre tabindex="0"><code>$ nix-store -q --references result
+/nix/store/3a45nb37s0ndljp68228snsqr3qsyp96-bzip2-1.0.6
+/nix/store/a457ywa1haa0sgr9g7a1pgldrg3s798d-coreutils-8.24
+/nix/store/zmd4jk4db5lgxb8l93mhkvr3x92g2sx2-bash-4.3-p39
+/nix/store/47sfpm2qclpqvrzijizimk4md1739b1b-gcc-wrapper-4.9.3
+... 
+</code></pre><p>How can it be? The package must be referring to those package somehow. In fact, they are hardcoded in the <code>/setup</code> file:</p>
+<pre tabindex="0"><code>$ head result/setup
+export SHELL=/nix/store/zmd4jk4db5lgxb8l93mhkvr3x92g2sx2-bash-4.3-p39/bin/bash
+initialPath=&#34;/nix/store/a457ywa1haa0sgr9g7a1pgldrg3s798d-coreutils-8.24 ...&#34;
+defaultNativeBuildInputs=&#34;/nix/store/sgwq15xg00xnm435gjicspm048rqg9y6-patchelf-0.8 ...&#34; 
+</code></pre><h1 id="the-setup-file">The setup file</h1>
+<p>Remember our generic <code>builder.sh</code> in <a href="http://lethalman.blogspot.it/2014/08/nix-pill-8-generic-builders.html">Pill 8</a>? It sets up a basic PATH, unpacks the source and runs the usual autotools commands for us.<br>
+The stdenv setup file is exactly that. It sets up several environment variables like PATH and creates some helper bash functions to build a package. I invite you to read it, it&rsquo;s only 860 lines at the time of this writing.</p>
+<p>The hardcoded toolchain and utilities are used to initially fill up the environment variables so that it&rsquo;s more pleasant to run common commands, similarly but not equal like we did with our builder with <code>baseInputs</code> and <code>buildInputs</code>.</p>
+<p>The build with stdenv works in phases. Phases are like <code>unpackPhase</code>, <code>configurePhase</code>, <code>buildPhase</code>, <code>checkPhase</code>, <code>installPhase</code>, <code>fixupPhase</code>. You can see the default list in the <code>genericBuild</code> function.<br>
+What <code>genericBuild</code> does is just run these phases. Default phases are just bash functions, you can easily read them.</p>
+<p>Every phase has hooks to run commands before and after the phase has been executed. Phases can be overwritten, reordered, whatever, it&rsquo;s just bash code.</p>
+<p>How to use this file? Like our old builder. To test it, we enter a fake empty derivation, source the stdenv setup, unpack the hello sources and build it:</p>
+<pre tabindex="0"><code>$ nix-shell -E &#39;derivation { name = &#34;fake&#34;; builder = &#34;fake&#34;; system = &#34;x86_64-linux&#34;; }&#39;
+nix-shell$ unset PATH
+nix-shell$ source /nix/store/k4jklkcag4zq4xkqhkpy156mgfm34ipn-stdenv/setup
+nix-shell$ tar -xf hello-2.9.tar.gz
+nix-shell$ cd hello-2.9
+nix-shell$ configurePhase
+...
+nix-shell$ buildPhase
+... 
+</code></pre><p><em>I unset <code>PATH</code> to further show that the stdenv is enough self-contained to build autotools packages that have no other dependencies.</em></p>
+<p>So we ran the <code>configurePhase</code> function and <code>buildPhase</code> function and they worked. These bash functions should be self-explanatory, you can read the code in the setup file.</p>
+<h1 id="how-is-the-setup-file-built">How is the setup file built</h1>
+<p>Very little digression for completeness. The stdenv derivation is just that setup file. That setup file is just this <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/stdenv/generic/setup.sh">setup.sh in nixpkgs</a> plus some lines on top of it, put by this <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/stdenv/generic/builder.sh">simple builder</a>:</p>
+<pre tabindex="0"><code>...
+echo &#34;export SHELL=$shell&#34; &gt; $out/setup
+echo &#34;initialPath=\&#34;$initialPath\&#34;&#34; &gt;&gt; $out/setup
+echo &#34;defaultNativeBuildInputs=\&#34;$defaultNativeBuildInputs\&#34;&#34; &gt;&gt; $out/setup
+echo &#34;$preHook&#34; &gt;&gt; $out/setup
+cat &#34;$setup&#34; &gt;&gt; $out/setup
+... 
+</code></pre><p>Nothing much to say, but you can read the Nix code that pass <code>$initialPath</code> and <code>$defaultNativeBuildInputs</code>. Not much interesting to continue further in this pill.</p>
+<h1 id="the-stdenvmkderivation-function">The stdenv.mkDerivation function</h1>
+<p>Until now we worked with plain bash scripts. What about the Nix side? The nixpkgs repository offers a useful function, like we did with our old builder. It is a wrapper around the raw <code>derivation</code> function which pulls in the stdenv for us, and runs <code>genericBuild</code>. It&rsquo;s <code>stdenv.mkDerivation</code>.</p>
+<p>Note how <code>stdenv</code> is a derivation but it&rsquo;s also an attribute set which contains some other attributes, like <code>mkDerivation</code>. Nothing fancy here, just convenience.</p>
+<p>Let&rsquo;s write a <code>hello.nix</code> expression using this new discovered stdenv:</p>
+<pre tabindex="0"><code>with import &lt;nixpkgs&gt; {};
+stdenv.mkDerivation {
+  name = &#34;hello&#34;;
+  src = ./hello-2.9.tar.gz;
+} 
+</code></pre><p>Don&rsquo;t be scared by the <code>with</code> expression. It pulls the nixpkgs repository into scope, so we can directly use <code>stdenv</code>. It looks very similar to the hello expression in <a href="http://lethalman.blogspot.it/2014/08/nix-pill-8-generic-builders.html">Pill 8</a>.<br>
+It builds, and runs fine:</p>
+<pre tabindex="0"><code>$ nix-build hello.nix
+...
+/nix/store/6flbdbpq6sc1dc79xjx01bz43zwgj3wc-hello
+$ result/bin/hello
+Hello, world! 
+</code></pre><h1 id="the-stdenvmkderivation-builder">The stdenv.mkDerivation builder</h1>
+<p>Let&rsquo;s take a look at the builder used by <code>mkDerivation</code>. You can read the code <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/stdenv/generic/default.nix#L155">here in nixpkgs</a>:</p>
+<pre tabindex="0"><code>{
+  ...
+  builder = attrs.realBuilder or shell;
+  args = attrs.args or [&#34;-e&#34; (attrs.builder or ./default-builder.sh)];
+  stdenv = result;
+  ...
+} 
+</code></pre><p>Also take a look at our old derivation wrapper in previous pills! The <code>builder</code> is bash (that <code>shell</code> variable), the argument to the builder (bash) is <code>default-builder.sh</code>, and then we add the environment variable <code>$stdenv</code> in the derivation which is the <code>stdenv</code> derivation.</p>
+<p>You can open <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/stdenv/generic/default-builder.sh">default-builder.sh</a> and see what it does:</p>
+<pre tabindex="0"><code>source $stdenv/setup
+genericBuild 
+</code></pre><p>It&rsquo;s what we did in <a href="http://lethalman.blogspot.it/2014/08/nix-pill-10-developing-with-nix-shell.html">Pill 10</a> to make the derivations nix-shell friendly. When entering the shell, the setup file only sets up the environment without building anything. When doing nix-build, it actually runs the build process.</p>
+<p>To get a clear understanding of the environment variables, look at the .drv of the hello derivation:</p>
+<pre tabindex="0"><code>$ pp-aterm -i $(nix-instantiate hello.nix)
+Derive(
+  [(&#34;out&#34;, &#34;/nix/store/6flbdbpq6sc1dc79xjx01bz43zwgj3wc-hello&#34;, &#34;&#34;, &#34;&#34;)]
+, [(&#34;/nix/store/8z4xw8a0ax1csa0l83zflsm4jw9c94w2-bash-4.3-p39.drv&#34;, [&#34;out&#34;]), (&#34;/nix/store/j0905apmxw2qb4ng5j40d4ghpiwa3mi1-stdenv.drv&#34;, [&#34;out&#34;])]
+, [&#34;/nix/store/0q6pfasdma4as22kyaknk4kwx4h58480-hello-2.9.tar.gz&#34;, &#34;/nix/store/9krlzvny65gdc8s7kpb6lkx8cd02c25b-default-builder.sh&#34;]
+, &#34;x86_64-linux&#34;
+, &#34;/nix/store/zmd4jk4db5lgxb8l93mhkvr3x92g2sx2-bash-4.3-p39**/bin/bash**&#34;
+, [&#34;-e&#34;, &#34;/nix/store/9krlzvny65gdc8s7kpb6lkx8cd02c25b-**default-builder.sh**&#34;]
+, [ (&#34;buildInputs&#34;, &#34;&#34;)
+  , (&#34;builder&#34;, &#34;/nix/store/zmd4jk4db5lgxb8l93mhkvr3x92g2sx2-bash-4.3-p39/bin/bash&#34;)
+  , (&#34;name&#34;, &#34;hello&#34;)
+  , (&#34;nativeBuildInputs&#34;, &#34;&#34;)
+  , (&#34;out&#34;, &#34;/nix/store/6flbdbpq6sc1dc79xjx01bz43zwgj3wc-hello&#34;)
+  , (&#34;propagatedBuildInputs&#34;, &#34;&#34;)
+  , (&#34;propagatedNativeBuildInputs&#34;, &#34;&#34;)
+  , (&#34;src&#34;, &#34;/nix/store/0q6pfasdma4as22kyaknk4kwx4h58480-**hello-2.9.tar.gz**&#34;)
+  , (&#34;stdenv&#34;, &#34;/nix/store/k4jklkcag4zq4xkqhkpy156mgfm34ipn-**stdenv**&#34;)
+  , (&#34;system&#34;, &#34;x86_64-linux&#34;)
+  ]
+) 
+</code></pre><p>So short I decided to paste it entirely above. The builder is bash, with <code>-e default-builder.sh</code> arguments. Then you can see the <code>src</code> and <code>stdenv</code> environment variables.</p>
+<p>Last bit, the <code>unpackPhase</code> in the setup is used to unpack the sources and enter the directory, again like we did in our old builder.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>The stdenv is the core of the nixpkgs repository. All packages use the <code>stdenv.mkDerivation</code> wrapper instead of the raw <code>derivation</code>. It does a bunch of operations for us and also sets up a pleasant build environment.</p>
+<p>The overall process is simple:</p>
+<ul>
+<li><code>nix-build</code></li>
+<li><code>bash -e default-builder.sh</code></li>
+<li><code>source $stdenv/setup</code></li>
+<li><code>genericBuild</code></li>
+</ul>
+<p>That&rsquo;s it, everything you need to know about the stdenv phases is in the <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/stdenv/generic/setup.sh">setup file</a>.</p>
+<p>Really, take your time to read that file. Don&rsquo;t forget that juicy docs are also available in the <a href="http://nixos.org/nixpkgs/manual/#chap-stdenv">nixpkgs manual</a>.</p>
+<h1 id="next-pill">Next pill&hellip;</h1>
+<p>&hellip;we will talk about how to add dependencies to our packages, <code>buildInputs</code>, <code>propagatedBuildInputs</code> and setup hooks. These three concepts are at the base of the current nixpkgs packages composition.</p>
+<h3 id="heading"></h3>
+<p>To be notified about the new pill, stay tuned on <a href="https://twitter.com/search?src=typd&amp;q=%23NixPills">#NixPills</a>, follow <a href="https://twitter.com/lethalman">@lethalman</a> or subscribe to the <a href="http://lethalman.blogspot.com/feeds/posts/default/-/nixpills">nixpills rss</a>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixpills/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpills</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2015/01/nix-pill-18-nix-store-paths.html">Nix pill 18: nix store paths</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/11/nix-pill-17-nixpkgs-overriding-packages.html">Nix pill 17: nixpkgs, overriding packages</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/11/nix-pill-16-nixpkgs-parameters.html">Nix pill 16: nixpkgs, the parameters</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/09/nix-pill-15-nix-search-paths.html">Nix pill 15: nix search paths</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/09/nix-pill-14-override-design-pattern.html">Nix pill 14: the override design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/09/nix-pill-13-callpackage-design-pattern.html">Nix pill 13: the callPackage design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-12-inputs-design-pattern.html">Nix pill 12: the inputs design pattern</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-11-garbage-collector.html">Nix pill 11: the garbage collector</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-10-developing-with-nix-shell.html">Nix pill 10: developing with nix-shell</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-9-automatic-runtime.html">Nix pill 9: automatic runtime dependencies</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/08/nix-pill-8-generic-builders.html">Nix pill 8: generic builders</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-7-working-derivation.html">Nix pill 7: a working derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-6-our-first-derivation.html">Nix pill 6: our first derivation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-5-functions-and-imports.html">Nix pill 5: functions and imports</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-4-basics-of-language.html">Nix pill 4: the basics of the language</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

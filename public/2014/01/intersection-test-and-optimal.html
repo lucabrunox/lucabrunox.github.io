@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Intersection test and optimal allocation of 2D axis-aligned boxes using linear programming | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="(function () { var script = document.createElement(&ldquo;script&rdquo;); script.type = &ldquo;text/javascript&rdquo;; script.src = &ldquo;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&rdquo;; document.getElementsByTagName(&ldquo;head&rdquo;)[0].appendChild(script); })(); Either-or trick
+In this solution, we will make use of the either-or trick. The constraints in a program are all in and, but we want some of them to be in or.
+Consider the following logic formula: \(a\ge b\vee c\ge d\). It can be written with the following and constraints: \[ \begin{alignedat}{2}\, &amp; M\cdot x\; &amp; &#43;a\; &amp; \ge b\\ \, &amp; M\cdot\left(1-x\right)\; &amp; &#43;c\; &amp; \ge d\\ \, &amp; \, &amp; x\; &amp; \in\left\{ 0,1\right\} \end{alignedat} \] where \(M \gt 0\) is big (depending on the specific context as we&rsquo;ll see later).">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2014/01/intersection-test-and-optimal.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2014/01/intersection-test-and-optimal.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Intersection test and optimal allocation of 2D axis-aligned boxes using linear programming">
+  <meta property="og:description" content="(function () { var script = document.createElement(&amp;ldquo;script&amp;rdquo;); script.type = &amp;ldquo;text/javascript&amp;rdquo;; script.src = &amp;ldquo;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;rdquo;; document.getElementsByTagName(&amp;ldquo;head&amp;rdquo;)[0].appendChild(script); })(); Either-or trick
+In this solution, we will make use of the either-or trick. The constraints in a program are all in and, but we want some of them to be in or.
+Consider the following logic formula: \(a\ge b\vee c\ge d\). It can be written with the following and constraints: \[ \begin{alignedat}{2}\, &amp;amp; M\cdot x\; &amp;amp; &#43;a\; &amp;amp; \ge b\\ \, &amp;amp; M\cdot\left(1-x\right)\; &amp;amp; &#43;c\; &amp;amp; \ge d\\ \, &amp;amp; \, &amp;amp; x\; &amp;amp; \in\left\{ 0,1\right\} \end{alignedat} \] where \(M \gt 0\) is big (depending on the specific context as we&amp;rsquo;ll see later).">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-01-20T09:31:00-08:00">
+    <meta property="article:modified_time" content="2014-01-20T09:31:00-08:00">
+    <meta property="article:tag" content="Glpk">
+    <meta property="article:tag" content="Geometry">
+    <meta property="article:tag" content="Linear Programming">
+    <meta property="article:tag" content="Milp">
+    <meta property="article:tag" content="Problem Solving">
+
+  <meta itemprop="name" content="Intersection test and optimal allocation of 2D axis-aligned boxes using linear programming">
+  <meta itemprop="description" content="(function () { var script = document.createElement(&ldquo;script&rdquo;); script.type = &ldquo;text/javascript&rdquo;; script.src = &ldquo;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&rdquo;; document.getElementsByTagName(&ldquo;head&rdquo;)[0].appendChild(script); })(); Either-or trick
+In this solution, we will make use of the either-or trick. The constraints in a program are all in and, but we want some of them to be in or.
+Consider the following logic formula: \(a\ge b\vee c\ge d\). It can be written with the following and constraints: \[ \begin{alignedat}{2}\, &amp; M\cdot x\; &amp; &#43;a\; &amp; \ge b\\ \, &amp; M\cdot\left(1-x\right)\; &amp; &#43;c\; &amp; \ge d\\ \, &amp; \, &amp; x\; &amp; \in\left\{ 0,1\right\} \end{alignedat} \] where \(M \gt 0\) is big (depending on the specific context as we&rsquo;ll see later).">
+  <meta itemprop="datePublished" content="2014-01-20T09:31:00-08:00">
+  <meta itemprop="dateModified" content="2014-01-20T09:31:00-08:00">
+  <meta itemprop="wordCount" content="819">
+  <meta itemprop="keywords" content="Glpk,Geometry,Linear Programming,Milp,Problem Solving"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Intersection test and optimal allocation of 2D axis-aligned boxes using linear programming">
+<meta name="twitter:description" content="(function () { var script = document.createElement(&ldquo;script&rdquo;); script.type = &ldquo;text/javascript&rdquo;; script.src = &ldquo;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&rdquo;; document.getElementsByTagName(&ldquo;head&rdquo;)[0].appendChild(script); })(); Either-or trick
+In this solution, we will make use of the either-or trick. The constraints in a program are all in and, but we want some of them to be in or.
+Consider the following logic formula: \(a\ge b\vee c\ge d\). It can be written with the following and constraints: \[ \begin{alignedat}{2}\, &amp; M\cdot x\; &amp; &#43;a\; &amp; \ge b\\ \, &amp; M\cdot\left(1-x\right)\; &amp; &#43;c\; &amp; \ge d\\ \, &amp; \, &amp; x\; &amp; \in\left\{ 0,1\right\} \end{alignedat} \] where \(M \gt 0\) is big (depending on the specific context as we&rsquo;ll see later).">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Intersection test and optimal allocation of 2D axis-aligned boxes using linear programming</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-01-20T09:31:00-08:00">January 20, 2014</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>(function () { var script = document.createElement(&ldquo;script&rdquo;); script.type = &ldquo;text/javascript&rdquo;; script.src = &ldquo;<a href="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML">http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML</a>_HTMLorMML&rdquo;; document.getElementsByTagName(&ldquo;head&rdquo;)[0].appendChild(script); })(); <strong>Either-or trick</strong><br>
+In this solution, we will make use of the either-or trick. The constraints in a program are all in <em>and</em>, but we want some of them to be in <em>or</em>.<br>
+Consider the following logic formula: \(a\ge b\vee c\ge d\). It can be written with the following <em>and</em> constraints: \[ \begin{alignedat}{2}\, &amp; M\cdot x\; &amp; +a\; &amp; \ge b\\ \, &amp; M\cdot\left(1-x\right)\; &amp; +c\; &amp; \ge d\\ \, &amp; \, &amp; x\; &amp; \in\left\{ 0,1\right\} \end{alignedat} \] where \(M \gt 0\) is big (depending on the specific context as we&rsquo;ll see later).<br>
+When \(x=0\), then \(a \ge b\) must hold, while the second constraint is always satisfied. When \(x=1\), then \(c \ge d\) must hold, while the first constraint is always satisfied.<br>
+In other words, either one of the two constraint must hold for a given value of \(x\). If neither do, then the original <em>or</em> formula is not satisfied.</p>
+<p><strong>Empty intersection test</strong><br>
+Given two AABB boxes \(i,j\) at position \(x_i,y_i\) and \(x_j,y_j\) with size \(w_i,h_i\) and \(w_j,h_j\) respectively, we want to constraint our program such that their intersection is empty.<br>
+This can be expressed with the following logic formula:<br>
+\[ \left(x_{i}\ge x_{j}+w_{j}\vee x_{j}\ge x_{i}+w_{i}\right)\vee\left(y_{i}\ge y_{j}+h_{j}\vee y_{j}\ge y_{i}+h_{i}\right) \]<br>
+We can encode the above expression with 3 either-or tricks using 3 binary variables:<br>
+\[ \begin{alignedat}{3}\; &amp; M\cdot b_{1}\; &amp; \, &amp; +M\cdot b_{3} &amp; +x_{i}\; &amp; \ge x_{j}+w_{j}\\ \; &amp; M\cdot\left(1-b_{1}\right)\; &amp; \, &amp; +M\cdot b_{3} &amp; +x_{j}\; &amp; \ge x_{i}+w_{i}\\ \; &amp; M\cdot b_{2}\; &amp; \, &amp; +M\cdot\left(1-b_{3}\right) &amp; +y_{i}\; &amp; \ge y_{j}+w_{j}\\ \; &amp; M\cdot\left(1-b_{2}\right)\; &amp; \, &amp; +M\cdot\left(1-b_{3}\right) &amp; +y_{j}\; &amp; \ge y_{i}+w_{i}\\ \, &amp; \, &amp; \, &amp; \; &amp; b_{1},b_{2},b_{3}\; &amp; \in\left\{ 0,1\right\} \end{alignedat} \] <strong>Real problem</strong><br>
+Given a fixed area of size \((cols)\times(rows)\) and a set of boxes with fixed width \(w_i\) for each \(i=1..n\) (where \(n\) is the number of boxes), find the optimal allocation \(x_i, y_i, h_i\) for each box \(i=1..n\) such that we cover all the area and maximize the size of the boxes fairly.<br>
+To achieve fair allocation we choose to maximize the minimum height of the boxes. For example, if we had an area of size \(5\times100\), and two boxes of width \(5\) each, we prefer them to have height \(50\) and \(50\) respectively, rather than \(1\) and \(99\).</p>
+<p>This problem can be encoded as follows: \[ max\; minh+C\cdot{\displaystyle \sum_{i=1}^{n}h_{i}} \] \[ subject\;to: \] \begin{equation} \forall i=1..n:\; minh\leq h_{i} \end{equation}<br>
+\[ \forall i=1..n-1,\, j=i+1..n: \] \begin{equation} \begin{alignedat}{3}\; &amp; M\cdot b_{1}^{\left(ij\right)}\; &amp; \, &amp; +M\cdot b_{3}^{\left(ij\right)} &amp; +x_{i}\; &amp; \ge x_{j}+w_{j}\\ \; &amp; M\cdot\left(1-b_{1}^{\left(ij\right)}\right)\; &amp; \, &amp; +M\cdot b_{3}^{\left(ij\right)} &amp; +x_{j}\; &amp; \ge x_{i}+w_{i}\\ \; &amp; M\cdot b_{2}^{\left(ij\right)}\; &amp; \, &amp; +M\cdot\left(1-b_{3}^{\left(ij\right)}\right) &amp; +y_{i}\; &amp; \ge y_{j}+w_{j}\\ \; &amp; M\cdot\left(1-b_{2}^{\left(ij\right)}\right)\; &amp; \, &amp; +M\cdot\left(1-b_{3}^{\left(ij\right)}\right) &amp; +y_{j}\; &amp; \ge y_{i}+w_{i}\\ \, &amp; \, &amp; \, &amp; \; &amp; b_{1}^{\left(ij\right)},b_{2}^{\left(ij\right)},b_{3}^{\left(ij\right)}\; &amp; \in\left\{ 0,1\right\} \end{alignedat} \end{equation}<br>
+\[ \forall i=1..n: \] \begin{equation} \begin{alignedat}{1}x_{i}+w_{i}\; &amp; \le cols\\ y_{i}+h_{i}\; &amp; \leq rows\\ 0\leq x_{i}\; &amp; \leq cols-1\\ 0\leq y_{i}\; &amp; \leq rows-1\\ 1\leq h_{i}\; &amp; \leq rows \end{alignedat} \end{equation} Equation \((1)\) is used to get the minimum height of the boxes together with the objective function. Equations \((2)\) ensure that the boxes do not overlap. Equations \((3)\) ensure that the boxes don&rsquo;t lie outside of the allocation area.<br>
+In the objective function we also add a second component, which ensures that on equal \(minh\) we chose the allocation that fills the remaining space. This component must thus be \(&lt; 1\) to not bias the \(minh\) component.</p>
+<p>Now, what are the values of \(M\) and \(C\)? The constant \(M\) must be big enough to make an inequality always true, so:<br>
+\begin{gather*} \forall i,j:\; M\ge x_{j}+w_{j}-x_{i}\\ M\ge\max\left\{ x_{j}+w_{j}-x_{i}\right\} \\ M\ge\max\left\{ x_{j}+w_{j}\right\} -\min\left\{ x_{i}\right\} \\ M\ge cols \end{gather*} Since it must hold also for rows, \(M\ge\max\left\{ cols,rows\right\}\). The result is very intuitive if you look at the original inequalities. We can choose a value of \(M=cols+rows\).<br>
+The constant \(C\) instead must be such that: \begin{gather*} C\cdot{\displaystyle \sum_{i=1}^{n}h_{i}}&lt;1\\ C\cdot n\cdot\max\left\{ h_{i}\right\} &lt;1\\ C\cdot n\cdot rows&lt;1\\ C&lt;\frac{1}{n\cdot rows} \end{gather*} This result is also very intuitive. We can choose \(C=\frac{1}{2\cdot n\cdot rows}\) to avoid numerical instability.</p>
+<p><strong>Demonstration</strong><br>
+I&rsquo;ve prepared a GMPL program to allocate \(10\) boxes with width \(3,4,10,7,4,8,2,9,8,5\) in an area of \(10\,cols\times100\, rows\). GLPK does not converge, so you can limit the time to 1 second (or more) in order to get a feasible but suboptimal solution.<br>
+You can visualize the result in the screenshot below of the two solutions while running for 1 second and 5 second respectively. After 60 seconds the solution didn&rsquo;t improve.<br>
+Please note that there is no relationship between the colors of the two tests.</p>
+<p>image/svg+xml 1s 5s</p>
+<p>Relaxing the <em>integer</em> constraint on \(x,y,h,minh\) might also give you better solutions in less time.<br>
+You can download the gist below and run it as: glpsol &ndash;tmlim 5 -m aabb_alloc.mod:</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/glpk/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Glpk</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/geometry/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Geometry</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/linear-programming/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Linear Programming</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/milp/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Milp</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/problem-solving/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Problem Solving</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

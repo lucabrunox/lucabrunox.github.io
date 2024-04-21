@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maja on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/maja/</link>
+    <description>Recent content in Maja on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Dec 2010 10:42:00 -0800</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/maja/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maja - The Vala to Javascript compiler</title>
+      <link>https://lucabrun.github.io/2010/12/maja-vala-to-javascript-compiler.html</link>
+      <pubDate>Fri, 17 Dec 2010 10:42:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2010/12/maja-vala-to-javascript-compiler.html</guid>
+      <description>Hello,&#xA;I&amp;rsquo;ve just released the first version of Maja, the Vala to Javascript compiler. The mapping is not quite complete but you can do pretty much everything you could do with javascript directly. There are (still incomplete) bindings for the qooxdoo framework and the demo browser is being ported to vala successfully.&#xA;Maja can be used in any environments, not only web browsers.&#xA;Programming in Vala saves you from lots of type safety troubles (Javascript), lot of typing (Java) and the syntax is really enjoyable as it is quite close to the Javascript model.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+    
+      <link href="/tags/aptitude/index.xml" rel="alternate" type="application/rss+xml" title="Luca Bruno blog" />
+      <link href="/tags/aptitude/index.xml" rel="feed" type="application/rss+xml" title="Luca Bruno blog" />
+      
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/tags/aptitude/">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/tags/aptitude/">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Aptitude">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Aptitude">
+  <meta itemprop="dateModified" content="2011-02-19T13:17:00-08:00"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Aptitude">
+<meta name="twitter:description" content="">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Aptitude
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <article class="cf pa3 pa4-m pa4-l">
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links mid-gray">
+      <p>Below you will find pages that utilize the taxonomy term “Aptitude”</p>
+    </div>
+  </article>
+  <div class="mw8 center">
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2011/02/aptitude-string-for-downgradable.html" class="link black dim">
+        Aptitude string for downgradable packages
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Hello,
+I&rsquo;m lately doing some tests with Debian experimental packages thus I often upgrade some packages to experimental and downgrade them back to unstable.
+WARNING: Downgrading in Debian is not supported etc.
+aptitude search &#34;?narrow(?installed,?archive(experimental))&#34; -F %p|\\ sed &#39;s,\\(\[^ \]\*\\),\\1/unstable,&#39;|xargs echo This will give you a list of experimental packages installed on your system each concatenated with &ldquo;/unstable&rdquo;. The output can go straight to &ldquo;aptitude install&rdquo;. I don&rsquo;t directly use &ldquo;xargs aptitude install&rdquo; because it&rsquo;s not interactive.
+    </div>
+    <a href="/2011/02/aptitude-string-for-downgradable.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2010/03/tdpkg-and-some-news.html" class="link black dim">
+        Tdpkg troubleshooting and some news
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Hello,
+lately I&rsquo;ve received some feedback, thanks for this.
+Is it compatible with apt? Can I use dpkg back again after using tdpkg?
+The answer is&hellip; yes! You can use what you want in the order you want, and use tdpkg when you want. Take in consideration that after using dpkg (or apt) without tdpkg, then you use tdpkg the cache will be rebuilt for consistency.
+It&rsquo;s not working here (Ubuntu, other distro&hellip;), doesn&rsquo;t create the cache.
+    </div>
+    <a href="/2010/03/tdpkg-and-some-news.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2010/03/tdpkg-speed-up-reading-dpkg-database.html" class="link black dim">
+        Tdpkg 1.0 - speed up reading dpkg database
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Hello,
+you may have noticed that dpkg takes a long time reading the database the first time you run it (e.g. through apt). This is because of the huge number of /var/lib/dpkg/info/*.list files (1700+ on my desktop machines). It can take up to 14 seconds and more at cold start to install/remove a single package.
+Since 2007 in dpkg mailing list a first proposal (by Sean Finney) to using sqlite as cache has been posted, then a couple of weeks ago I reproposed it.
+    </div>
+    <a href="/2010/03/tdpkg-speed-up-reading-dpkg-database.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/12/aptitude-gtk-progress.html" class="link black dim">
+        Aptitude-gtk progress
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Hello,
+I was curious to see if aptitude-gtk was making some progress. I haven&rsquo;t followed the project since it&rsquo;s been merged into aptitude.
+Well, I found it more functional and complete. Here&rsquo;s a screenshot showing pending packages for upgrade after an update:
+From GNOME
+The team is definitely doing a good job. Hopefully I&rsquo;ll find the time to give some help as I&rsquo;m really interested in such full-featured GUI frontend.
+    </div>
+    <a href="/2008/12/aptitude-gtk-progress.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+  </div>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

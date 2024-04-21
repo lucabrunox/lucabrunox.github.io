@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/golang/</link>
+    <description>Recent content in Golang on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Feb 2015 03:33:00 -0800</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Developing in golang with Nix package manager</title>
+      <link>https://lucabrun.github.io/2015/02/developing-in-golang-with-nix-package.html</link>
+      <pubDate>Sun, 08 Feb 2015 03:33:00 -0800</pubDate>
+      <guid>https://lucabrun.github.io/2015/02/developing-in-golang-with-nix-package.html</guid>
+      <description>I&amp;rsquo;ve been using Go since several months. It&amp;rsquo;s a pleasant language, even though it has its own drawbacks.&#xA;In our Nixpkgs repository we have support for several programming languages: perl, python, ruby, haskell, lua, &amp;hellip; We&amp;rsquo;ve merged a better support for Go.&#xA;What kind of support are we talking about? In Nix, you never install libraries. Instead, you define an environment in which to use a certain library compiled for a certain version of the language.</description>
+    </item>
+  </channel>
+</rss>

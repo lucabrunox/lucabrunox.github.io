@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/emacs/</link>
+    <description>Recent content in Emacs on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 May 2014 00:47:00 -0700</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Grep in git with emacs</title>
+      <link>https://lucabrun.github.io/2014/05/grep-in-git-with-emacs.html</link>
+      <pubDate>Wed, 21 May 2014 00:47:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2014/05/grep-in-git-with-emacs.html</guid>
+      <description>I&amp;rsquo;m sure you&amp;rsquo;re aware of vc-git-grep command in Emacs, but it has a downside: you must specify the file extension every time, and it&amp;rsquo;s case-sensitive.&#xA;I propose you an alternative vc-git-grep2 that is case-insensitive and only requires the directory in which to start the search.&#xA;(defun vc-git-grep2 (regexp dir) (interactive (progn (grep-compute-defaults) (cond ((equal current-prefix-arg &amp;#39;(16)) (list (read-from-minibuffer &amp;#34;Run: &amp;#34; &amp;#34;git grep&amp;#34; nil nil &amp;#39;grep-history) nil)) (t (let\* ((regexp (grep-read-regexp)) (dir (read-directory-name &amp;#34;In directory: &amp;#34; nil default-directory t))) (list regexp dir)))))) (require &amp;#39;grep) (when (and (stringp regexp) (\&amp;gt; (length regexp) 0)) (let ((command regexp)) (if (\&amp;gt; 4 5) (if (string\= command &amp;#34;git grep&amp;#34;) (setq command nil)) (setq dir (file-name-as-directory (expand-file-name dir))) (setq command (grep-expand-template &amp;#34;git grep -n -i -e &amp;lt;R&amp;gt;&amp;#34; regexp)) (when command (if (equal current-prefix-arg &amp;#39;(4)) (setq command (read-from-minibuffer &amp;#34;Confirm: &amp;#34; command nil nil &amp;#39;grep-history)) (add-to-history &amp;#39;grep-history command)))) (when command (let ((default-directory dir) (compilation-environment &amp;#39;(&amp;#34;PAGER=&amp;#34;))) ;; Setting process-setup-function makes exit-message-function work ;; even when async processes aren&amp;#39;t supported.</description>
+    </item>
+    <item>
+      <title>Why I&#39;m still using Emacs</title>
+      <link>https://lucabrun.github.io/2011/07/why-im-still-using-emacs.html</link>
+      <pubDate>Tue, 05 Jul 2011 03:29:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2011/07/why-im-still-using-emacs.html</guid>
+      <description>Hello,&#xA;I&amp;rsquo;m using emacs since a long time by now. Everytime I ask myself why I&amp;rsquo;m using it, given emacs certainly isn&amp;rsquo;t the easiest environment for programming. So, I often tried to replace emacs with other IDEs or editors, using several extensions and so on, but I still miss these killer features in a single editor:&#xA;Pressing a key (whatever it is, TAB in emacs) correctly/smartly indent the row according to the current language.</description>
+    </item>
+  </channel>
+</rss>

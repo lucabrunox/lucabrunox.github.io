@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Controlling audio volume in Awesome WM | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="I use awesome on my eeepc because it&rsquo;s much space and resource saving.
+There are several possibilities for controlling volume in the Awesome window manager.
+Today I&rsquo;d like to share my way of doing it: using amixer for controlling the volume, and naughty for notifying the user.
+Start by defining the following in your rc.lua (source discussion here):
+volnotify = {}
+volnotify.id = nil
+function volnotify:notify (msg)
+self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2013/03/controlling-audio-volume-in-awesome-wm.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2013/03/controlling-audio-volume-in-awesome-wm.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Controlling audio volume in Awesome WM">
+  <meta property="og:description" content="I use awesome on my eeepc because it&amp;rsquo;s much space and resource saving.
+There are several possibilities for controlling volume in the Awesome window manager.
+Today I&amp;rsquo;d like to share my way of doing it: using amixer for controlling the volume, and naughty for notifying the user.
+Start by defining the following in your rc.lua (source discussion here):
+volnotify = {}
+volnotify.id = nil
+function volnotify:notify (msg)
+self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2013-03-24T13:15:00-07:00">
+    <meta property="article:modified_time" content="2013-03-24T13:15:00-07:00">
+    <meta property="article:tag" content="Awesome">
+    <meta property="article:tag" content="Audio">
+    <meta property="article:tag" content="Desktop">
+
+  <meta itemprop="name" content="Controlling audio volume in Awesome WM">
+  <meta itemprop="description" content="I use awesome on my eeepc because it&rsquo;s much space and resource saving.
+There are several possibilities for controlling volume in the Awesome window manager.
+Today I&rsquo;d like to share my way of doing it: using amixer for controlling the volume, and naughty for notifying the user.
+Start by defining the following in your rc.lua (source discussion here):
+volnotify = {}
+volnotify.id = nil
+function volnotify:notify (msg)
+self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self.">
+  <meta itemprop="datePublished" content="2013-03-24T13:15:00-07:00">
+  <meta itemprop="dateModified" content="2013-03-24T13:15:00-07:00">
+  <meta itemprop="wordCount" content="303">
+  <meta itemprop="keywords" content="Awesome,Audio,Desktop"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Controlling audio volume in Awesome WM">
+<meta name="twitter:description" content="I use awesome on my eeepc because it&rsquo;s much space and resource saving.
+There are several possibilities for controlling volume in the Awesome window manager.
+Today I&rsquo;d like to share my way of doing it: using amixer for controlling the volume, and naughty for notifying the user.
+Start by defining the following in your rc.lua (source discussion here):
+volnotify = {}
+volnotify.id = nil
+function volnotify:notify (msg)
+self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Controlling audio volume in Awesome WM</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2013-03-24T13:15:00-07:00">March 24, 2013</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I use awesome on my eeepc because it&rsquo;s much space and resource saving.<br>
+There are several possibilities for controlling volume in the <a href="http://awesome.naquadah.org/">Awesome window manager</a>.<br>
+Today I&rsquo;d like to share my way of doing it: using amixer for controlling the volume, and <a href="http://awesome.naquadah.org/wiki/Naughty">naughty</a> for notifying the user.</p>
+<p>Start by defining the following in your rc.lua (<a href="http://comments.gmane.org/gmane.comp.window-managers.awesome/7577">source discussion here</a>):</p>
+<p>volnotify = {}<br>
+volnotify.id = nil<br>
+function volnotify:notify (msg)<br>
+    self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self.id}).id<br>
+end</p>
+<p>We use naughty for notifying the user instead of notify-send because of the &ldquo;replaces_id&rdquo; feature. It&rsquo;s used to replace an old notification with a new one. This is useful when you keep increasing the volume so that you only get one notification instead of stacking them up.<br>
+So the purpose of this code is to keep track of the id returned by naughty on each invocation, so that we can pass it to the next invocation.</p>
+<p>function volume(incdec)<br>
+    awful.util.spawn_with_shell (&ldquo;vol=$(amixer set Master 5%&rdquo; .. incdec .. &ldquo;|tail -1|cut -d % -f 1|cut -d &lsquo;[&rsquo; -f 2) &amp;&amp; echo \\\&ldquo;volnotify:notify(&lsquo;Volume $vol%&rsquo;)\\\&quot;|awesome-client -&rdquo;, false)<br>
+end</p>
+<p>function togglemute()<br>
+    awful.util.spawn_with_shell(&ldquo;vol=$(amixer set Master toggle|tail -n 1|cut -d &lsquo;[&rsquo; -f 3|cut -d &lsquo;]&rsquo; -f 1) &amp;&amp; echo \\\&ldquo;volnotify:notify(&lsquo;Volume $vol&rsquo;)\\\&quot;|awesome-client -&rdquo;, false)<br>
+end</p>
+<p>The first function is used to increase or decrease the volume. It accepts an argument of value either &ldquo;+&rdquo; or &ldquo;-&rdquo;, then changes the master volume accordingly and finally displays a notification with the new volume.<br>
+The second function will toggle the mute state of the volume in a similar manner.</p>
+<p>We are going to call these two functions whenever the user hits the media keys by binding new global keys as follows:</p>
+<p>globalkeys = awful.util.table.join (globalkeys,<br>
+    awful.key({}, &ldquo;XF86AudioMute&rdquo;, togglemute),<br>
+    awful.key({}, &ldquo;XF86AudioLowerVolume&rdquo;, function() volume(&rdquo;-&rdquo;) end),<br>
+    awful.key({}, &ldquo;XF86AudioRaiseVolume&rdquo;, function() volume(&quot;+&quot;) end)<br>
+)</p>
+<p>Restart with Mod+Ctrl+R and that&rsquo;s it!</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/awesome/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Awesome</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/audio/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Audio</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/desktop/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Desktop</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2011/06/writing-binary-files-with-bash.html">Writing binary files with bash</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2009/02/awesomeother-wrong-keyboard-layout.html">Awesome/other wrong keyboard layout</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

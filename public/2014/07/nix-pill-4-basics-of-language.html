@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Nix pill 4: the basics of the language | Luca Bruno blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Welcome to the fourth Nix pill. In the previous third pill we entered the Nix environment. We installed software as user, managed the profile, switched between generations, and queried the nix store. That&rsquo;s the very basics of nix administration somehow.
+The Nix language is used to write derivations. The nix-build tool is used to build derivations. Even as a system administrator that wants to customize the installation, it&rsquo;s necessary to master Nix.">
+    <meta name="generator" content="Hugo 0.125.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lucabrun.github.io/2014/07/nix-pill-4-basics-of-language.html">
+    
+
+    <meta property="og:url" content="https://lucabrun.github.io/2014/07/nix-pill-4-basics-of-language.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Nix pill 4: the basics of the language">
+  <meta property="og:description" content="Welcome to the fourth Nix pill. In the previous third pill we entered the Nix environment. We installed software as user, managed the profile, switched between generations, and queried the nix store. That&amp;rsquo;s the very basics of nix administration somehow.
+The Nix language is used to write derivations. The nix-build tool is used to build derivations. Even as a system administrator that wants to customize the installation, it&amp;rsquo;s necessary to master Nix.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-07-26T10:52:00-07:00">
+    <meta property="article:modified_time" content="2014-07-26T10:52:00-07:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixpills">
+    <meta property="article:tag" content="Nixos">
+
+  <meta itemprop="name" content="Nix pill 4: the basics of the language">
+  <meta itemprop="description" content="Welcome to the fourth Nix pill. In the previous third pill we entered the Nix environment. We installed software as user, managed the profile, switched between generations, and queried the nix store. That&rsquo;s the very basics of nix administration somehow.
+The Nix language is used to write derivations. The nix-build tool is used to build derivations. Even as a system administrator that wants to customize the installation, it&rsquo;s necessary to master Nix.">
+  <meta itemprop="datePublished" content="2014-07-26T10:52:00-07:00">
+  <meta itemprop="dateModified" content="2014-07-26T10:52:00-07:00">
+  <meta itemprop="wordCount" content="1480">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 4: the basics of the language">
+<meta name="twitter:description" content="Welcome to the fourth Nix pill. In the previous third pill we entered the Nix environment. We installed software as user, managed the profile, switched between generations, and queried the nix store. That&rsquo;s the very basics of nix administration somehow.
+The Nix language is used to write derivations. The nix-build tool is used to build derivations. Even as a system administrator that wants to customize the installation, it&rsquo;s necessary to master Nix.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Luca Bruno blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Nix pill 4: the basics of the language</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-07-26T10:52:00-07:00">July 26, 2014</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Welcome to the fourth Nix pill. In the previous <a href="http://lethalman.blogspot.it/2014/07/nix-pill-3-enter-environment.html">third pill</a> we entered the Nix environment. We installed software as user, managed the profile, switched between generations, and queried the nix store. That&rsquo;s the very basics of nix administration somehow.</p>
+<p>The <a href="http://nixos.org/nix/manual/#chap-writing-nix-expressions">Nix language</a> is used to write derivations. The <a href="http://nixos.org/nix/manual/#sec-nix-build">nix-build</a> tool is used to build derivations. Even as a system administrator that wants to customize the installation, it&rsquo;s necessary to master Nix. Using Nix for your jobs means you get the features we saw in the previous pills for free.</p>
+<p>The syntax is very uncommon thus looking at existing examples may lead to thinking that there&rsquo;s a lot of magic behind. In reality, it&rsquo;s only about writing utility functions for making things convenient.<br>
+On the other hand, this same syntax is great for describing packages.</p>
+<p>Important: in Nix, everything is an expression, there are no statements. This is common to many functional languages.<br>
+Important: values in Nix are immutable.</p>
+<h3 id="value-types">Value types</h3>
+<p>We&rsquo;ve installed nix-repl in the previous pill. If you didn&rsquo;t, nix-env -i nix-repl. The nix-repl syntax is slightly different than nix syntax when it comes to assigning variables, but no worries.  I prefer playing with nix-repl with you before cluttering your mind with more complex expressions.</p>
+<p>Launch nix-repl. First of all, nix supports basic arithmetic operations: +, -, and *. The integer division can be done with builtins.div.</p>
+<pre tabindex="0"><code>nix-repl&gt; 1+3
+4
+nix-repl&gt; builtins.div 6 3
+2
+</code></pre><p>Really, why doesn&rsquo;t nix have basic operations such as division? Because it&rsquo;s not needed for creating packages. Nix is not a general purpose language, it&rsquo;s a domain-specific language for writing packages.</p>
+<p>Just think that builtins.div is not being used in the whole of our <a href="https://github.com/NixOS/nixpkgs/">nixpkgs repository</a>: it&rsquo;s useless.</p>
+<p>Other operators are ||, &amp;&amp; and ! for booleans, and relational operators such as !=, ==, &lt;, &gt;, &lt;=, &gt;=. In Nix, &lt;, &gt;, &lt;= and &gt;= are not much used. There are also <a href="http://nixos.org/nix/manual/#table-operators">other operators</a> we will see in the course of this series.</p>
+<p>Nix has integer (not floating point), string, path, boolean and null <a href="http://nixos.org/nix/manual/#ssec-values">simple types</a>. Then there are lists, sets and functions. These types are enough to build an operating system.</p>
+<p>Nix is strongly typed, but it&rsquo;s not statically typed. That is, you cannot mix strings and integers, you must first do the conversion. </p>
+<p>Try to use / between two numbers:</p>
+<pre tabindex="0"><code>nix-repl&gt; 2/3
+/home/nix/2/3
+</code></pre><p>Nix parsed 2/3 as a relative path to the current directory. Paths are parsed as long as there&rsquo;s a slash. Therefore to specify the current directory, use ./.</p>
+<p>In addition, Nix also parses urls.</p>
+<p>Not all urls or paths can be parsed this way. If a syntax error occurs, it&rsquo;s still possible to fallback to plain strings. Parsing urls and paths are convenient for additional safety.</p>
+<h3 id="identifiers">Identifiers</h3>
+<p>Not much to say, except that dash (-) is allowed in identifiers. That&rsquo;s convenient since many packages use dash in its name. In fact:</p>
+<pre tabindex="0"><code>nix-repl&gt; a-b
+error: undefined variable \`a-b&#39; at (string):1:1
+nix-repl&gt; a - b
+error: undefined variable \`a&#39; at (string):1:1
+</code></pre><p>As you can see, a-b is parsed as identifier, not as operation between a and b.</p>
+<h3 id="strings">Strings</h3>
+<p>It&rsquo;s important to understand the syntax for strings. When reading Nix expressions at the beginning, you may find dollars ($) ambiguous in their usage.</p>
+<p>Strings are enclosed by double quotes (&quot;), or two single quotes (&rsquo;&rsquo;).</p>
+<pre tabindex="0"><code>nix-repl&gt; &#34;foo&#34;
+&#34;foo&#34;
+nix-repl&gt; &#39;&#39;foo&#39;&#39;
+&#34;foo&#34;
+</code></pre><p>In python you can use also single quotes for strings like &lsquo;foo&rsquo;, but not in Nix.</p>
+<p>It&rsquo;s possible to <a href="http://nixos.org/nix/manual/#ssec-values">interpolate</a> whole Nix expressions inside strings with ${&hellip;} and only with ${&hellip;}, not $foo or {$foo} or anything else.</p>
+<pre tabindex="0"><code>nix-repl&gt; foo = &#34;strval&#34;
+nix-repl&gt; &#34;$foo&#34;
+&#34;$foo&#34;
+nix-repl&gt; &#34;${foo}&#34;
+&#34;strval&#34;
+nix-repl&gt; &#34;${2+3}&#34;
+error: cannot coerce an integer to a string, at (string):1:2
+</code></pre><p>Note: ignore the foo = &ldquo;strval&rdquo; assignment, it&rsquo;s nix-repl special syntax.</p>
+<p>As said previously, you cannot mix integers and strings. You explicitly need conversion. We&rsquo;ll see this later: function calls are another story.</p>
+<p>Using the syntax with two single quotes, it&rsquo;s useful for writing double quotes inside strings instead of escaping:</p>
+<pre tabindex="0"><code>nix-repl&gt; &#39;&#39;test &#34; test&#39;&#39;
+&#34;test \\&#34; test&#34;
+nix-repl&gt; &#39;&#39;${foo}&#39;&#39;
+&#34;strval&#34;
+</code></pre><p>Escaping ${&hellip;} within double quoted strings is done with the backslash. Within two single quotes, it&rsquo;s done with &lsquo;&rsquo;:</p>
+<pre tabindex="0"><code>nix-repl&gt; &#34;\\${foo}&#34;
+&#34;${foo}&#34;
+nix-repl&gt; &#39;&#39;test &#39;&#39;${foo} test&#39;&#39;
+&#34;test ${foo} test&#34;
+</code></pre><p>No other magic about strings for now.</p>
+<h3 id="lists">Lists</h3>
+<p>Lists are a sequence of expressions delimited by space (not comma):</p>
+<pre tabindex="0"><code>nix-repl&gt; \[ 2 &#34;foo&#34; true (2+3) \]
+\[ 2 &#34;foo&#34; true 5 \]
+</code></pre><p>Lists, like anything else in Nix, are immutable. Adding or removing elements from a list is possible, but will return a new list.</p>
+<h3 id="sets">Sets</h3>
+<p>Sets are an association between a string key and a Nix expression. Keys can only be strings. When writing sets you can also use identifiers as keys.</p>
+<pre tabindex="0"><code>nix-repl&gt; s = { foo = &#34;bar&#34;; a-b = &#34;baz&#34;; &#34;123&#34; = &#34;num&#34;; }
+nix-repl&gt; s
+{ 123 = &#34;num&#34;; a-b = &#34;baz&#34;; foo = &#34;bar&#34;; }
+</code></pre><p>Note: here the string representation from nix is wrong, you can&rsquo;t write { 123 = &ldquo;num&rdquo;; } because 123 is not an identifier.</p>
+<p>You need semicomma (;) after every key-value assignment.</p>
+<p>For those reading Nix expressions from nixpkgs: do not confuse sets with argument sets used in functions.</p>
+<p>To access elements in the set:</p>
+<pre tabindex="0"><code>nix-repl&gt; s.a-b
+&#34;baz&#34;
+nix-repl&gt; s.&#34;123&#34;
+&#34;num&#34;
+</code></pre><p>Yes, you can use strings for non-identifiers to address keys in the set.</p>
+<p>You cannot refer inside a set to elements of the same set:</p>
+<pre tabindex="0"><code>nix-repl&gt; { a = 3; b = a+4; }
+error: undefined variable \`a&#39; at (string):1:10
+</code></pre><p>To do so, use <a href="http://nixos.org/nix/manual/#idm47361539166560">recursive sets</a>:</p>
+<pre tabindex="0"><code>nix-repl&gt; rec { a= 3; b = a+4; }
+{ a = 3; b = 7; }
+</code></pre><p>This will be very convenient when defining packages.</p>
+<h3 id="if-expression">If expression</h3>
+<p>Expressions, not statements.</p>
+<pre tabindex="0"><code>nix-repl&gt; a = 3
+nix-repl&gt; b = 4
+nix-repl&gt; if a &gt; b then &#34;yes&#34; else &#34;no&#34;
+&#34;no&#34;
+</code></pre><p>You can&rsquo;t have only the &ldquo;then&rdquo; branch, you must specify also the &ldquo;else&rdquo; branch, because an expression must have a value in all cases.</p>
+<h3 id="let-expression">Let expression</h3>
+<p>This kind of expression is used to define local variables to inner expressions.</p>
+<pre tabindex="0"><code>nix-repl&gt; let a = &#34;foo&#34;; in a
+&#34;foo&#34;
+</code></pre><p>The syntax is: first assign variables, then &ldquo;in&rdquo; expression. The overall result will be the final expression after &ldquo;in&rdquo;.</p>
+<pre tabindex="0"><code>nix-repl&gt; let a = 3; b = 4; in a + b
+7
+</code></pre><p>Let&rsquo;s write two let expressions, one inside the other:</p>
+<pre tabindex="0"><code>nix-repl&gt; let a = 3; in let b = 4; in a + b
+7
+</code></pre><p>With let you cannot assign twice to the same variable. You can however shadow outer variables:</p>
+<pre tabindex="0"><code>nix-repl&gt; let a = 3; a = 8; in a
+error: attribute \`a&#39; at (string):1:12 already defined at (string):1:5
+nix-repl&gt; let a = 3; in let a = 8; in a
+8
+</code></pre><p>You cannot refer to variables in a let expression outside of it:</p>
+<pre tabindex="0"><code>nix-repl&gt; let a = (let b = 3; in b); in b
+error: undefined variable \`b&#39; at (string):1:31
+</code></pre><p>You can refer to variables in the let expression when assigning variables like with recursive sets:</p>
+<pre tabindex="0"><code>nix-repl&gt; let a = 4; b = a + 5; in b
+9
+</code></pre><p>So beware when you want to refer to a variable from the outer scope, but it&rsquo;s being defined in the current let expression. Same applies to recursive sets.</p>
+<h3 id="with-expression">With expression</h3>
+<p>This kind of expression is something you hardly see in other languages. Think of it like a more granular &ldquo;using&rdquo; of C++, or &ldquo;from module import *&rdquo; from Python. You decide per-expression when to include symbols into the scope.</p>
+<pre tabindex="0"><code>nix-repl&gt; longName = { a = 3; b = 4; }
+nix-repl&gt; longName.a + longName.b
+7
+nix-repl&gt; with longName; a + b
+7
+</code></pre><p>That&rsquo;s it, it takes a set and includes symbols in the scope of the inner expression. Of course, only valid identifiers from the set keys will be included.</p>
+<p>If a symbol exists in the outer scope and also in the &ldquo;with&rdquo; scope, it will <strong>not</strong> be shadowed. You can however still refer to the set:</p>
+<pre tabindex="0"><code>nix-repl&gt; let a = 10; in with longName; a + b
+14
+nix-repl&gt; let a = 10; in with longName; longName.a + b
+7
+</code></pre><h3 id="laziness">Laziness</h3>
+<p>Nix evaluates expression only <a href="http://en.wikipedia.org/wiki/Lazy_evaluation">when needed</a>. This is a great feature when working with packages.</p>
+<pre tabindex="0"><code>nix-repl&gt; let a = builtins.div 4 0; b = 6; in b
+6
+</code></pre><p>Since &ldquo;a&rdquo; is not needed, there&rsquo;s no error about division by zero, because the expression is not in need to be evaluated.</p>
+<p>That&rsquo;s why we can have all the packages <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/top-level/all-packages.nix">defined here</a>, yet access to specific packages very fast.</p>
+<h3 id="next-pill">Next pill</h3>
+<p>&hellip;we will talk about functions and imports. In this pill I&rsquo;ve tried to avoid function calls as much as possible, otherwise the post would have been too long.</p>
+<p>Nix pill 5 is available for <a href="http://lethalman.blogspot.it/2014/07/nix-pill-5-functions-and-imports.html">reading here</a>.</p>
+<p>To be notified about the new pill, stay tuned on <a href="https://twitter.com/search?src=typd&amp;q=%23NixPills">#NixPills</a>, follow <a href="https://twitter.com/lethalman">@lethalman</a> or subscribe to the <a href="http://lethalman.blogspot.com/feeds/posts/default/-/nixpills">nixpills rss</a>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixpills/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpills</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-3-enter-environment.html">Nix pill 3: enter the environment</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-2-install-on-your-running.html">Nix pill 2: install on your running system</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/nix-pill-1-why-you-should-give-it-try.html">Nix pill 1: why you should give it a try</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html">Debugging and fixing a wmctrl bug in NixOS</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
+    &copy;  Luca Bruno blog 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

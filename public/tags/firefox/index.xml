@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firefox on Luca Bruno blog</title>
+    <link>https://lucabrun.github.io/tags/firefox/</link>
+    <description>Recent content in Firefox on Luca Bruno blog</description>
+    <generator>Hugo 0.125.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Jul 2011 09:13:00 -0700</lastBuildDate>
+    <atom:link href="https://lucabrun.github.io/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Give my luck back, Firefox 5!</title>
+      <link>https://lucabrun.github.io/2011/07/dear-firefox-5.html</link>
+      <pubDate>Sat, 23 Jul 2011 09:13:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2011/07/dear-firefox-5.html</guid>
+      <description>Today I&amp;rsquo;ve upgraded to firefox 5, special thanks to Debian developer for packaging it. So far, everything works well and better than before, except two things (one of which I managed to tweak):&#xA;The tabs bar is higher than before. This means that the mouse must move more to reach them. This has been solved. Thanks for allowing me to put the tabs bar below back again.&#xA;The address bar no more involves &amp;ldquo;I feel lucky&amp;rdquo; search.</description>
+    </item>
+    <item>
+      <title>Enforce facebook chat through SSL</title>
+      <link>https://lucabrun.github.io/2011/05/enforce-facebook-chat-through-ssl.html</link>
+      <pubDate>Sun, 22 May 2011 14:59:00 -0700</pubDate>
+      <guid>https://lucabrun.github.io/2011/05/enforce-facebook-chat-through-ssl.html</guid>
+      <description>Hello,&#xA;since a few days facebook is supporting SSL for the chat. The problem is that it can&amp;rsquo;t be enabled.&#xA;Until facebook enables this you can use the SSLGuard plugin for firefox, which enforces SSL for a list of web sites, including all facebook pages and the chat as well.&#xA;We have some good ideas for sslguard that we&amp;rsquo;d like to get in for the next releases&amp;hellip; stay tuned.</description>
+    </item>
+  </channel>
+</rss>
