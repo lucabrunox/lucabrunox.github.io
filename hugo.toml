@@ -1,5 +1,6 @@
 baseURL = 'https://lucabrun.github.io/'
 languageCode = 'en-us'
 title = 'Luca Bruno blog'
-theme = "ananke"
 publishDir = "docs"
+theme = "ananke"
+
