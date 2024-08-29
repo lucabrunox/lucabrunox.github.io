@@ -2,150 +2,150 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Debian on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/debian/</link>
+    <link>https://lucabrunox.github.io/tags/debian/</link>
     <description>Recent content in Debian on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 Nov 2012 01:57:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/debian/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Code Search is dead. Long live Code Search!</title>
-      <link>https://lucabrun.github.io/2012/11/code-search-is-dead-long-live-code.html</link>
+      <link>https://lucabrunox.github.io/2012/11/code-search-is-dead-long-live-code.html</link>
       <pubDate>Sun, 11 Nov 2012 01:57:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2012/11/code-search-is-dead-long-live-code.html</guid>
+      <guid>https://lucabrunox.github.io/2012/11/code-search-is-dead-long-live-code.html</guid>
       <description>I&amp;rsquo;m bumping a breaking news from debian.net: Introducing codesearch.debian.net, a regexp code search engine&#xA;The days of google codesearch are ended since a while, but now we have an up-to-date and open source debian codesearch.&#xA;(from the about page):&#xA;It searches all the open source projects which are included in the Debian archive (the &amp;ldquo;main&amp;rdquo; distribution only, not non-free or contrib). Currently, that includes about 18000 packages with 140 GiB of source code.</description>
     </item>
     <item>
       <title>Give my luck back, Firefox 5!</title>
-      <link>https://lucabrun.github.io/2011/07/dear-firefox-5.html</link>
+      <link>https://lucabrunox.github.io/2011/07/dear-firefox-5.html</link>
       <pubDate>Sat, 23 Jul 2011 09:13:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2011/07/dear-firefox-5.html</guid>
+      <guid>https://lucabrunox.github.io/2011/07/dear-firefox-5.html</guid>
       <description>Today I&amp;rsquo;ve upgraded to firefox 5, special thanks to Debian developer for packaging it. So far, everything works well and better than before, except two things (one of which I managed to tweak):&#xA;The tabs bar is higher than before. This means that the mouse must move more to reach them. This has been solved. Thanks for allowing me to put the tabs bar below back again.&#xA;The address bar no more involves &amp;ldquo;I feel lucky&amp;rdquo; search.</description>
     </item>
     <item>
       <title>Complete variables with cd command in bash</title>
-      <link>https://lucabrun.github.io/2011/05/complete-variables-with-cd-command-in.html</link>
+      <link>https://lucabrunox.github.io/2011/05/complete-variables-with-cd-command-in.html</link>
       <pubDate>Fri, 27 May 2011 05:51:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2011/05/complete-variables-with-cd-command-in.html</guid>
+      <guid>https://lucabrunox.github.io/2011/05/complete-variables-with-cd-command-in.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;ve been searching for a way to complete variables containing directories with the &amp;ldquo;cd&amp;rdquo; command in bash. This is very helpful if you have something like &amp;ldquo;cd $mydir/&amp;rdquo;. This is not actually working in debian bash-completion.&#xA;Then I&amp;rsquo;ve realized that other commands such as &amp;ldquo;ls&amp;rdquo; actually expand variables. I looked for some &amp;ldquo;complete&amp;rdquo; combo used for &amp;ldquo;ls&amp;rdquo; but not for &amp;ldquo;cd&amp;rdquo; in /etc/bash_completion and I came out with the following:</description>
     </item>
     <item>
       <title>Aptitude string for downgradable packages</title>
-      <link>https://lucabrun.github.io/2011/02/aptitude-string-for-downgradable.html</link>
+      <link>https://lucabrunox.github.io/2011/02/aptitude-string-for-downgradable.html</link>
       <pubDate>Sat, 19 Feb 2011 13:17:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2011/02/aptitude-string-for-downgradable.html</guid>
+      <guid>https://lucabrunox.github.io/2011/02/aptitude-string-for-downgradable.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m lately doing some tests with Debian experimental packages thus I often upgrade some packages to experimental and downgrade them back to unstable.&#xA;WARNING: Downgrading in Debian is not supported etc.&#xA;aptitude search &amp;#34;?narrow(?installed,?archive(experimental))&amp;#34; -F %p|\\ sed &amp;#39;s,\\(\[^ \]\*\\),\\1/unstable,&amp;#39;|xargs echo This will give you a list of experimental packages installed on your system each concatenated with &amp;ldquo;/unstable&amp;rdquo;. The output can go straight to &amp;ldquo;aptitude install&amp;rdquo;. I don&amp;rsquo;t directly use &amp;ldquo;xargs aptitude install&amp;rdquo; because it&amp;rsquo;s not interactive.</description>
     </item>
     <item>
       <title>Debian Appreciation Day</title>
-      <link>https://lucabrun.github.io/2010/08/debian-appreciation-day.html</link>
+      <link>https://lucabrunox.github.io/2010/08/debian-appreciation-day.html</link>
       <pubDate>Mon, 16 Aug 2010 05:26:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2010/08/debian-appreciation-day.html</guid>
+      <guid>https://lucabrunox.github.io/2010/08/debian-appreciation-day.html</guid>
       <description>Hello,&#xA;today is the Debian birthday. For this event a Debian Appreciation Day has been prepared to thank all the Debian organization, all the contributors, developers, teams and everything related to the universal operating system. If you want to thank Debian and make developers feel loved :P here&amp;rsquo;s the page: thanks.debian.net.</description>
     </item>
     <item>
       <title>Tdpkg troubleshooting and some news</title>
-      <link>https://lucabrun.github.io/2010/03/tdpkg-and-some-news.html</link>
+      <link>https://lucabrunox.github.io/2010/03/tdpkg-and-some-news.html</link>
       <pubDate>Tue, 16 Mar 2010 13:05:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2010/03/tdpkg-and-some-news.html</guid>
+      <guid>https://lucabrunox.github.io/2010/03/tdpkg-and-some-news.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;ve received some feedback, thanks for this.&#xA;Is it compatible with apt? Can I use dpkg back again after using tdpkg?&#xA;The answer is&amp;hellip; yes! You can use what you want in the order you want, and use tdpkg when you want. Take in consideration that after using dpkg (or apt) without tdpkg, then you use tdpkg the cache will be rebuilt for consistency.&#xA;It&amp;rsquo;s not working here (Ubuntu, other distro&amp;hellip;), doesn&amp;rsquo;t create the cache.</description>
     </item>
     <item>
       <title>Tdpkg 1.0 - speed up reading dpkg database</title>
-      <link>https://lucabrun.github.io/2010/03/tdpkg-speed-up-reading-dpkg-database.html</link>
+      <link>https://lucabrunox.github.io/2010/03/tdpkg-speed-up-reading-dpkg-database.html</link>
       <pubDate>Mon, 15 Mar 2010 13:21:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2010/03/tdpkg-speed-up-reading-dpkg-database.html</guid>
+      <guid>https://lucabrunox.github.io/2010/03/tdpkg-speed-up-reading-dpkg-database.html</guid>
       <description>Hello,&#xA;you may have noticed that dpkg takes a long time reading the database the first time you run it (e.g. through apt). This is because of the huge number of /var/lib/dpkg/info/*.list files (1700+ on my desktop machines). It can take up to 14 seconds and more at cold start to install/remove a single package.&#xA;Since 2007 in dpkg mailing list a first proposal (by Sean Finney) to using sqlite as cache has been posted, then a couple of weeks ago I reproposed it.</description>
     </item>
     <item>
       <title>Debian/GNOME bug triage ended</title>
-      <link>https://lucabrun.github.io/2010/03/debiangnome-bug-triage-ended.html</link>
+      <link>https://lucabrunox.github.io/2010/03/debiangnome-bug-triage-ended.html</link>
       <pubDate>Wed, 03 Mar 2010 01:51:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2010/03/debiangnome-bug-triage-ended.html</guid>
+      <guid>https://lucabrunox.github.io/2010/03/debiangnome-bug-triage-ended.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m writing about the work done in the bug triage weekend of the Debian/GNOME team, started at 27th Feb and ended in 28th Feb.&#xA;The result is great, 167 bugs have been closed and many more have been triaged and forwarded upstream.&#xA;Thanks to everybody who contributed, especially to whom has done it for the first time (well, you can still continue working on the remaining bugs ;) ).</description>
     </item>
     <item>
       <title>New GPG key</title>
-      <link>https://lucabrun.github.io/2009/08/new-gpg-key.html</link>
+      <link>https://lucabrunox.github.io/2009/08/new-gpg-key.html</link>
       <pubDate>Sat, 29 Aug 2009 05:46:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/08/new-gpg-key.html</guid>
+      <guid>https://lucabrunox.github.io/2009/08/new-gpg-key.html</guid>
       <description>Hello,&#xA;due to some synchronization problems between my desktop and laptop, unfortunately I&amp;rsquo;ve lost my GPG secret key. I was planning to renew my key after the SHA issues, but this way I can&amp;rsquo;t neither revoke the old key nor sign the new key. So I please anybody having my pubkey to delete it:&#xA;gpg &amp;ndash;delete-key C29A9371&#xA;I&amp;rsquo;ve uploaded my new key as usual so you can get it:&#xA;gpg &amp;ndash;keyserver pgp.</description>
     </item>
     <item>
       <title>Awesome/other wrong keyboard layout</title>
-      <link>https://lucabrun.github.io/2009/02/awesomeother-wrong-keyboard-layout.html</link>
+      <link>https://lucabrunox.github.io/2009/02/awesomeother-wrong-keyboard-layout.html</link>
       <pubDate>Fri, 27 Feb 2009 15:12:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/02/awesomeother-wrong-keyboard-layout.html</guid>
+      <guid>https://lucabrunox.github.io/2009/02/awesomeother-wrong-keyboard-layout.html</guid>
       <description>Hello,&#xA;due to the high resource usage by Eclipse (I have to use that unfortunately because of my professor) I&amp;rsquo;ve temporarly dropped GNOME and now I&amp;rsquo;m using Awesome for a while.&#xA;Ok let&amp;rsquo;s say the problem: the keyboard. Do you have different languages, layouts and so on among several configurations (GNOME, X, &amp;hellip;) and your keyboard layout is messed up with awesome?&#xA;Just do it:&#xA;setxkbmap -layout YOURLAYOUT&#xA;Where YOURLAYOUT for me is it.</description>
     </item>
     <item>
       <title>Mailbox-to-mbox</title>
-      <link>https://lucabrun.github.io/2008/12/mailmbox-to-mbox.html</link>
+      <link>https://lucabrunox.github.io/2008/12/mailmbox-to-mbox.html</link>
       <pubDate>Fri, 26 Dec 2008 10:54:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/12/mailmbox-to-mbox.html</guid>
+      <guid>https://lucabrunox.github.io/2008/12/mailmbox-to-mbox.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;ve been looking for a way to convert a mailman archive to an mbox format so that I could open with mutt.&#xA;I then found a couple of scripts, but the one I&amp;rsquo;ve found simpler and working for my needs is mailbox2mbox.pl.&#xA;Sample usage:&#xA;$ gunzip YourArchive.txt.gz $ perl mailbox2mbox.pl &amp;lt; YourArchive.txt &amp;gt; mbox $ mutt -f mbox And it simply works!&#xA;Does anybody know a method as simple as the above one but more powerful?</description>
     </item>
     <item>
       <title>Aptitude-gtk progress</title>
-      <link>https://lucabrun.github.io/2008/12/aptitude-gtk-progress.html</link>
+      <link>https://lucabrunox.github.io/2008/12/aptitude-gtk-progress.html</link>
       <pubDate>Mon, 01 Dec 2008 14:58:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/12/aptitude-gtk-progress.html</guid>
+      <guid>https://lucabrunox.github.io/2008/12/aptitude-gtk-progress.html</guid>
       <description>Hello,&#xA;I was curious to see if aptitude-gtk was making some progress. I haven&amp;rsquo;t followed the project since it&amp;rsquo;s been merged into aptitude.&#xA;Well, I found it more functional and complete. Here&amp;rsquo;s a screenshot showing pending packages for upgrade after an update:&#xA;From GNOME&#xA;The team is definitely doing a good job. Hopefully I&amp;rsquo;ll find the time to give some help as I&amp;rsquo;m really interested in such full-featured GUI frontend.</description>
     </item>
     <item>
       <title>How to contribute to APT</title>
-      <link>https://lucabrun.github.io/2008/10/how-to-contribute-to-apt.html</link>
+      <link>https://lucabrunox.github.io/2008/10/how-to-contribute-to-apt.html</link>
       <pubDate>Fri, 10 Oct 2008 09:12:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/10/how-to-contribute-to-apt.html</guid>
+      <guid>https://lucabrunox.github.io/2008/10/how-to-contribute-to-apt.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve worked on FreeSpeak a couple of years ago, a Python/GTK+/GNOME project to translate text and web pages by querying already existing online translation tools.&#xA;PRO: It has been packed for Ubuntu and it has been publicized by a journal in Italy.&#xA;CONS: It has been discontinued until now. In fact I restarted the project and I&amp;rsquo;m doing a huge refactoring because of the ugly code I wrote in the past.</description>
     </item>
     <item>
       <title>Debian Get Satisfaction</title>
-      <link>https://lucabrun.github.io/2008/09/debian-get-satisfaction.html</link>
+      <link>https://lucabrunox.github.io/2008/09/debian-get-satisfaction.html</link>
       <pubDate>Thu, 11 Sep 2008 00:59:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/09/debian-get-satisfaction.html</guid>
+      <guid>https://lucabrunox.github.io/2008/09/debian-get-satisfaction.html</guid>
       <description>&#xA;Hello,&#xA;lately I&amp;rsquo;ve found getsatisfaction, a social web2 free customer support for all companies and products.&#xA;Of course, what have I done is to look for the Debian company. Well it&amp;rsquo;s there, but unused.&#xA;Easy for novice users to ask and find answers there. You can share you ideas and get help Report problems and get help on bug reporting General and specific discussion Subdivide the service in variuos products (for examples ports and distributions) </description>
     </item>
     <item>
       <title>Compiz with ATI RS480 on Debian</title>
-      <link>https://lucabrun.github.io/2008/08/compiz-with-ati-rs480-on-debian.html</link>
+      <link>https://lucabrunox.github.io/2008/08/compiz-with-ati-rs480-on-debian.html</link>
       <pubDate>Mon, 11 Aug 2008 13:41:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/08/compiz-with-ati-rs480-on-debian.html</guid>
+      <guid>https://lucabrunox.github.io/2008/08/compiz-with-ati-rs480-on-debian.html</guid>
       <description>Hello,&#xA;after years that compositing has been introduced in our desktop, it&amp;rsquo;s finally come the time to try it.&#xA;Uninstall fglrx&#xA;My video card is not supported very well with Mesa 7.0.x, in fact I&amp;rsquo;ve been using the fglrx driver for a long time&amp;hellip;. until now!&#xA;I had to manually dpkg &amp;ndash;purge all the related packages.&#xA;Now it&amp;rsquo;s better to rmmod fglrx.&#xA;Install mesa 7.1 from experimental&#xA;On #compiz-fusion some guys hinted me I should have used Mesa 7.</description>
     </item>
     <item>
       <title>Gnome main menu</title>
-      <link>https://lucabrun.github.io/2008/08/gnome-main-menu.html</link>
+      <link>https://lucabrunox.github.io/2008/08/gnome-main-menu.html</link>
       <pubDate>Thu, 07 Aug 2008 10:09:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/08/gnome-main-menu.html</guid>
+      <guid>https://lucabrunox.github.io/2008/08/gnome-main-menu.html</guid>
       <description>Gnome main menu&#xA;Originally uploaded by Lethalman&#xA;Hello,&#xA;while I was playing with apt-cache I&amp;rsquo;ve discovered a new kind of main menu in GNOME. It&amp;rsquo;s being developed by SuSE. It feels nice, robust and innovative.&#xA;The screenshot is showing the documents tab.&#xA;To install, aptitude install gnome-main-menu and add the new applet.</description>
     </item>
     <item>
       <title>kqemu on Debian amd64</title>
-      <link>https://lucabrun.github.io/2008/08/kqemu-on-debian-amd64.html</link>
+      <link>https://lucabrunox.github.io/2008/08/kqemu-on-debian-amd64.html</link>
       <pubDate>Thu, 07 Aug 2008 09:07:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/08/kqemu-on-debian-amd64.html</guid>
+      <guid>https://lucabrunox.github.io/2008/08/kqemu-on-debian-amd64.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve been using qemu a lot lately because I&amp;rsquo;m creating an usb hdd with debian live.&#xA;The image contains a system running postgresql, development packages for gtk and python and gnome-core . All this ends up loading in more than 5 minutes, this is really boring.&#xA;Then I begun looking for a faster virtualization system, and found KVM. Unfortunately my processor hasn&amp;rsquo;t the right flag for it.&#xA;Finally I found kqemu, which is a module for the kernel that speeds up a lot qemu.</description>
     </item>
     <item>
       <title>Debian and zd1211 wifi</title>
-      <link>https://lucabrun.github.io/2008/08/debian-and-zd1211-wifi.html</link>
+      <link>https://lucabrunox.github.io/2008/08/debian-and-zd1211-wifi.html</link>
       <pubDate>Wed, 06 Aug 2008 09:08:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/08/debian-and-zd1211-wifi.html</guid>
+      <guid>https://lucabrunox.github.io/2008/08/debian-and-zd1211-wifi.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m using debian lenny and I&amp;rsquo;ve got these two problems:&#xA;With versions of the linux kernel prior to 2.6.20 (maybe) I could install zd1211 firmware using the module-assistant which has been now dropped from testing and unstable. Boot process slowed down by 30 seconds and couldn&amp;rsquo;t plug-in the usb pen because udev/hal screw up What I&amp;rsquo;ve done is to remove the source and its created firmware, with the one shipped with testing and unstable (bug #411912):</description>
     </item>
     <item>
       <title>New debian tool proposal</title>
-      <link>https://lucabrun.github.io/2008/06/new-debian-tool-proposal.html</link>
+      <link>https://lucabrunox.github.io/2008/06/new-debian-tool-proposal.html</link>
       <pubDate>Mon, 30 Jun 2008 01:16:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/06/new-debian-tool-proposal.html</guid>
+      <guid>https://lucabrunox.github.io/2008/06/new-debian-tool-proposal.html</guid>
       <description>Hello,&#xA;this is my second post about Debian. I&amp;rsquo;m lately discovering all the tools for both managing my Debian system and creating packages.&#xA;dh_make is the first tool I&amp;rsquo;ve used for the &amp;ldquo;first debianization&amp;rdquo; (called so by the New maintainers&amp;rsquo; guide) which creates a basic template for your package.&#xA;Anyway after a few packagings I&amp;rsquo;ve seen that something redundant could be automatized further.&#xA;What I suggest is a tool that does the following stuff after dh_make has been called:</description>
     </item>
     <item>
       <title>Time for Debian</title>
-      <link>https://lucabrun.github.io/2008/04/time-for-debian.html</link>
+      <link>https://lucabrunox.github.io/2008/04/time-for-debian.html</link>
       <pubDate>Tue, 22 Apr 2008 11:55:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/04/time-for-debian.html</guid>
+      <guid>https://lucabrunox.github.io/2008/04/time-for-debian.html</guid>
       <description>Hello,&#xA;I switched to Debian lately and i think it will become my preferred distribution.&#xA;I started with Slackware, then an LFS and then Gentoo. I never found them definitive for me.&#xA;I used Slackware by compiling sources most of all, then i didn&amp;rsquo;t see any reason to continue using it.&#xA;The LFS came since my new PC as a test, and as long I could maintain it I had no problems and had fun with it.</description>
     </item>
   </channel>

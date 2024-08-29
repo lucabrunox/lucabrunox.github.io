@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wav on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/wav/</link>
+    <link>https://lucabrunox.github.io/tags/wav/</link>
     <description>Recent content in Wav on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Jun 2011 03:04:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/wav/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/wav/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Writing binary files with bash</title>
-      <link>https://lucabrun.github.io/2011/06/writing-binary-files-with-bash.html</link>
+      <link>https://lucabrunox.github.io/2011/06/writing-binary-files-with-bash.html</link>
       <pubDate>Thu, 02 Jun 2011 03:04:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2011/06/writing-binary-files-with-bash.html</guid>
+      <guid>https://lucabrunox.github.io/2011/06/writing-binary-files-with-bash.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m trying to see if I&amp;rsquo;m able to write some binary file using bash. So, when writing a binary file you often want to write a number into binary format. I ended up with this simple function for writing numbers in little endian:&#xA;function num2bin() { printf $(printf %.$(($2\*2))x\\\\n $1| sed &amp;#39;s/\\(\[0-9a-f\]\[0-9a-f\]\\)/\\\\x\\1/g&amp;#39;)| awk -F &amp;#39;&amp;#39; &amp;#39;{ printf $4$3$2$1 }&amp;#39; } The first parameter is the number to write, the second is the number of bytes (up to 4).</description>
     </item>
   </channel>

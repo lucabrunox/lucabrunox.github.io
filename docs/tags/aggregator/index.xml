@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aggregator on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/aggregator/</link>
+    <link>https://lucabrunox.github.io/tags/aggregator/</link>
     <description>Recent content in Aggregator on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 02 May 2010 12:08:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/aggregator/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/aggregator/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google Reader Fail</title>
-      <link>https://lucabrun.github.io/2010/05/google-reader-fail.html</link>
+      <link>https://lucabrunox.github.io/2010/05/google-reader-fail.html</link>
       <pubDate>Sun, 02 May 2010 12:08:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2010/05/google-reader-fail.html</guid>
+      <guid>https://lucabrunox.github.io/2010/05/google-reader-fail.html</guid>
       <description>Hello,&#xA;Google Reader has just wiped out my subscriptions list, which made me scream like a crazy monkey (other than cleaning up the list).Now I&amp;rsquo;m using bloglines, which looks pretty good except there&amp;rsquo;s nothing like &amp;ldquo;read all items&amp;rdquo;, but you must clean on each feed to see the items (any alternative to bloglines supporting this?).&#xA;But as far as I can see, I&amp;rsquo;m not the only one that lost the feeds, the difference is that I just opened the reader without any other operation.</description>
     </item>
   </channel>

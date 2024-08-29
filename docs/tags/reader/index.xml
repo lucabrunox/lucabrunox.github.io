@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reader on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/reader/</link>
+    <link>https://lucabrunox.github.io/tags/reader/</link>
     <description>Recent content in Reader on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 03 Jul 2013 00:54:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/reader/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/reader/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Found my google reader alternative: the old reader</title>
-      <link>https://lucabrun.github.io/2013/07/found-my-google-reader-alternative.html</link>
+      <link>https://lucabrunox.github.io/2013/07/found-my-google-reader-alternative.html</link>
       <pubDate>Wed, 03 Jul 2013 00:54:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2013/07/found-my-google-reader-alternative.html</guid>
+      <guid>https://lucabrunox.github.io/2013/07/found-my-google-reader-alternative.html</guid>
       <description>So I&amp;rsquo;d like to share with you my google reader alternative: theoldreader.&#xA;I&amp;rsquo;ve tried so far yoleo, feedly, goread and diggreader. Each of them is missing the following must have things for me:&#xA;The &amp;ldquo;next&amp;rdquo; button. I don&amp;rsquo;t like using keyboard bindings when reading feeds. Search through all feeds Social by sharing/liking news Exporting OPML Additionally, theoldreader has a great (disabled by default) feature: clicking on a news will scroll to it.</description>
     </item>
   </channel>

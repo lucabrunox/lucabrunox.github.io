@@ -2,122 +2,122 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/python/</link>
+    <link>https://lucabrunox.github.io/tags/python/</link>
     <description>Recent content in Python on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 09 Jul 2011 00:42:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python/Ruby like generators in Vala</title>
-      <link>https://lucabrun.github.io/2011/07/pythonruby-like-generators-in-vala.html</link>
+      <link>https://lucabrunox.github.io/2011/07/pythonruby-like-generators-in-vala.html</link>
       <pubDate>Sat, 09 Jul 2011 00:42:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2011/07/pythonruby-like-generators-in-vala.html</guid>
+      <guid>https://lucabrunox.github.io/2011/07/pythonruby-like-generators-in-vala.html</guid>
       <description>Hello,&#xA;the post below is copied straight from here.&#xA;Here I&amp;rsquo;ll show a cool snippet code making use Vala async functions and iterators for emulating Python/Ruby generators. Creating a generator is as simple as extending the Generator class and implementing the generate() method.&#xA;abstract class Generator { private bool consumed; private G value; private SourceFunc callback; public Generator () { helper (); } private async void helper () { yield generate (); consumed \= true; } protected abstract async void generate (); protected async void feed (G value) { this.</description>
     </item>
     <item>
       <title>Bluetooth simple one-line device connection pairing with Bluez</title>
-      <link>https://lucabrun.github.io/2011/02/bluetooth-simple-one-line-device.html</link>
+      <link>https://lucabrunox.github.io/2011/02/bluetooth-simple-one-line-device.html</link>
       <pubDate>Wed, 09 Feb 2011 07:10:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2011/02/bluetooth-simple-one-line-device.html</guid>
+      <guid>https://lucabrunox.github.io/2011/02/bluetooth-simple-one-line-device.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve written a simple Python script using the Bluez (version 4.66) stack (thanks to http://shr-project.org/trac/wiki/Using) with this usage:&#xA;python connect.py MACADDRESS PIN MOUNTPOINT&#xA;Snippet code for connect.py is here. If the device is paired, it will be removed and unmounted.&#xA;Disconnection is as easy with:&#xA;python disconnect.py MACADDRESS MOUNTPOINT&#xA;Snippet code for disconnect.py is here.&#xA;Feel free to use the code also for other services, in this case my primary concern was to mount the file system.</description>
     </item>
     <item>
       <title>Secure and Decentralized Chat</title>
-      <link>https://lucabrun.github.io/2010/02/secure-and-decentralized-chat.html</link>
+      <link>https://lucabrunox.github.io/2010/02/secure-and-decentralized-chat.html</link>
       <pubDate>Tue, 16 Feb 2010 03:11:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2010/02/secure-and-decentralized-chat.html</guid>
+      <guid>https://lucabrunox.github.io/2010/02/secure-and-decentralized-chat.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m writing to let you know of the first release of SDChat.&#xA;It is a protocol with libraries and programs to create secure IM networks using GPG and RSA.&#xA;All the stack is written in Python but the page says it will be rewritten from scratch to provide a C API.&#xA;It features a GTK+ interface with many plugins (unfortunately audio and video are being broken due to gstreamer updates) and a simple server for routing.</description>
     </item>
     <item>
       <title>Lua for Pythoners - Dictionary</title>
-      <link>https://lucabrun.github.io/2009/12/lua-for-pythoners-dictionary.html</link>
+      <link>https://lucabrunox.github.io/2009/12/lua-for-pythoners-dictionary.html</link>
       <pubDate>Mon, 14 Dec 2009 04:15:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/12/lua-for-pythoners-dictionary.html</guid>
+      <guid>https://lucabrunox.github.io/2009/12/lua-for-pythoners-dictionary.html</guid>
       <description>Hello,&#xA;as promised this is the second post, this time for dictionaries. The most important thing to notice is that tbl[key]=nil means deleting the entry from the table, while in python dict[key]=None is still a valid entry with None value.&#xA;Here&amp;rsquo;s the snippet you can launch in a lua interpreter and this is the catalog of python dictionary examples.</description>
     </item>
     <item>
       <title>Lua for Pythoners - Lists</title>
-      <link>https://lucabrun.github.io/2009/12/lua-for-pythoners-lists.html</link>
+      <link>https://lucabrunox.github.io/2009/12/lua-for-pythoners-lists.html</link>
       <pubDate>Sun, 13 Dec 2009 05:58:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/12/lua-for-pythoners-lists.html</guid>
+      <guid>https://lucabrunox.github.io/2009/12/lua-for-pythoners-lists.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;m discovering Lua as general purpose language. Many people don&amp;rsquo;t agree with lua being used as a general purpose language, many others (including a newbie like me) think Lua has such a simple syntax and powerful tables to become a full fledged language.&#xA;I use a lot of Python, so I start from here: what Python does that Lua can&amp;rsquo;t do almost in the same way? Read the question as it is, don&amp;rsquo;t read &amp;ldquo;what Python does that Lua can&amp;rsquo;t do&amp;rdquo;, it&amp;rsquo;s different.</description>
     </item>
     <item>
       <title>Mimaggia, cairo tester</title>
-      <link>https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html</link>
+      <link>https://lucabrunox.github.io/2009/11/mimaggia-cairo-tester.html</link>
       <pubDate>Fri, 27 Nov 2009 04:21:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html</guid>
+      <guid>https://lucabrunox.github.io/2009/11/mimaggia-cairo-tester.html</guid>
       <description>Hello,&#xA;From GNOME&#xA;I&amp;rsquo;ve created a simple pygtk project for testing cairo statements. It includes a sort of terminal where you write statements in a simple language. It features immediate preview of what you write.&#xA;Say it&amp;rsquo;s a new format for images.&#xA;If you want to test it and see the code, ask me.</description>
     </item>
     <item>
       <title>Python and RSA</title>
-      <link>https://lucabrun.github.io/2009/11/there-are-many-python-toolkits-for.html</link>
+      <link>https://lucabrunox.github.io/2009/11/there-are-many-python-toolkits-for.html</link>
       <pubDate>Sat, 14 Nov 2009 06:34:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/11/there-are-many-python-toolkits-for.html</guid>
+      <guid>https://lucabrunox.github.io/2009/11/there-are-many-python-toolkits-for.html</guid>
       <description>There are many Python toolkits for crypto, so I hope I&amp;rsquo;ve done the best choice (at least for now). This is a simple utility class for managing RSA keys, a sort of wrappera to the m2crypto class.&#xA;import M2Crypto&#xA;class RSA (object): def \_\_init\_\_ (self, bits=1024, padding=M2Crypto.RSA.pkcs1\_padding, exp=65537): self.bits = bits self.padding = padding self.exp = exp self.rsa = None def generate (self): self.rsa = M2Crypto.RSA.gen\_key( self.bits, self.exp, lambda x: None) def encrypt (self, s): c = &amp;#34;&amp;#34; bytes = self.</description>
     </item>
     <item>
       <title>Spadi source code</title>
-      <link>https://lucabrun.github.io/2009/08/spadi-source-code.html</link>
+      <link>https://lucabrunox.github.io/2009/08/spadi-source-code.html</link>
       <pubDate>Sun, 09 Aug 2009 11:10:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/08/spadi-source-code.html</guid>
+      <guid>https://lucabrunox.github.io/2009/08/spadi-source-code.html</guid>
       <description>Hello,&#xA;after I&amp;rsquo;ve written really a few docs, and cleaned up some stuff, I&amp;rsquo;ve published the code of both Spadi and Corraza on gitorious here. In the while, I&amp;rsquo;ve added support for floors and closeable views.&#xA;Help&amp;hellip; help is needed.&#xA;Stay tuned.</description>
     </item>
     <item>
       <title>Constructing a free ArchiCAD alternative</title>
-      <link>https://lucabrun.github.io/2009/08/constructing-free-archicad-alternative.html</link>
+      <link>https://lucabrunox.github.io/2009/08/constructing-free-archicad-alternative.html</link>
       <pubDate>Thu, 06 Aug 2009 04:02:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/08/constructing-free-archicad-alternative.html</guid>
+      <guid>https://lucabrunox.github.io/2009/08/constructing-free-archicad-alternative.html</guid>
       <description>Hello,&#xA;together a couple of university mates we talked about a possible free (as in freedom) ArchiCAD alternative. There are several free CAD out there but none is free for architects/engineers. The project is too big and ambitious, but I wanted to give OpenGL a shot with this excuse to learn something new.&#xA;I&amp;rsquo;ve started two projects:&#xA;Corraza, the OpenGL framework for editing 3d objects and exporting the scene graph to ray tracing software&amp;hellip; think about a very very very minimal blender but as library</description>
     </item>
     <item>
       <title>Aruanne, pdf reporting framework</title>
-      <link>https://lucabrun.github.io/2009/07/aruanne-pdf-reporting-framework.html</link>
+      <link>https://lucabrunox.github.io/2009/07/aruanne-pdf-reporting-framework.html</link>
       <pubDate>Tue, 21 Jul 2009 23:34:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/07/aruanne-pdf-reporting-framework.html</guid>
+      <guid>https://lucabrunox.github.io/2009/07/aruanne-pdf-reporting-framework.html</guid>
       <description>Hello,&#xA;a while ago I&amp;rsquo;ve been talking about pango cairo and how to generate pdf with a couple of tables.&#xA;In the meantime I&amp;rsquo;ve worked on it, improving and enhancing new kinds of elements. This has lead to the creation of a small project, a library providing a simple framework for generating mostly PDF reports (I haven&amp;rsquo;t tried to generate SVG or something else yet).&#xA;After a couple of release requests, I&amp;rsquo;ve found finally the time to publish a sort of working code.</description>
     </item>
     <item>
       <title>FreeSpeak 0.3.0 has been released</title>
-      <link>https://lucabrun.github.io/2009/01/freespeak-030-has-been-released.html</link>
+      <link>https://lucabrunox.github.io/2009/01/freespeak-030-has-been-released.html</link>
       <pubDate>Sat, 10 Jan 2009 02:42:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/01/freespeak-030-has-been-released.html</guid>
+      <guid>https://lucabrunox.github.io/2009/01/freespeak-030-has-been-released.html</guid>
       <description>FreeSpeak is a free (as in freedom, developed and released under the terms of GPL) frontend to online translator engines (such as Google, Yahoo, etc.). It is written in Python, it uses the GTK toolkit and some GNOME infrastructure features.&#xA;This is a major enhancemenfts release.&#xA;Overview of Changes from FreeSpeak 0.2.0 to FreeSpeak 0.3.0&#xA;===========================================================&#xA;* Project is now hosted at BerliOS.de: http://freespeak.berlios.de&#xA;* Support for cancellating operations has been added</description>
     </item>
     <item>
       <title>Global keybinding on X</title>
-      <link>https://lucabrun.github.io/2008/12/global-keybinding-on-x.html</link>
+      <link>https://lucabrunox.github.io/2008/12/global-keybinding-on-x.html</link>
       <pubDate>Sun, 21 Dec 2008 01:52:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/12/global-keybinding-on-x.html</guid>
+      <guid>https://lucabrunox.github.io/2008/12/global-keybinding-on-x.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;ve been looking for a way to create a desktop-wide keybinding for FreeSpeak.&#xA;I first looked into Tomboy and Deskbar source codes but the egg was too huge to be adopted, and it would have brought C dependency which isn&amp;rsquo;t always nice for a Python project.&#xA;Then fargiolas pointed me to a blog post where I could find about gnome keybindings owned by gnome control center. Well that was only a mirage as it doesn&amp;rsquo;t really grab the key but it&amp;rsquo;s only a visual entry in the keyboard shortcuts preferences.</description>
     </item>
     <item>
       <title>FreeSpeak gains translation suggestions</title>
-      <link>https://lucabrun.github.io/2008/11/freespeak-gains-translation-suggestions.html</link>
+      <link>https://lucabrunox.github.io/2008/11/freespeak-gains-translation-suggestions.html</link>
       <pubDate>Sun, 30 Nov 2008 03:47:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/11/freespeak-gains-translation-suggestions.html</guid>
+      <guid>https://lucabrunox.github.io/2008/11/freespeak-gains-translation-suggestions.html</guid>
       <description>Hello,&#xA;it hasn&amp;rsquo;t been a long time since FreeSpeak 0.2.0 has been released. One of the TODOs for the next release was to support open-tran, and more over translation suggestions for development.&#xA;This is a screenshot of what&amp;rsquo;s been included in the repository today:&#xA;From GNOME&#xA;FreeSpeak is a GNOME frontend to online translator engines.</description>
     </item>
     <item>
       <title>FreeSpeak 0.2.0 has been released</title>
-      <link>https://lucabrun.github.io/2008/11/freespeak-020-has-been-released.html</link>
+      <link>https://lucabrunox.github.io/2008/11/freespeak-020-has-been-released.html</link>
       <pubDate>Fri, 28 Nov 2008 03:57:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/11/freespeak-020-has-been-released.html</guid>
+      <guid>https://lucabrunox.github.io/2008/11/freespeak-020-has-been-released.html</guid>
       <description>Hello,&#xA;after some work in these weeks now I have released a new version of FreeSpeak.&#xA;FreeSpeak is a free (as in freedom, developed and released under the terms of GPL) frontend to online translator engines (such as Google, Yahoo, etc.). It is written in Python, it uses the GTK toolkit and some GNOME infrastructure features&#xA;.&#xA;It&amp;rsquo;s been rewritten almost from scratch so I think there&amp;rsquo;s no need to post release notes here.</description>
     </item>
     <item>
       <title>Replace GTK&#43; with Clutter for fun</title>
-      <link>https://lucabrun.github.io/2008/11/replace-gtk-with-clutter-for-fun.html</link>
+      <link>https://lucabrunox.github.io/2008/11/replace-gtk-with-clutter-for-fun.html</link>
       <pubDate>Sun, 23 Nov 2008 12:38:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/11/replace-gtk-with-clutter-for-fun.html</guid>
+      <guid>https://lucabrunox.github.io/2008/11/replace-gtk-with-clutter-for-fun.html</guid>
       <description>Hello,&#xA;lately I was having fun with Clutter and Python. I&amp;rsquo;ve started by creating some Gtk-like widgets (such as GtkWindow, GtkBox, and GtkButton) in Clutter.&#xA;Well, this is the result&amp;hellip; it&amp;rsquo;s a simple example of a very poor toolkit, but it works:&#xA;Try it, it&amp;rsquo;s only one .py file source code</description>
     </item>
     <item>
       <title>Single app instances, Python and DBus</title>
-      <link>https://lucabrun.github.io/2008/11/single-app-instances-python-and-dbus.html</link>
+      <link>https://lucabrunox.github.io/2008/11/single-app-instances-python-and-dbus.html</link>
       <pubDate>Sun, 16 Nov 2008 10:01:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/11/single-app-instances-python-and-dbus.html</guid>
+      <guid>https://lucabrunox.github.io/2008/11/single-app-instances-python-and-dbus.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m working on FreeSpeak lately and I needed to run the application once per session, as it&amp;rsquo;s got a trayicon and a notebook (maybe windows with an applet is better?)&#xA;I decided to use DBus for making the application run only a single instance; when you try to open it again it won&amp;rsquo;t start another process, instead it will use the already running one.&#xA;This is how I would create a generic single app instance with dbus-python:</description>
     </item>
   </channel>

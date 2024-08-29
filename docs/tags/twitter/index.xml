@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Twitter on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/twitter/</link>
+    <link>https://lucabrunox.github.io/tags/twitter/</link>
     <description>Recent content in Twitter on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 03 Jul 2008 10:35:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>identi.ca is worse</title>
-      <link>https://lucabrun.github.io/2008/07/identica-is-worse.html</link>
+      <link>https://lucabrunox.github.io/2008/07/identica-is-worse.html</link>
       <pubDate>Thu, 03 Jul 2008 10:35:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/07/identica-is-worse.html</guid>
+      <guid>https://lucabrunox.github.io/2008/07/identica-is-worse.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m using Twitter in this week and the API works &amp;ldquo;almost&amp;rdquo; perfectly while the website is down most of the time.&#xA;I&amp;rsquo;ve recently heard about identi.ca, so I decided to try it.&#xA;My first impression was bad, because I&amp;rsquo;ve seen many redirects of the page, and DNS changes sometimes.&#xA;But ok, I tried to register and again&amp;hellip; I had problems. When I submitted the registration twice it just did nothing.</description>
     </item>
   </channel>

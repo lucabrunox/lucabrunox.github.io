@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nodejs on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/nodejs/</link>
+    <link>https://lucabrunox.github.io/tags/nodejs/</link>
     <description>Recent content in Nodejs on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 Jan 2016 13:33:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TypeScript and NodeJS, I&#39;m sold</title>
-      <link>https://lucabrun.github.io/2016/01/typescript-and-nodejs-im-sold.html</link>
+      <link>https://lucabrunox.github.io/2016/01/typescript-and-nodejs-im-sold.html</link>
       <pubDate>Mon, 04 Jan 2016 13:33:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2016/01/typescript-and-nodejs-im-sold.html</guid>
+      <guid>https://lucabrunox.github.io/2016/01/typescript-and-nodejs-im-sold.html</guid>
       <description>TypeScript is a typed superset of JavaScript that compiles to plain JavaScript, the way you expect it to be.&#xA;I’ve heard of it a long time ago, but recently with TypeScript 1.7 it got async functions, which means you can awaitasynchronous function calls, similarly to C#, Vala, Go and other languages with syntax support for concurrency. That makes coroutines a pleasant experience compared to plain JavaScript. That’s also the main reason why I didn’t choose Dart.</description>
     </item>
   </channel>

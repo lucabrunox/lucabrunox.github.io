@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cairo on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/cairo/</link>
+    <link>https://lucabrunox.github.io/tags/cairo/</link>
     <description>Recent content in Cairo on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Nov 2009 04:21:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/cairo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/cairo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mimaggia, cairo tester</title>
-      <link>https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html</link>
+      <link>https://lucabrunox.github.io/2009/11/mimaggia-cairo-tester.html</link>
       <pubDate>Fri, 27 Nov 2009 04:21:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html</guid>
+      <guid>https://lucabrunox.github.io/2009/11/mimaggia-cairo-tester.html</guid>
       <description>Hello,&#xA;From GNOME&#xA;I&amp;rsquo;ve created a simple pygtk project for testing cairo statements. It includes a sort of terminal where you write statements in a simple language. It features immediate preview of what you write.&#xA;Say it&amp;rsquo;s a new format for images.&#xA;If you want to test it and see the code, ask me.</description>
     </item>
     <item>
       <title>Aruanne, pdf reporting framework</title>
-      <link>https://lucabrun.github.io/2009/07/aruanne-pdf-reporting-framework.html</link>
+      <link>https://lucabrunox.github.io/2009/07/aruanne-pdf-reporting-framework.html</link>
       <pubDate>Tue, 21 Jul 2009 23:34:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/07/aruanne-pdf-reporting-framework.html</guid>
+      <guid>https://lucabrunox.github.io/2009/07/aruanne-pdf-reporting-framework.html</guid>
       <description>Hello,&#xA;a while ago I&amp;rsquo;ve been talking about pango cairo and how to generate pdf with a couple of tables.&#xA;In the meantime I&amp;rsquo;ve worked on it, improving and enhancing new kinds of elements. This has lead to the creation of a small project, a library providing a simple framework for generating mostly PDF reports (I haven&amp;rsquo;t tried to generate SVG or something else yet).&#xA;After a couple of release requests, I&amp;rsquo;ve found finally the time to publish a sort of working code.</description>
     </item>
     <item>
       <title>Render tables with pangocairo like reportlab</title>
-      <link>https://lucabrun.github.io/2009/05/render-tables-with-pangocairo-like.html</link>
+      <link>https://lucabrunox.github.io/2009/05/render-tables-with-pangocairo-like.html</link>
       <pubDate>Wed, 27 May 2009 14:22:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/05/render-tables-with-pangocairo-like.html</guid>
+      <guid>https://lucabrunox.github.io/2009/05/render-tables-with-pangocairo-like.html</guid>
       <description>Hello,&#xA;lately I was wondering if there was any alternative to the well known reportlab python software for creating PDF reports. I immediately thought about Cairo. The only two problems are:&#xA;Cairo doesn&amp;rsquo;t create multiple pages No support for creating tables containing text, necessary for table-based reports I still can&amp;rsquo;t realize how to achieve the first feature, but the second one could be solved using Pango layouts.&#xA;The idea is to create the cells of the table using such layouts, so that the text get wrapped etc.</description>
     </item>
     <item>
       <title>Create a GdkPixbuf from cairo surface</title>
-      <link>https://lucabrun.github.io/2009/04/create-pixbuf-from-cairo-surface.html</link>
+      <link>https://lucabrunox.github.io/2009/04/create-pixbuf-from-cairo-surface.html</link>
       <pubDate>Sun, 26 Apr 2009 10:40:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/04/create-pixbuf-from-cairo-surface.html</guid>
+      <guid>https://lucabrunox.github.io/2009/04/create-pixbuf-from-cairo-surface.html</guid>
       <description>Hello,&#xA;here&amp;rsquo;s the inverted code snippet of the previous post.&#xA;`w, h = surface.get_width(), surface.get_height()&#xA;pixmap = gtk.gdk.Pixmap (None, w, h, 24)&#xA;cr = pixmap.cairo_create ()&#xA;cr.set_source_surface (surface, 0, 0)&#xA;cr.paint ()&#xA;pixbuf = gtk.gdk.Pixbuf (gtk.gdk.COLORSPACE_RGB, True, 8, w, h)&#xA;pixbuf = pixbuf.get_from_drawable (pixmap, gtk.gdk.colormap_get_system(), 0, 0, 0, 0, w, h)`</description>
     </item>
     <item>
       <title>Create a cairo surface from a pixbuf</title>
-      <link>https://lucabrun.github.io/2009/04/create-cairo-surface-from-pixbuf.html</link>
+      <link>https://lucabrunox.github.io/2009/04/create-cairo-surface-from-pixbuf.html</link>
       <pubDate>Sat, 25 Apr 2009 02:03:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/04/create-cairo-surface-from-pixbuf.html</guid>
+      <guid>https://lucabrunox.github.io/2009/04/create-cairo-surface-from-pixbuf.html</guid>
       <description>Hello,&#xA;sometimes in the code of a couple of projects I see some hard algorithms to transform a pixbuf in a cairo surface.&#xA;Maybe most of people don&amp;rsquo;t know that GdkCairoContext, contrarily to cairo_t, is created against a cairo context not a cairo surface:&#xA;`surface = cairo.ImageSurface (cairo.FORMAT_ARGB32, pixbuf.get_width(), pixbuf.get_height())&#xA;cr = cairo.Context (surface)&#xA;gdkcr = gtk.gdk.CairoContext (cr)&#xA;gdkcr.set_source_pixbuf (pixbuf)&#xA;gdkcr.paint ()`&#xA;Notice gtk.gdk.CairoContext (cr), which cr is not the surface.</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mimaggia on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/mimaggia/</link>
+    <link>https://lucabrunox.github.io/tags/mimaggia/</link>
     <description>Recent content in Mimaggia on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Nov 2009 04:21:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/mimaggia/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/mimaggia/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mimaggia, cairo tester</title>
-      <link>https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html</link>
+      <link>https://lucabrunox.github.io/2009/11/mimaggia-cairo-tester.html</link>
       <pubDate>Fri, 27 Nov 2009 04:21:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html</guid>
+      <guid>https://lucabrunox.github.io/2009/11/mimaggia-cairo-tester.html</guid>
       <description>Hello,&#xA;From GNOME&#xA;I&amp;rsquo;ve created a simple pygtk project for testing cairo statements. It includes a sort of terminal where you write statements in a simple language. It features immediate preview of what you write.&#xA;Say it&amp;rsquo;s a new format for images.&#xA;If you want to test it and see the code, ask me.</description>
     </item>
   </channel>

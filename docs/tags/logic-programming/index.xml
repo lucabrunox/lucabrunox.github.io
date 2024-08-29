@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Logic Programming on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/logic-programming/</link>
+    <link>https://lucabrunox.github.io/tags/logic-programming/</link>
     <description>Recent content in Logic Programming on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Feb 2011 10:30:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/logic-programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/logic-programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bubble sort for prolog</title>
-      <link>https://lucabrun.github.io/2011/02/bubble-sort-for-prolog.html</link>
+      <link>https://lucabrunox.github.io/2011/02/bubble-sort-for-prolog.html</link>
       <pubDate>Thu, 24 Feb 2011 10:30:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2011/02/bubble-sort-for-prolog.html</guid>
+      <guid>https://lucabrunox.github.io/2011/02/bubble-sort-for-prolog.html</guid>
       <description>Hello again,&#xA;this time I&amp;rsquo;ve found a version of bubble sort here. I wanted to provide my version, which is less iterative and, I think, more intuitive. What it does is, simply, bubble until it&amp;rsquo;s sorted:&#xA;bubblesort(L1, L2) :- bubblesort2(L1,L2,unsorted),!. bubblesort2(L,L,sorted). bubblesort2(L1,L2,unsorted) :- bubble(L1,L3,C), bubblesort2(L3,L2,C). bubble(\[\],\[\],sorted). bubble(\[X\],\[X\],sorted). bubble(\[X,Y|L\], \[X|L1\], C) :- X &amp;lt;= Y, bubble(\[Y|L\],L1,C). bubble(\[X,Y|L\], \[Y|L1\], unsorted) :- X \&amp;gt; Y, bubble(\[X|L\],L1,\_). Yes, the exam is tomorrow so I will finally stop annoying you readers ;) </description>
     </item>
     <item>
       <title>Matrix transpose with Prolog</title>
-      <link>https://lucabrun.github.io/2011/02/matrix-transpose-with-prolog.html</link>
+      <link>https://lucabrunox.github.io/2011/02/matrix-transpose-with-prolog.html</link>
       <pubDate>Tue, 15 Feb 2011 12:20:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2011/02/matrix-transpose-with-prolog.html</guid>
+      <guid>https://lucabrunox.github.io/2011/02/matrix-transpose-with-prolog.html</guid>
       <description>Hello,&#xA;an exam exercise requires me to write a matrix transpose method. I&amp;rsquo;ve written one and it took a little before I was able to define it completely in 4 rules.&#xA;I&amp;rsquo;m curious then I&amp;rsquo;ve found this on stackoverflow: the approach is to calculate first transposed column, then shift by one column and calculate the transpose of that new matrix.&#xA;This was one of the first solutions I&amp;rsquo;ve thought but I haven&amp;rsquo;t realized it because I&amp;rsquo;m too lazy to create a rule for calculating the shifted matrix.</description>
     </item>
   </channel>

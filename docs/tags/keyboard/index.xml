@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Keyboard on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/keyboard/</link>
+    <link>https://lucabrunox.github.io/tags/keyboard/</link>
     <description>Recent content in Keyboard on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Mar 2014 16:10:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/keyboard/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/keyboard/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gtk3 hit-a-hint: mouseless navigation module</title>
-      <link>https://lucabrun.github.io/2014/03/gtk3-hit-hint-mouseless-navigation.html</link>
+      <link>https://lucabrunox.github.io/2014/03/gtk3-hit-hint-mouseless-navigation.html</link>
       <pubDate>Sun, 23 Mar 2014 16:10:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2014/03/gtk3-hit-hint-mouseless-navigation.html</guid>
+      <guid>https://lucabrunox.github.io/2014/03/gtk3-hit-hint-mouseless-navigation.html</guid>
       <description>I present gtkhah, a gtk module for hit-a-hint mouseless navigation of gtk3 applications.&#xA;It&amp;rsquo;s been inspired by the various hit-a-hint browser extensions.&#xA;Usage at the project homepage. Here&amp;rsquo;s a quick screenshot of Gedit:</description>
     </item>
   </channel>

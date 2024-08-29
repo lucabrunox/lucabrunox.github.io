@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pdf on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/pdf/</link>
+    <link>https://lucabrunox.github.io/tags/pdf/</link>
     <description>Recent content in Pdf on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 21 Jul 2009 23:34:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aruanne, pdf reporting framework</title>
-      <link>https://lucabrun.github.io/2009/07/aruanne-pdf-reporting-framework.html</link>
+      <link>https://lucabrunox.github.io/2009/07/aruanne-pdf-reporting-framework.html</link>
       <pubDate>Tue, 21 Jul 2009 23:34:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/07/aruanne-pdf-reporting-framework.html</guid>
+      <guid>https://lucabrunox.github.io/2009/07/aruanne-pdf-reporting-framework.html</guid>
       <description>Hello,&#xA;a while ago I&amp;rsquo;ve been talking about pango cairo and how to generate pdf with a couple of tables.&#xA;In the meantime I&amp;rsquo;ve worked on it, improving and enhancing new kinds of elements. This has lead to the creation of a small project, a library providing a simple framework for generating mostly PDF reports (I haven&amp;rsquo;t tried to generate SVG or something else yet).&#xA;After a couple of release requests, I&amp;rsquo;ve found finally the time to publish a sort of working code.</description>
     </item>
     <item>
       <title>Render tables with pangocairo like reportlab</title>
-      <link>https://lucabrun.github.io/2009/05/render-tables-with-pangocairo-like.html</link>
+      <link>https://lucabrunox.github.io/2009/05/render-tables-with-pangocairo-like.html</link>
       <pubDate>Wed, 27 May 2009 14:22:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/05/render-tables-with-pangocairo-like.html</guid>
+      <guid>https://lucabrunox.github.io/2009/05/render-tables-with-pangocairo-like.html</guid>
       <description>Hello,&#xA;lately I was wondering if there was any alternative to the well known reportlab python software for creating PDF reports. I immediately thought about Cairo. The only two problems are:&#xA;Cairo doesn&amp;rsquo;t create multiple pages No support for creating tables containing text, necessary for table-based reports I still can&amp;rsquo;t realize how to achieve the first feature, but the second one could be solved using Pango layouts.&#xA;The idea is to create the cells of the table using such layouts, so that the text get wrapped etc.</description>
     </item>
   </channel>

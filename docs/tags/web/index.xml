@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/web/</link>
+    <link>https://lucabrunox.github.io/tags/web/</link>
     <description>Recent content in Web on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 23 Jul 2011 09:13:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Give my luck back, Firefox 5!</title>
-      <link>https://lucabrun.github.io/2011/07/dear-firefox-5.html</link>
+      <link>https://lucabrunox.github.io/2011/07/dear-firefox-5.html</link>
       <pubDate>Sat, 23 Jul 2011 09:13:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2011/07/dear-firefox-5.html</guid>
+      <guid>https://lucabrunox.github.io/2011/07/dear-firefox-5.html</guid>
       <description>Today I&amp;rsquo;ve upgraded to firefox 5, special thanks to Debian developer for packaging it. So far, everything works well and better than before, except two things (one of which I managed to tweak):&#xA;The tabs bar is higher than before. This means that the mouse must move more to reach them. This has been solved. Thanks for allowing me to put the tabs bar below back again.&#xA;The address bar no more involves &amp;ldquo;I feel lucky&amp;rdquo; search.</description>
     </item>
   </channel>

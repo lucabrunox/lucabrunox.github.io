@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Haskell on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/haskell/</link>
+    <link>https://lucabrunox.github.io/tags/haskell/</link>
     <description>Recent content in Haskell on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 06 Sep 2013 16:03:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/haskell/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/haskell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Regex in Haskell patterns</title>
-      <link>https://lucabrun.github.io/2013/09/regex-in-haskell-patterns.html</link>
+      <link>https://lucabrunox.github.io/2013/09/regex-in-haskell-patterns.html</link>
       <pubDate>Fri, 06 Sep 2013 16:03:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2013/09/regex-in-haskell-patterns.html</guid>
+      <guid>https://lucabrunox.github.io/2013/09/regex-in-haskell-patterns.html</guid>
       <description>Have you ever wanted to do case expr of regexhere -&amp;gt; &amp;hellip; ?&#xA;You can do almost that with view patterns!&#xA;{-# LANGUAGE ViewPatterns #-}&#xA;import Text.Regex.Posix&#xA;-- Helper&#xA;pat :: String -&amp;gt; String -&amp;gt; [[String]]&#xA;pat p s = s =~ p&#xA;-- Function with matching&#xA;foo :: String -&amp;gt; String&#xA;foo (pat &amp;ldquo;foo(bar|baz)&amp;rdquo; -&amp;gt; [[_,x]]) = x&#xA;foo _ = &amp;ldquo;no!&amp;rdquo;&#xA;main :: IO ()&#xA;main = do</description>
     </item>
     <item>
       <title>Build Vala applications with Shake build system</title>
-      <link>https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html</link>
+      <link>https://lucabrunox.github.io/2013/04/build-vala-applications-with-shake.html</link>
       <pubDate>Sat, 06 Apr 2013 14:18:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html</guid>
+      <guid>https://lucabrunox.github.io/2013/04/build-vala-applications-with-shake.html</guid>
       <description>I&amp;rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.&#xA;First of all, you need to know that Shake is a library written in Haskell, and it&amp;rsquo;s meant to be a better replacement for make. Let&amp;rsquo;s start by installing cabal and then shake:&#xA;apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.</description>
     </item>
   </channel>

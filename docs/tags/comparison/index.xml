@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Comparison on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/comparison/</link>
+    <link>https://lucabrunox.github.io/tags/comparison/</link>
     <description>Recent content in Comparison on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Feb 2011 10:30:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/comparison/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/comparison/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bubble sort for prolog</title>
-      <link>https://lucabrun.github.io/2011/02/bubble-sort-for-prolog.html</link>
+      <link>https://lucabrunox.github.io/2011/02/bubble-sort-for-prolog.html</link>
       <pubDate>Thu, 24 Feb 2011 10:30:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2011/02/bubble-sort-for-prolog.html</guid>
+      <guid>https://lucabrunox.github.io/2011/02/bubble-sort-for-prolog.html</guid>
       <description>Hello again,&#xA;this time I&amp;rsquo;ve found a version of bubble sort here. I wanted to provide my version, which is less iterative and, I think, more intuitive. What it does is, simply, bubble until it&amp;rsquo;s sorted:&#xA;bubblesort(L1, L2) :- bubblesort2(L1,L2,unsorted),!. bubblesort2(L,L,sorted). bubblesort2(L1,L2,unsorted) :- bubble(L1,L3,C), bubblesort2(L3,L2,C). bubble(\[\],\[\],sorted). bubble(\[X\],\[X\],sorted). bubble(\[X,Y|L\], \[X|L1\], C) :- X &amp;lt;= Y, bubble(\[Y|L\],L1,C). bubble(\[X,Y|L\], \[Y|L1\], unsorted) :- X \&amp;gt; Y, bubble(\[X|L\],L1,\_). Yes, the exam is tomorrow so I will finally stop annoying you readers ;) </description>
     </item>
     <item>
       <title>DuckDuckGo search engine</title>
-      <link>https://lucabrun.github.io/2010/09/duckduckgo-search-engine.html</link>
+      <link>https://lucabrunox.github.io/2010/09/duckduckgo-search-engine.html</link>
       <pubDate>Wed, 15 Sep 2010 05:16:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2010/09/duckduckgo-search-engine.html</guid>
+      <guid>https://lucabrunox.github.io/2010/09/duckduckgo-search-engine.html</guid>
       <description>Hello,&#xA;in this post I&amp;rsquo;d like to hint you a very nice search engine: DuckDuckGo. I&amp;rsquo;ve been pointed out to this by a post here on why both Google and Yahoo suck (and why Google search does more).&#xA;In older posts of mine you can find some examples on how Google search can miserably fail a search.&#xA;The main problem with the two approaches is: Google (and Bing too) sorts by popularity, Yahoo by match.</description>
     </item>
     <item>
       <title>Google search wrong again</title>
-      <link>https://lucabrun.github.io/2010/03/google-search-wrong-again.html</link>
+      <link>https://lucabrunox.github.io/2010/03/google-search-wrong-again.html</link>
       <pubDate>Fri, 05 Mar 2010 04:37:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2010/03/google-search-wrong-again.html</guid>
+      <guid>https://lucabrunox.github.io/2010/03/google-search-wrong-again.html</guid>
       <description>Hello,&#xA;sometimes ago I posted twice about google search having wrong results.&#xA;Now it happens again after a few months (it&amp;rsquo;s like google breaks page weights like every 4-5 months).&#xA;The search is &amp;ldquo;debian dpkg list&amp;rdquo;, I really expect the mailing list info page but after 3-4 pages of google search (and also bing this time) I couldn&amp;rsquo;t find it. With yahoo search it&amp;rsquo;s at the first position (lists.debian.org/debian-dpkg).&#xA;Like for the previous posts, using different search engines matters and matches your needs.</description>
     </item>
     <item>
       <title>Lua for Pythoners - Dictionary</title>
-      <link>https://lucabrun.github.io/2009/12/lua-for-pythoners-dictionary.html</link>
+      <link>https://lucabrunox.github.io/2009/12/lua-for-pythoners-dictionary.html</link>
       <pubDate>Mon, 14 Dec 2009 04:15:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/12/lua-for-pythoners-dictionary.html</guid>
+      <guid>https://lucabrunox.github.io/2009/12/lua-for-pythoners-dictionary.html</guid>
       <description>Hello,&#xA;as promised this is the second post, this time for dictionaries. The most important thing to notice is that tbl[key]=nil means deleting the entry from the table, while in python dict[key]=None is still a valid entry with None value.&#xA;Here&amp;rsquo;s the snippet you can launch in a lua interpreter and this is the catalog of python dictionary examples.</description>
     </item>
     <item>
       <title>Lua for Pythoners - Lists</title>
-      <link>https://lucabrun.github.io/2009/12/lua-for-pythoners-lists.html</link>
+      <link>https://lucabrunox.github.io/2009/12/lua-for-pythoners-lists.html</link>
       <pubDate>Sun, 13 Dec 2009 05:58:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/12/lua-for-pythoners-lists.html</guid>
+      <guid>https://lucabrunox.github.io/2009/12/lua-for-pythoners-lists.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;m discovering Lua as general purpose language. Many people don&amp;rsquo;t agree with lua being used as a general purpose language, many others (including a newbie like me) think Lua has such a simple syntax and powerful tables to become a full fledged language.&#xA;I use a lot of Python, so I start from here: what Python does that Lua can&amp;rsquo;t do almost in the same way? Read the question as it is, don&amp;rsquo;t read &amp;ldquo;what Python does that Lua can&amp;rsquo;t do&amp;rdquo;, it&amp;rsquo;s different.</description>
     </item>
   </channel>

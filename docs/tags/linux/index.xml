@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/linux/</link>
+    <link>https://lucabrunox.github.io/tags/linux/</link>
     <description>Recent content in Linux on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 14 Aug 2018 12:16:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OpenVPN configuration for server and multiple clients</title>
-      <link>https://lucabrun.github.io/2018/08/openvpn-server-with-multiple-clients.html</link>
+      <link>https://lucabrunox.github.io/2018/08/openvpn-server-with-multiple-clients.html</link>
       <pubDate>Tue, 14 Aug 2018 12:16:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2018/08/openvpn-server-with-multiple-clients.html</guid>
+      <guid>https://lucabrunox.github.io/2018/08/openvpn-server-with-multiple-clients.html</guid>
       <description>This is a simple post showing a basic configuration for setting up OpenVPN server accepting multiple clients with TLS.&#xA;First of all generate self-signed server and client private key and certificates, and dh params. Make sure to write the Organization Name AND Common Name (CN) when asked, otherwise openvpn will fail to verify the certificates.&#xA;openssl req -newkey rsa:2048 -nodes -keyout serverkey.pem -x509 -days 365000 -out servercert.pem openssl req -newkey rsa:2048 -nodes -keyout clientkey.</description>
     </item>
     <item>
       <title>Switch window by name on Linux - alternative to Alt&#43;Tab</title>
-      <link>https://lucabrun.github.io/2013/03/switch-window-by-name-on-linux.html</link>
+      <link>https://lucabrunox.github.io/2013/03/switch-window-by-name-on-linux.html</link>
       <pubDate>Thu, 28 Mar 2013 04:24:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2013/03/switch-window-by-name-on-linux.html</guid>
+      <guid>https://lucabrunox.github.io/2013/03/switch-window-by-name-on-linux.html</guid>
       <description>Today I want to share a very simple script that works with most Linux window managers: switch window by name.&#xA;It works like this: you press Ctrl+Alt+M, then a dialog appears where you write part of the name of the window, and you&amp;rsquo;ll get switched to the window that matches the provided name.The string your provide will match part of window names in case-insensitive mode.&#xA;That means if you have &amp;ldquo;Foo - Mozilla Firefox&amp;rdquo; and type in &amp;ldquo;fire&amp;rdquo; you&amp;rsquo;ll switch to firefox.</description>
     </item>
   </channel>

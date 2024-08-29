@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Problem Solving on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/problem-solving/</link>
+    <link>https://lucabrunox.github.io/tags/problem-solving/</link>
     <description>Recent content in Problem Solving on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Jan 2014 09:31:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/problem-solving/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrunox.github.io/tags/problem-solving/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intersection test and optimal allocation of 2D axis-aligned boxes using linear programming</title>
-      <link>https://lucabrun.github.io/2014/01/intersection-test-and-optimal.html</link>
+      <link>https://lucabrunox.github.io/2014/01/intersection-test-and-optimal.html</link>
       <pubDate>Mon, 20 Jan 2014 09:31:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2014/01/intersection-test-and-optimal.html</guid>
+      <guid>https://lucabrunox.github.io/2014/01/intersection-test-and-optimal.html</guid>
       <description>(function () { var script = document.createElement(&amp;ldquo;script&amp;rdquo;); script.type = &amp;ldquo;text/javascript&amp;rdquo;; script.src = &amp;ldquo;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;rdquo;; document.getElementsByTagName(&amp;ldquo;head&amp;rdquo;)[0].appendChild(script); })(); Either-or trick&#xA;In this solution, we will make use of the either-or trick. The constraints in a program are all in and, but we want some of them to be in or.&#xA;Consider the following logic formula: \(a\ge b\vee c\ge d\). It can be written with the following and constraints: \[ \begin{alignedat}{2}\, &amp;amp; M\cdot x\; &amp;amp; +a\; &amp;amp; \ge b\\ \, &amp;amp; M\cdot\left(1-x\right)\; &amp;amp; +c\; &amp;amp; \ge d\\ \, &amp;amp; \, &amp;amp; x\; &amp;amp; \in\left\{ 0,1\right\} \end{alignedat} \] where \(M \gt 0\) is big (depending on the specific context as we&amp;rsquo;ll see later).</description>
     </item>
   </channel>
