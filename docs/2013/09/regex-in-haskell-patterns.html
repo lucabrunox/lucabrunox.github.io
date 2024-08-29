@@ -36,7 +36,7 @@
   lang="en-us"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -76,14 +76,14 @@ main = do" />
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://lucabrun.github.io/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://lucabrun.github.io/theme.png" />
 
   
   
@@ -99,7 +99,7 @@ main = do" />
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://lucabrun.github.io/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -111,11 +111,11 @@ main = do" />
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.ico"
+    href="https://lucabrun.github.io/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/apple-touch-icon.png"
+    href="https://lucabrun.github.io/apple-touch-icon.png"
   />
 
   
@@ -124,12 +124,84 @@ main = do" />
   
   
   
+  
+  
+
+
+  
+  
+  <meta itemprop="name" content="Regex in Haskell patterns">
+  <meta itemprop="description" content="Have you ever wanted to do case expr of regexhere -&gt; &hellip; ?
+You can do almost that with view patterns!
+{-# LANGUAGE ViewPatterns #-}
+import Text.Regex.Posix
+-- Helper
+pat :: String -&gt; String -&gt; [[String]]
+pat p s = s =~ p
+-- Function with matching
+foo :: String -&gt; String
+foo (pat &ldquo;foo(bar|baz)&rdquo; -&gt; [[_,x]]) = x
+foo _ = &ldquo;no!&rdquo;
+main :: IO ()
+main = do">
+  <meta itemprop="datePublished" content="2013-09-06T16:03:00-07:00">
+  <meta itemprop="dateModified" content="2013-09-06T16:03:00-07:00">
+  <meta itemprop="wordCount" content="91">
+  <meta itemprop="keywords" content="Regex,Haskell">
+  
+  <meta property="og:url" content="https://lucabrun.github.io/2013/09/regex-in-haskell-patterns.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Regex in Haskell patterns">
+  <meta property="og:description" content="Have you ever wanted to do case expr of regexhere -&amp;gt; &amp;hellip; ?
+You can do almost that with view patterns!
+{-# LANGUAGE ViewPatterns #-}
+import Text.Regex.Posix
+-- Helper
+pat :: String -&amp;gt; String -&amp;gt; [[String]]
+pat p s = s =~ p
+-- Function with matching
+foo :: String -&amp;gt; String
+foo (pat &amp;ldquo;foo(bar|baz)&amp;rdquo; -&amp;gt; [[_,x]]) = x
+foo _ = &amp;ldquo;no!&amp;rdquo;
+main :: IO ()
+main = do">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2013-09-06T16:03:00-07:00">
+    <meta property="article:modified_time" content="2013-09-06T16:03:00-07:00">
+    <meta property="article:tag" content="Regex">
+    <meta property="article:tag" content="Haskell">
+
+  
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Regex in Haskell patterns">
+<meta name="twitter:description" content="Have you ever wanted to do case expr of regexhere -&gt; &hellip; ?
+You can do almost that with view patterns!
+{-# LANGUAGE ViewPatterns #-}
+import Text.Regex.Posix
+-- Helper
+pat :: String -&gt; String -&gt; [[String]]
+pat p s = s =~ p
+-- Function with matching
+foo :: String -&gt; String
+foo (pat &ldquo;foo(bar|baz)&rdquo; -&gt; [[_,x]]) = x
+foo _ = &ldquo;no!&rdquo;
+main :: IO ()
+main = do">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://lucabrun.github.io/2013/09/regex-in-haskell-patterns.html" />
+  
+  
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://lucabrun.github.io/"
       >Luca Bruno blog</a
     >
     <div
@@ -247,13 +319,13 @@ main = do<br>
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/regex"
+      href="https://lucabrun.github.io/tags/regex"
       >regex</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/haskell"
+      href="https://lucabrun.github.io/tags/haskell"
       >haskell</a
     >
     
@@ -268,12 +340,12 @@ main = do<br>
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
     
-    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2014/01/intersection-test-and-optimal.html"
+    <a class="ltr:pr-3 rtl:pl-3" href="https://lucabrun.github.io/2014/01/intersection-test-and-optimal.html"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Intersection test and optimal allocation of 2D axis-aligned boxes using linear programming</span></a
     >
     
     
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2013/07/found-my-google-reader-alternative.html"
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://lucabrun.github.io/2013/07/found-my-google-reader-alternative.html"
       ><span>Found my google reader alternative: the old reader</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     
@@ -302,7 +374,7 @@ main = do<br>
   <div class="mr-auto">
   
     &copy; 2024
-    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+    <a class="link" href="https://lucabrun.github.io/">Luca Bruno blog</a>
   
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

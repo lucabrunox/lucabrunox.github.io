@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Refactory on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/refactory/</link>
+    <link>https://lucabrun.github.io/tags/refactory/</link>
     <description>Recent content in Refactory on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 06 Dec 2012 14:00:00 -0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/refactory/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/refactory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Refactory.org is down</title>
-      <link>http://localhost:1313/2012/12/refactoryorg-is-down.html</link>
+      <link>https://lucabrun.github.io/2012/12/refactoryorg-is-down.html</link>
       <pubDate>Thu, 06 Dec 2012 14:00:00 -0800</pubDate>
-      <guid>http://localhost:1313/2012/12/refactoryorg-is-down.html</guid>
+      <guid>https://lucabrun.github.io/2012/12/refactoryorg-is-down.html</guid>
       <description>Unfortunately many of my snippets in this blog have been written and uploaded exclusively on refactory.org . It was a free service for uploading snippets of any kind, with a friendly versioning system and other cool features.&#xA;It&amp;rsquo;s now inactive since several months. I&amp;rsquo;m sorry for anybody stumbling upon any post that has code hosted at refactory.org . From now on I will try to put the code in the post itself whenever I can, or find better places to upload the code.</description>
     </item>
   </channel>

@@ -36,7 +36,7 @@
   lang="en-us"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -66,14 +66,14 @@ Overriding a package I recall the override design pattern from the nix pill 14."
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://lucabrun.github.io/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://lucabrun.github.io/theme.png" />
 
   
   
@@ -89,7 +89,7 @@ Overriding a package I recall the override design pattern from the nix pill 14."
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://lucabrun.github.io/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -101,11 +101,11 @@ Overriding a package I recall the override design pattern from the nix pill 14."
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.ico"
+    href="https://lucabrun.github.io/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/apple-touch-icon.png"
+    href="https://lucabrun.github.io/apple-touch-icon.png"
   />
 
   
@@ -114,12 +114,56 @@ Overriding a package I recall the override design pattern from the nix pill 14."
   
   
   
+  
+  
+
+
+  
+  
+  <meta itemprop="name" content="Nix pill 17: nixpkgs, overriding packages">
+  <meta itemprop="description" content="Welcome to the 17th Nix pill. In the previous 16th pill we have started to dive into the nixpkgs repository. Nixpkgs is a function, and we&rsquo;ve looked at some parameters like system and config.
+Today we&rsquo;ll talk about a special attribute: config.packageOverrides. Overriding packages in a set with fixed point can be considered another design pattern in nixpkgs.
+Overriding a package I recall the override design pattern from the nix pill 14.">
+  <meta itemprop="datePublished" content="2014-11-10T02:00:00-08:00">
+  <meta itemprop="dateModified" content="2014-11-10T02:00:00-08:00">
+  <meta itemprop="wordCount" content="967">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos">
+  
+  <meta property="og:url" content="https://lucabrun.github.io/2014/11/nix-pill-17-nixpkgs-overriding-packages.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Nix pill 17: nixpkgs, overriding packages">
+  <meta property="og:description" content="Welcome to the 17th Nix pill. In the previous 16th pill we have started to dive into the nixpkgs repository. Nixpkgs is a function, and we&amp;rsquo;ve looked at some parameters like system and config.
+Today we&amp;rsquo;ll talk about a special attribute: config.packageOverrides. Overriding packages in a set with fixed point can be considered another design pattern in nixpkgs.
+Overriding a package I recall the override design pattern from the nix pill 14.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-11-10T02:00:00-08:00">
+    <meta property="article:modified_time" content="2014-11-10T02:00:00-08:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixpills">
+    <meta property="article:tag" content="Nixos">
+
+  
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 17: nixpkgs, overriding packages">
+<meta name="twitter:description" content="Welcome to the 17th Nix pill. In the previous 16th pill we have started to dive into the nixpkgs repository. Nixpkgs is a function, and we&rsquo;ve looked at some parameters like system and config.
+Today we&rsquo;ll talk about a special attribute: config.packageOverrides. Overriding packages in a set with fixed point can be considered another design pattern in nixpkgs.
+Overriding a package I recall the override design pattern from the nix pill 14.">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://lucabrun.github.io/2014/11/nix-pill-17-nixpkgs-overriding-packages.html" />
+  
+  
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://lucabrun.github.io/"
       >Luca Bruno blog</a
     >
     <div
@@ -291,25 +335,25 @@ nix-repl&gt; :b pkgs.asciidocFull
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/nixpkgs"
+      href="https://lucabrun.github.io/tags/nixpkgs"
       >nixpkgs</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/nix"
+      href="https://lucabrun.github.io/tags/nix"
       >nix</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/nixpills"
+      href="https://lucabrun.github.io/tags/nixpills"
       >nixpills</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/nixos"
+      href="https://lucabrun.github.io/tags/nixos"
       >nixos</a
     >
     
@@ -324,12 +368,12 @@ nix-repl&gt; :b pkgs.asciidocFull
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
     
-    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2015/01/nix-pill-18-nix-store-paths.html"
+    <a class="ltr:pr-3 rtl:pl-3" href="https://lucabrun.github.io/2015/01/nix-pill-18-nix-store-paths.html"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Nix pill 18: nix store paths</span></a
     >
     
     
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2014/11/nix-pill-16-nixpkgs-parameters.html"
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://lucabrun.github.io/2014/11/nix-pill-16-nixpkgs-parameters.html"
       ><span>Nix pill 16: nixpkgs, the parameters</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     
@@ -358,7 +402,7 @@ nix-repl&gt; :b pkgs.asciidocFull
   <div class="mr-auto">
   
     &copy; 2024
-    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+    <a class="link" href="https://lucabrun.github.io/">Luca Bruno blog</a>
   
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

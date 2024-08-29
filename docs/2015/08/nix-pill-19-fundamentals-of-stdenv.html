@@ -36,7 +36,7 @@
   lang="en-us"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -66,14 +66,14 @@ The stdenv is not a special derivation, but it&rsquo;s very important for the ni
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://lucabrun.github.io/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://lucabrun.github.io/theme.png" />
 
   
   
@@ -89,7 +89,7 @@ The stdenv is not a special derivation, but it&rsquo;s very important for the ni
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://lucabrun.github.io/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -101,11 +101,11 @@ The stdenv is not a special derivation, but it&rsquo;s very important for the ni
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.ico"
+    href="https://lucabrun.github.io/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/apple-touch-icon.png"
+    href="https://lucabrun.github.io/apple-touch-icon.png"
   />
 
   
@@ -114,12 +114,56 @@ The stdenv is not a special derivation, but it&rsquo;s very important for the ni
   
   
   
+  
+  
+
+
+  
+  
+  <meta itemprop="name" content="Nix pill 19: fundamentals of stdenv">
+  <meta itemprop="description" content="Welcome to the 19th Nix pill. In the previous 18th pill we did dive into the algorithm used by Nix to compute the store paths, and also introduced fixed-output store paths.
+This time we will instead look into nixpkgs, in particular one of its core derivation: stdenv .
+The stdenv is not a special derivation, but it&rsquo;s very important for the nixpkgs repository. It serves as base for packaging software. It is used to pull in dependencies such as the GCC toolchain, GNU make, core utilities, patch and diff utilities, and so on.">
+  <meta itemprop="datePublished" content="2015-08-24T09:48:00-07:00">
+  <meta itemprop="dateModified" content="2015-08-24T09:48:00-07:00">
+  <meta itemprop="wordCount" content="1135">
+  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos">
+  
+  <meta property="og:url" content="https://lucabrun.github.io/2015/08/nix-pill-19-fundamentals-of-stdenv.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Nix pill 19: fundamentals of stdenv">
+  <meta property="og:description" content="Welcome to the 19th Nix pill. In the previous 18th pill we did dive into the algorithm used by Nix to compute the store paths, and also introduced fixed-output store paths.
+This time we will instead look into nixpkgs, in particular one of its core derivation: stdenv .
+The stdenv is not a special derivation, but it&amp;rsquo;s very important for the nixpkgs repository. It serves as base for packaging software. It is used to pull in dependencies such as the GCC toolchain, GNU make, core utilities, patch and diff utilities, and so on.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2015-08-24T09:48:00-07:00">
+    <meta property="article:modified_time" content="2015-08-24T09:48:00-07:00">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixpills">
+    <meta property="article:tag" content="Nixos">
+
+  
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 19: fundamentals of stdenv">
+<meta name="twitter:description" content="Welcome to the 19th Nix pill. In the previous 18th pill we did dive into the algorithm used by Nix to compute the store paths, and also introduced fixed-output store paths.
+This time we will instead look into nixpkgs, in particular one of its core derivation: stdenv .
+The stdenv is not a special derivation, but it&rsquo;s very important for the nixpkgs repository. It serves as base for packaging software. It is used to pull in dependencies such as the GCC toolchain, GNU make, core utilities, patch and diff utilities, and so on.">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://lucabrun.github.io/2015/08/nix-pill-19-fundamentals-of-stdenv.html" />
+  
+  
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://lucabrun.github.io/"
       >Luca Bruno blog</a
     >
     <div
@@ -343,25 +387,25 @@ Derive(
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/nixpkgs"
+      href="https://lucabrun.github.io/tags/nixpkgs"
       >nixpkgs</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/nix"
+      href="https://lucabrun.github.io/tags/nix"
       >nix</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/nixpills"
+      href="https://lucabrun.github.io/tags/nixpills"
       >nixpills</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/nixos"
+      href="https://lucabrun.github.io/tags/nixos"
       >nixos</a
     >
     
@@ -376,12 +420,12 @@ Derive(
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
     
-    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2016/01/typescript-and-nodejs-im-sold.html"
+    <a class="ltr:pr-3 rtl:pl-3" href="https://lucabrun.github.io/2016/01/typescript-and-nodejs-im-sold.html"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>TypeScript and NodeJS, I&#39;m sold</span></a
     >
     
     
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2015/02/nixos-consul-nginx-and-containers.html"
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://lucabrun.github.io/2015/02/nixos-consul-nginx-and-containers.html"
       ><span>NixOS, Consul, Nginx and containers</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     
@@ -410,7 +454,7 @@ Derive(
   <div class="mr-auto">
   
     &copy; 2024
-    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+    <a class="link" href="https://lucabrun.github.io/">Luca Bruno blog</a>
   
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

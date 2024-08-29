@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Facebook on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/facebook/</link>
+    <link>https://lucabrun.github.io/tags/facebook/</link>
     <description>Recent content in Facebook on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 22 May 2011 14:59:00 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/facebook/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/facebook/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Enforce facebook chat through SSL</title>
-      <link>http://localhost:1313/2011/05/enforce-facebook-chat-through-ssl.html</link>
+      <link>https://lucabrun.github.io/2011/05/enforce-facebook-chat-through-ssl.html</link>
       <pubDate>Sun, 22 May 2011 14:59:00 -0700</pubDate>
-      <guid>http://localhost:1313/2011/05/enforce-facebook-chat-through-ssl.html</guid>
+      <guid>https://lucabrun.github.io/2011/05/enforce-facebook-chat-through-ssl.html</guid>
       <description>Hello,&#xA;since a few days facebook is supporting SSL for the chat. The problem is that it can&amp;rsquo;t be enabled.&#xA;Until facebook enables this you can use the SSLGuard plugin for firefox, which enforces SSL for a list of web sites, including all facebook pages and the chat as well.&#xA;We have some good ideas for sslguard that we&amp;rsquo;d like to get in for the next releases&amp;hellip; stay tuned.</description>
     </item>
     <item>
       <title>Facebook and Berlusconi</title>
-      <link>http://localhost:1313/2009/12/facebook-and-berlusconi.html</link>
+      <link>https://lucabrun.github.io/2009/12/facebook-and-berlusconi.html</link>
       <pubDate>Mon, 14 Dec 2009 09:38:00 -0800</pubDate>
-      <guid>http://localhost:1313/2009/12/facebook-and-berlusconi.html</guid>
+      <guid>https://lucabrun.github.io/2009/12/facebook-and-berlusconi.html</guid>
       <description>Hello,&#xA;today many people are getting subscribed (with NO authorization) automatically to this group: Sosteniamo SILVIO BERLUSCONI contro i FAN di massimo tartaglia. You have NO notification that you&amp;rsquo;ve been subscribed to this group.&#xA;Also consider the geographic position (screenshot) of the group contact.&#xA;Also consider that the group can&amp;rsquo;t be signaled to facebook, because the feature looks like out of service.&#xA;It&amp;rsquo;s clearly a mafia group, beware of!</description>
     </item>
   </channel>

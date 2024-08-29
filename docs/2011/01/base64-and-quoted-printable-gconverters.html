@@ -36,7 +36,7 @@
   lang="en-us"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -67,14 +67,14 @@ In order to parse MIME parts with base64 or quopri content-transfer-encoding I c
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://lucabrun.github.io/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://lucabrun.github.io/theme.png" />
 
   
   
@@ -90,7 +90,7 @@ In order to parse MIME parts with base64 or quopri content-transfer-encoding I c
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://lucabrun.github.io/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -102,11 +102,11 @@ In order to parse MIME parts with base64 or quopri content-transfer-encoding I c
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.ico"
+    href="https://lucabrun.github.io/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/apple-touch-icon.png"
+    href="https://lucabrun.github.io/apple-touch-icon.png"
   />
 
   
@@ -115,12 +115,61 @@ In order to parse MIME parts with base64 or quopri content-transfer-encoding I c
   
   
   
+  
+  
+
+
+  
+  
+  <meta itemprop="name" content="Base64 and Quoted-Printable GConverters for GMua">
+  <meta itemprop="description" content="Hello,
+lately I&rsquo;m writing GMua for educational purposes and for evaluating Vala, whose purpose is to simplify writing Mail User Agents or simple scripts, ala Java Mail.
+It currently parses IMAP (not yet complete) and has a graphical interface called Gutt (yes, inspired by Mutt) for testing.
+In order to parse MIME parts with base64 or quopri content-transfer-encoding I chose to implement a couple of GConverter (will use GMime a day, maybe when they switch to gio, not yet needed) in Vala that you can find here:">
+  <meta itemprop="datePublished" content="2011-01-14T23:55:00-08:00">
+  <meta itemprop="dateModified" content="2011-01-14T23:55:00-08:00">
+  <meta itemprop="wordCount" content="109">
+  <meta itemprop="keywords" content="Gio,Decrew,Gmua,Mail,Mutt,Development,Vala">
+  
+  <meta property="og:url" content="https://lucabrun.github.io/2011/01/base64-and-quoted-printable-gconverters.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Base64 and Quoted-Printable GConverters for GMua">
+  <meta property="og:description" content="Hello,
+lately I&amp;rsquo;m writing GMua for educational purposes and for evaluating Vala, whose purpose is to simplify writing Mail User Agents or simple scripts, ala Java Mail.
+It currently parses IMAP (not yet complete) and has a graphical interface called Gutt (yes, inspired by Mutt) for testing.
+In order to parse MIME parts with base64 or quopri content-transfer-encoding I chose to implement a couple of GConverter (will use GMime a day, maybe when they switch to gio, not yet needed) in Vala that you can find here:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2011-01-14T23:55:00-08:00">
+    <meta property="article:modified_time" content="2011-01-14T23:55:00-08:00">
+    <meta property="article:tag" content="Gio">
+    <meta property="article:tag" content="Decrew">
+    <meta property="article:tag" content="Gmua">
+    <meta property="article:tag" content="Mail">
+    <meta property="article:tag" content="Mutt">
+    <meta property="article:tag" content="Development">
+
+  
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Base64 and Quoted-Printable GConverters for GMua">
+<meta name="twitter:description" content="Hello,
+lately I&rsquo;m writing GMua for educational purposes and for evaluating Vala, whose purpose is to simplify writing Mail User Agents or simple scripts, ala Java Mail.
+It currently parses IMAP (not yet complete) and has a graphical interface called Gutt (yes, inspired by Mutt) for testing.
+In order to parse MIME parts with base64 or quopri content-transfer-encoding I chose to implement a couple of GConverter (will use GMime a day, maybe when they switch to gio, not yet needed) in Vala that you can find here:">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://lucabrun.github.io/2011/01/base64-and-quoted-printable-gconverters.html" />
+  
+  
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://lucabrun.github.io/"
       >Luca Bruno blog</a
     >
     <div
@@ -230,43 +279,43 @@ In order to parse MIME parts with base64 or quopri content-transfer-encoding I c
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/gio"
+      href="https://lucabrun.github.io/tags/gio"
       >gio</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/decrew"
+      href="https://lucabrun.github.io/tags/decrew"
       >decrew</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/gmua"
+      href="https://lucabrun.github.io/tags/gmua"
       >gmua</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/mail"
+      href="https://lucabrun.github.io/tags/mail"
       >mail</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/mutt"
+      href="https://lucabrun.github.io/tags/mutt"
       >mutt</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/development"
+      href="https://lucabrun.github.io/tags/development"
       >development</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/vala"
+      href="https://lucabrun.github.io/tags/vala"
       >vala</a
     >
     
@@ -281,12 +330,12 @@ In order to parse MIME parts with base64 or quopri content-transfer-encoding I c
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
     
-    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2011/02/rubiks-cube-game-in-valaclutter.html"
+    <a class="ltr:pr-3 rtl:pl-3" href="https://lucabrun.github.io/2011/02/rubiks-cube-game-in-valaclutter.html"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Rubik&#39;s Cube 3D Game in Vala/Clutter</span></a
     >
     
     
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2010/12/valag-11-released.html"
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://lucabrun.github.io/2010/12/valag-11-released.html"
       ><span>Valag 1.1 released, graph generator for the Vala AST</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     
@@ -315,7 +364,7 @@ In order to parse MIME parts with base64 or quopri content-transfer-encoding I c
   <div class="mr-auto">
   
     &copy; 2024
-    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+    <a class="link" href="https://lucabrun.github.io/">Luca Bruno blog</a>
   
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

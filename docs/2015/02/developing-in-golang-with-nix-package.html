@@ -36,7 +36,7 @@
   lang="en-us"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -66,14 +66,14 @@ What kind of support are we talking about? In Nix, you never install libraries. 
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://lucabrun.github.io/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://lucabrun.github.io/theme.png" />
 
   
   
@@ -89,7 +89,7 @@ What kind of support are we talking about? In Nix, you never install libraries. 
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://lucabrun.github.io/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -101,11 +101,11 @@ What kind of support are we talking about? In Nix, you never install libraries. 
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.ico"
+    href="https://lucabrun.github.io/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/apple-touch-icon.png"
+    href="https://lucabrun.github.io/apple-touch-icon.png"
   />
 
   
@@ -114,12 +114,56 @@ What kind of support are we talking about? In Nix, you never install libraries. 
   
   
   
+  
+  
+
+
+  
+  
+  <meta itemprop="name" content="Developing in golang with Nix package manager">
+  <meta itemprop="description" content="I&rsquo;ve been using Go since several months. It&rsquo;s a pleasant language, even though it has its own drawbacks.
+In our Nixpkgs repository we have support for several programming languages: perl, python, ruby, haskell, lua, &hellip; We&rsquo;ve merged a better support for Go.
+What kind of support are we talking about? In Nix, you never install libraries. Instead, you define an environment in which to use a certain library compiled for a certain version of the language.">
+  <meta itemprop="datePublished" content="2015-02-08T03:33:00-08:00">
+  <meta itemprop="dateModified" content="2015-02-08T03:33:00-08:00">
+  <meta itemprop="wordCount" content="613">
+  <meta itemprop="keywords" content="Golang,Nixpkgs,Nix,Nixos">
+  
+  <meta property="og:url" content="https://lucabrun.github.io/2015/02/developing-in-golang-with-nix-package.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Developing in golang with Nix package manager">
+  <meta property="og:description" content="I&amp;rsquo;ve been using Go since several months. It&amp;rsquo;s a pleasant language, even though it has its own drawbacks.
+In our Nixpkgs repository we have support for several programming languages: perl, python, ruby, haskell, lua, &amp;hellip; We&amp;rsquo;ve merged a better support for Go.
+What kind of support are we talking about? In Nix, you never install libraries. Instead, you define an environment in which to use a certain library compiled for a certain version of the language.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2015-02-08T03:33:00-08:00">
+    <meta property="article:modified_time" content="2015-02-08T03:33:00-08:00">
+    <meta property="article:tag" content="Golang">
+    <meta property="article:tag" content="Nixpkgs">
+    <meta property="article:tag" content="Nix">
+    <meta property="article:tag" content="Nixos">
+
+  
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Developing in golang with Nix package manager">
+<meta name="twitter:description" content="I&rsquo;ve been using Go since several months. It&rsquo;s a pleasant language, even though it has its own drawbacks.
+In our Nixpkgs repository we have support for several programming languages: perl, python, ruby, haskell, lua, &hellip; We&rsquo;ve merged a better support for Go.
+What kind of support are we talking about? In Nix, you never install libraries. Instead, you define an environment in which to use a certain library compiled for a certain version of the language.">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://lucabrun.github.io/2015/02/developing-in-golang-with-nix-package.html" />
+  
+  
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://lucabrun.github.io/"
       >Luca Bruno blog</a
     >
     <div
@@ -286,25 +330,25 @@ So as you can see, for each go package nix requires a name, the go path, where t
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/golang"
+      href="https://lucabrun.github.io/tags/golang"
       >golang</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/nixpkgs"
+      href="https://lucabrun.github.io/tags/nixpkgs"
       >nixpkgs</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/nix"
+      href="https://lucabrun.github.io/tags/nix"
       >nix</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/nixos"
+      href="https://lucabrun.github.io/tags/nixos"
       >nixos</a
     >
     
@@ -319,12 +363,12 @@ So as you can see, for each go package nix requires a name, the go path, where t
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
     
-    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2015/02/nixos-consul-nginx-and-containers.html"
+    <a class="ltr:pr-3 rtl:pl-3" href="https://lucabrun.github.io/2015/02/nixos-consul-nginx-and-containers.html"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>NixOS, Consul, Nginx and containers</span></a
     >
     
     
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2015/01/nix-pill-18-nix-store-paths.html"
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://lucabrun.github.io/2015/01/nix-pill-18-nix-store-paths.html"
       ><span>Nix pill 18: nix store paths</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     
@@ -353,7 +397,7 @@ So as you can see, for each go package nix requires a name, the go path, where t
   <div class="mr-auto">
   
     &copy; 2024
-    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+    <a class="link" href="https://lucabrun.github.io/">Luca Bruno blog</a>
   
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

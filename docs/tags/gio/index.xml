@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gio on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/gio/</link>
+    <link>https://lucabrun.github.io/tags/gio/</link>
     <description>Recent content in Gio on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Jan 2011 23:55:00 -0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/gio/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/gio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Base64 and Quoted-Printable GConverters for GMua</title>
-      <link>http://localhost:1313/2011/01/base64-and-quoted-printable-gconverters.html</link>
+      <link>https://lucabrun.github.io/2011/01/base64-and-quoted-printable-gconverters.html</link>
       <pubDate>Fri, 14 Jan 2011 23:55:00 -0800</pubDate>
-      <guid>http://localhost:1313/2011/01/base64-and-quoted-printable-gconverters.html</guid>
+      <guid>https://lucabrun.github.io/2011/01/base64-and-quoted-printable-gconverters.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;m writing GMua for educational purposes and for evaluating Vala, whose purpose is to simplify writing Mail User Agents or simple scripts, ala Java Mail.&#xA;It currently parses IMAP (not yet complete) and has a graphical interface called Gutt (yes, inspired by Mutt) for testing.&#xA;In order to parse MIME parts with base64 or quopri content-transfer-encoding I chose to implement a couple of GConverter (will use GMime a day, maybe when they switch to gio, not yet needed) in Vala that you can find here:</description>
     </item>
   </channel>

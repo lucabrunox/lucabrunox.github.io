@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Languages on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/languages/</link>
+    <link>https://lucabrun.github.io/tags/languages/</link>
     <description>Recent content in Languages on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 09 Jul 2011 00:42:00 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/languages/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/languages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python/Ruby like generators in Vala</title>
-      <link>http://localhost:1313/2011/07/pythonruby-like-generators-in-vala.html</link>
+      <link>https://lucabrun.github.io/2011/07/pythonruby-like-generators-in-vala.html</link>
       <pubDate>Sat, 09 Jul 2011 00:42:00 -0700</pubDate>
-      <guid>http://localhost:1313/2011/07/pythonruby-like-generators-in-vala.html</guid>
+      <guid>https://lucabrun.github.io/2011/07/pythonruby-like-generators-in-vala.html</guid>
       <description>Hello,&#xA;the post below is copied straight from here.&#xA;Here I&amp;rsquo;ll show a cool snippet code making use Vala async functions and iterators for emulating Python/Ruby generators. Creating a generator is as simple as extending the Generator class and implementing the generate() method.&#xA;abstract class Generator { private bool consumed; private G value; private SourceFunc callback; public Generator () { helper (); } private async void helper () { yield generate (); consumed \= true; } protected abstract async void generate (); protected async void feed (G value) { this.</description>
     </item>
     <item>
       <title>Valag 1.1 released, graph generator for the Vala AST</title>
-      <link>http://localhost:1313/2010/12/valag-11-released.html</link>
+      <link>https://lucabrun.github.io/2010/12/valag-11-released.html</link>
       <pubDate>Sun, 19 Dec 2010 04:19:00 -0800</pubDate>
-      <guid>http://localhost:1313/2010/12/valag-11-released.html</guid>
+      <guid>https://lucabrun.github.io/2010/12/valag-11-released.html</guid>
       <description>Hello,&#xA;a new version of Valag, a graphviz generator for the Vala language AST, has been released.&#xA;Changes since 1.0 version:&#xA;Add &amp;ndash;format and &amp;ndash;prefix options. Update to latest libvala-0.12. Bug fixes. This new version also distributes the xdot.py program as a viewer for the generated graphs.&#xA;More information and download at the Valag homepage.</description>
     </item>
     <item>
       <title>Maja - The Vala to Javascript compiler</title>
-      <link>http://localhost:1313/2010/12/maja-vala-to-javascript-compiler.html</link>
+      <link>https://lucabrun.github.io/2010/12/maja-vala-to-javascript-compiler.html</link>
       <pubDate>Fri, 17 Dec 2010 10:42:00 -0800</pubDate>
-      <guid>http://localhost:1313/2010/12/maja-vala-to-javascript-compiler.html</guid>
+      <guid>https://lucabrun.github.io/2010/12/maja-vala-to-javascript-compiler.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve just released the first version of Maja, the Vala to Javascript compiler. The mapping is not quite complete but you can do pretty much everything you could do with javascript directly. There are (still incomplete) bindings for the qooxdoo framework and the demo browser is being ported to vala successfully.&#xA;Maja can be used in any environments, not only web browsers.&#xA;Programming in Vala saves you from lots of type safety troubles (Javascript), lot of typing (Java) and the syntax is really enjoyable as it is quite close to the Javascript model.</description>
     </item>
     <item>
       <title>Vala 0.7.10 released</title>
-      <link>http://localhost:1313/2010/02/vala-0710-released.html</link>
+      <link>https://lucabrun.github.io/2010/02/vala-0710-released.html</link>
       <pubDate>Thu, 04 Feb 2010 12:43:00 -0800</pubDate>
-      <guid>http://localhost:1313/2010/02/vala-0710-released.html</guid>
+      <guid>https://lucabrun.github.io/2010/02/vala-0710-released.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m lately following the Vala development and finally we got a new release with plenty of bug fixes and enhancements which makes Vala even more interesting and usable as general purpose language.&#xA;Here&amp;rsquo;s the announcement.&#xA;I&amp;rsquo;d like to point you to the new Vala journal, a good resource to stay tuned with Vala changes periodically.&#xA;News:&#xA;* Support coalescing operator ??.&#xA;* Support to_string and bitwise complement with enums.</description>
     </item>
     <item>
       <title>Lua for Pythoners - Dictionary</title>
-      <link>http://localhost:1313/2009/12/lua-for-pythoners-dictionary.html</link>
+      <link>https://lucabrun.github.io/2009/12/lua-for-pythoners-dictionary.html</link>
       <pubDate>Mon, 14 Dec 2009 04:15:00 -0800</pubDate>
-      <guid>http://localhost:1313/2009/12/lua-for-pythoners-dictionary.html</guid>
+      <guid>https://lucabrun.github.io/2009/12/lua-for-pythoners-dictionary.html</guid>
       <description>Hello,&#xA;as promised this is the second post, this time for dictionaries. The most important thing to notice is that tbl[key]=nil means deleting the entry from the table, while in python dict[key]=None is still a valid entry with None value.&#xA;Here&amp;rsquo;s the snippet you can launch in a lua interpreter and this is the catalog of python dictionary examples.</description>
     </item>
     <item>
       <title>Lua for Pythoners - Lists</title>
-      <link>http://localhost:1313/2009/12/lua-for-pythoners-lists.html</link>
+      <link>https://lucabrun.github.io/2009/12/lua-for-pythoners-lists.html</link>
       <pubDate>Sun, 13 Dec 2009 05:58:00 -0800</pubDate>
-      <guid>http://localhost:1313/2009/12/lua-for-pythoners-lists.html</guid>
+      <guid>https://lucabrun.github.io/2009/12/lua-for-pythoners-lists.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;m discovering Lua as general purpose language. Many people don&amp;rsquo;t agree with lua being used as a general purpose language, many others (including a newbie like me) think Lua has such a simple syntax and powerful tables to become a full fledged language.&#xA;I use a lot of Python, so I start from here: what Python does that Lua can&amp;rsquo;t do almost in the same way? Read the question as it is, don&amp;rsquo;t read &amp;ldquo;what Python does that Lua can&amp;rsquo;t do&amp;rdquo;, it&amp;rsquo;s different.</description>
     </item>
   </channel>

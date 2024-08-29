@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Performance on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/performance/</link>
+    <link>https://lucabrun.github.io/tags/performance/</link>
     <description>Recent content in Performance on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 07 Oct 2009 14:23:00 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Speeding up zsh completion</title>
-      <link>http://localhost:1313/2009/10/speeding-up-zsh-completion.html</link>
+      <link>https://lucabrun.github.io/2009/10/speeding-up-zsh-completion.html</link>
       <pubDate>Wed, 07 Oct 2009 14:23:00 -0700</pubDate>
-      <guid>http://localhost:1313/2009/10/speeding-up-zsh-completion.html</guid>
+      <guid>https://lucabrun.github.io/2009/10/speeding-up-zsh-completion.html</guid>
       <description>Hello,&#xA;since I&amp;rsquo;ve started using zsh, a great shell with great out of the box completion, one of the most boring issues was having a really slow completion. I can understand it could be slow to get a list of packages, remote files or command line options, but also paths were often slow to be completed. After lots of searches I&amp;rsquo;ve ended up in adding this magic line to my ~/.</description>
     </item>
     <item>
       <title>The less consuming radio player ever</title>
-      <link>http://localhost:1313/2009/06/less-consuming-radio-player-ever.html</link>
+      <link>https://lucabrun.github.io/2009/06/less-consuming-radio-player-ever.html</link>
       <pubDate>Sat, 20 Jun 2009 13:10:00 -0700</pubDate>
-      <guid>http://localhost:1313/2009/06/less-consuming-radio-player-ever.html</guid>
+      <guid>https://lucabrun.github.io/2009/06/less-consuming-radio-player-ever.html</guid>
       <description>Hello,&#xA;multimedia always killed desktop performance, also audio with all such effect-based players out there. I&amp;rsquo;ve been using deezer for a long time, but sometimes I&amp;rsquo;m tired to see my desktop lagging.&#xA;I don&amp;rsquo;t need that, I need random music from internet while I&amp;rsquo;m either programming or studying, and my computer has only 512mb ram and 2.4ghz amd64 (onLY??? yes nowadays it&amp;rsquo;s a little amount).&#xA;Let&amp;rsquo;s see what we can do using gst-launch:</description>
     </item>
   </channel>

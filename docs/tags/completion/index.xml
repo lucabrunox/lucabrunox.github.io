@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Completion on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/completion/</link>
+    <link>https://lucabrun.github.io/tags/completion/</link>
     <description>Recent content in Completion on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 May 2011 05:51:00 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/completion/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/completion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Complete variables with cd command in bash</title>
-      <link>http://localhost:1313/2011/05/complete-variables-with-cd-command-in.html</link>
+      <link>https://lucabrun.github.io/2011/05/complete-variables-with-cd-command-in.html</link>
       <pubDate>Fri, 27 May 2011 05:51:00 -0700</pubDate>
-      <guid>http://localhost:1313/2011/05/complete-variables-with-cd-command-in.html</guid>
+      <guid>https://lucabrun.github.io/2011/05/complete-variables-with-cd-command-in.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;ve been searching for a way to complete variables containing directories with the &amp;ldquo;cd&amp;rdquo; command in bash. This is very helpful if you have something like &amp;ldquo;cd $mydir/&amp;rdquo;. This is not actually working in debian bash-completion.&#xA;Then I&amp;rsquo;ve realized that other commands such as &amp;ldquo;ls&amp;rdquo; actually expand variables. I looked for some &amp;ldquo;complete&amp;rdquo; combo used for &amp;ldquo;ls&amp;rdquo; but not for &amp;ldquo;cd&amp;rdquo; in /etc/bash_completion and I came out with the following:</description>
     </item>
     <item>
       <title>Speeding up zsh completion</title>
-      <link>http://localhost:1313/2009/10/speeding-up-zsh-completion.html</link>
+      <link>https://lucabrun.github.io/2009/10/speeding-up-zsh-completion.html</link>
       <pubDate>Wed, 07 Oct 2009 14:23:00 -0700</pubDate>
-      <guid>http://localhost:1313/2009/10/speeding-up-zsh-completion.html</guid>
+      <guid>https://lucabrun.github.io/2009/10/speeding-up-zsh-completion.html</guid>
       <description>Hello,&#xA;since I&amp;rsquo;ve started using zsh, a great shell with great out of the box completion, one of the most boring issues was having a really slow completion. I can understand it could be slow to get a list of packages, remote files or command line options, but also paths were often slow to be completed. After lots of searches I&amp;rsquo;ve ended up in adding this magic line to my ~/.</description>
     </item>
   </channel>

@@ -36,7 +36,7 @@
   lang="en-us"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -67,14 +67,14 @@ This was one of the first solutions I&rsquo;ve thought but I haven&rsquo;t reali
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://lucabrun.github.io/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://lucabrun.github.io/theme.png" />
 
   
   
@@ -90,7 +90,7 @@ This was one of the first solutions I&rsquo;ve thought but I haven&rsquo;t reali
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://lucabrun.github.io/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -102,11 +102,11 @@ This was one of the first solutions I&rsquo;ve thought but I haven&rsquo;t reali
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.ico"
+    href="https://lucabrun.github.io/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/apple-touch-icon.png"
+    href="https://lucabrun.github.io/apple-touch-icon.png"
   />
 
   
@@ -115,12 +115,59 @@ This was one of the first solutions I&rsquo;ve thought but I haven&rsquo;t reali
   
   
   
+  
+  
+
+
+  
+  
+  <meta itemprop="name" content="Matrix transpose with Prolog">
+  <meta itemprop="description" content="Hello,
+an exam exercise requires me to write a matrix transpose method. I&rsquo;ve written one and it took a little before I was able to define it completely in 4 rules.
+I&rsquo;m curious then I&rsquo;ve found this on stackoverflow: the approach is to calculate first transposed column, then shift by one column and calculate the transpose of that new matrix.
+This was one of the first solutions I&rsquo;ve thought but I haven&rsquo;t realized it because I&rsquo;m too lazy to create a rule for calculating the shifted matrix.">
+  <meta itemprop="datePublished" content="2011-02-15T12:20:00-08:00">
+  <meta itemprop="dateModified" content="2011-02-15T12:20:00-08:00">
+  <meta itemprop="wordCount" content="230">
+  <meta itemprop="keywords" content="Logic Programming,Prolog,Algorithms,Matrices">
+  
+  <meta property="og:url" content="https://lucabrun.github.io/2011/02/matrix-transpose-with-prolog.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Matrix transpose with Prolog">
+  <meta property="og:description" content="Hello,
+an exam exercise requires me to write a matrix transpose method. I&amp;rsquo;ve written one and it took a little before I was able to define it completely in 4 rules.
+I&amp;rsquo;m curious then I&amp;rsquo;ve found this on stackoverflow: the approach is to calculate first transposed column, then shift by one column and calculate the transpose of that new matrix.
+This was one of the first solutions I&amp;rsquo;ve thought but I haven&amp;rsquo;t realized it because I&amp;rsquo;m too lazy to create a rule for calculating the shifted matrix.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2011-02-15T12:20:00-08:00">
+    <meta property="article:modified_time" content="2011-02-15T12:20:00-08:00">
+    <meta property="article:tag" content="Logic Programming">
+    <meta property="article:tag" content="Prolog">
+    <meta property="article:tag" content="Algorithms">
+    <meta property="article:tag" content="Matrices">
+
+  
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Matrix transpose with Prolog">
+<meta name="twitter:description" content="Hello,
+an exam exercise requires me to write a matrix transpose method. I&rsquo;ve written one and it took a little before I was able to define it completely in 4 rules.
+I&rsquo;m curious then I&rsquo;ve found this on stackoverflow: the approach is to calculate first transposed column, then shift by one column and calculate the transpose of that new matrix.
+This was one of the first solutions I&rsquo;ve thought but I haven&rsquo;t realized it because I&rsquo;m too lazy to create a rule for calculating the shifted matrix.">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://lucabrun.github.io/2011/02/matrix-transpose-with-prolog.html" />
+  
+  
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://lucabrun.github.io/"
       >Luca Bruno blog</a
     >
     <div
@@ -238,25 +285,25 @@ After we finish calculating a row, we restart from the first row but looking at 
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/logic-programming"
+      href="https://lucabrun.github.io/tags/logic-programming"
       >logic programming</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/prolog"
+      href="https://lucabrun.github.io/tags/prolog"
       >prolog</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/algorithms"
+      href="https://lucabrun.github.io/tags/algorithms"
       >algorithms</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/matrices"
+      href="https://lucabrun.github.io/tags/matrices"
       >matrices</a
     >
     
@@ -271,12 +318,12 @@ After we finish calculating a row, we restart from the first row but looking at 
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
     
-    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2011/02/aptitude-string-for-downgradable.html"
+    <a class="ltr:pr-3 rtl:pl-3" href="https://lucabrun.github.io/2011/02/aptitude-string-for-downgradable.html"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Aptitude string for downgradable packages</span></a
     >
     
     
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2011/02/bluetooth-simple-one-line-device.html"
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://lucabrun.github.io/2011/02/bluetooth-simple-one-line-device.html"
       ><span>Bluetooth simple one-line device connection pairing with Bluez</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     
@@ -305,7 +352,7 @@ After we finish calculating a row, we restart from the first row but looking at 
   <div class="mr-auto">
   
     &copy; 2024
-    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+    <a class="link" href="https://lucabrun.github.io/">Luca Bruno blog</a>
   
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

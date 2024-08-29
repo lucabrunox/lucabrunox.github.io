@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Last.fm on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/last.fm/</link>
+    <link>https://lucabrun.github.io/tags/last.fm/</link>
     <description>Recent content in Last.fm on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 16 Aug 2008 03:28:00 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/last.fm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/last.fm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vagalume, GTK&#43; and Last.fm</title>
-      <link>http://localhost:1313/2008/08/vagalume-gtk-and-lastfm.html</link>
+      <link>https://lucabrun.github.io/2008/08/vagalume-gtk-and-lastfm.html</link>
       <pubDate>Sat, 16 Aug 2008 03:28:00 -0700</pubDate>
-      <guid>http://localhost:1313/2008/08/vagalume-gtk-and-lastfm.html</guid>
+      <guid>https://lucabrun.github.io/2008/08/vagalume-gtk-and-lastfm.html</guid>
       <description>Vagalume, GTK+ and Last.fm&#xA;Originally uploaded by Lethalman&#xA;I&amp;rsquo;ve found this great gstreamer application to listen to the last.fm stations. It works perfectly, fully functional and up-to-date. Features several IM status updates, including telepathy. It&amp;rsquo;s definitely good-looking with my dark theme.&#xA;Homepage: http://vagalume.igalia.com/&#xA;Last.fm group: http://www.last.fm/group/Vagalume</description>
     </item>
   </channel>

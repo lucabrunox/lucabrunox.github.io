@@ -36,7 +36,7 @@
   lang="en-us"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -68,14 +68,14 @@ Finally I found kqemu, which is a module for the kernel that speeds up a lot qem
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://lucabrun.github.io/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://lucabrun.github.io/theme.png" />
 
   
   
@@ -91,7 +91,7 @@ Finally I found kqemu, which is a module for the kernel that speeds up a lot qem
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://lucabrun.github.io/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -103,11 +103,11 @@ Finally I found kqemu, which is a module for the kernel that speeds up a lot qem
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.ico"
+    href="https://lucabrun.github.io/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/apple-touch-icon.png"
+    href="https://lucabrun.github.io/apple-touch-icon.png"
   />
 
   
@@ -116,12 +116,59 @@ Finally I found kqemu, which is a module for the kernel that speeds up a lot qem
   
   
   
+  
+  
+
+
+  
+  
+  <meta itemprop="name" content="kqemu on Debian amd64">
+  <meta itemprop="description" content="Hello,
+I&rsquo;ve been using qemu a lot lately because I&rsquo;m creating an usb hdd with debian live.
+The image contains a system running postgresql, development packages for gtk and python and gnome-core . All this ends up loading in more than 5 minutes, this is really boring.
+Then I begun looking for a faster virtualization system, and found KVM. Unfortunately my processor hasn&rsquo;t the right flag for it.
+Finally I found kqemu, which is a module for the kernel that speeds up a lot qemu.">
+  <meta itemprop="datePublished" content="2008-08-07T09:07:00-07:00">
+  <meta itemprop="dateModified" content="2008-08-07T09:07:00-07:00">
+  <meta itemprop="wordCount" content="190">
+  <meta itemprop="keywords" content="Debian">
+  
+  <meta property="og:url" content="https://lucabrun.github.io/2008/08/kqemu-on-debian-amd64.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="kqemu on Debian amd64">
+  <meta property="og:description" content="Hello,
+I&amp;rsquo;ve been using qemu a lot lately because I&amp;rsquo;m creating an usb hdd with debian live.
+The image contains a system running postgresql, development packages for gtk and python and gnome-core . All this ends up loading in more than 5 minutes, this is really boring.
+Then I begun looking for a faster virtualization system, and found KVM. Unfortunately my processor hasn&amp;rsquo;t the right flag for it.
+Finally I found kqemu, which is a module for the kernel that speeds up a lot qemu.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2008-08-07T09:07:00-07:00">
+    <meta property="article:modified_time" content="2008-08-07T09:07:00-07:00">
+    <meta property="article:tag" content="Debian">
+
+  
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="kqemu on Debian amd64">
+<meta name="twitter:description" content="Hello,
+I&rsquo;ve been using qemu a lot lately because I&rsquo;m creating an usb hdd with debian live.
+The image contains a system running postgresql, development packages for gtk and python and gnome-core . All this ends up loading in more than 5 minutes, this is really boring.
+Then I begun looking for a faster virtualization system, and found KVM. Unfortunately my processor hasn&rsquo;t the right flag for it.
+Finally I found kqemu, which is a module for the kernel that speeds up a lot qemu.">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://lucabrun.github.io/2008/08/kqemu-on-debian-amd64.html" />
+  
+  
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://lucabrun.github.io/"
       >Luca Bruno blog</a
     >
     <div
@@ -239,7 +286,7 @@ modprobe kqemu</p>
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/debian"
+      href="https://lucabrun.github.io/tags/debian"
       >debian</a
     >
     
@@ -254,12 +301,12 @@ modprobe kqemu</p>
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
     
-    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2008/08/gnome-main-menu.html"
+    <a class="ltr:pr-3 rtl:pl-3" href="https://lucabrun.github.io/2008/08/gnome-main-menu.html"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Gnome main menu</span></a
     >
     
     
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2008/08/debian-and-zd1211-wifi.html"
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://lucabrun.github.io/2008/08/debian-and-zd1211-wifi.html"
       ><span>Debian and zd1211 wifi</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     
@@ -288,7 +335,7 @@ modprobe kqemu</p>
   <div class="mr-auto">
   
     &copy; 2024
-    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+    <a class="link" href="https://lucabrun.github.io/">Luca Bruno blog</a>
   
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

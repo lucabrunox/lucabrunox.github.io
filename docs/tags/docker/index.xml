@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/docker/</link>
+    <link>https://lucabrun.github.io/tags/docker/</link>
     <description>Recent content in Docker on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Apr 2016 01:42:00 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cheap Docker images with Nix</title>
-      <link>http://localhost:1313/2016/04/cheap-docker-images-with-nix_15.html</link>
+      <link>https://lucabrun.github.io/2016/04/cheap-docker-images-with-nix_15.html</link>
       <pubDate>Fri, 15 Apr 2016 01:42:00 -0700</pubDate>
-      <guid>http://localhost:1313/2016/04/cheap-docker-images-with-nix_15.html</guid>
+      <guid>https://lucabrun.github.io/2016/04/cheap-docker-images-with-nix_15.html</guid>
       <description>Let&amp;rsquo;s talk about Docker and Nix today. Before explaining what Nix is, if you don&amp;rsquo;t know yet, and before going into the details, I will show you a snippet similar to a Dockerfile for creating a Redis image equivalent to the one in docker hub.&#xA;The final image will be around 42mb (or 25mb) in size, compared to 177mb.&#xA;EDIT: as mentioned on HN, alpine-based images can even go around 15mb in size.</description>
     </item>
   </channel>

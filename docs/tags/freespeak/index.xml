@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Freespeak on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/freespeak/</link>
+    <link>https://lucabrun.github.io/tags/freespeak/</link>
     <description>Recent content in Freespeak on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 10 Jan 2009 02:42:00 -0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/freespeak/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/freespeak/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FreeSpeak 0.3.0 has been released</title>
-      <link>http://localhost:1313/2009/01/freespeak-030-has-been-released.html</link>
+      <link>https://lucabrun.github.io/2009/01/freespeak-030-has-been-released.html</link>
       <pubDate>Sat, 10 Jan 2009 02:42:00 -0800</pubDate>
-      <guid>http://localhost:1313/2009/01/freespeak-030-has-been-released.html</guid>
+      <guid>https://lucabrun.github.io/2009/01/freespeak-030-has-been-released.html</guid>
       <description>FreeSpeak is a free (as in freedom, developed and released under the terms of GPL) frontend to online translator engines (such as Google, Yahoo, etc.). It is written in Python, it uses the GTK toolkit and some GNOME infrastructure features.&#xA;This is a major enhancemenfts release.&#xA;Overview of Changes from FreeSpeak 0.2.0 to FreeSpeak 0.3.0&#xA;===========================================================&#xA;* Project is now hosted at BerliOS.de: http://freespeak.berlios.de&#xA;* Support for cancellating operations has been added</description>
     </item>
     <item>
       <title>FreeSpeak gains translation suggestions</title>
-      <link>http://localhost:1313/2008/11/freespeak-gains-translation-suggestions.html</link>
+      <link>https://lucabrun.github.io/2008/11/freespeak-gains-translation-suggestions.html</link>
       <pubDate>Sun, 30 Nov 2008 03:47:00 -0800</pubDate>
-      <guid>http://localhost:1313/2008/11/freespeak-gains-translation-suggestions.html</guid>
+      <guid>https://lucabrun.github.io/2008/11/freespeak-gains-translation-suggestions.html</guid>
       <description>Hello,&#xA;it hasn&amp;rsquo;t been a long time since FreeSpeak 0.2.0 has been released. One of the TODOs for the next release was to support open-tran, and more over translation suggestions for development.&#xA;This is a screenshot of what&amp;rsquo;s been included in the repository today:&#xA;From GNOME&#xA;FreeSpeak is a GNOME frontend to online translator engines.</description>
     </item>
     <item>
       <title>FreeSpeak 0.2.0 has been released</title>
-      <link>http://localhost:1313/2008/11/freespeak-020-has-been-released.html</link>
+      <link>https://lucabrun.github.io/2008/11/freespeak-020-has-been-released.html</link>
       <pubDate>Fri, 28 Nov 2008 03:57:00 -0800</pubDate>
-      <guid>http://localhost:1313/2008/11/freespeak-020-has-been-released.html</guid>
+      <guid>https://lucabrun.github.io/2008/11/freespeak-020-has-been-released.html</guid>
       <description>Hello,&#xA;after some work in these weeks now I have released a new version of FreeSpeak.&#xA;FreeSpeak is a free (as in freedom, developed and released under the terms of GPL) frontend to online translator engines (such as Google, Yahoo, etc.). It is written in Python, it uses the GTK toolkit and some GNOME infrastructure features&#xA;.&#xA;It&amp;rsquo;s been rewritten almost from scratch so I think there&amp;rsquo;s no need to post release notes here.</description>
     </item>
   </channel>

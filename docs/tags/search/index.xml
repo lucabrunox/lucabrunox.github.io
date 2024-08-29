@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Search on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/search/</link>
+    <link>https://lucabrun.github.io/tags/search/</link>
     <description>Recent content in Search on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 Nov 2012 01:57:00 -0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/search/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/search/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Code Search is dead. Long live Code Search!</title>
-      <link>http://localhost:1313/2012/11/code-search-is-dead-long-live-code.html</link>
+      <link>https://lucabrun.github.io/2012/11/code-search-is-dead-long-live-code.html</link>
       <pubDate>Sun, 11 Nov 2012 01:57:00 -0800</pubDate>
-      <guid>http://localhost:1313/2012/11/code-search-is-dead-long-live-code.html</guid>
+      <guid>https://lucabrun.github.io/2012/11/code-search-is-dead-long-live-code.html</guid>
       <description>I&amp;rsquo;m bumping a breaking news from debian.net: Introducing codesearch.debian.net, a regexp code search engine&#xA;The days of google codesearch are ended since a while, but now we have an up-to-date and open source debian codesearch.&#xA;(from the about page):&#xA;It searches all the open source projects which are included in the Debian archive (the &amp;ldquo;main&amp;rdquo; distribution only, not non-free or contrib). Currently, that includes about 18000 packages with 140 GiB of source code.</description>
     </item>
     <item>
       <title>Google search wrong again</title>
-      <link>http://localhost:1313/2010/03/google-search-wrong-again.html</link>
+      <link>https://lucabrun.github.io/2010/03/google-search-wrong-again.html</link>
       <pubDate>Fri, 05 Mar 2010 04:37:00 -0800</pubDate>
-      <guid>http://localhost:1313/2010/03/google-search-wrong-again.html</guid>
+      <guid>https://lucabrun.github.io/2010/03/google-search-wrong-again.html</guid>
       <description>Hello,&#xA;sometimes ago I posted twice about google search having wrong results.&#xA;Now it happens again after a few months (it&amp;rsquo;s like google breaks page weights like every 4-5 months).&#xA;The search is &amp;ldquo;debian dpkg list&amp;rdquo;, I really expect the mailing list info page but after 3-4 pages of google search (and also bing this time) I couldn&amp;rsquo;t find it. With yahoo search it&amp;rsquo;s at the first position (lists.debian.org/debian-dpkg).&#xA;Like for the previous posts, using different search engines matters and matches your needs.</description>
     </item>
   </channel>

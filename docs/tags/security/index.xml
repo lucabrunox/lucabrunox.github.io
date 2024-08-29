@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/security/</link>
+    <link>https://lucabrun.github.io/tags/security/</link>
     <description>Recent content in Security on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 18 Jun 2010 01:08:00 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Idea duplicated again</title>
-      <link>http://localhost:1313/2010/06/idea-duplicated-again.html</link>
+      <link>https://lucabrun.github.io/2010/06/idea-duplicated-again.html</link>
       <pubDate>Fri, 18 Jun 2010 01:08:00 -0700</pubDate>
-      <guid>http://localhost:1313/2010/06/idea-duplicated-again.html</guid>
+      <guid>https://lucabrun.github.io/2010/06/idea-duplicated-again.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;d like to point you to this firefox extension HTTPS Everywhere (June 17th, 2010) and SSLGuard which is also a firefox extension (first released Oct 14th, 2009).&#xA;The code of the former extension is a lot more complicated and the result is not always quite the same as SSLGuard. In fact, while they support secure cookies and per-website custom rules, SSLGuard lets you add custom websites to be secured directly from a friendly graphical dialog.</description>
     </item>
     <item>
       <title>Secure and Decentralized Chat</title>
-      <link>http://localhost:1313/2010/02/secure-and-decentralized-chat.html</link>
+      <link>https://lucabrun.github.io/2010/02/secure-and-decentralized-chat.html</link>
       <pubDate>Tue, 16 Feb 2010 03:11:00 -0800</pubDate>
-      <guid>http://localhost:1313/2010/02/secure-and-decentralized-chat.html</guid>
+      <guid>https://lucabrun.github.io/2010/02/secure-and-decentralized-chat.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m writing to let you know of the first release of SDChat.&#xA;It is a protocol with libraries and programs to create secure IM networks using GPG and RSA.&#xA;All the stack is written in Python but the page says it will be rewritten from scratch to provide a C API.&#xA;It features a GTK+ interface with many plugins (unfortunately audio and video are being broken due to gstreamer updates) and a simple server for routing.</description>
     </item>
   </channel>

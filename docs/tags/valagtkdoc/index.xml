@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Valagtkdoc on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/valagtkdoc/</link>
+    <link>https://lucabrun.github.io/tags/valagtkdoc/</link>
     <description>Recent content in Valagtkdoc on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 02 Apr 2010 08:14:00 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/valagtkdoc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/valagtkdoc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Valagtkdoc 1.0</title>
-      <link>http://localhost:1313/2010/04/valagtkdoc-10.html</link>
+      <link>https://lucabrun.github.io/2010/04/valagtkdoc-10.html</link>
       <pubDate>Fri, 02 Apr 2010 08:14:00 -0700</pubDate>
-      <guid>http://localhost:1313/2010/04/valagtkdoc-10.html</guid>
+      <guid>https://lucabrun.github.io/2010/04/valagtkdoc-10.html</guid>
       <description>Hello,&#xA;yes&amp;hellip; this is the nth program I&amp;rsquo;m writing in this period. I hope this is the last one :)&#xA;Valagtkdoc is a tool that integrates Vala with GTK-Doc for documentation generation.&#xA;You can find download and example usage at the homepage.&#xA;I think it&amp;rsquo;s far from being perfect, and actually I haven&amp;rsquo;t tried integrating it with autotools, but it shouldn&amp;rsquo;t be that hard. Unfortunately, you have to somehow break the gtk-doc rule &amp;ldquo;do not run it manually&amp;rdquo; because valagtkdoc goes in the middle between gtkdoc-scan and gtkdoc-mkdb.</description>
     </item>
   </channel>

@@ -36,7 +36,7 @@
   lang="en-us"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -71,14 +71,14 @@ self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self." />
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://lucabrun.github.io/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://lucabrun.github.io/theme.png" />
 
   
   
@@ -94,7 +94,7 @@ self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self." />
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://lucabrun.github.io/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -106,11 +106,11 @@ self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self." />
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.ico"
+    href="https://lucabrun.github.io/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/apple-touch-icon.png"
+    href="https://lucabrun.github.io/apple-touch-icon.png"
   />
 
   
@@ -119,12 +119,70 @@ self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self." />
   
   
   
+  
+  
+
+
+  
+  
+  <meta itemprop="name" content="Controlling audio volume in Awesome WM">
+  <meta itemprop="description" content="I use awesome on my eeepc because it&rsquo;s much space and resource saving.
+There are several possibilities for controlling volume in the Awesome window manager.
+Today I&rsquo;d like to share my way of doing it: using amixer for controlling the volume, and naughty for notifying the user.
+Start by defining the following in your rc.lua (source discussion here):
+volnotify = {}
+volnotify.id = nil
+function volnotify:notify (msg)
+self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self.">
+  <meta itemprop="datePublished" content="2013-03-24T13:15:00-07:00">
+  <meta itemprop="dateModified" content="2013-03-24T13:15:00-07:00">
+  <meta itemprop="wordCount" content="303">
+  <meta itemprop="keywords" content="Awesome,Audio,Desktop">
+  
+  <meta property="og:url" content="https://lucabrun.github.io/2013/03/controlling-audio-volume-in-awesome-wm.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Controlling audio volume in Awesome WM">
+  <meta property="og:description" content="I use awesome on my eeepc because it&amp;rsquo;s much space and resource saving.
+There are several possibilities for controlling volume in the Awesome window manager.
+Today I&amp;rsquo;d like to share my way of doing it: using amixer for controlling the volume, and naughty for notifying the user.
+Start by defining the following in your rc.lua (source discussion here):
+volnotify = {}
+volnotify.id = nil
+function volnotify:notify (msg)
+self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2013-03-24T13:15:00-07:00">
+    <meta property="article:modified_time" content="2013-03-24T13:15:00-07:00">
+    <meta property="article:tag" content="Awesome">
+    <meta property="article:tag" content="Audio">
+    <meta property="article:tag" content="Desktop">
+
+  
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Controlling audio volume in Awesome WM">
+<meta name="twitter:description" content="I use awesome on my eeepc because it&rsquo;s much space and resource saving.
+There are several possibilities for controlling volume in the Awesome window manager.
+Today I&rsquo;d like to share my way of doing it: using amixer for controlling the volume, and naughty for notifying the user.
+Start by defining the following in your rc.lua (source discussion here):
+volnotify = {}
+volnotify.id = nil
+function volnotify:notify (msg)
+self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self.">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://lucabrun.github.io/2013/03/controlling-audio-volume-in-awesome-wm.html" />
+  
+  
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://lucabrun.github.io/"
       >Luca Bruno blog</a
     >
     <div
@@ -251,19 +309,19 @@ The second function will toggle the mute state of the volume in a similar manner
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/awesome"
+      href="https://lucabrun.github.io/tags/awesome"
       >awesome</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/audio"
+      href="https://lucabrun.github.io/tags/audio"
       >audio</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/desktop"
+      href="https://lucabrun.github.io/tags/desktop"
       >desktop</a
     >
     
@@ -278,12 +336,12 @@ The second function will toggle the mute state of the volume in a similar manner
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
     
-    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2013/03/switch-window-by-name-on-linux.html"
+    <a class="ltr:pr-3 rtl:pl-3" href="https://lucabrun.github.io/2013/03/switch-window-by-name-on-linux.html"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Switch window by name on Linux - alternative to Alt&#43;Tab</span></a
     >
     
     
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2012/12/refactoryorg-is-down.html"
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://lucabrun.github.io/2012/12/refactoryorg-is-down.html"
       ><span>Refactory.org is down</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     
@@ -312,7 +370,7 @@ The second function will toggle the mute state of the volume in a similar manner
   <div class="mr-auto">
   
     &copy; 2024
-    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+    <a class="link" href="https://lucabrun.github.io/">Luca Bruno blog</a>
   
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

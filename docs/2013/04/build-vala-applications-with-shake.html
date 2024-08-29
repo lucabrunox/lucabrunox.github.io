@@ -36,7 +36,7 @@
   lang="en-us"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -66,14 +66,14 @@ apt-get install cabal-install cabal update cabal install shake TL;DR; this is th
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://lucabrun.github.io/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://lucabrun.github.io/theme.png" />
 
   
   
@@ -89,7 +89,7 @@ apt-get install cabal-install cabal update cabal install shake TL;DR; this is th
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://lucabrun.github.io/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -101,11 +101,11 @@ apt-get install cabal-install cabal update cabal install shake TL;DR; this is th
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.ico"
+    href="https://lucabrun.github.io/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/apple-touch-icon.png"
+    href="https://lucabrun.github.io/apple-touch-icon.png"
   />
 
   
@@ -114,12 +114,58 @@ apt-get install cabal-install cabal update cabal install shake TL;DR; this is th
   
   
   
+  
+  
+
+
+  
+  
+  <meta itemprop="name" content="Build Vala applications with Shake build system">
+  <meta itemprop="description" content="I&rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.
+First of all, you need to know that Shake is a library written in Haskell, and it&rsquo;s meant to be a better replacement for make. Let&rsquo;s start by installing cabal and then shake:
+apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.">
+  <meta itemprop="datePublished" content="2013-04-06T14:18:00-07:00">
+  <meta itemprop="dateModified" content="2013-04-06T14:18:00-07:00">
+  <meta itemprop="wordCount" content="544">
+  <meta itemprop="keywords" content="Make,Shake,Haskell,Buildsys,Development,Vala">
+  
+  <meta property="og:url" content="https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html">
+  <meta property="og:site_name" content="Luca Bruno blog">
+  <meta property="og:title" content="Build Vala applications with Shake build system">
+  <meta property="og:description" content="I&amp;rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.
+First of all, you need to know that Shake is a library written in Haskell, and it&amp;rsquo;s meant to be a better replacement for make. Let&amp;rsquo;s start by installing cabal and then shake:
+apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2013-04-06T14:18:00-07:00">
+    <meta property="article:modified_time" content="2013-04-06T14:18:00-07:00">
+    <meta property="article:tag" content="Make">
+    <meta property="article:tag" content="Shake">
+    <meta property="article:tag" content="Haskell">
+    <meta property="article:tag" content="Buildsys">
+    <meta property="article:tag" content="Development">
+    <meta property="article:tag" content="Vala">
+
+  
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Build Vala applications with Shake build system">
+<meta name="twitter:description" content="I&rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.
+First of all, you need to know that Shake is a library written in Haskell, and it&rsquo;s meant to be a better replacement for make. Let&rsquo;s start by installing cabal and then shake:
+apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html" />
+  
+  
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://lucabrun.github.io/"
       >Luca Bruno blog</a
     >
     <div
@@ -275,37 +321,37 @@ With shake instead we consistently define how to build .c files with csources *&
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/make"
+      href="https://lucabrun.github.io/tags/make"
       >make</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/shake"
+      href="https://lucabrun.github.io/tags/shake"
       >shake</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/haskell"
+      href="https://lucabrun.github.io/tags/haskell"
       >haskell</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/buildsys"
+      href="https://lucabrun.github.io/tags/buildsys"
       >buildsys</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/development"
+      href="https://lucabrun.github.io/tags/development"
       >development</a
     >
      
     <a
       class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/vala"
+      href="https://lucabrun.github.io/tags/vala"
       >vala</a
     >
     
@@ -320,12 +366,12 @@ With shake instead we consistently define how to build .c files with csources *&
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
     
-    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2013/06/accessing-simple-private-fields-in-php.html"
+    <a class="ltr:pr-3 rtl:pl-3" href="https://lucabrun.github.io/2013/06/accessing-simple-private-fields-in-php.html"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Accessing simple private fields in PHP</span></a
     >
     
     
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2013/03/switch-window-by-name-on-linux.html"
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://lucabrun.github.io/2013/03/switch-window-by-name-on-linux.html"
       ><span>Switch window by name on Linux - alternative to Alt&#43;Tab</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     
@@ -354,7 +400,7 @@ With shake instead we consistently define how to build .c files with csources *&
   <div class="mr-auto">
   
     &copy; 2024
-    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+    <a class="link" href="https://lucabrun.github.io/">Luca Bruno blog</a>
   
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gpg on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/gpg/</link>
+    <link>https://lucabrun.github.io/tags/gpg/</link>
     <description>Recent content in Gpg on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 16 Feb 2010 03:11:00 -0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Secure and Decentralized Chat</title>
-      <link>http://localhost:1313/2010/02/secure-and-decentralized-chat.html</link>
+      <link>https://lucabrun.github.io/2010/02/secure-and-decentralized-chat.html</link>
       <pubDate>Tue, 16 Feb 2010 03:11:00 -0800</pubDate>
-      <guid>http://localhost:1313/2010/02/secure-and-decentralized-chat.html</guid>
+      <guid>https://lucabrun.github.io/2010/02/secure-and-decentralized-chat.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m writing to let you know of the first release of SDChat.&#xA;It is a protocol with libraries and programs to create secure IM networks using GPG and RSA.&#xA;All the stack is written in Python but the page says it will be rewritten from scratch to provide a C API.&#xA;It features a GTK+ interface with many plugins (unfortunately audio and video are being broken due to gstreamer updates) and a simple server for routing.</description>
     </item>
     <item>
       <title>New GPG key</title>
-      <link>http://localhost:1313/2009/08/new-gpg-key.html</link>
+      <link>https://lucabrun.github.io/2009/08/new-gpg-key.html</link>
       <pubDate>Sat, 29 Aug 2009 05:46:00 -0700</pubDate>
-      <guid>http://localhost:1313/2009/08/new-gpg-key.html</guid>
+      <guid>https://lucabrun.github.io/2009/08/new-gpg-key.html</guid>
       <description>Hello,&#xA;due to some synchronization problems between my desktop and laptop, unfortunately I&amp;rsquo;ve lost my GPG secret key. I was planning to renew my key after the SHA issues, but this way I can&amp;rsquo;t neither revoke the old key nor sign the new key. So I please anybody having my pubkey to delete it:&#xA;gpg &amp;ndash;delete-key C29A9371&#xA;I&amp;rsquo;ve uploaded my new key as usual so you can get it:&#xA;gpg &amp;ndash;keyserver pgp.</description>
     </item>
   </channel>

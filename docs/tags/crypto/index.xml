@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Crypto on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/crypto/</link>
+    <link>https://lucabrun.github.io/tags/crypto/</link>
     <description>Recent content in Crypto on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Nov 2009 06:34:00 -0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python and RSA</title>
-      <link>http://localhost:1313/2009/11/there-are-many-python-toolkits-for.html</link>
+      <link>https://lucabrun.github.io/2009/11/there-are-many-python-toolkits-for.html</link>
       <pubDate>Sat, 14 Nov 2009 06:34:00 -0800</pubDate>
-      <guid>http://localhost:1313/2009/11/there-are-many-python-toolkits-for.html</guid>
+      <guid>https://lucabrun.github.io/2009/11/there-are-many-python-toolkits-for.html</guid>
       <description>There are many Python toolkits for crypto, so I hope I&amp;rsquo;ve done the best choice (at least for now). This is a simple utility class for managing RSA keys, a sort of wrappera to the m2crypto class.&#xA;import M2Crypto&#xA;class RSA (object): def \_\_init\_\_ (self, bits=1024, padding=M2Crypto.RSA.pkcs1\_padding, exp=65537): self.bits = bits self.padding = padding self.exp = exp self.rsa = None def generate (self): self.rsa = M2Crypto.RSA.gen\_key( self.bits, self.exp, lambda x: None) def encrypt (self, s): c = &amp;#34;&amp;#34; bytes = self.</description>
     </item>
   </channel>

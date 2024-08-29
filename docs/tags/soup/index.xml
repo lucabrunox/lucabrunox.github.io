@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Soup on Luca Bruno blog</title>
-    <link>http://localhost:1313/tags/soup/</link>
+    <link>https://lucabrun.github.io/tags/soup/</link>
     <description>Recent content in Soup on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Jan 2010 03:04:00 -0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/soup/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lucabrun.github.io/tags/soup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fetch web page with Vala and Soup</title>
-      <link>http://localhost:1313/2010/01/fetch-web-page-with-vala-and-soup.html</link>
+      <link>https://lucabrun.github.io/2010/01/fetch-web-page-with-vala-and-soup.html</link>
       <pubDate>Sun, 24 Jan 2010 03:04:00 -0800</pubDate>
-      <guid>http://localhost:1313/2010/01/fetch-web-page-with-vala-and-soup.html</guid>
+      <guid>https://lucabrun.github.io/2010/01/fetch-web-page-with-vala-and-soup.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m lately using the Vala language widely. I find it a great and well designed language.&#xA;You may know I&amp;rsquo;m the maintainer of Freespeak. This program is written in Python. Now I&amp;rsquo;m rewriting it in Vala, both for providing a good and really simple API in C and for learning Vala.&#xA;I will now paste a snippet from the new freespeak code that I use for creating a cancellable asyncronous operation for fetching a web page using libsoup either with a GET or a POST method.</description>
     </item>
   </channel>
