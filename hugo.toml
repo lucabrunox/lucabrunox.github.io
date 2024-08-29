@@ -4,3 +4,9 @@ title = 'Luca Bruno blog'
 publishDir = "docs"
 theme = "paper"
 
+[params]
+color='linen'
+linkedin='lucabrunox'
+github='lucabrunox'
+monoDarkIcon=true
+
