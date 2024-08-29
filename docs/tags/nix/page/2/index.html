@@ -1,0 +1,376 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Nix - Luca Bruno blog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  
+  <meta
+    name="description"
+    content="A personal blog"
+  />
+  <meta name="author" content="Luca Bruno blog" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.125.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Luca Bruno blog</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+
+
+<h1 class="mb-14">#Nix</h1>
+
+
+
+
+
+
+
+ 
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Nix pill 12: the inputs design pattern</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Aug 28, 2014</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2014/08/nix-pill-12-inputs-design-pattern.html">Nix pill 12: the inputs design pattern</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Nix pill 11: the garbage collector</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Aug 21, 2014</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2014/08/nix-pill-11-garbage-collector.html">Nix pill 11: the garbage collector</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Nix pill 10: developing with nix-shell</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Aug 19, 2014</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2014/08/nix-pill-10-developing-with-nix-shell.html">Nix pill 10: developing with nix-shell</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Nix pill 9: automatic runtime dependencies</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Aug 8, 2014</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2014/08/nix-pill-9-automatic-runtime.html">Nix pill 9: automatic runtime dependencies</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Nix pill 8: generic builders</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Aug 1, 2014</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2014/08/nix-pill-8-generic-builders.html">Nix pill 8: generic builders</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Nix pill 7: a working derivation</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jul 31, 2014</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2014/07/nix-pill-7-working-derivation.html">Nix pill 7: a working derivation</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Nix pill 6: our first derivation</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jul 29, 2014</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2014/07/nix-pill-6-our-first-derivation.html">Nix pill 6: our first derivation</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Nix pill 5: functions and imports</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jul 28, 2014</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2014/07/nix-pill-5-functions-and-imports.html">Nix pill 5: functions and imports</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Nix pill 4: the basics of the language</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jul 26, 2014</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2014/07/nix-pill-4-basics-of-language.html">Nix pill 4: the basics of the language</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Nix pill 3: enter the environment</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jul 25, 2014</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2014/07/nix-pill-3-enter-environment.html">Nix pill 3: enter the environment</a>
+</section>
+
+
+
+
+<nav class="mt-14 flex">
+  
+  <a class="btn" href="/tags/nix/">← Prev Page</a>
+  
+  
+  <a class="btn ml-auto" href="/tags/nix/page/3/"
+    >Next Page →</a
+  >
+  
+</nav>
+
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

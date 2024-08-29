@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Consul on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/consul/</link>
+    <link>http://localhost:1313/tags/consul/</link>
     <description>Recent content in Consul on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 19 Feb 2015 03:59:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/consul/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/consul/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NixOS, Consul, Nginx and containers</title>
-      <link>https://lucabrun.github.io/2015/02/nixos-consul-nginx-and-containers.html</link>
+      <link>http://localhost:1313/2015/02/nixos-consul-nginx-and-containers.html</link>
       <pubDate>Thu, 19 Feb 2015 03:59:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2015/02/nixos-consul-nginx-and-containers.html</guid>
+      <guid>http://localhost:1313/2015/02/nixos-consul-nginx-and-containers.html</guid>
       <description>This is a follow up post on https://medium.com/@dan.ellis/you-dont-need-1mm-for-a-distributed-system-70901d4741e1 . I think the post was well written, so I decided to write a variant using NixOS.&#xA;We&amp;rsquo;ll be using declarative nixos containers, which do not use docker but systemd-nspawn. Also systemd is started as init system inside containers.&#xA;Please note that this configuration can be applied to any nixos machine, and also the containers configuration could be applied to real servers or other kinds of virtualization, e.</description>
     </item>
   </channel>

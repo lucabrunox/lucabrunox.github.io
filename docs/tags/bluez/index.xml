@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bluez on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/bluez/</link>
+    <link>http://localhost:1313/tags/bluez/</link>
     <description>Recent content in Bluez on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Feb 2011 07:10:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/bluez/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/bluez/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bluetooth simple one-line device connection pairing with Bluez</title>
-      <link>https://lucabrun.github.io/2011/02/bluetooth-simple-one-line-device.html</link>
+      <link>http://localhost:1313/2011/02/bluetooth-simple-one-line-device.html</link>
       <pubDate>Wed, 09 Feb 2011 07:10:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2011/02/bluetooth-simple-one-line-device.html</guid>
+      <guid>http://localhost:1313/2011/02/bluetooth-simple-one-line-device.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve written a simple Python script using the Bluez (version 4.66) stack (thanks to http://shr-project.org/trac/wiki/Using) with this usage:&#xA;python connect.py MACADDRESS PIN MOUNTPOINT&#xA;Snippet code for connect.py is here. If the device is paired, it will be removed and unmounted.&#xA;Disconnection is as easy with:&#xA;python disconnect.py MACADDRESS MOUNTPOINT&#xA;Snippet code for disconnect.py is here.&#xA;Feel free to use the code also for other services, in this case my primary concern was to mount the file system.</description>
     </item>
   </channel>

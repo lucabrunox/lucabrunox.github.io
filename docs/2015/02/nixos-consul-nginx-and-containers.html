@@ -1,141 +1,218 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>NixOS, Consul, Nginx and containers | Luca Bruno blog</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="This is a follow up post on https://medium.com/@dan.ellis/you-dont-need-1mm-for-a-distributed-system-70901d4741e1 . I think the post was well written, so I decided to write a variant using NixOS.
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>NixOS, Consul, Nginx and containers - Luca Bruno blog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="This is a follow up post on https://medium.com/@dan.ellis/you-dont-need-1mm-for-a-distributed-system-70901d4741e1 . I think the post was well written, so I decided to write a variant using NixOS.
 We&rsquo;ll be using declarative nixos containers, which do not use docker but systemd-nspawn. Also systemd is started as init system inside containers.
-Please note that this configuration can be applied to any nixos machine, and also the containers configuration could be applied to real servers or other kinds of virtualization, e.">
-    <meta name="generator" content="Hugo 0.125.2">
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
-
-
-
-    
-
-    
-      
-
-    
-
-    
-
-    
-      <link rel="canonical" href="https://lucabrun.github.io/2015/02/nixos-consul-nginx-and-containers.html">
-    
-
-    <meta property="og:url" content="https://lucabrun.github.io/2015/02/nixos-consul-nginx-and-containers.html">
-  <meta property="og:site_name" content="Luca Bruno blog">
-  <meta property="og:title" content="NixOS, Consul, Nginx and containers">
-  <meta property="og:description" content="This is a follow up post on https://medium.com/@dan.ellis/you-dont-need-1mm-for-a-distributed-system-70901d4741e1 . I think the post was well written, so I decided to write a variant using NixOS.
-We&amp;rsquo;ll be using declarative nixos containers, which do not use docker but systemd-nspawn. Also systemd is started as init system inside containers.
-Please note that this configuration can be applied to any nixos machine, and also the containers configuration could be applied to real servers or other kinds of virtualization, e.">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-  <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2015-02-19T03:59:00-08:00">
-    <meta property="article:modified_time" content="2015-02-19T03:59:00-08:00">
-    <meta property="article:tag" content="Containers">
-    <meta property="article:tag" content="Consul">
-    <meta property="article:tag" content="Nix">
-    <meta property="article:tag" content="Nixos">
-
-  <meta itemprop="name" content="NixOS, Consul, Nginx and containers">
-  <meta itemprop="description" content="This is a follow up post on https://medium.com/@dan.ellis/you-dont-need-1mm-for-a-distributed-system-70901d4741e1 . I think the post was well written, so I decided to write a variant using NixOS.
-We&rsquo;ll be using declarative nixos containers, which do not use docker but systemd-nspawn. Also systemd is started as init system inside containers.
-Please note that this configuration can be applied to any nixos machine, and also the containers configuration could be applied to real servers or other kinds of virtualization, e.">
-  <meta itemprop="datePublished" content="2015-02-19T03:59:00-08:00">
-  <meta itemprop="dateModified" content="2015-02-19T03:59:00-08:00">
-  <meta itemprop="wordCount" content="843">
-  <meta itemprop="keywords" content="Containers,Consul,Nix,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="NixOS, Consul, Nginx and containers">
-<meta name="twitter:description" content="This is a follow up post on https://medium.com/@dan.ellis/you-dont-need-1mm-for-a-distributed-system-70901d4741e1 . I think the post was well written, so I decided to write a variant using NixOS.
-We&rsquo;ll be using declarative nixos containers, which do not use docker but systemd-nspawn. Also systemd is started as init system inside containers.
-Please note that this configuration can be applied to any nixos machine, and also the containers configuration could be applied to real servers or other kinds of virtualization, e.">
-
-	
-  </head>
-
-  <body class="ma0 avenir bg-near-white">
-
-    
-   
+Please note that this configuration can be applied to any nixos machine, and also the containers configuration could be applied to real servers or other kinds of virtualization, e." />
+  <meta name="author" content="Luca Bruno blog" />
   
 
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Luca Bruno blog
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      
-<div class="ananke-socials">
   
-</div>
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
-    </div>
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.125.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Luca Bruno blog</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
-</nav>
 
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">NixOS, Consul, Nginx and containers</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Feb 19, 2015</time>
+      
+      
+      
+      
     </div>
+    
   </header>
 
-
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        Posts
-      </aside>
-      
-
-
-
-
-
-
-
-
-
-
-  <div id="sharing" class="mt3 ananke-socials">
-    
-  </div>
-
-
-      <h1 class="f1 athelas mt3 mb1">NixOS, Consul, Nginx and containers</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2015-02-19T03:59:00-08:00">February 19, 2015</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>This is a follow up post on <a href="https://medium.com/@dan.ellis/you-dont-need-1mm-for-a-distributed-system-70901d4741e1">https://medium.com/@dan.ellis/you-dont-need-1mm-for-a-distributed-system-70901d4741e1</a> . I think the post was well written, so I decided to write a variant using <a href="http://nixos.org/">NixOS</a>.</p>
+  <section><p>This is a follow up post on <a href="https://medium.com/@dan.ellis/you-dont-need-1mm-for-a-distributed-system-70901d4741e1">https://medium.com/@dan.ellis/you-dont-need-1mm-for-a-distributed-system-70901d4741e1</a> . I think the post was well written, so I decided to write a variant using <a href="http://nixos.org/">NixOS</a>.</p>
 <p>We&rsquo;ll be using <a href="https://nixos.org/releases/nixos/14.12/nixos-14.12.374.61adf9e/manual/ch-containers.html#sec-declarative-containers">declarative nixos containers</a>, which do not use docker but <a href="http://www.freedesktop.org/software/systemd/man/systemd-nspawn.html">systemd-nspawn</a>. Also systemd is started as init system inside containers.</p>
 <p>Please note that this configuration can be applied to any nixos machine, and also the containers configuration could be applied to real servers or other kinds of virtualization, e.g. via <a href="http://nixos.org/nixops/">nixops</a>. That is, the same syntax and configuration can be reused anywhere else within the nix world.</p>
 <p>For example, you could create docker containers with nixos, and keep running the host with another distribution.</p>
@@ -321,119 +398,94 @@ in
 Fixing this is about tweaking the systemd service values about the StartTime.</p>
 <p>Each container consumes practically no disk space at base. Everything else is shared through the host nix store, except logs, consul state, ecc. of course.</p>
 <p>Have fun!</p>
-<ul class="pa0">
+</section>
+
   
-   <li class="list di">
-     <a href="/tags/containers/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Containers</a>
-   </li>
   
-   <li class="list di">
-     <a href="/tags/consul/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Consul</a>
-   </li>
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/containers"
+      >containers</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/consul"
+      >consul</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/nix"
+      >nix</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/nixos"
+      >nixos</a
+    >
+    
+  </footer>
   
-   <li class="list di">
-     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
-   </li>
+
   
-   <li class="list di">
-     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
-   </li>
   
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
-    </div>
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2015/08/nix-pill-19-fundamentals-of-stdenv.html"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Nix pill 19: fundamentals of stdenv</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2015/02/developing-in-golang-with-nix-package.html"
+      ><span>Developing in golang with Nix package manager</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
 
-    <aside class="w-30-l mt6-l">
+  
+  
+
+  
+  
+
+  
 
 
+  
+</article>
 
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/2015/02/developing-in-golang-with-nix-package.html">Developing in golang with Nix package manager</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2015/01/nix-pill-18-nix-store-paths.html">Nix pill 18: nix store paths</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/11/nix-pill-17-nixpkgs-overriding-packages.html">Nix pill 17: nixpkgs, overriding packages</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/11/nix-pill-16-nixpkgs-parameters.html">Nix pill 16: nixpkgs, the parameters</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/09/nix-pill-15-nix-search-paths.html">Nix pill 15: nix search paths</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/09/nix-pill-14-override-design-pattern.html">Nix pill 14: the override design pattern</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/09/nix-pill-13-callpackage-design-pattern.html">Nix pill 13: the callPackage design pattern</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/08/nix-pill-12-inputs-design-pattern.html">Nix pill 12: the inputs design pattern</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/08/nix-pill-11-garbage-collector.html">Nix pill 11: the garbage collector</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/08/nix-pill-10-developing-with-nix-shell.html">Nix pill 10: developing with nix-shell</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/08/nix-pill-9-automatic-runtime.html">Nix pill 9: automatic runtime dependencies</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/08/nix-pill-8-generic-builders.html">Nix pill 8: generic builders</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/07/nix-pill-7-working-derivation.html">Nix pill 7: a working derivation</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/07/nix-pill-6-our-first-derivation.html">Nix pill 6: our first derivation</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2014/07/nix-pill-5-functions-and-imports.html">Nix pill 5: functions and imports</a>
-        </li>
-	    
-    </ul>
-</div>
-
-</aside>
-
-  </article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
-    &copy;  Luca Bruno blog 2024 
-  </a>
-    <div>
-<div class="ananke-socials">
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
   
-</div>
-</div>
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+  
   </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
 </footer>
 
   </body>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web Services on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/web-services/</link>
+    <link>http://localhost:1313/tags/web-services/</link>
     <description>Recent content in Web Services on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 09 Oct 2009 06:08:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/web-services/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/web-services/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Debian&#43;Apache&#43;Tomcat&#43;Axis</title>
-      <link>https://lucabrun.github.io/2009/10/debianapachetomcataxis.html</link>
+      <link>http://localhost:1313/2009/10/debianapachetomcataxis.html</link>
       <pubDate>Fri, 09 Oct 2009 06:08:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/10/debianapachetomcataxis.html</guid>
+      <guid>http://localhost:1313/2009/10/debianapachetomcataxis.html</guid>
       <description>Hello,&#xA;one of the courses I&amp;rsquo;m following at the university is &amp;ldquo;Laboratorio di reti&#xA;di calcolatori&amp;rdquo; which uses the technologies (really technologies?????)&#xA;listed in the post title. This is a little tutorial for making them works,&#xA;with a little script for registering .wsdd files.&#xA;- aptitude install apache2 tomcat6&#xA;- download the binaries of axis 1.x (latest is 2.x, it&amp;rsquo;s not used in our course) and xerces then unpack them.</description>
     </item>
   </channel>

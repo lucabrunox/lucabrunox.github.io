@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Duckduckgo on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/duckduckgo/</link>
+    <link>http://localhost:1313/tags/duckduckgo/</link>
     <description>Recent content in Duckduckgo on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Sep 2010 05:16:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/duckduckgo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/duckduckgo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DuckDuckGo search engine</title>
-      <link>https://lucabrun.github.io/2010/09/duckduckgo-search-engine.html</link>
+      <link>http://localhost:1313/2010/09/duckduckgo-search-engine.html</link>
       <pubDate>Wed, 15 Sep 2010 05:16:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2010/09/duckduckgo-search-engine.html</guid>
+      <guid>http://localhost:1313/2010/09/duckduckgo-search-engine.html</guid>
       <description>Hello,&#xA;in this post I&amp;rsquo;d like to hint you a very nice search engine: DuckDuckGo. I&amp;rsquo;ve been pointed out to this by a post here on why both Google and Yahoo suck (and why Google search does more).&#xA;In older posts of mine you can find some examples on how Google search can miserably fail a search.&#xA;The main problem with the two approaches is: Google (and Bing too) sorts by popularity, Yahoo by match.</description>
     </item>
   </channel>

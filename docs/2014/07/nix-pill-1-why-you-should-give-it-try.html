@@ -1,141 +1,218 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Nix pill 1: why you should give it a try | Luca Bruno blog</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Introduction
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Nix pill 1: why you should give it a try - Luca Bruno blog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Introduction
 Welcome to the first post of the Nix in pills series. Nix is a purely functional package manager and deployment system for POSIX. There&rsquo;s a lot of documentation that describes what Nix, NixOS and related projects are.
-The purpose of this post is to convince you to give Nix a try. Installing NixOS is not required, but sometimes I may refer to NixOS as a real world example of Nix usage for building a whole operating system.">
-    <meta name="generator" content="Hugo 0.125.2">
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
-
-
-
-    
-
-    
-      
-
-    
-
-    
-
-    
-      <link rel="canonical" href="https://lucabrun.github.io/2014/07/nix-pill-1-why-you-should-give-it-try.html">
-    
-
-    <meta property="og:url" content="https://lucabrun.github.io/2014/07/nix-pill-1-why-you-should-give-it-try.html">
-  <meta property="og:site_name" content="Luca Bruno blog">
-  <meta property="og:title" content="Nix pill 1: why you should give it a try">
-  <meta property="og:description" content="Introduction
-Welcome to the first post of the Nix in pills series. Nix is a purely functional package manager and deployment system for POSIX. There&amp;rsquo;s a lot of documentation that describes what Nix, NixOS and related projects are.
-The purpose of this post is to convince you to give Nix a try. Installing NixOS is not required, but sometimes I may refer to NixOS as a real world example of Nix usage for building a whole operating system.">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-  <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2014-07-23T07:11:00-07:00">
-    <meta property="article:modified_time" content="2014-07-23T07:11:00-07:00">
-    <meta property="article:tag" content="Nixpkgs">
-    <meta property="article:tag" content="Nix">
-    <meta property="article:tag" content="Nixpills">
-    <meta property="article:tag" content="Nixos">
-
-  <meta itemprop="name" content="Nix pill 1: why you should give it a try">
-  <meta itemprop="description" content="Introduction
-Welcome to the first post of the Nix in pills series. Nix is a purely functional package manager and deployment system for POSIX. There&rsquo;s a lot of documentation that describes what Nix, NixOS and related projects are.
-The purpose of this post is to convince you to give Nix a try. Installing NixOS is not required, but sometimes I may refer to NixOS as a real world example of Nix usage for building a whole operating system.">
-  <meta itemprop="datePublished" content="2014-07-23T07:11:00-07:00">
-  <meta itemprop="dateModified" content="2014-07-23T07:11:00-07:00">
-  <meta itemprop="wordCount" content="1334">
-  <meta itemprop="keywords" content="Nixpkgs,Nix,Nixpills,Nixos"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Nix pill 1: why you should give it a try">
-<meta name="twitter:description" content="Introduction
-Welcome to the first post of the Nix in pills series. Nix is a purely functional package manager and deployment system for POSIX. There&rsquo;s a lot of documentation that describes what Nix, NixOS and related projects are.
-The purpose of this post is to convince you to give Nix a try. Installing NixOS is not required, but sometimes I may refer to NixOS as a real world example of Nix usage for building a whole operating system.">
-
-	
-  </head>
-
-  <body class="ma0 avenir bg-near-white">
-
-    
-   
+The purpose of this post is to convince you to give Nix a try. Installing NixOS is not required, but sometimes I may refer to NixOS as a real world example of Nix usage for building a whole operating system." />
+  <meta name="author" content="Luca Bruno blog" />
   
 
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Luca Bruno blog
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      
-<div class="ananke-socials">
   
-</div>
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
-    </div>
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.125.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Luca Bruno blog</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
-</nav>
 
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Nix pill 1: why you should give it a try</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Jul 23, 2014</time>
+      
+      
+      
+      
     </div>
+    
   </header>
 
-
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        Posts
-      </aside>
-      
-
-
-
-
-
-
-
-
-
-
-  <div id="sharing" class="mt3 ananke-socials">
-    
-  </div>
-
-
-      <h1 class="f1 athelas mt3 mb1">Nix pill 1: why you should give it a try</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2014-07-23T07:11:00-07:00">July 23, 2014</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><strong>Introduction</strong></p>
+  <section><p><strong>Introduction</strong></p>
 <p>Welcome to the first post of the <a href="http://nixos.org/nix/">Nix</a> in pills series. Nix is a purely functional package manager and deployment system for POSIX. There&rsquo;s a lot of documentation that describes what Nix, <a href="http://nixos.org/">NixOS</a> and related projects are.<br>
 The purpose of this post is to convince you to give Nix a try. Installing NixOS is not required, but sometimes I may refer to NixOS as a real world example of Nix usage for building a whole operating system.</p>
 <p><strong>Rationale of pills</strong></p>
@@ -187,63 +264,94 @@ It however currently falls off when speaking about dynamic composition at runtim
 &hellip;we will install Nix on top of your current system (I assume GNU/Linux, but we also have OSX users) and start inspecting the installed stuff.<br>
 Pill 2 is available for <a href="http://lethalman.blogspot.com/2014/07/nix-pill-2-install-on-your-running.html">reading here</a>.</p>
 <p>To be notified about the new pill, stay tuned on <a href="https://twitter.com/search?src=typd&amp;q=%23NixPills">#NixPills</a>, follow <a href="https://twitter.com/lethalman">@lethalman</a> or subscribe to the <a href="http://lethalman.blogspot.com/feeds/posts/default/-/nixpills">nixpills rss</a>.</p>
-<ul class="pa0">
+</section>
+
   
-   <li class="list di">
-     <a href="/tags/nixpkgs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpkgs</a>
-   </li>
   
-   <li class="list di">
-     <a href="/tags/nix/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nix</a>
-   </li>
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/nixpkgs"
+      >nixpkgs</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/nix"
+      >nix</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/nixpills"
+      >nixpills</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/nixos"
+      >nixos</a
+    >
+    
+  </footer>
   
-   <li class="list di">
-     <a href="/tags/nixpills/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixpills</a>
-   </li>
+
   
-   <li class="list di">
-     <a href="/tags/nixos/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nixos</a>
-   </li>
   
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
-    </div>
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2014/07/nix-pill-2-install-on-your-running.html"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Nix pill 2: install on your running system</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html"
+      ><span>Debugging and fixing a wmctrl bug in NixOS</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
 
-    <aside class="w-30-l mt6-l">
+  
+  
+
+  
+  
+
+  
 
 
+  
+</article>
 
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html">Debugging and fixing a wmctrl bug in NixOS</a>
-        </li>
-	    
-    </ul>
-</div>
-
-</aside>
-
-  </article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
-    &copy;  Luca Bruno blog 2024 
-  </a>
-    <div>
-<div class="ananke-socials">
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
   
-</div>
-</div>
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+  
   </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
 </footer>
 
   </body>

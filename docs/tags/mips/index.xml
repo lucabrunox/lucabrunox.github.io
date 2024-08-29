@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mips on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/mips/</link>
+    <link>http://localhost:1313/tags/mips/</link>
     <description>Recent content in Mips on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 29 Jul 2010 02:28:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/mips/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/mips/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mipsdis MIPS32 disassembler</title>
-      <link>https://lucabrun.github.io/2010/07/mipsdis-mips32-disassembler.html</link>
+      <link>http://localhost:1313/2010/07/mipsdis-mips32-disassembler.html</link>
       <pubDate>Thu, 29 Jul 2010 02:28:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2010/07/mipsdis-mips32-disassembler.html</guid>
+      <guid>http://localhost:1313/2010/07/mipsdis-mips32-disassembler.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve written a MIPS32 (Release 2) disassembler for ELF files. It is not a simple disassembler, it&amp;rsquo;s mostly made for reverse engineering proprietary boxes for educational purposes. It has been successfully tested on Vodafone Station which has Broadcom binaries. These boxes don&amp;rsquo;t have a sections table, therefore normal disassemblers don&amp;rsquo;t work. Mipsdis instead will guess the bounds of those sections (most important ones are TEXT and RODATA for strings).</description>
     </item>
   </channel>

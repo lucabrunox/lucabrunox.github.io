@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sorting on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/sorting/</link>
+    <link>http://localhost:1313/tags/sorting/</link>
     <description>Recent content in Sorting on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Feb 2011 10:30:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/sorting/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/sorting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bubble sort for prolog</title>
-      <link>https://lucabrun.github.io/2011/02/bubble-sort-for-prolog.html</link>
+      <link>http://localhost:1313/2011/02/bubble-sort-for-prolog.html</link>
       <pubDate>Thu, 24 Feb 2011 10:30:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2011/02/bubble-sort-for-prolog.html</guid>
+      <guid>http://localhost:1313/2011/02/bubble-sort-for-prolog.html</guid>
       <description>Hello again,&#xA;this time I&amp;rsquo;ve found a version of bubble sort here. I wanted to provide my version, which is less iterative and, I think, more intuitive. What it does is, simply, bubble until it&amp;rsquo;s sorted:&#xA;bubblesort(L1, L2) :- bubblesort2(L1,L2,unsorted),!. bubblesort2(L,L,sorted). bubblesort2(L1,L2,unsorted) :- bubble(L1,L3,C), bubblesort2(L3,L2,C). bubble(\[\],\[\],sorted). bubble(\[X\],\[X\],sorted). bubble(\[X,Y|L\], \[X|L1\], C) :- X &amp;lt;= Y, bubble(\[Y|L\],L1,C). bubble(\[X,Y|L\], \[Y|L1\], unsorted) :- X \&amp;gt; Y, bubble(\[X|L\],L1,\_). Yes, the exam is tomorrow so I will finally stop annoying you readers ;) </description>
     </item>
   </channel>

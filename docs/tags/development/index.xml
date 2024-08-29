@@ -2,325 +2,325 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/development/</link>
+    <link>http://localhost:1313/tags/development/</link>
     <description>Recent content in Development on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 Jan 2016 13:33:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TypeScript and NodeJS, I&#39;m sold</title>
-      <link>https://lucabrun.github.io/2016/01/typescript-and-nodejs-im-sold.html</link>
+      <link>http://localhost:1313/2016/01/typescript-and-nodejs-im-sold.html</link>
       <pubDate>Mon, 04 Jan 2016 13:33:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2016/01/typescript-and-nodejs-im-sold.html</guid>
+      <guid>http://localhost:1313/2016/01/typescript-and-nodejs-im-sold.html</guid>
       <description>TypeScript is a typed superset of JavaScript that compiles to plain JavaScript, the way you expect it to be.&#xA;I’ve heard of it a long time ago, but recently with TypeScript 1.7 it got async functions, which means you can awaitasynchronous function calls, similarly to C#, Vala, Go and other languages with syntax support for concurrency. That makes coroutines a pleasant experience compared to plain JavaScript. That’s also the main reason why I didn’t choose Dart.</description>
     </item>
     <item>
       <title>Build Vala applications with Shake build system</title>
-      <link>https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html</link>
+      <link>http://localhost:1313/2013/04/build-vala-applications-with-shake.html</link>
       <pubDate>Sat, 06 Apr 2013 14:18:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html</guid>
+      <guid>http://localhost:1313/2013/04/build-vala-applications-with-shake.html</guid>
       <description>I&amp;rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.&#xA;First of all, you need to know that Shake is a library written in Haskell, and it&amp;rsquo;s meant to be a better replacement for make. Let&amp;rsquo;s start by installing cabal and then shake:&#xA;apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.</description>
     </item>
     <item>
       <title>Refactory.org is down</title>
-      <link>https://lucabrun.github.io/2012/12/refactoryorg-is-down.html</link>
+      <link>http://localhost:1313/2012/12/refactoryorg-is-down.html</link>
       <pubDate>Thu, 06 Dec 2012 14:00:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2012/12/refactoryorg-is-down.html</guid>
+      <guid>http://localhost:1313/2012/12/refactoryorg-is-down.html</guid>
       <description>Unfortunately many of my snippets in this blog have been written and uploaded exclusively on refactory.org . It was a free service for uploading snippets of any kind, with a friendly versioning system and other cool features.&#xA;It&amp;rsquo;s now inactive since several months. I&amp;rsquo;m sorry for anybody stumbling upon any post that has code hosted at refactory.org . From now on I will try to put the code in the post itself whenever I can, or find better places to upload the code.</description>
     </item>
     <item>
       <title>Grab focus on Gtk Widget</title>
-      <link>https://lucabrun.github.io/2012/11/grab-focus-on-gtk-widget.html</link>
+      <link>http://localhost:1313/2012/11/grab-focus-on-gtk-widget.html</link>
       <pubDate>Thu, 22 Nov 2012 11:49:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2012/11/grab-focus-on-gtk-widget.html</guid>
+      <guid>http://localhost:1313/2012/11/grab-focus-on-gtk-widget.html</guid>
       <description>Many times I had to give focus to a newly created Gtk widget that still had to be mapped to screen. Since widget.grab_focus() does not work if the widget is not displayed on the screen, then I always used an idle source to delay the operation.&#xA;Today I noticed that the idle may be too late: if the user is writing something, then some key strokes may be lost because the idle runs slightly after the widget has been mapped.</description>
     </item>
     <item>
       <title>Vala language introduction on IRC</title>
-      <link>https://lucabrun.github.io/2011/09/vala-language-introduction-on-irc.html</link>
+      <link>http://localhost:1313/2011/09/vala-language-introduction-on-irc.html</link>
       <pubDate>Thu, 08 Sep 2011 03:09:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2011/09/vala-language-introduction-on-irc.html</guid>
+      <guid>http://localhost:1313/2011/09/vala-language-introduction-on-irc.html</guid>
       <description>Hi,&#xA;I&amp;rsquo;ve lately held an talk on IRC about the Vala programming language for the Ubuntu App Developer Week. I&amp;rsquo;ve introduced the basics of the Vala language and its features.&#xA;You can read the log of the talk here.</description>
     </item>
     <item>
       <title>Python/Ruby like generators in Vala</title>
-      <link>https://lucabrun.github.io/2011/07/pythonruby-like-generators-in-vala.html</link>
+      <link>http://localhost:1313/2011/07/pythonruby-like-generators-in-vala.html</link>
       <pubDate>Sat, 09 Jul 2011 00:42:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2011/07/pythonruby-like-generators-in-vala.html</guid>
+      <guid>http://localhost:1313/2011/07/pythonruby-like-generators-in-vala.html</guid>
       <description>Hello,&#xA;the post below is copied straight from here.&#xA;Here I&amp;rsquo;ll show a cool snippet code making use Vala async functions and iterators for emulating Python/Ruby generators. Creating a generator is as simple as extending the Generator class and implementing the generate() method.&#xA;abstract class Generator { private bool consumed; private G value; private SourceFunc callback; public Generator () { helper (); } private async void helper () { yield generate (); consumed \= true; } protected abstract async void generate (); protected async void feed (G value) { this.</description>
     </item>
     <item>
       <title>Why I&#39;m still using Emacs</title>
-      <link>https://lucabrun.github.io/2011/07/why-im-still-using-emacs.html</link>
+      <link>http://localhost:1313/2011/07/why-im-still-using-emacs.html</link>
       <pubDate>Tue, 05 Jul 2011 03:29:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2011/07/why-im-still-using-emacs.html</guid>
+      <guid>http://localhost:1313/2011/07/why-im-still-using-emacs.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m using emacs since a long time by now. Everytime I ask myself why I&amp;rsquo;m using it, given emacs certainly isn&amp;rsquo;t the easiest environment for programming. So, I often tried to replace emacs with other IDEs or editors, using several extensions and so on, but I still miss these killer features in a single editor:&#xA;Pressing a key (whatever it is, TAB in emacs) correctly/smartly indent the row according to the current language.</description>
     </item>
     <item>
       <title>Writing binary files with bash</title>
-      <link>https://lucabrun.github.io/2011/06/writing-binary-files-with-bash.html</link>
+      <link>http://localhost:1313/2011/06/writing-binary-files-with-bash.html</link>
       <pubDate>Thu, 02 Jun 2011 03:04:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2011/06/writing-binary-files-with-bash.html</guid>
+      <guid>http://localhost:1313/2011/06/writing-binary-files-with-bash.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m trying to see if I&amp;rsquo;m able to write some binary file using bash. So, when writing a binary file you often want to write a number into binary format. I ended up with this simple function for writing numbers in little endian:&#xA;function num2bin() { printf $(printf %.$(($2\*2))x\\\\n $1| sed &amp;#39;s/\\(\[0-9a-f\]\[0-9a-f\]\\)/\\\\x\\1/g&amp;#39;)| awk -F &amp;#39;&amp;#39; &amp;#39;{ printf $4$3$2$1 }&amp;#39; } The first parameter is the number to write, the second is the number of bytes (up to 4).</description>
     </item>
     <item>
       <title>Enforce facebook chat through SSL</title>
-      <link>https://lucabrun.github.io/2011/05/enforce-facebook-chat-through-ssl.html</link>
+      <link>http://localhost:1313/2011/05/enforce-facebook-chat-through-ssl.html</link>
       <pubDate>Sun, 22 May 2011 14:59:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2011/05/enforce-facebook-chat-through-ssl.html</guid>
+      <guid>http://localhost:1313/2011/05/enforce-facebook-chat-through-ssl.html</guid>
       <description>Hello,&#xA;since a few days facebook is supporting SSL for the chat. The problem is that it can&amp;rsquo;t be enabled.&#xA;Until facebook enables this you can use the SSLGuard plugin for firefox, which enforces SSL for a list of web sites, including all facebook pages and the chat as well.&#xA;We have some good ideas for sslguard that we&amp;rsquo;d like to get in for the next releases&amp;hellip; stay tuned.</description>
     </item>
     <item>
       <title>Valag 1.2 released</title>
-      <link>https://lucabrun.github.io/2011/05/vala-12-released.html</link>
+      <link>http://localhost:1313/2011/05/vala-12-released.html</link>
       <pubDate>Sat, 14 May 2011 03:11:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2011/05/vala-12-released.html</guid>
+      <guid>http://localhost:1313/2011/05/vala-12-released.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve just released the 1.2 version of Valag, the graph generator for analyzing Vala code trees. Only relevant change is the fact that it now builds against libvala-0.14.&#xA;More information and download at the Valag homepage.</description>
     </item>
     <item>
       <title>Base64 and Quoted-Printable GConverters for GMua</title>
-      <link>https://lucabrun.github.io/2011/01/base64-and-quoted-printable-gconverters.html</link>
+      <link>http://localhost:1313/2011/01/base64-and-quoted-printable-gconverters.html</link>
       <pubDate>Fri, 14 Jan 2011 23:55:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2011/01/base64-and-quoted-printable-gconverters.html</guid>
+      <guid>http://localhost:1313/2011/01/base64-and-quoted-printable-gconverters.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;m writing GMua for educational purposes and for evaluating Vala, whose purpose is to simplify writing Mail User Agents or simple scripts, ala Java Mail.&#xA;It currently parses IMAP (not yet complete) and has a graphical interface called Gutt (yes, inspired by Mutt) for testing.&#xA;In order to parse MIME parts with base64 or quopri content-transfer-encoding I chose to implement a couple of GConverter (will use GMime a day, maybe when they switch to gio, not yet needed) in Vala that you can find here:</description>
     </item>
     <item>
       <title>Valag 1.1 released, graph generator for the Vala AST</title>
-      <link>https://lucabrun.github.io/2010/12/valag-11-released.html</link>
+      <link>http://localhost:1313/2010/12/valag-11-released.html</link>
       <pubDate>Sun, 19 Dec 2010 04:19:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2010/12/valag-11-released.html</guid>
+      <guid>http://localhost:1313/2010/12/valag-11-released.html</guid>
       <description>Hello,&#xA;a new version of Valag, a graphviz generator for the Vala language AST, has been released.&#xA;Changes since 1.0 version:&#xA;Add &amp;ndash;format and &amp;ndash;prefix options. Update to latest libvala-0.12. Bug fixes. This new version also distributes the xdot.py program as a viewer for the generated graphs.&#xA;More information and download at the Valag homepage.</description>
     </item>
     <item>
       <title>Maja - The Vala to Javascript compiler</title>
-      <link>https://lucabrun.github.io/2010/12/maja-vala-to-javascript-compiler.html</link>
+      <link>http://localhost:1313/2010/12/maja-vala-to-javascript-compiler.html</link>
       <pubDate>Fri, 17 Dec 2010 10:42:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2010/12/maja-vala-to-javascript-compiler.html</guid>
+      <guid>http://localhost:1313/2010/12/maja-vala-to-javascript-compiler.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve just released the first version of Maja, the Vala to Javascript compiler. The mapping is not quite complete but you can do pretty much everything you could do with javascript directly. There are (still incomplete) bindings for the qooxdoo framework and the demo browser is being ported to vala successfully.&#xA;Maja can be used in any environments, not only web browsers.&#xA;Programming in Vala saves you from lots of type safety troubles (Javascript), lot of typing (Java) and the syntax is really enjoyable as it is quite close to the Javascript model.</description>
     </item>
     <item>
       <title>Using Mash with Vala</title>
-      <link>https://lucabrun.github.io/2010/07/using-mash-with-vala.html</link>
+      <link>http://localhost:1313/2010/07/using-mash-with-vala.html</link>
       <pubDate>Thu, 29 Jul 2010 06:22:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2010/07/using-mash-with-vala.html</guid>
+      <guid>http://localhost:1313/2010/07/using-mash-with-vala.html</guid>
       <description>Hello,&#xA;recently Mash has been released. It is a library for reading models in PLY format and creating Clutter actors from them. For reference, Blender is able to export to PLY. It means you can draw your models with Blender and use Clutter as rendering engine.&#xA;Clutter is a 3D canvas and animation toolkit while Blender is a 3D modelling suite.&#xA;What I&amp;rsquo;ve tested so far is porting the Monkey Viewer C example to Vala: code snippet and monkey PLY here.</description>
     </item>
     <item>
       <title>Idea duplicated again</title>
-      <link>https://lucabrun.github.io/2010/06/idea-duplicated-again.html</link>
+      <link>http://localhost:1313/2010/06/idea-duplicated-again.html</link>
       <pubDate>Fri, 18 Jun 2010 01:08:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2010/06/idea-duplicated-again.html</guid>
+      <guid>http://localhost:1313/2010/06/idea-duplicated-again.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;d like to point you to this firefox extension HTTPS Everywhere (June 17th, 2010) and SSLGuard which is also a firefox extension (first released Oct 14th, 2009).&#xA;The code of the former extension is a lot more complicated and the result is not always quite the same as SSLGuard. In fact, while they support secure cookies and per-website custom rules, SSLGuard lets you add custom websites to be secured directly from a friendly graphical dialog.</description>
     </item>
     <item>
       <title>Valagtkdoc 1.0</title>
-      <link>https://lucabrun.github.io/2010/04/valagtkdoc-10.html</link>
+      <link>http://localhost:1313/2010/04/valagtkdoc-10.html</link>
       <pubDate>Fri, 02 Apr 2010 08:14:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2010/04/valagtkdoc-10.html</guid>
+      <guid>http://localhost:1313/2010/04/valagtkdoc-10.html</guid>
       <description>Hello,&#xA;yes&amp;hellip; this is the nth program I&amp;rsquo;m writing in this period. I hope this is the last one :)&#xA;Valagtkdoc is a tool that integrates Vala with GTK-Doc for documentation generation.&#xA;You can find download and example usage at the homepage.&#xA;I think it&amp;rsquo;s far from being perfect, and actually I haven&amp;rsquo;t tried integrating it with autotools, but it shouldn&amp;rsquo;t be that hard. Unfortunately, you have to somehow break the gtk-doc rule &amp;ldquo;do not run it manually&amp;rdquo; because valagtkdoc goes in the middle between gtkdoc-scan and gtkdoc-mkdb.</description>
     </item>
     <item>
       <title>Vala and Graphviz</title>
-      <link>https://lucabrun.github.io/2010/03/vala-and-graphviz.html</link>
+      <link>http://localhost:1313/2010/03/vala-and-graphviz.html</link>
       <pubDate>Sun, 14 Mar 2010 04:37:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2010/03/vala-and-graphviz.html</guid>
+      <guid>http://localhost:1313/2010/03/vala-and-graphviz.html</guid>
       <description>Hello,&#xA;it&amp;rsquo;s often useful for Vala hackers to have a graphical representation of the code tree and control flow blocks. Therefore I&amp;rsquo;ve created a simple application called Valag which generates four types of diagrams using Graphviz for each state of the Vala compiler.&#xA;This is the first release, there&amp;rsquo;re many things to fix and enhance (like command line options) but it is working quite good already to give support when hacking Vala.</description>
     </item>
     <item>
       <title>Debian/GNOME bug triage ended</title>
-      <link>https://lucabrun.github.io/2010/03/debiangnome-bug-triage-ended.html</link>
+      <link>http://localhost:1313/2010/03/debiangnome-bug-triage-ended.html</link>
       <pubDate>Wed, 03 Mar 2010 01:51:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2010/03/debiangnome-bug-triage-ended.html</guid>
+      <guid>http://localhost:1313/2010/03/debiangnome-bug-triage-ended.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m writing about the work done in the bug triage weekend of the Debian/GNOME team, started at 27th Feb and ended in 28th Feb.&#xA;The result is great, 167 bugs have been closed and many more have been triaged and forwarded upstream.&#xA;Thanks to everybody who contributed, especially to whom has done it for the first time (well, you can still continue working on the remaining bugs ;) ).</description>
     </item>
     <item>
       <title>Vala 0.7.10 released</title>
-      <link>https://lucabrun.github.io/2010/02/vala-0710-released.html</link>
+      <link>http://localhost:1313/2010/02/vala-0710-released.html</link>
       <pubDate>Thu, 04 Feb 2010 12:43:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2010/02/vala-0710-released.html</guid>
+      <guid>http://localhost:1313/2010/02/vala-0710-released.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m lately following the Vala development and finally we got a new release with plenty of bug fixes and enhancements which makes Vala even more interesting and usable as general purpose language.&#xA;Here&amp;rsquo;s the announcement.&#xA;I&amp;rsquo;d like to point you to the new Vala journal, a good resource to stay tuned with Vala changes periodically.&#xA;News:&#xA;* Support coalescing operator ??.&#xA;* Support to_string and bitwise complement with enums.</description>
     </item>
     <item>
       <title>Mimaggia, cairo tester</title>
-      <link>https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html</link>
+      <link>http://localhost:1313/2009/11/mimaggia-cairo-tester.html</link>
       <pubDate>Fri, 27 Nov 2009 04:21:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html</guid>
+      <guid>http://localhost:1313/2009/11/mimaggia-cairo-tester.html</guid>
       <description>Hello,&#xA;From GNOME&#xA;I&amp;rsquo;ve created a simple pygtk project for testing cairo statements. It includes a sort of terminal where you write statements in a simple language. It features immediate preview of what you write.&#xA;Say it&amp;rsquo;s a new format for images.&#xA;If you want to test it and see the code, ask me.</description>
     </item>
     <item>
       <title>Python and RSA</title>
-      <link>https://lucabrun.github.io/2009/11/there-are-many-python-toolkits-for.html</link>
+      <link>http://localhost:1313/2009/11/there-are-many-python-toolkits-for.html</link>
       <pubDate>Sat, 14 Nov 2009 06:34:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/11/there-are-many-python-toolkits-for.html</guid>
+      <guid>http://localhost:1313/2009/11/there-are-many-python-toolkits-for.html</guid>
       <description>There are many Python toolkits for crypto, so I hope I&amp;rsquo;ve done the best choice (at least for now). This is a simple utility class for managing RSA keys, a sort of wrappera to the m2crypto class.&#xA;import M2Crypto&#xA;class RSA (object): def \_\_init\_\_ (self, bits=1024, padding=M2Crypto.RSA.pkcs1\_padding, exp=65537): self.bits = bits self.padding = padding self.exp = exp self.rsa = None def generate (self): self.rsa = M2Crypto.RSA.gen\_key( self.bits, self.exp, lambda x: None) def encrypt (self, s): c = &amp;#34;&amp;#34; bytes = self.</description>
     </item>
     <item>
       <title>Debian&#43;Apache&#43;Tomcat&#43;Axis</title>
-      <link>https://lucabrun.github.io/2009/10/debianapachetomcataxis.html</link>
+      <link>http://localhost:1313/2009/10/debianapachetomcataxis.html</link>
       <pubDate>Fri, 09 Oct 2009 06:08:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/10/debianapachetomcataxis.html</guid>
+      <guid>http://localhost:1313/2009/10/debianapachetomcataxis.html</guid>
       <description>Hello,&#xA;one of the courses I&amp;rsquo;m following at the university is &amp;ldquo;Laboratorio di reti&#xA;di calcolatori&amp;rdquo; which uses the technologies (really technologies?????)&#xA;listed in the post title. This is a little tutorial for making them works,&#xA;with a little script for registering .wsdd files.&#xA;- aptitude install apache2 tomcat6&#xA;- download the binaries of axis 1.x (latest is 2.x, it&amp;rsquo;s not used in our course) and xerces then unpack them.</description>
     </item>
     <item>
       <title>Spadi source code</title>
-      <link>https://lucabrun.github.io/2009/08/spadi-source-code.html</link>
+      <link>http://localhost:1313/2009/08/spadi-source-code.html</link>
       <pubDate>Sun, 09 Aug 2009 11:10:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/08/spadi-source-code.html</guid>
+      <guid>http://localhost:1313/2009/08/spadi-source-code.html</guid>
       <description>Hello,&#xA;after I&amp;rsquo;ve written really a few docs, and cleaned up some stuff, I&amp;rsquo;ve published the code of both Spadi and Corraza on gitorious here. In the while, I&amp;rsquo;ve added support for floors and closeable views.&#xA;Help&amp;hellip; help is needed.&#xA;Stay tuned.</description>
     </item>
     <item>
       <title>Constructing a free ArchiCAD alternative</title>
-      <link>https://lucabrun.github.io/2009/08/constructing-free-archicad-alternative.html</link>
+      <link>http://localhost:1313/2009/08/constructing-free-archicad-alternative.html</link>
       <pubDate>Thu, 06 Aug 2009 04:02:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/08/constructing-free-archicad-alternative.html</guid>
+      <guid>http://localhost:1313/2009/08/constructing-free-archicad-alternative.html</guid>
       <description>Hello,&#xA;together a couple of university mates we talked about a possible free (as in freedom) ArchiCAD alternative. There are several free CAD out there but none is free for architects/engineers. The project is too big and ambitious, but I wanted to give OpenGL a shot with this excuse to learn something new.&#xA;I&amp;rsquo;ve started two projects:&#xA;Corraza, the OpenGL framework for editing 3d objects and exporting the scene graph to ray tracing software&amp;hellip; think about a very very very minimal blender but as library</description>
     </item>
     <item>
       <title>Aruanne, pdf reporting framework</title>
-      <link>https://lucabrun.github.io/2009/07/aruanne-pdf-reporting-framework.html</link>
+      <link>http://localhost:1313/2009/07/aruanne-pdf-reporting-framework.html</link>
       <pubDate>Tue, 21 Jul 2009 23:34:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/07/aruanne-pdf-reporting-framework.html</guid>
+      <guid>http://localhost:1313/2009/07/aruanne-pdf-reporting-framework.html</guid>
       <description>Hello,&#xA;a while ago I&amp;rsquo;ve been talking about pango cairo and how to generate pdf with a couple of tables.&#xA;In the meantime I&amp;rsquo;ve worked on it, improving and enhancing new kinds of elements. This has lead to the creation of a small project, a library providing a simple framework for generating mostly PDF reports (I haven&amp;rsquo;t tried to generate SVG or something else yet).&#xA;After a couple of release requests, I&amp;rsquo;ve found finally the time to publish a sort of working code.</description>
     </item>
     <item>
       <title>Syx changes web and git hosting</title>
-      <link>https://lucabrun.github.io/2009/05/syx-changes-web-and-git-hosting.html</link>
+      <link>http://localhost:1313/2009/05/syx-changes-web-and-git-hosting.html</link>
       <pubDate>Fri, 29 May 2009 15:45:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/05/syx-changes-web-and-git-hosting.html</guid>
+      <guid>http://localhost:1313/2009/05/syx-changes-web-and-git-hosting.html</guid>
       <description>_&#xA;Hello,&#xA;I&amp;rsquo;m officializing the change of web hosting and git hosting from googlecode to berlios:&#xA;_&#xA;The new website is up!&#xA;For several reasons, including reliability, we switched both the website and git hosting to berlios. Also the purpose of this change is to rewrite the website backend using Syx.&#xA;The mailing list and the bug tracker are still hosted at googlecode.&#xA;Some progress news in the while&#xA;We&amp;rsquo;re working on a new memory management, object representation and garbage collector.</description>
     </item>
     <item>
       <title>JMF and MPEG</title>
-      <link>https://lucabrun.github.io/2009/02/jmf-and-mpeg.html</link>
+      <link>http://localhost:1313/2009/02/jmf-and-mpeg.html</link>
       <pubDate>Tue, 24 Feb 2009 14:11:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/02/jmf-and-mpeg.html</guid>
+      <guid>http://localhost:1313/2009/02/jmf-and-mpeg.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m recently writing a game with Java AWT/Swing/SwingX/JMF for a university exam.&#xA;If you are using the Java Media Framework and most of the formats (all the well known and used formats) can&amp;rsquo;t be handled by the library here&amp;rsquo;s your definitive solution to the problem.&#xA;You will usually get &amp;ldquo;Unable to handle format: MPEG&amp;rdquo; or something like that.&#xA;How do you get rid of that and make things work? There&amp;rsquo;s a great plugin named jffmpeg which handles a huge number of audio and video formats (including ogg/vob).</description>
     </item>
     <item>
       <title>FreeSpeak 0.3.0 has been released</title>
-      <link>https://lucabrun.github.io/2009/01/freespeak-030-has-been-released.html</link>
+      <link>http://localhost:1313/2009/01/freespeak-030-has-been-released.html</link>
       <pubDate>Sat, 10 Jan 2009 02:42:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/01/freespeak-030-has-been-released.html</guid>
+      <guid>http://localhost:1313/2009/01/freespeak-030-has-been-released.html</guid>
       <description>FreeSpeak is a free (as in freedom, developed and released under the terms of GPL) frontend to online translator engines (such as Google, Yahoo, etc.). It is written in Python, it uses the GTK toolkit and some GNOME infrastructure features.&#xA;This is a major enhancemenfts release.&#xA;Overview of Changes from FreeSpeak 0.2.0 to FreeSpeak 0.3.0&#xA;===========================================================&#xA;* Project is now hosted at BerliOS.de: http://freespeak.berlios.de&#xA;* Support for cancellating operations has been added</description>
     </item>
     <item>
       <title>Global keybinding on X</title>
-      <link>https://lucabrun.github.io/2008/12/global-keybinding-on-x.html</link>
+      <link>http://localhost:1313/2008/12/global-keybinding-on-x.html</link>
       <pubDate>Sun, 21 Dec 2008 01:52:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/12/global-keybinding-on-x.html</guid>
+      <guid>http://localhost:1313/2008/12/global-keybinding-on-x.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;ve been looking for a way to create a desktop-wide keybinding for FreeSpeak.&#xA;I first looked into Tomboy and Deskbar source codes but the egg was too huge to be adopted, and it would have brought C dependency which isn&amp;rsquo;t always nice for a Python project.&#xA;Then fargiolas pointed me to a blog post where I could find about gnome keybindings owned by gnome control center. Well that was only a mirage as it doesn&amp;rsquo;t really grab the key but it&amp;rsquo;s only a visual entry in the keyboard shortcuts preferences.</description>
     </item>
     <item>
       <title>Aptitude-gtk progress</title>
-      <link>https://lucabrun.github.io/2008/12/aptitude-gtk-progress.html</link>
+      <link>http://localhost:1313/2008/12/aptitude-gtk-progress.html</link>
       <pubDate>Mon, 01 Dec 2008 14:58:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/12/aptitude-gtk-progress.html</guid>
+      <guid>http://localhost:1313/2008/12/aptitude-gtk-progress.html</guid>
       <description>Hello,&#xA;I was curious to see if aptitude-gtk was making some progress. I haven&amp;rsquo;t followed the project since it&amp;rsquo;s been merged into aptitude.&#xA;Well, I found it more functional and complete. Here&amp;rsquo;s a screenshot showing pending packages for upgrade after an update:&#xA;From GNOME&#xA;The team is definitely doing a good job. Hopefully I&amp;rsquo;ll find the time to give some help as I&amp;rsquo;m really interested in such full-featured GUI frontend.</description>
     </item>
     <item>
       <title>Replace GTK&#43; with Clutter for fun</title>
-      <link>https://lucabrun.github.io/2008/11/replace-gtk-with-clutter-for-fun.html</link>
+      <link>http://localhost:1313/2008/11/replace-gtk-with-clutter-for-fun.html</link>
       <pubDate>Sun, 23 Nov 2008 12:38:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/11/replace-gtk-with-clutter-for-fun.html</guid>
+      <guid>http://localhost:1313/2008/11/replace-gtk-with-clutter-for-fun.html</guid>
       <description>Hello,&#xA;lately I was having fun with Clutter and Python. I&amp;rsquo;ve started by creating some Gtk-like widgets (such as GtkWindow, GtkBox, and GtkButton) in Clutter.&#xA;Well, this is the result&amp;hellip; it&amp;rsquo;s a simple example of a very poor toolkit, but it works:&#xA;Try it, it&amp;rsquo;s only one .py file source code</description>
     </item>
     <item>
       <title>Single app instances, Python and DBus</title>
-      <link>https://lucabrun.github.io/2008/11/single-app-instances-python-and-dbus.html</link>
+      <link>http://localhost:1313/2008/11/single-app-instances-python-and-dbus.html</link>
       <pubDate>Sun, 16 Nov 2008 10:01:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/11/single-app-instances-python-and-dbus.html</guid>
+      <guid>http://localhost:1313/2008/11/single-app-instances-python-and-dbus.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m working on FreeSpeak lately and I needed to run the application once per session, as it&amp;rsquo;s got a trayicon and a notebook (maybe windows with an applet is better?)&#xA;I decided to use DBus for making the application run only a single instance; when you try to open it again it won&amp;rsquo;t start another process, instead it will use the already running one.&#xA;This is how I would create a generic single app instance with dbus-python:</description>
     </item>
     <item>
       <title>FreeSpeak, a GTK&#43;/GNOME translator</title>
-      <link>https://lucabrun.github.io/2008/10/freespeak-gtkgnome-translator.html</link>
+      <link>http://localhost:1313/2008/10/freespeak-gtkgnome-translator.html</link>
       <pubDate>Tue, 14 Oct 2008 14:31:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/10/freespeak-gtkgnome-translator.html</guid>
+      <guid>http://localhost:1313/2008/10/freespeak-gtkgnome-translator.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve worked on FreeSpeak a couple of years ago, a Python/GTK+/GNOME project to translate text and web pages by querying already existing online translation tools.&#xA;PRO: It has been packed for Ubuntu and it has been publicized by a journal in Italy.&#xA;CONS: It has been discontinued until now. In fact I restarted the project and I&amp;rsquo;m doing a huge refactoring because of the ugly code I wrote in the past.</description>
     </item>
     <item>
       <title>How to contribute to APT</title>
-      <link>https://lucabrun.github.io/2008/10/how-to-contribute-to-apt.html</link>
+      <link>http://localhost:1313/2008/10/how-to-contribute-to-apt.html</link>
       <pubDate>Fri, 10 Oct 2008 09:12:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/10/how-to-contribute-to-apt.html</guid>
+      <guid>http://localhost:1313/2008/10/how-to-contribute-to-apt.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve worked on FreeSpeak a couple of years ago, a Python/GTK+/GNOME project to translate text and web pages by querying already existing online translation tools.&#xA;PRO: It has been packed for Ubuntu and it has been publicized by a journal in Italy.&#xA;CONS: It has been discontinued until now. In fact I restarted the project and I&amp;rsquo;m doing a huge refactoring because of the ugly code I wrote in the past.</description>
     </item>
     <item>
       <title>GTK Apps to replace Gnome Files</title>
-      <link>https://lucabrun.github.io/2008/09/gtk-apps-to-replace-gnome-files.html</link>
+      <link>http://localhost:1313/2008/09/gtk-apps-to-replace-gnome-files.html</link>
       <pubDate>Mon, 08 Sep 2008 10:20:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/09/gtk-apps-to-replace-gnome-files.html</guid>
+      <guid>http://localhost:1313/2008/09/gtk-apps-to-replace-gnome-files.html</guid>
       <description>Hello,&#xA;everyone knows that gnomefiles has went offline with that boring redirect to osnews.com.&#xA;Now many people is looking toward gtk-apps.org, I didn&amp;rsquo;t know it before. It&amp;rsquo;s looking really good.&#xA;The only problems is that I had (and I guess I&amp;rsquo;m not the only one) a few unmaintained projects on gnomefiles and they are now lost.&#xA;I&amp;rsquo;m wondering if it will be publicized a day by gtk.org to be something more official.</description>
     </item>
     <item>
       <title>Syx gaining more stability and speed</title>
-      <link>https://lucabrun.github.io/2008/07/syx-gaining-more-stability-and-speed.html</link>
+      <link>http://localhost:1313/2008/07/syx-gaining-more-stability-and-speed.html</link>
       <pubDate>Sun, 13 Jul 2008 07:00:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/07/syx-gaining-more-stability-and-speed.html</guid>
+      <guid>http://localhost:1313/2008/07/syx-gaining-more-stability-and-speed.html</guid>
       <description>Hello,&#xA;in the new branches of Syx (an open source Smalltalk-80 implementation) we&amp;rsquo;re working to try a new kind of memory management and add many features that have been missed until now to focus on other stuff.&#xA;The new faster and more modern v0.1.8 release will contain the following refactoring:&#xA;Objects will be variable-length (minumum 12 bytes on 32-bit processors and 16 bytes on 64-bit processors)&#xA;By changing the objects also the GC changed to a mark and compact GC</description>
     </item>
     <item>
       <title>New debian tool proposal</title>
-      <link>https://lucabrun.github.io/2008/06/new-debian-tool-proposal.html</link>
+      <link>http://localhost:1313/2008/06/new-debian-tool-proposal.html</link>
       <pubDate>Mon, 30 Jun 2008 01:16:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/06/new-debian-tool-proposal.html</guid>
+      <guid>http://localhost:1313/2008/06/new-debian-tool-proposal.html</guid>
       <description>Hello,&#xA;this is my second post about Debian. I&amp;rsquo;m lately discovering all the tools for both managing my Debian system and creating packages.&#xA;dh_make is the first tool I&amp;rsquo;ve used for the &amp;ldquo;first debianization&amp;rdquo; (called so by the New maintainers&amp;rsquo; guide) which creates a basic template for your package.&#xA;Anyway after a few packagings I&amp;rsquo;ve seen that something redundant could be automatized further.&#xA;What I suggest is a tool that does the following stuff after dh_make has been called:</description>
     </item>
     <item>
       <title>Syx 0.1.7 has been released</title>
-      <link>https://lucabrun.github.io/2008/06/syx-017-has-been-released.html</link>
+      <link>http://localhost:1313/2008/06/syx-017-has-been-released.html</link>
       <pubDate>Sat, 07 Jun 2008 14:18:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/06/syx-017-has-been-released.html</guid>
+      <guid>http://localhost:1313/2008/06/syx-017-has-been-released.html</guid>
       <description>Hello,&#xA;after several months a new version of Syx has been released. This release contains mostly VM changes and some changes to the Smalltalk Collections. As usual, release notes follow:&#xA;This versions enhances a new version of the interpreter, major updates to the scheduler, and as usual a lot of bug fixes. Syx left the Google Code SVN repositories because of many connection problems.&#xA;You can find informations about the new GIT repository here: http://code.</description>
     </item>
     <item>
       <title>Syx, GTK&#43; and threading</title>
-      <link>https://lucabrun.github.io/2008/05/syx-gtk-and-threading.html</link>
+      <link>http://localhost:1313/2008/05/syx-gtk-and-threading.html</link>
       <pubDate>Fri, 23 May 2008 14:00:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/05/syx-gtk-and-threading.html</guid>
+      <guid>http://localhost:1313/2008/05/syx-gtk-and-threading.html</guid>
       <description>Hello,&#xA;you all know that Gtk+ has locks for the GUI when dealing with the X server and prevent async events to be sent. This is done by manually acquiring/releasing the lock on Gdk. Many Gtk+ ports don&amp;rsquo;t do this automatically.&#xA;Syx used gtk_main() into a thread and automatically put gdk enter/leave for each function in its wrapper. It would be somewhat ugly in Smalltalk code having to enter/leave each time.</description>
     </item>
     <item>
       <title>Syx Manual</title>
-      <link>https://lucabrun.github.io/2008/05/syx-manual.html</link>
+      <link>http://localhost:1313/2008/05/syx-manual.html</link>
       <pubDate>Fri, 02 May 2008 01:56:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/05/syx-manual.html</guid>
+      <guid>http://localhost:1313/2008/05/syx-manual.html</guid>
       <description>Hello,&#xA;I report the post on the mailing list below:&#xA;Hello,&#xA;with the next release 0.1.7, once I get a working interpreter and updated all the parts of Syx,&#xA;I will move output of doxygen to doc/reference and start a texinfo manual in doc/manual.&#xA;My idea is to have this kind of manual:&#xA;What is Smalltalk Why Smalltalk YX Introduction to the language Introduction the Syx environment COMPLETE Class and methods documentation, EACH non private method will be documented with examples</description>
     </item>
     <item>
       <title>Time for Debian</title>
-      <link>https://lucabrun.github.io/2008/04/time-for-debian.html</link>
+      <link>http://localhost:1313/2008/04/time-for-debian.html</link>
       <pubDate>Tue, 22 Apr 2008 11:55:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/04/time-for-debian.html</guid>
+      <guid>http://localhost:1313/2008/04/time-for-debian.html</guid>
       <description>Hello,&#xA;I switched to Debian lately and i think it will become my preferred distribution.&#xA;I started with Slackware, then an LFS and then Gentoo. I never found them definitive for me.&#xA;I used Slackware by compiling sources most of all, then i didn&amp;rsquo;t see any reason to continue using it.&#xA;The LFS came since my new PC as a test, and as long I could maintain it I had no problems and had fun with it.</description>
     </item>
     <item>
       <title>Smalltalk YX toward a new interpreter</title>
-      <link>https://lucabrun.github.io/2008/04/smalltalk-yx-toward-new-interpreter.html</link>
+      <link>http://localhost:1313/2008/04/smalltalk-yx-toward-new-interpreter.html</link>
       <pubDate>Tue, 15 Apr 2008 02:51:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/04/smalltalk-yx-toward-new-interpreter.html</guid>
+      <guid>http://localhost:1313/2008/04/smalltalk-yx-toward-new-interpreter.html</guid>
       <description>Hello,&#xA;Smalltalk YX is currently working on refactoring a part of the interpreter, relative to contexts and stack management.&#xA;The current version uses one stack per process but always create contexts for each method or block entered.&#xA;The new branch, called newinterp, won&amp;rsquo;t create those contexts anymore but they will be created only on-demand (e.g. thisContext). This means both less resources and garbage collector usage, and a possible speedup.&#xA;More informations on the mailing list here.</description>
     </item>
     <item>
       <title>Smalltalk YX 0.1.6 has been released</title>
-      <link>https://lucabrun.github.io/2008/01/smalltalk-yx-016-has-been-released.html</link>
+      <link>http://localhost:1313/2008/01/smalltalk-yx-016-has-been-released.html</link>
       <pubDate>Mon, 07 Jan 2008 03:21:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/01/smalltalk-yx-016-has-been-released.html</guid>
+      <guid>http://localhost:1313/2008/01/smalltalk-yx-016-has-been-released.html</guid>
       <description>Hello,&#xA;as usual these release notes follows.&#xA;This is a major bug fixes release, but introduce as usual many features. First of all this release put the GNU build (autotools) as first build system, and SCons as secondary which is still useful for MingW and the WinCE port.&#xA;Full GNU build support X11 plugin A basic CommandLine class for parsing the command line Basic support for handling foreign C pointers and structs/unions from Smalltalk has been added Several fixes for building on Sparc 64 using SCons The -e option from command line has been added Some help and Syx status will be printed in console mode FileStream fileIn has been fixed Class declaration from Smalltalk has been fixed Lexer fixes for symbols, identifier and strings FileStream now handles FILE* instead of file descriptors and this fixed several bugs System startup has been fixed when fileing in files Dictionary rehashing has been fixed Basic support for handling foreign C structs and unions from Smalltalk has been added Thanks to everyone contributing to the project.</description>
     </item>
     <item>
       <title>Hello world in console and GTK&#43;</title>
-      <link>https://lucabrun.github.io/2007/12/hello-world-in-console-and-gtk.html</link>
+      <link>http://localhost:1313/2007/12/hello-world-in-console-and-gtk.html</link>
       <pubDate>Mon, 17 Dec 2007 06:11:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2007/12/hello-world-in-console-and-gtk.html</guid>
+      <guid>http://localhost:1313/2007/12/hello-world-in-console-and-gtk.html</guid>
       <description>Hello,&#xA;lately i received a request to show how to print Hello world from Syx and a small example on how to open a GTK+ window.&#xA;Here are the two examples:&#xA;Hello World Opening a Gtk Window Have fun!</description>
     </item>
     <item>
       <title>Syx 0.1.5 has been released</title>
-      <link>https://lucabrun.github.io/2007/12/syx-015-has-been-released.html</link>
+      <link>http://localhost:1313/2007/12/syx-015-has-been-released.html</link>
       <pubDate>Fri, 14 Dec 2007 11:04:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2007/12/syx-015-has-been-released.html</guid>
+      <guid>http://localhost:1313/2007/12/syx-015-has-been-released.html</guid>
       <description>Hello,&#xA;after a few months of low activity due to the university, i finally released the new version of Syx. Release notes follows.&#xA;This version includes yet more features, compatibility with other build systems on different platforms, important bug fixes and a great performance boost, which will be continued in next releases. A list of the major changes:&#xA;MSVC support has been improved ANSI C and strict ISO compilation External declarations for C++ The ST runtime compiler has been replaced with a C-side compiler Class creation issues from ST has been fixed Tracebacks and error reporting have been improved Install desktop files on GNU/Linux platforms Support for the GNU building system has been added as an alternative to SCons Build under MSYS has been fixed Block ensuring has been fixed New examples have been added such as web code browser and a simple GTK+ application Dictionary rehashing has been fixed A better implentation of OrderedCollection?</description>
     </item>
   </channel>

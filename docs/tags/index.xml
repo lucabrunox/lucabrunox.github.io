@@ -2,955 +2,955 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 14 Aug 2018 12:16:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
-      <link>https://lucabrun.github.io/tags/linux/</link>
+      <link>http://localhost:1313/tags/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/linux/</guid>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Openvpn</title>
-      <link>https://lucabrun.github.io/tags/openvpn/</link>
+      <link>http://localhost:1313/tags/openvpn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/openvpn/</guid>
+      <guid>http://localhost:1313/tags/openvpn/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>https://lucabrun.github.io/tags/docker/</link>
+      <link>http://localhost:1313/tags/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/docker/</guid>
+      <guid>http://localhost:1313/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Nix</title>
-      <link>https://lucabrun.github.io/tags/nix/</link>
+      <link>http://localhost:1313/tags/nix/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/nix/</guid>
+      <guid>http://localhost:1313/tags/nix/</guid>
       <description></description>
     </item>
     <item>
       <title>Nixos</title>
-      <link>https://lucabrun.github.io/tags/nixos/</link>
+      <link>http://localhost:1313/tags/nixos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/nixos/</guid>
+      <guid>http://localhost:1313/tags/nixos/</guid>
       <description></description>
     </item>
     <item>
       <title>Nixpkgs</title>
-      <link>https://lucabrun.github.io/tags/nixpkgs/</link>
+      <link>http://localhost:1313/tags/nixpkgs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/nixpkgs/</guid>
+      <guid>http://localhost:1313/tags/nixpkgs/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
-      <link>https://lucabrun.github.io/tags/development/</link>
+      <link>http://localhost:1313/tags/development/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/development/</guid>
+      <guid>http://localhost:1313/tags/development/</guid>
       <description></description>
     </item>
     <item>
       <title>Javascript</title>
-      <link>https://lucabrun.github.io/tags/javascript/</link>
+      <link>http://localhost:1313/tags/javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/javascript/</guid>
+      <guid>http://localhost:1313/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Nodejs</title>
-      <link>https://lucabrun.github.io/tags/nodejs/</link>
+      <link>http://localhost:1313/tags/nodejs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/nodejs/</guid>
+      <guid>http://localhost:1313/tags/nodejs/</guid>
       <description></description>
     </item>
     <item>
       <title>Typescript</title>
-      <link>https://lucabrun.github.io/tags/typescript/</link>
+      <link>http://localhost:1313/tags/typescript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/typescript/</guid>
+      <guid>http://localhost:1313/tags/typescript/</guid>
       <description></description>
     </item>
     <item>
       <title>Nixpills</title>
-      <link>https://lucabrun.github.io/tags/nixpills/</link>
+      <link>http://localhost:1313/tags/nixpills/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/nixpills/</guid>
+      <guid>http://localhost:1313/tags/nixpills/</guid>
       <description></description>
     </item>
     <item>
       <title>Consul</title>
-      <link>https://lucabrun.github.io/tags/consul/</link>
+      <link>http://localhost:1313/tags/consul/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/consul/</guid>
+      <guid>http://localhost:1313/tags/consul/</guid>
       <description></description>
     </item>
     <item>
       <title>Containers</title>
-      <link>https://lucabrun.github.io/tags/containers/</link>
+      <link>http://localhost:1313/tags/containers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/containers/</guid>
+      <guid>http://localhost:1313/tags/containers/</guid>
       <description></description>
     </item>
     <item>
       <title>Golang</title>
-      <link>https://lucabrun.github.io/tags/golang/</link>
+      <link>http://localhost:1313/tags/golang/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/golang/</guid>
+      <guid>http://localhost:1313/tags/golang/</guid>
       <description></description>
     </item>
     <item>
       <title>Wmtrl</title>
-      <link>https://lucabrun.github.io/tags/wmtrl/</link>
+      <link>http://localhost:1313/tags/wmtrl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/wmtrl/</guid>
+      <guid>http://localhost:1313/tags/wmtrl/</guid>
       <description></description>
     </item>
     <item>
       <title>Xbindkeys</title>
-      <link>https://lucabrun.github.io/tags/xbindkeys/</link>
+      <link>http://localhost:1313/tags/xbindkeys/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/xbindkeys/</guid>
+      <guid>http://localhost:1313/tags/xbindkeys/</guid>
       <description></description>
     </item>
     <item>
       <title>Emacs</title>
-      <link>https://lucabrun.github.io/tags/emacs/</link>
+      <link>http://localhost:1313/tags/emacs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/emacs/</guid>
+      <guid>http://localhost:1313/tags/emacs/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://lucabrun.github.io/tags/git/</link>
+      <link>http://localhost:1313/tags/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/git/</guid>
+      <guid>http://localhost:1313/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Gnome</title>
-      <link>https://lucabrun.github.io/tags/gnome/</link>
+      <link>http://localhost:1313/tags/gnome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/gnome/</guid>
+      <guid>http://localhost:1313/tags/gnome/</guid>
       <description></description>
     </item>
     <item>
       <title>Gtk</title>
-      <link>https://lucabrun.github.io/tags/gtk/</link>
+      <link>http://localhost:1313/tags/gtk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/gtk/</guid>
+      <guid>http://localhost:1313/tags/gtk/</guid>
       <description></description>
     </item>
     <item>
       <title>Hit-a-Hint</title>
-      <link>https://lucabrun.github.io/tags/hit-a-hint/</link>
+      <link>http://localhost:1313/tags/hit-a-hint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/hit-a-hint/</guid>
+      <guid>http://localhost:1313/tags/hit-a-hint/</guid>
       <description></description>
     </item>
     <item>
       <title>Keyboard</title>
-      <link>https://lucabrun.github.io/tags/keyboard/</link>
+      <link>http://localhost:1313/tags/keyboard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/keyboard/</guid>
+      <guid>http://localhost:1313/tags/keyboard/</guid>
       <description></description>
     </item>
     <item>
       <title>Vala</title>
-      <link>https://lucabrun.github.io/tags/vala/</link>
+      <link>http://localhost:1313/tags/vala/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/vala/</guid>
+      <guid>http://localhost:1313/tags/vala/</guid>
       <description></description>
     </item>
     <item>
       <title>Geometry</title>
-      <link>https://lucabrun.github.io/tags/geometry/</link>
+      <link>http://localhost:1313/tags/geometry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/geometry/</guid>
+      <guid>http://localhost:1313/tags/geometry/</guid>
       <description></description>
     </item>
     <item>
       <title>Glpk</title>
-      <link>https://lucabrun.github.io/tags/glpk/</link>
+      <link>http://localhost:1313/tags/glpk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/glpk/</guid>
+      <guid>http://localhost:1313/tags/glpk/</guid>
       <description></description>
     </item>
     <item>
       <title>Linear Programming</title>
-      <link>https://lucabrun.github.io/tags/linear-programming/</link>
+      <link>http://localhost:1313/tags/linear-programming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/linear-programming/</guid>
+      <guid>http://localhost:1313/tags/linear-programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Milp</title>
-      <link>https://lucabrun.github.io/tags/milp/</link>
+      <link>http://localhost:1313/tags/milp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/milp/</guid>
+      <guid>http://localhost:1313/tags/milp/</guid>
       <description></description>
     </item>
     <item>
       <title>Problem Solving</title>
-      <link>https://lucabrun.github.io/tags/problem-solving/</link>
+      <link>http://localhost:1313/tags/problem-solving/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/problem-solving/</guid>
+      <guid>http://localhost:1313/tags/problem-solving/</guid>
       <description></description>
     </item>
     <item>
       <title>Haskell</title>
-      <link>https://lucabrun.github.io/tags/haskell/</link>
+      <link>http://localhost:1313/tags/haskell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/haskell/</guid>
+      <guid>http://localhost:1313/tags/haskell/</guid>
       <description></description>
     </item>
     <item>
       <title>Regex</title>
-      <link>https://lucabrun.github.io/tags/regex/</link>
+      <link>http://localhost:1313/tags/regex/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/regex/</guid>
+      <guid>http://localhost:1313/tags/regex/</guid>
       <description></description>
     </item>
     <item>
       <title>Feeds</title>
-      <link>https://lucabrun.github.io/tags/feeds/</link>
+      <link>http://localhost:1313/tags/feeds/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/feeds/</guid>
+      <guid>http://localhost:1313/tags/feeds/</guid>
       <description></description>
     </item>
     <item>
       <title>Google</title>
-      <link>https://lucabrun.github.io/tags/google/</link>
+      <link>http://localhost:1313/tags/google/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/google/</guid>
+      <guid>http://localhost:1313/tags/google/</guid>
       <description></description>
     </item>
     <item>
       <title>Reader</title>
-      <link>https://lucabrun.github.io/tags/reader/</link>
+      <link>http://localhost:1313/tags/reader/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/reader/</guid>
+      <guid>http://localhost:1313/tags/reader/</guid>
       <description></description>
     </item>
     <item>
       <title>Algorithms</title>
-      <link>https://lucabrun.github.io/tags/algorithms/</link>
+      <link>http://localhost:1313/tags/algorithms/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/algorithms/</guid>
+      <guid>http://localhost:1313/tags/algorithms/</guid>
       <description></description>
     </item>
     <item>
       <title>Blog</title>
-      <link>https://lucabrun.github.io/tags/blog/</link>
+      <link>http://localhost:1313/tags/blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/blog/</guid>
+      <guid>http://localhost:1313/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Comments</title>
-      <link>https://lucabrun.github.io/tags/comments/</link>
+      <link>http://localhost:1313/tags/comments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/comments/</guid>
+      <guid>http://localhost:1313/tags/comments/</guid>
       <description></description>
     </item>
     <item>
       <title>Php</title>
-      <link>https://lucabrun.github.io/tags/php/</link>
+      <link>http://localhost:1313/tags/php/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/php/</guid>
+      <guid>http://localhost:1313/tags/php/</guid>
       <description></description>
     </item>
     <item>
       <title>Buildsys</title>
-      <link>https://lucabrun.github.io/tags/buildsys/</link>
+      <link>http://localhost:1313/tags/buildsys/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/buildsys/</guid>
+      <guid>http://localhost:1313/tags/buildsys/</guid>
       <description></description>
     </item>
     <item>
       <title>Make</title>
-      <link>https://lucabrun.github.io/tags/make/</link>
+      <link>http://localhost:1313/tags/make/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/make/</guid>
+      <guid>http://localhost:1313/tags/make/</guid>
       <description></description>
     </item>
     <item>
       <title>Shake</title>
-      <link>https://lucabrun.github.io/tags/shake/</link>
+      <link>http://localhost:1313/tags/shake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/shake/</guid>
+      <guid>http://localhost:1313/tags/shake/</guid>
       <description></description>
     </item>
     <item>
       <title>Desktop</title>
-      <link>https://lucabrun.github.io/tags/desktop/</link>
+      <link>http://localhost:1313/tags/desktop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/desktop/</guid>
+      <guid>http://localhost:1313/tags/desktop/</guid>
       <description></description>
     </item>
     <item>
       <title>Window Manager</title>
-      <link>https://lucabrun.github.io/tags/window-manager/</link>
+      <link>http://localhost:1313/tags/window-manager/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/window-manager/</guid>
+      <guid>http://localhost:1313/tags/window-manager/</guid>
       <description></description>
     </item>
     <item>
       <title>Wmctrl</title>
-      <link>https://lucabrun.github.io/tags/wmctrl/</link>
+      <link>http://localhost:1313/tags/wmctrl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/wmctrl/</guid>
+      <guid>http://localhost:1313/tags/wmctrl/</guid>
       <description></description>
     </item>
     <item>
       <title>Zenity</title>
-      <link>https://lucabrun.github.io/tags/zenity/</link>
+      <link>http://localhost:1313/tags/zenity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/zenity/</guid>
+      <guid>http://localhost:1313/tags/zenity/</guid>
       <description></description>
     </item>
     <item>
       <title>Audio</title>
-      <link>https://lucabrun.github.io/tags/audio/</link>
+      <link>http://localhost:1313/tags/audio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/audio/</guid>
+      <guid>http://localhost:1313/tags/audio/</guid>
       <description></description>
     </item>
     <item>
       <title>Awesome</title>
-      <link>https://lucabrun.github.io/tags/awesome/</link>
+      <link>http://localhost:1313/tags/awesome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/awesome/</guid>
+      <guid>http://localhost:1313/tags/awesome/</guid>
       <description></description>
     </item>
     <item>
       <title>Refactory</title>
-      <link>https://lucabrun.github.io/tags/refactory/</link>
+      <link>http://localhost:1313/tags/refactory/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/refactory/</guid>
+      <guid>http://localhost:1313/tags/refactory/</guid>
       <description></description>
     </item>
     <item>
       <title>Debian</title>
-      <link>https://lucabrun.github.io/tags/debian/</link>
+      <link>http://localhost:1313/tags/debian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/debian/</guid>
+      <guid>http://localhost:1313/tags/debian/</guid>
       <description></description>
     </item>
     <item>
       <title>Search</title>
-      <link>https://lucabrun.github.io/tags/search/</link>
+      <link>http://localhost:1313/tags/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/search/</guid>
+      <guid>http://localhost:1313/tags/search/</guid>
       <description></description>
     </item>
     <item>
       <title>Talk</title>
-      <link>https://lucabrun.github.io/tags/talk/</link>
+      <link>http://localhost:1313/tags/talk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/talk/</guid>
+      <guid>http://localhost:1313/tags/talk/</guid>
       <description></description>
     </item>
     <item>
       <title>Ubuntu</title>
-      <link>https://lucabrun.github.io/tags/ubuntu/</link>
+      <link>http://localhost:1313/tags/ubuntu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/ubuntu/</guid>
+      <guid>http://localhost:1313/tags/ubuntu/</guid>
       <description></description>
     </item>
     <item>
       <title>Probability</title>
-      <link>https://lucabrun.github.io/tags/probability/</link>
+      <link>http://localhost:1313/tags/probability/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/probability/</guid>
+      <guid>http://localhost:1313/tags/probability/</guid>
       <description></description>
     </item>
     <item>
       <title>Firefox</title>
-      <link>https://lucabrun.github.io/tags/firefox/</link>
+      <link>http://localhost:1313/tags/firefox/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/firefox/</guid>
+      <guid>http://localhost:1313/tags/firefox/</guid>
       <description></description>
     </item>
     <item>
       <title>Web</title>
-      <link>https://lucabrun.github.io/tags/web/</link>
+      <link>http://localhost:1313/tags/web/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/web/</guid>
+      <guid>http://localhost:1313/tags/web/</guid>
       <description></description>
     </item>
     <item>
       <title>Coroutine</title>
-      <link>https://lucabrun.github.io/tags/coroutine/</link>
+      <link>http://localhost:1313/tags/coroutine/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/coroutine/</guid>
+      <guid>http://localhost:1313/tags/coroutine/</guid>
       <description></description>
     </item>
     <item>
       <title>Generator</title>
-      <link>https://lucabrun.github.io/tags/generator/</link>
+      <link>http://localhost:1313/tags/generator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/generator/</guid>
+      <guid>http://localhost:1313/tags/generator/</guid>
       <description></description>
     </item>
     <item>
       <title>Languages</title>
-      <link>https://lucabrun.github.io/tags/languages/</link>
+      <link>http://localhost:1313/tags/languages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/languages/</guid>
+      <guid>http://localhost:1313/tags/languages/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://lucabrun.github.io/tags/python/</link>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/python/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Ruby</title>
-      <link>https://lucabrun.github.io/tags/ruby/</link>
+      <link>http://localhost:1313/tags/ruby/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/ruby/</guid>
+      <guid>http://localhost:1313/tags/ruby/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
-      <link>https://lucabrun.github.io/tags/bash/</link>
+      <link>http://localhost:1313/tags/bash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/bash/</guid>
+      <guid>http://localhost:1313/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Wav</title>
-      <link>https://lucabrun.github.io/tags/wav/</link>
+      <link>http://localhost:1313/tags/wav/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/wav/</guid>
+      <guid>http://localhost:1313/tags/wav/</guid>
       <description></description>
     </item>
     <item>
       <title>Completion</title>
-      <link>https://lucabrun.github.io/tags/completion/</link>
+      <link>http://localhost:1313/tags/completion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/completion/</guid>
+      <guid>http://localhost:1313/tags/completion/</guid>
       <description></description>
     </item>
     <item>
       <title>Decrew</title>
-      <link>https://lucabrun.github.io/tags/decrew/</link>
+      <link>http://localhost:1313/tags/decrew/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/decrew/</guid>
+      <guid>http://localhost:1313/tags/decrew/</guid>
       <description></description>
     </item>
     <item>
       <title>Facebook</title>
-      <link>https://lucabrun.github.io/tags/facebook/</link>
+      <link>http://localhost:1313/tags/facebook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/facebook/</guid>
+      <guid>http://localhost:1313/tags/facebook/</guid>
       <description></description>
     </item>
     <item>
       <title>Sslguard</title>
-      <link>https://lucabrun.github.io/tags/sslguard/</link>
+      <link>http://localhost:1313/tags/sslguard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/sslguard/</guid>
+      <guid>http://localhost:1313/tags/sslguard/</guid>
       <description></description>
     </item>
     <item>
       <title>Graphviz</title>
-      <link>https://lucabrun.github.io/tags/graphviz/</link>
+      <link>http://localhost:1313/tags/graphviz/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/graphviz/</guid>
+      <guid>http://localhost:1313/tags/graphviz/</guid>
       <description></description>
     </item>
     <item>
       <title>Valag</title>
-      <link>https://lucabrun.github.io/tags/valag/</link>
+      <link>http://localhost:1313/tags/valag/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/valag/</guid>
+      <guid>http://localhost:1313/tags/valag/</guid>
       <description></description>
     </item>
     <item>
       <title>Comparison</title>
-      <link>https://lucabrun.github.io/tags/comparison/</link>
+      <link>http://localhost:1313/tags/comparison/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/comparison/</guid>
+      <guid>http://localhost:1313/tags/comparison/</guid>
       <description></description>
     </item>
     <item>
       <title>Logic Programming</title>
-      <link>https://lucabrun.github.io/tags/logic-programming/</link>
+      <link>http://localhost:1313/tags/logic-programming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/logic-programming/</guid>
+      <guid>http://localhost:1313/tags/logic-programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Prolog</title>
-      <link>https://lucabrun.github.io/tags/prolog/</link>
+      <link>http://localhost:1313/tags/prolog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/prolog/</guid>
+      <guid>http://localhost:1313/tags/prolog/</guid>
       <description></description>
     </item>
     <item>
       <title>Sorting</title>
-      <link>https://lucabrun.github.io/tags/sorting/</link>
+      <link>http://localhost:1313/tags/sorting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/sorting/</guid>
+      <guid>http://localhost:1313/tags/sorting/</guid>
       <description></description>
     </item>
     <item>
       <title>Aptitude</title>
-      <link>https://lucabrun.github.io/tags/aptitude/</link>
+      <link>http://localhost:1313/tags/aptitude/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/aptitude/</guid>
+      <guid>http://localhost:1313/tags/aptitude/</guid>
       <description></description>
     </item>
     <item>
       <title>Matrices</title>
-      <link>https://lucabrun.github.io/tags/matrices/</link>
+      <link>http://localhost:1313/tags/matrices/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/matrices/</guid>
+      <guid>http://localhost:1313/tags/matrices/</guid>
       <description></description>
     </item>
     <item>
       <title>Bluetooth</title>
-      <link>https://lucabrun.github.io/tags/bluetooth/</link>
+      <link>http://localhost:1313/tags/bluetooth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/bluetooth/</guid>
+      <guid>http://localhost:1313/tags/bluetooth/</guid>
       <description></description>
     </item>
     <item>
       <title>Bluez</title>
-      <link>https://lucabrun.github.io/tags/bluez/</link>
+      <link>http://localhost:1313/tags/bluez/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/bluez/</guid>
+      <guid>http://localhost:1313/tags/bluez/</guid>
       <description></description>
     </item>
     <item>
       <title>Dbus</title>
-      <link>https://lucabrun.github.io/tags/dbus/</link>
+      <link>http://localhost:1313/tags/dbus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/dbus/</guid>
+      <guid>http://localhost:1313/tags/dbus/</guid>
       <description></description>
     </item>
     <item>
       <title>Clutter</title>
-      <link>https://lucabrun.github.io/tags/clutter/</link>
+      <link>http://localhost:1313/tags/clutter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/clutter/</guid>
+      <guid>http://localhost:1313/tags/clutter/</guid>
       <description></description>
     </item>
     <item>
       <title>Game</title>
-      <link>https://lucabrun.github.io/tags/game/</link>
+      <link>http://localhost:1313/tags/game/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/game/</guid>
+      <guid>http://localhost:1313/tags/game/</guid>
       <description></description>
     </item>
     <item>
       <title>Gio</title>
-      <link>https://lucabrun.github.io/tags/gio/</link>
+      <link>http://localhost:1313/tags/gio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/gio/</guid>
+      <guid>http://localhost:1313/tags/gio/</guid>
       <description></description>
     </item>
     <item>
       <title>Gmua</title>
-      <link>https://lucabrun.github.io/tags/gmua/</link>
+      <link>http://localhost:1313/tags/gmua/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/gmua/</guid>
+      <guid>http://localhost:1313/tags/gmua/</guid>
       <description></description>
     </item>
     <item>
       <title>Mail</title>
-      <link>https://lucabrun.github.io/tags/mail/</link>
+      <link>http://localhost:1313/tags/mail/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/mail/</guid>
+      <guid>http://localhost:1313/tags/mail/</guid>
       <description></description>
     </item>
     <item>
       <title>Mutt</title>
-      <link>https://lucabrun.github.io/tags/mutt/</link>
+      <link>http://localhost:1313/tags/mutt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/mutt/</guid>
+      <guid>http://localhost:1313/tags/mutt/</guid>
       <description></description>
     </item>
     <item>
       <title>Maja</title>
-      <link>https://lucabrun.github.io/tags/maja/</link>
+      <link>http://localhost:1313/tags/maja/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/maja/</guid>
+      <guid>http://localhost:1313/tags/maja/</guid>
       <description></description>
     </item>
     <item>
       <title>Duckduckgo</title>
-      <link>https://lucabrun.github.io/tags/duckduckgo/</link>
+      <link>http://localhost:1313/tags/duckduckgo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/duckduckgo/</guid>
+      <guid>http://localhost:1313/tags/duckduckgo/</guid>
       <description></description>
     </item>
     <item>
       <title>Yahoo</title>
-      <link>https://lucabrun.github.io/tags/yahoo/</link>
+      <link>http://localhost:1313/tags/yahoo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/yahoo/</guid>
+      <guid>http://localhost:1313/tags/yahoo/</guid>
       <description></description>
     </item>
     <item>
       <title>Mips</title>
-      <link>https://lucabrun.github.io/tags/mips/</link>
+      <link>http://localhost:1313/tags/mips/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/mips/</guid>
+      <guid>http://localhost:1313/tags/mips/</guid>
       <description></description>
     </item>
     <item>
       <title>Mipsdis</title>
-      <link>https://lucabrun.github.io/tags/mipsdis/</link>
+      <link>http://localhost:1313/tags/mipsdis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/mipsdis/</guid>
+      <guid>http://localhost:1313/tags/mipsdis/</guid>
       <description></description>
     </item>
     <item>
       <title>Reverse Engineering</title>
-      <link>https://lucabrun.github.io/tags/reverse-engineering/</link>
+      <link>http://localhost:1313/tags/reverse-engineering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/reverse-engineering/</guid>
+      <guid>http://localhost:1313/tags/reverse-engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
-      <link>https://lucabrun.github.io/tags/security/</link>
+      <link>http://localhost:1313/tags/security/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/security/</guid>
+      <guid>http://localhost:1313/tags/security/</guid>
       <description></description>
     </item>
     <item>
       <title>Ssl</title>
-      <link>https://lucabrun.github.io/tags/ssl/</link>
+      <link>http://localhost:1313/tags/ssl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/ssl/</guid>
+      <guid>http://localhost:1313/tags/ssl/</guid>
       <description></description>
     </item>
     <item>
       <title>Aggregator</title>
-      <link>https://lucabrun.github.io/tags/aggregator/</link>
+      <link>http://localhost:1313/tags/aggregator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/aggregator/</guid>
+      <guid>http://localhost:1313/tags/aggregator/</guid>
       <description></description>
     </item>
     <item>
       <title>Rss</title>
-      <link>https://lucabrun.github.io/tags/rss/</link>
+      <link>http://localhost:1313/tags/rss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/rss/</guid>
+      <guid>http://localhost:1313/tags/rss/</guid>
       <description></description>
     </item>
     <item>
       <title>Gtkdoc</title>
-      <link>https://lucabrun.github.io/tags/gtkdoc/</link>
+      <link>http://localhost:1313/tags/gtkdoc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/gtkdoc/</guid>
+      <guid>http://localhost:1313/tags/gtkdoc/</guid>
       <description></description>
     </item>
     <item>
       <title>Valagtkdoc</title>
-      <link>https://lucabrun.github.io/tags/valagtkdoc/</link>
+      <link>http://localhost:1313/tags/valagtkdoc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/valagtkdoc/</guid>
+      <guid>http://localhost:1313/tags/valagtkdoc/</guid>
       <description></description>
     </item>
     <item>
       <title>Dpkg</title>
-      <link>https://lucabrun.github.io/tags/dpkg/</link>
+      <link>http://localhost:1313/tags/dpkg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/dpkg/</guid>
+      <guid>http://localhost:1313/tags/dpkg/</guid>
       <description></description>
     </item>
     <item>
       <title>Tdpkg</title>
-      <link>https://lucabrun.github.io/tags/tdpkg/</link>
+      <link>http://localhost:1313/tags/tdpkg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/tdpkg/</guid>
+      <guid>http://localhost:1313/tags/tdpkg/</guid>
       <description></description>
     </item>
     <item>
       <title>Gpg</title>
-      <link>https://lucabrun.github.io/tags/gpg/</link>
+      <link>http://localhost:1313/tags/gpg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/gpg/</guid>
+      <guid>http://localhost:1313/tags/gpg/</guid>
       <description></description>
     </item>
     <item>
       <title>Networking</title>
-      <link>https://lucabrun.github.io/tags/networking/</link>
+      <link>http://localhost:1313/tags/networking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/networking/</guid>
+      <guid>http://localhost:1313/tags/networking/</guid>
       <description></description>
     </item>
     <item>
       <title>Rsa</title>
-      <link>https://lucabrun.github.io/tags/rsa/</link>
+      <link>http://localhost:1313/tags/rsa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/rsa/</guid>
+      <guid>http://localhost:1313/tags/rsa/</guid>
       <description></description>
     </item>
     <item>
       <title>Sdchat</title>
-      <link>https://lucabrun.github.io/tags/sdchat/</link>
+      <link>http://localhost:1313/tags/sdchat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/sdchat/</guid>
+      <guid>http://localhost:1313/tags/sdchat/</guid>
       <description></description>
     </item>
     <item>
       <title>Soup</title>
-      <link>https://lucabrun.github.io/tags/soup/</link>
+      <link>http://localhost:1313/tags/soup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/soup/</guid>
+      <guid>http://localhost:1313/tags/soup/</guid>
       <description></description>
     </item>
     <item>
       <title>Holidays</title>
-      <link>https://lucabrun.github.io/tags/holidays/</link>
+      <link>http://localhost:1313/tags/holidays/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/holidays/</guid>
+      <guid>http://localhost:1313/tags/holidays/</guid>
       <description></description>
     </item>
     <item>
       <title>Italy</title>
-      <link>https://lucabrun.github.io/tags/italy/</link>
+      <link>http://localhost:1313/tags/italy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/italy/</guid>
+      <guid>http://localhost:1313/tags/italy/</guid>
       <description></description>
     </item>
     <item>
       <title>Mafia</title>
-      <link>https://lucabrun.github.io/tags/mafia/</link>
+      <link>http://localhost:1313/tags/mafia/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/mafia/</guid>
+      <guid>http://localhost:1313/tags/mafia/</guid>
       <description></description>
     </item>
     <item>
       <title>Lua</title>
-      <link>https://lucabrun.github.io/tags/lua/</link>
+      <link>http://localhost:1313/tags/lua/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/lua/</guid>
+      <guid>http://localhost:1313/tags/lua/</guid>
       <description></description>
     </item>
     <item>
       <title>Cairo</title>
-      <link>https://lucabrun.github.io/tags/cairo/</link>
+      <link>http://localhost:1313/tags/cairo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/cairo/</guid>
+      <guid>http://localhost:1313/tags/cairo/</guid>
       <description></description>
     </item>
     <item>
       <title>Mimaggia</title>
-      <link>https://lucabrun.github.io/tags/mimaggia/</link>
+      <link>http://localhost:1313/tags/mimaggia/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/mimaggia/</guid>
+      <guid>http://localhost:1313/tags/mimaggia/</guid>
       <description></description>
     </item>
     <item>
       <title>Crypto</title>
-      <link>https://lucabrun.github.io/tags/crypto/</link>
+      <link>http://localhost:1313/tags/crypto/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/crypto/</guid>
+      <guid>http://localhost:1313/tags/crypto/</guid>
       <description></description>
     </item>
     <item>
       <title>Apache</title>
-      <link>https://lucabrun.github.io/tags/apache/</link>
+      <link>http://localhost:1313/tags/apache/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/apache/</guid>
+      <guid>http://localhost:1313/tags/apache/</guid>
       <description></description>
     </item>
     <item>
       <title>Axis</title>
-      <link>https://lucabrun.github.io/tags/axis/</link>
+      <link>http://localhost:1313/tags/axis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/axis/</guid>
+      <guid>http://localhost:1313/tags/axis/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>https://lucabrun.github.io/tags/java/</link>
+      <link>http://localhost:1313/tags/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/java/</guid>
+      <guid>http://localhost:1313/tags/java/</guid>
       <description></description>
     </item>
     <item>
       <title>Tomcat</title>
-      <link>https://lucabrun.github.io/tags/tomcat/</link>
+      <link>http://localhost:1313/tags/tomcat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/tomcat/</guid>
+      <guid>http://localhost:1313/tags/tomcat/</guid>
       <description></description>
     </item>
     <item>
       <title>Unical</title>
-      <link>https://lucabrun.github.io/tags/unical/</link>
+      <link>http://localhost:1313/tags/unical/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/unical/</guid>
+      <guid>http://localhost:1313/tags/unical/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Services</title>
-      <link>https://lucabrun.github.io/tags/web-services/</link>
+      <link>http://localhost:1313/tags/web-services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/web-services/</guid>
+      <guid>http://localhost:1313/tags/web-services/</guid>
       <description></description>
     </item>
     <item>
       <title>Performance</title>
-      <link>https://lucabrun.github.io/tags/performance/</link>
+      <link>http://localhost:1313/tags/performance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/performance/</guid>
+      <guid>http://localhost:1313/tags/performance/</guid>
       <description></description>
     </item>
     <item>
       <title>Zsh</title>
-      <link>https://lucabrun.github.io/tags/zsh/</link>
+      <link>http://localhost:1313/tags/zsh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/zsh/</guid>
+      <guid>http://localhost:1313/tags/zsh/</guid>
       <description></description>
     </item>
     <item>
       <title>Archicad</title>
-      <link>https://lucabrun.github.io/tags/archicad/</link>
+      <link>http://localhost:1313/tags/archicad/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/archicad/</guid>
+      <guid>http://localhost:1313/tags/archicad/</guid>
       <description></description>
     </item>
     <item>
       <title>Corraza</title>
-      <link>https://lucabrun.github.io/tags/corraza/</link>
+      <link>http://localhost:1313/tags/corraza/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/corraza/</guid>
+      <guid>http://localhost:1313/tags/corraza/</guid>
       <description></description>
     </item>
     <item>
       <title>Opengl</title>
-      <link>https://lucabrun.github.io/tags/opengl/</link>
+      <link>http://localhost:1313/tags/opengl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/opengl/</guid>
+      <guid>http://localhost:1313/tags/opengl/</guid>
       <description></description>
     </item>
     <item>
       <title>Spadi</title>
-      <link>https://lucabrun.github.io/tags/spadi/</link>
+      <link>http://localhost:1313/tags/spadi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/spadi/</guid>
+      <guid>http://localhost:1313/tags/spadi/</guid>
       <description></description>
     </item>
     <item>
       <title>Ray Tracing</title>
-      <link>https://lucabrun.github.io/tags/ray-tracing/</link>
+      <link>http://localhost:1313/tags/ray-tracing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/ray-tracing/</guid>
+      <guid>http://localhost:1313/tags/ray-tracing/</guid>
       <description></description>
     </item>
     <item>
       <title>Aruanne</title>
-      <link>https://lucabrun.github.io/tags/aruanne/</link>
+      <link>http://localhost:1313/tags/aruanne/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/aruanne/</guid>
+      <guid>http://localhost:1313/tags/aruanne/</guid>
       <description></description>
     </item>
     <item>
       <title>Pango</title>
-      <link>https://lucabrun.github.io/tags/pango/</link>
+      <link>http://localhost:1313/tags/pango/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/pango/</guid>
+      <guid>http://localhost:1313/tags/pango/</guid>
       <description></description>
     </item>
     <item>
       <title>Pdf</title>
-      <link>https://lucabrun.github.io/tags/pdf/</link>
+      <link>http://localhost:1313/tags/pdf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/pdf/</guid>
+      <guid>http://localhost:1313/tags/pdf/</guid>
       <description></description>
     </item>
     <item>
       <title>Report</title>
-      <link>https://lucabrun.github.io/tags/report/</link>
+      <link>http://localhost:1313/tags/report/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/report/</guid>
+      <guid>http://localhost:1313/tags/report/</guid>
       <description></description>
     </item>
     <item>
       <title>Gstreamer</title>
-      <link>https://lucabrun.github.io/tags/gstreamer/</link>
+      <link>http://localhost:1313/tags/gstreamer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/gstreamer/</guid>
+      <guid>http://localhost:1313/tags/gstreamer/</guid>
       <description></description>
     </item>
     <item>
       <title>Media</title>
-      <link>https://lucabrun.github.io/tags/media/</link>
+      <link>http://localhost:1313/tags/media/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/media/</guid>
+      <guid>http://localhost:1313/tags/media/</guid>
       <description></description>
     </item>
     <item>
       <title>Smalltalk</title>
-      <link>https://lucabrun.github.io/tags/smalltalk/</link>
+      <link>http://localhost:1313/tags/smalltalk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/smalltalk/</guid>
+      <guid>http://localhost:1313/tags/smalltalk/</guid>
       <description></description>
     </item>
     <item>
       <title>Syx</title>
-      <link>https://lucabrun.github.io/tags/syx/</link>
+      <link>http://localhost:1313/tags/syx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/syx/</guid>
+      <guid>http://localhost:1313/tags/syx/</guid>
       <description></description>
     </item>
     <item>
       <title>Webkit</title>
-      <link>https://lucabrun.github.io/tags/webkit/</link>
+      <link>http://localhost:1313/tags/webkit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/webkit/</guid>
+      <guid>http://localhost:1313/tags/webkit/</guid>
       <description></description>
     </item>
     <item>
       <title>Freespeak</title>
-      <link>https://lucabrun.github.io/tags/freespeak/</link>
+      <link>http://localhost:1313/tags/freespeak/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/freespeak/</guid>
+      <guid>http://localhost:1313/tags/freespeak/</guid>
       <description></description>
     </item>
     <item>
       <title>Xlib</title>
-      <link>https://lucabrun.github.io/tags/xlib/</link>
+      <link>http://localhost:1313/tags/xlib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/xlib/</guid>
+      <guid>http://localhost:1313/tags/xlib/</guid>
       <description></description>
     </item>
     <item>
       <title>Social</title>
-      <link>https://lucabrun.github.io/tags/social/</link>
+      <link>http://localhost:1313/tags/social/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/social/</guid>
+      <guid>http://localhost:1313/tags/social/</guid>
       <description></description>
     </item>
     <item>
       <title>Last.fm</title>
-      <link>https://lucabrun.github.io/tags/last.fm/</link>
+      <link>http://localhost:1313/tags/last.fm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/last.fm/</guid>
+      <guid>http://localhost:1313/tags/last.fm/</guid>
       <description></description>
     </item>
     <item>
       <title>Twitter</title>
-      <link>https://lucabrun.github.io/tags/twitter/</link>
+      <link>http://localhost:1313/tags/twitter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lucabrun.github.io/tags/twitter/</guid>
+      <guid>http://localhost:1313/tags/twitter/</guid>
       <description></description>
     </item>
   </channel>

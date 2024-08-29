@@ -2,150 +2,150 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gtk on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/gtk/</link>
+    <link>http://localhost:1313/tags/gtk/</link>
     <description>Recent content in Gtk on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Mar 2014 16:10:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/gtk/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/gtk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gtk3 hit-a-hint: mouseless navigation module</title>
-      <link>https://lucabrun.github.io/2014/03/gtk3-hit-hint-mouseless-navigation.html</link>
+      <link>http://localhost:1313/2014/03/gtk3-hit-hint-mouseless-navigation.html</link>
       <pubDate>Sun, 23 Mar 2014 16:10:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2014/03/gtk3-hit-hint-mouseless-navigation.html</guid>
+      <guid>http://localhost:1313/2014/03/gtk3-hit-hint-mouseless-navigation.html</guid>
       <description>I present gtkhah, a gtk module for hit-a-hint mouseless navigation of gtk3 applications.&#xA;It&amp;rsquo;s been inspired by the various hit-a-hint browser extensions.&#xA;Usage at the project homepage. Here&amp;rsquo;s a quick screenshot of Gedit:</description>
     </item>
     <item>
       <title>Grab focus on Gtk Widget</title>
-      <link>https://lucabrun.github.io/2012/11/grab-focus-on-gtk-widget.html</link>
+      <link>http://localhost:1313/2012/11/grab-focus-on-gtk-widget.html</link>
       <pubDate>Thu, 22 Nov 2012 11:49:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2012/11/grab-focus-on-gtk-widget.html</guid>
+      <guid>http://localhost:1313/2012/11/grab-focus-on-gtk-widget.html</guid>
       <description>Many times I had to give focus to a newly created Gtk widget that still had to be mapped to screen. Since widget.grab_focus() does not work if the widget is not displayed on the screen, then I always used an idle source to delay the operation.&#xA;Today I noticed that the idle may be too late: if the user is writing something, then some key strokes may be lost because the idle runs slightly after the widget has been mapped.</description>
     </item>
     <item>
       <title>Valagtkdoc 1.0</title>
-      <link>https://lucabrun.github.io/2010/04/valagtkdoc-10.html</link>
+      <link>http://localhost:1313/2010/04/valagtkdoc-10.html</link>
       <pubDate>Fri, 02 Apr 2010 08:14:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2010/04/valagtkdoc-10.html</guid>
+      <guid>http://localhost:1313/2010/04/valagtkdoc-10.html</guid>
       <description>Hello,&#xA;yes&amp;hellip; this is the nth program I&amp;rsquo;m writing in this period. I hope this is the last one :)&#xA;Valagtkdoc is a tool that integrates Vala with GTK-Doc for documentation generation.&#xA;You can find download and example usage at the homepage.&#xA;I think it&amp;rsquo;s far from being perfect, and actually I haven&amp;rsquo;t tried integrating it with autotools, but it shouldn&amp;rsquo;t be that hard. Unfortunately, you have to somehow break the gtk-doc rule &amp;ldquo;do not run it manually&amp;rdquo; because valagtkdoc goes in the middle between gtkdoc-scan and gtkdoc-mkdb.</description>
     </item>
     <item>
       <title>Secure and Decentralized Chat</title>
-      <link>https://lucabrun.github.io/2010/02/secure-and-decentralized-chat.html</link>
+      <link>http://localhost:1313/2010/02/secure-and-decentralized-chat.html</link>
       <pubDate>Tue, 16 Feb 2010 03:11:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2010/02/secure-and-decentralized-chat.html</guid>
+      <guid>http://localhost:1313/2010/02/secure-and-decentralized-chat.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m writing to let you know of the first release of SDChat.&#xA;It is a protocol with libraries and programs to create secure IM networks using GPG and RSA.&#xA;All the stack is written in Python but the page says it will be rewritten from scratch to provide a C API.&#xA;It features a GTK+ interface with many plugins (unfortunately audio and video are being broken due to gstreamer updates) and a simple server for routing.</description>
     </item>
     <item>
       <title>Mimaggia, cairo tester</title>
-      <link>https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html</link>
+      <link>http://localhost:1313/2009/11/mimaggia-cairo-tester.html</link>
       <pubDate>Fri, 27 Nov 2009 04:21:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html</guid>
+      <guid>http://localhost:1313/2009/11/mimaggia-cairo-tester.html</guid>
       <description>Hello,&#xA;From GNOME&#xA;I&amp;rsquo;ve created a simple pygtk project for testing cairo statements. It includes a sort of terminal where you write statements in a simple language. It features immediate preview of what you write.&#xA;Say it&amp;rsquo;s a new format for images.&#xA;If you want to test it and see the code, ask me.</description>
     </item>
     <item>
       <title>Spadi source code</title>
-      <link>https://lucabrun.github.io/2009/08/spadi-source-code.html</link>
+      <link>http://localhost:1313/2009/08/spadi-source-code.html</link>
       <pubDate>Sun, 09 Aug 2009 11:10:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/08/spadi-source-code.html</guid>
+      <guid>http://localhost:1313/2009/08/spadi-source-code.html</guid>
       <description>Hello,&#xA;after I&amp;rsquo;ve written really a few docs, and cleaned up some stuff, I&amp;rsquo;ve published the code of both Spadi and Corraza on gitorious here. In the while, I&amp;rsquo;ve added support for floors and closeable views.&#xA;Help&amp;hellip; help is needed.&#xA;Stay tuned.</description>
     </item>
     <item>
       <title>Constructing a free ArchiCAD alternative</title>
-      <link>https://lucabrun.github.io/2009/08/constructing-free-archicad-alternative.html</link>
+      <link>http://localhost:1313/2009/08/constructing-free-archicad-alternative.html</link>
       <pubDate>Thu, 06 Aug 2009 04:02:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/08/constructing-free-archicad-alternative.html</guid>
+      <guid>http://localhost:1313/2009/08/constructing-free-archicad-alternative.html</guid>
       <description>Hello,&#xA;together a couple of university mates we talked about a possible free (as in freedom) ArchiCAD alternative. There are several free CAD out there but none is free for architects/engineers. The project is too big and ambitious, but I wanted to give OpenGL a shot with this excuse to learn something new.&#xA;I&amp;rsquo;ve started two projects:&#xA;Corraza, the OpenGL framework for editing 3d objects and exporting the scene graph to ray tracing software&amp;hellip; think about a very very very minimal blender but as library</description>
     </item>
     <item>
       <title>Blogging from Epiphany WebKit</title>
-      <link>https://lucabrun.github.io/2009/05/blogging-from-epiphany-webkit.html</link>
+      <link>http://localhost:1313/2009/05/blogging-from-epiphany-webkit.html</link>
       <pubDate>Mon, 18 May 2009 11:33:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/05/blogging-from-epiphany-webkit.html</guid>
+      <guid>http://localhost:1313/2009/05/blogging-from-epiphany-webkit.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve been using Midori for a while. It&amp;rsquo;s a great browser: innovative and light. However all my bookmarks and data are in Epiphany. Last week the new epiphany-webkit version has been uploaded in Debian Sid and I couldn&amp;rsquo;t wait to test it. I&amp;rsquo;m currently using it instead of gecko; it has still some issues but I begun living without it.</description>
     </item>
     <item>
       <title>Create a GdkPixbuf from cairo surface</title>
-      <link>https://lucabrun.github.io/2009/04/create-pixbuf-from-cairo-surface.html</link>
+      <link>http://localhost:1313/2009/04/create-pixbuf-from-cairo-surface.html</link>
       <pubDate>Sun, 26 Apr 2009 10:40:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/04/create-pixbuf-from-cairo-surface.html</guid>
+      <guid>http://localhost:1313/2009/04/create-pixbuf-from-cairo-surface.html</guid>
       <description>Hello,&#xA;here&amp;rsquo;s the inverted code snippet of the previous post.&#xA;`w, h = surface.get_width(), surface.get_height()&#xA;pixmap = gtk.gdk.Pixmap (None, w, h, 24)&#xA;cr = pixmap.cairo_create ()&#xA;cr.set_source_surface (surface, 0, 0)&#xA;cr.paint ()&#xA;pixbuf = gtk.gdk.Pixbuf (gtk.gdk.COLORSPACE_RGB, True, 8, w, h)&#xA;pixbuf = pixbuf.get_from_drawable (pixmap, gtk.gdk.colormap_get_system(), 0, 0, 0, 0, w, h)`</description>
     </item>
     <item>
       <title>Global keybinding on X</title>
-      <link>https://lucabrun.github.io/2008/12/global-keybinding-on-x.html</link>
+      <link>http://localhost:1313/2008/12/global-keybinding-on-x.html</link>
       <pubDate>Sun, 21 Dec 2008 01:52:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/12/global-keybinding-on-x.html</guid>
+      <guid>http://localhost:1313/2008/12/global-keybinding-on-x.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;ve been looking for a way to create a desktop-wide keybinding for FreeSpeak.&#xA;I first looked into Tomboy and Deskbar source codes but the egg was too huge to be adopted, and it would have brought C dependency which isn&amp;rsquo;t always nice for a Python project.&#xA;Then fargiolas pointed me to a blog post where I could find about gnome keybindings owned by gnome control center. Well that was only a mirage as it doesn&amp;rsquo;t really grab the key but it&amp;rsquo;s only a visual entry in the keyboard shortcuts preferences.</description>
     </item>
     <item>
       <title>Aptitude-gtk progress</title>
-      <link>https://lucabrun.github.io/2008/12/aptitude-gtk-progress.html</link>
+      <link>http://localhost:1313/2008/12/aptitude-gtk-progress.html</link>
       <pubDate>Mon, 01 Dec 2008 14:58:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/12/aptitude-gtk-progress.html</guid>
+      <guid>http://localhost:1313/2008/12/aptitude-gtk-progress.html</guid>
       <description>Hello,&#xA;I was curious to see if aptitude-gtk was making some progress. I haven&amp;rsquo;t followed the project since it&amp;rsquo;s been merged into aptitude.&#xA;Well, I found it more functional and complete. Here&amp;rsquo;s a screenshot showing pending packages for upgrade after an update:&#xA;From GNOME&#xA;The team is definitely doing a good job. Hopefully I&amp;rsquo;ll find the time to give some help as I&amp;rsquo;m really interested in such full-featured GUI frontend.</description>
     </item>
     <item>
       <title>FreeSpeak gains translation suggestions</title>
-      <link>https://lucabrun.github.io/2008/11/freespeak-gains-translation-suggestions.html</link>
+      <link>http://localhost:1313/2008/11/freespeak-gains-translation-suggestions.html</link>
       <pubDate>Sun, 30 Nov 2008 03:47:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/11/freespeak-gains-translation-suggestions.html</guid>
+      <guid>http://localhost:1313/2008/11/freespeak-gains-translation-suggestions.html</guid>
       <description>Hello,&#xA;it hasn&amp;rsquo;t been a long time since FreeSpeak 0.2.0 has been released. One of the TODOs for the next release was to support open-tran, and more over translation suggestions for development.&#xA;This is a screenshot of what&amp;rsquo;s been included in the repository today:&#xA;From GNOME&#xA;FreeSpeak is a GNOME frontend to online translator engines.</description>
     </item>
     <item>
       <title>FreeSpeak 0.2.0 has been released</title>
-      <link>https://lucabrun.github.io/2008/11/freespeak-020-has-been-released.html</link>
+      <link>http://localhost:1313/2008/11/freespeak-020-has-been-released.html</link>
       <pubDate>Fri, 28 Nov 2008 03:57:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/11/freespeak-020-has-been-released.html</guid>
+      <guid>http://localhost:1313/2008/11/freespeak-020-has-been-released.html</guid>
       <description>Hello,&#xA;after some work in these weeks now I have released a new version of FreeSpeak.&#xA;FreeSpeak is a free (as in freedom, developed and released under the terms of GPL) frontend to online translator engines (such as Google, Yahoo, etc.). It is written in Python, it uses the GTK toolkit and some GNOME infrastructure features&#xA;.&#xA;It&amp;rsquo;s been rewritten almost from scratch so I think there&amp;rsquo;s no need to post release notes here.</description>
     </item>
     <item>
       <title>Replace GTK&#43; with Clutter for fun</title>
-      <link>https://lucabrun.github.io/2008/11/replace-gtk-with-clutter-for-fun.html</link>
+      <link>http://localhost:1313/2008/11/replace-gtk-with-clutter-for-fun.html</link>
       <pubDate>Sun, 23 Nov 2008 12:38:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/11/replace-gtk-with-clutter-for-fun.html</guid>
+      <guid>http://localhost:1313/2008/11/replace-gtk-with-clutter-for-fun.html</guid>
       <description>Hello,&#xA;lately I was having fun with Clutter and Python. I&amp;rsquo;ve started by creating some Gtk-like widgets (such as GtkWindow, GtkBox, and GtkButton) in Clutter.&#xA;Well, this is the result&amp;hellip; it&amp;rsquo;s a simple example of a very poor toolkit, but it works:&#xA;Try it, it&amp;rsquo;s only one .py file source code</description>
     </item>
     <item>
       <title>Single app instances, Python and DBus</title>
-      <link>https://lucabrun.github.io/2008/11/single-app-instances-python-and-dbus.html</link>
+      <link>http://localhost:1313/2008/11/single-app-instances-python-and-dbus.html</link>
       <pubDate>Sun, 16 Nov 2008 10:01:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2008/11/single-app-instances-python-and-dbus.html</guid>
+      <guid>http://localhost:1313/2008/11/single-app-instances-python-and-dbus.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m working on FreeSpeak lately and I needed to run the application once per session, as it&amp;rsquo;s got a trayicon and a notebook (maybe windows with an applet is better?)&#xA;I decided to use DBus for making the application run only a single instance; when you try to open it again it won&amp;rsquo;t start another process, instead it will use the already running one.&#xA;This is how I would create a generic single app instance with dbus-python:</description>
     </item>
     <item>
       <title>FreeSpeak, a GTK&#43;/GNOME translator</title>
-      <link>https://lucabrun.github.io/2008/10/freespeak-gtkgnome-translator.html</link>
+      <link>http://localhost:1313/2008/10/freespeak-gtkgnome-translator.html</link>
       <pubDate>Tue, 14 Oct 2008 14:31:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/10/freespeak-gtkgnome-translator.html</guid>
+      <guid>http://localhost:1313/2008/10/freespeak-gtkgnome-translator.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve worked on FreeSpeak a couple of years ago, a Python/GTK+/GNOME project to translate text and web pages by querying already existing online translation tools.&#xA;PRO: It has been packed for Ubuntu and it has been publicized by a journal in Italy.&#xA;CONS: It has been discontinued until now. In fact I restarted the project and I&amp;rsquo;m doing a huge refactoring because of the ugly code I wrote in the past.</description>
     </item>
     <item>
       <title>GTK Apps to replace Gnome Files</title>
-      <link>https://lucabrun.github.io/2008/09/gtk-apps-to-replace-gnome-files.html</link>
+      <link>http://localhost:1313/2008/09/gtk-apps-to-replace-gnome-files.html</link>
       <pubDate>Mon, 08 Sep 2008 10:20:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/09/gtk-apps-to-replace-gnome-files.html</guid>
+      <guid>http://localhost:1313/2008/09/gtk-apps-to-replace-gnome-files.html</guid>
       <description>Hello,&#xA;everyone knows that gnomefiles has went offline with that boring redirect to osnews.com.&#xA;Now many people is looking toward gtk-apps.org, I didn&amp;rsquo;t know it before. It&amp;rsquo;s looking really good.&#xA;The only problems is that I had (and I guess I&amp;rsquo;m not the only one) a few unmaintained projects on gnomefiles and they are now lost.&#xA;I&amp;rsquo;m wondering if it will be publicized a day by gtk.org to be something more official.</description>
     </item>
     <item>
       <title>Vagalume, GTK&#43; and Last.fm</title>
-      <link>https://lucabrun.github.io/2008/08/vagalume-gtk-and-lastfm.html</link>
+      <link>http://localhost:1313/2008/08/vagalume-gtk-and-lastfm.html</link>
       <pubDate>Sat, 16 Aug 2008 03:28:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/08/vagalume-gtk-and-lastfm.html</guid>
+      <guid>http://localhost:1313/2008/08/vagalume-gtk-and-lastfm.html</guid>
       <description>Vagalume, GTK+ and Last.fm&#xA;Originally uploaded by Lethalman&#xA;I&amp;rsquo;ve found this great gstreamer application to listen to the last.fm stations. It works perfectly, fully functional and up-to-date. Features several IM status updates, including telepathy. It&amp;rsquo;s definitely good-looking with my dark theme.&#xA;Homepage: http://vagalume.igalia.com/&#xA;Last.fm group: http://www.last.fm/group/Vagalume</description>
     </item>
     <item>
       <title>Gnome main menu</title>
-      <link>https://lucabrun.github.io/2008/08/gnome-main-menu.html</link>
+      <link>http://localhost:1313/2008/08/gnome-main-menu.html</link>
       <pubDate>Thu, 07 Aug 2008 10:09:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/08/gnome-main-menu.html</guid>
+      <guid>http://localhost:1313/2008/08/gnome-main-menu.html</guid>
       <description>Gnome main menu&#xA;Originally uploaded by Lethalman&#xA;Hello,&#xA;while I was playing with apt-cache I&amp;rsquo;ve discovered a new kind of main menu in GNOME. It&amp;rsquo;s being developed by SuSE. It feels nice, robust and innovative.&#xA;The screenshot is showing the documents tab.&#xA;To install, aptitude install gnome-main-menu and add the new applet.</description>
     </item>
     <item>
       <title>Syx, GTK&#43; and threading</title>
-      <link>https://lucabrun.github.io/2008/05/syx-gtk-and-threading.html</link>
+      <link>http://localhost:1313/2008/05/syx-gtk-and-threading.html</link>
       <pubDate>Fri, 23 May 2008 14:00:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/05/syx-gtk-and-threading.html</guid>
+      <guid>http://localhost:1313/2008/05/syx-gtk-and-threading.html</guid>
       <description>Hello,&#xA;you all know that Gtk+ has locks for the GUI when dealing with the X server and prevent async events to be sent. This is done by manually acquiring/releasing the lock on Gdk. Many Gtk+ ports don&amp;rsquo;t do this automatically.&#xA;Syx used gtk_main() into a thread and automatically put gdk enter/leave for each function in its wrapper. It would be somewhat ugly in Smalltalk code having to enter/leave each time.</description>
     </item>
   </channel>

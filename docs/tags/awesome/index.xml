@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Awesome on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/awesome/</link>
+    <link>http://localhost:1313/tags/awesome/</link>
     <description>Recent content in Awesome on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Mar 2013 13:15:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/awesome/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/awesome/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Controlling audio volume in Awesome WM</title>
-      <link>https://lucabrun.github.io/2013/03/controlling-audio-volume-in-awesome-wm.html</link>
+      <link>http://localhost:1313/2013/03/controlling-audio-volume-in-awesome-wm.html</link>
       <pubDate>Sun, 24 Mar 2013 13:15:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2013/03/controlling-audio-volume-in-awesome-wm.html</guid>
+      <guid>http://localhost:1313/2013/03/controlling-audio-volume-in-awesome-wm.html</guid>
       <description>I use awesome on my eeepc because it&amp;rsquo;s much space and resource saving.&#xA;There are several possibilities for controlling volume in the Awesome window manager.&#xA;Today I&amp;rsquo;d like to share my way of doing it: using amixer for controlling the volume, and naughty for notifying the user.&#xA;Start by defining the following in your rc.lua (source discussion here):&#xA;volnotify = {}&#xA;volnotify.id = nil&#xA;function volnotify:notify (msg)&#xA;self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self.</description>
     </item>
     <item>
       <title>Awesome/other wrong keyboard layout</title>
-      <link>https://lucabrun.github.io/2009/02/awesomeother-wrong-keyboard-layout.html</link>
+      <link>http://localhost:1313/2009/02/awesomeother-wrong-keyboard-layout.html</link>
       <pubDate>Fri, 27 Feb 2009 15:12:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/02/awesomeother-wrong-keyboard-layout.html</guid>
+      <guid>http://localhost:1313/2009/02/awesomeother-wrong-keyboard-layout.html</guid>
       <description>Hello,&#xA;due to the high resource usage by Eclipse (I have to use that unfortunately because of my professor) I&amp;rsquo;ve temporarly dropped GNOME and now I&amp;rsquo;m using Awesome for a while.&#xA;Ok let&amp;rsquo;s say the problem: the keyboard. Do you have different languages, layouts and so on among several configurations (GNOME, X, &amp;hellip;) and your keyboard layout is messed up with awesome?&#xA;Just do it:&#xA;setxkbmap -layout YOURLAYOUT&#xA;Where YOURLAYOUT for me is it.</description>
     </item>
   </channel>

@@ -1,147 +1,219 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Constructing a free ArchiCAD alternative | Luca Bruno blog</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Hello,
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Constructing a free ArchiCAD alternative - Luca Bruno blog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Hello,
 together a couple of university mates we talked about a possible free (as in freedom) ArchiCAD alternative. There are several free CAD out there but none is free for architects/engineers. The project is too big and ambitious, but I wanted to give OpenGL a shot with this excuse to learn something new.
 I&rsquo;ve started two projects:
-Corraza, the OpenGL framework for editing 3d objects and exporting the scene graph to ray tracing software&hellip; think about a very very very minimal blender but as library">
-    <meta name="generator" content="Hugo 0.125.2">
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
-
-
-
-    
-
-    
-      
-
-    
-
-    
-
-    
-      <link rel="canonical" href="https://lucabrun.github.io/2009/08/constructing-free-archicad-alternative.html">
-    
-
-    <meta property="og:url" content="https://lucabrun.github.io/2009/08/constructing-free-archicad-alternative.html">
-  <meta property="og:site_name" content="Luca Bruno blog">
-  <meta property="og:title" content="Constructing a free ArchiCAD alternative">
-  <meta property="og:description" content="Hello,
-together a couple of university mates we talked about a possible free (as in freedom) ArchiCAD alternative. There are several free CAD out there but none is free for architects/engineers. The project is too big and ambitious, but I wanted to give OpenGL a shot with this excuse to learn something new.
-I&amp;rsquo;ve started two projects:
-Corraza, the OpenGL framework for editing 3d objects and exporting the scene graph to ray tracing software&amp;hellip; think about a very very very minimal blender but as library">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-  <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2009-08-06T04:02:00-07:00">
-    <meta property="article:modified_time" content="2009-08-06T04:02:00-07:00">
-    <meta property="article:tag" content="Gtk">
-    <meta property="article:tag" content="Corraza">
-    <meta property="article:tag" content="Opengl">
-    <meta property="article:tag" content="Python">
-    <meta property="article:tag" content="Ray Tracing">
-    <meta property="article:tag" content="Archicad">
-
-  <meta itemprop="name" content="Constructing a free ArchiCAD alternative">
-  <meta itemprop="description" content="Hello,
-together a couple of university mates we talked about a possible free (as in freedom) ArchiCAD alternative. There are several free CAD out there but none is free for architects/engineers. The project is too big and ambitious, but I wanted to give OpenGL a shot with this excuse to learn something new.
-I&rsquo;ve started two projects:
-Corraza, the OpenGL framework for editing 3d objects and exporting the scene graph to ray tracing software&hellip; think about a very very very minimal blender but as library">
-  <meta itemprop="datePublished" content="2009-08-06T04:02:00-07:00">
-  <meta itemprop="dateModified" content="2009-08-06T04:02:00-07:00">
-  <meta itemprop="wordCount" content="132">
-  <meta itemprop="keywords" content="Gtk,Corraza,Opengl,Python,Ray Tracing,Archicad,Development,Spadi"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Constructing a free ArchiCAD alternative">
-<meta name="twitter:description" content="Hello,
-together a couple of university mates we talked about a possible free (as in freedom) ArchiCAD alternative. There are several free CAD out there but none is free for architects/engineers. The project is too big and ambitious, but I wanted to give OpenGL a shot with this excuse to learn something new.
-I&rsquo;ve started two projects:
-Corraza, the OpenGL framework for editing 3d objects and exporting the scene graph to ray tracing software&hellip; think about a very very very minimal blender but as library">
-
-	
-  </head>
-
-  <body class="ma0 avenir bg-near-white">
-
-    
-   
+Corraza, the OpenGL framework for editing 3d objects and exporting the scene graph to ray tracing software&hellip; think about a very very very minimal blender but as library" />
+  <meta name="author" content="Luca Bruno blog" />
   
 
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Luca Bruno blog
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      
-<div class="ananke-socials">
   
-</div>
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
-    </div>
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.125.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Luca Bruno blog</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
-</nav>
 
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Constructing a free ArchiCAD alternative</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Aug 6, 2009</time>
+      
+      
+      
+      
     </div>
+    
   </header>
 
-
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        Posts
-      </aside>
-      
-
-
-
-
-
-
-
-
-
-
-  <div id="sharing" class="mt3 ananke-socials">
-    
-  </div>
-
-
-      <h1 class="f1 athelas mt3 mb1">Constructing a free ArchiCAD alternative</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2009-08-06T04:02:00-07:00">August 6, 2009</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Hello,<br>
+  <section><p>Hello,<br>
 together a couple of university mates we talked about a possible free (as in freedom) ArchiCAD alternative. There are several free CAD out there but none is free for architects/engineers. The project is too big and ambitious, but I wanted to give OpenGL a shot with this excuse to learn something new.</p>
 <p>I&rsquo;ve started two projects:</p>
 <ul>
@@ -155,135 +227,118 @@ together a couple of university mates we talked about a possible free (as in fre
 <p>You can find a <a href="http://www.youtube.com/watch?v=i3D7CLdhvuk">video here</a> to see what it can do now, after a week of development.<br>
 There&rsquo;s no code published at the moment, contact me if you would like to join the development.</p>
 <p>Stay tuned.</p>
-<ul class="pa0">
-  
-   <li class="list di">
-     <a href="/tags/gtk/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Gtk</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/corraza/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Corraza</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/opengl/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Opengl</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/python/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/ray-tracing/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Ray Tracing</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/archicad/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Archicad</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/development/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Development</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/spadi/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Spadi</a>
-   </li>
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
-    </div>
+</section>
 
-    <aside class="w-30-l mt6-l">
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/gtk"
+      >gtk</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/corraza"
+      >corraza</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/opengl"
+      >opengl</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/python"
+      >python</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/ray-tracing"
+      >ray tracing</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/archicad"
+      >archicad</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/development"
+      >development</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/spadi"
+      >spadi</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2009/08/spadi-source-code.html"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Spadi source code</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2009/07/aruanne-pdf-reporting-framework.html"
+      ><span>Aruanne, pdf reporting framework</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
 
 
+  
+</article>
 
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/2008/12/global-keybinding-on-x.html">Global keybinding on X</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/11/replace-gtk-with-clutter-for-fun.html">Replace GTK&#43; with Clutter for fun</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/11/single-app-instances-python-and-dbus.html">Single app instances, Python and DBus</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2009/07/aruanne-pdf-reporting-framework.html">Aruanne, pdf reporting framework</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2009/01/freespeak-030-has-been-released.html">FreeSpeak 0.3.0 has been released</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/12/aptitude-gtk-progress.html">Aptitude-gtk progress</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/11/freespeak-gains-translation-suggestions.html">FreeSpeak gains translation suggestions</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/11/freespeak-020-has-been-released.html">FreeSpeak 0.2.0 has been released</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/10/freespeak-gtkgnome-translator.html">FreeSpeak, a GTK&#43;/GNOME translator</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/09/gtk-apps-to-replace-gnome-files.html">GTK Apps to replace Gnome Files</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/05/syx-gtk-and-threading.html">Syx, GTK&#43; and threading</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2009/05/syx-changes-web-and-git-hosting.html">Syx changes web and git hosting</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2009/05/blogging-from-epiphany-webkit.html">Blogging from Epiphany WebKit</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2009/04/create-pixbuf-from-cairo-surface.html">Create a GdkPixbuf from cairo surface</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2009/02/jmf-and-mpeg.html">JMF and MPEG</a>
-        </li>
-	    
-    </ul>
-</div>
-
-</aside>
-
-  </article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
-    &copy;  Luca Bruno blog 2024 
-  </a>
-    <div>
-<div class="ananke-socials">
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
   
-</div>
-</div>
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+  
   </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
 </footer>
 
   </body>

@@ -1,350 +1,373 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Luca Bruno blog</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="">
-    <meta name="generator" content="Hugo 0.125.2">
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<!doctype html>
 
 
 
-    
 
-    
-      
 
-    
 
-    
-    
-      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Luca Bruno blog" />
-      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="Luca Bruno blog" />
-      
-    
 
-    
-      <link rel="canonical" href="https://lucabrun.github.io/posts/">
-    
 
-    <meta property="og:url" content="https://lucabrun.github.io/posts/">
-  <meta property="og:site_name" content="Luca Bruno blog">
-  <meta property="og:title" content="Posts">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Posts">
-  <meta itemprop="dateModified" content="2018-08-14T12:16:00-07:00"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Posts">
-<meta name="twitter:description" content="">
 
-	
-  </head>
 
-  <body class="ma0 avenir bg-near-white">
 
-    
 
-  <header>
-    <div class="pb3-m pb6-l bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Luca Bruno blog
-      
-    </a>
-    <div class="flex-l items-center">
-      
 
-      
-      
-<div class="ananke-socials">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
   
-</div>
+  <title>Posts - Luca Bruno blog</title>
 
-    </div>
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  
+  <meta
+    name="description"
+    content="A personal blog"
+  />
+  <meta name="author" content="Luca Bruno blog" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.125.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Luca Bruno blog</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Happy Holidays</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Dec 25, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/12/merry-christmas.html">Happy Holidays</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Facebook and Berlusconi</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Dec 14, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/12/facebook-and-berlusconi.html">Facebook and Berlusconi</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Lua for Pythoners - Dictionary</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Dec 14, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/12/lua-for-pythoners-dictionary.html">Lua for Pythoners - Dictionary</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Lua for Pythoners - Lists</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Dec 13, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/12/lua-for-pythoners-lists.html">Lua for Pythoners - Lists</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Mimaggia, cairo tester</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Nov 27, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/11/mimaggia-cairo-tester.html">Mimaggia, cairo tester</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Python and RSA</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Nov 14, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/11/there-are-many-python-toolkits-for.html">Python and RSA</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Debian&#43;Apache&#43;Tomcat&#43;Axis</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Oct 9, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/10/debianapachetomcataxis.html">Debian&#43;Apache&#43;Tomcat&#43;Axis</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Speeding up zsh completion</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Oct 7, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/10/speeding-up-zsh-completion.html">Speeding up zsh completion</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">New GPG key</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Aug 29, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/08/new-gpg-key.html">New GPG key</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Spadi source code</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Aug 9, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/08/spadi-source-code.html">Spadi source code</a>
+</section>
+
+
+
+
+<nav class="mt-14 flex">
+  
+  <a class="btn" href="/posts/page/7/">← Prev Page</a>
+  
+  
+  <a class="btn ml-auto" href="/posts/page/9/"
+    >Next Page →</a
+  >
+  
 </nav>
 
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Posts
-        </h1>
-        
-      </div>
-    </div>
-  </header>
 
-
-    <main class="pb7" role="main">
-      
-  <article class="pa3 pa4-ns nested-copy-line-height">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
-    <section class="flex-ns flex-wrap justify-around mt5">
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/12/merry-christmas.html" class="link black dim">
-        Happy Holidays
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I wish you all a Merry Christmas and a Happy New Year!
-    </div>
-    <a href="/2009/12/merry-christmas.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/12/facebook-and-berlusconi.html" class="link black dim">
-        Facebook and Berlusconi
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-today many people are getting subscribed (with NO authorization) automatically to this group: Sosteniamo SILVIO BERLUSCONI contro i FAN di massimo tartaglia. You have NO notification that you&rsquo;ve been subscribed to this group.
-Also consider the geographic position (screenshot) of the group contact.
-Also consider that the group can&rsquo;t be signaled to facebook, because the feature looks like out of service.
-It&rsquo;s clearly a mafia group, beware of!
-    </div>
-    <a href="/2009/12/facebook-and-berlusconi.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/12/lua-for-pythoners-dictionary.html" class="link black dim">
-        Lua for Pythoners - Dictionary
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-as promised this is the second post, this time for dictionaries. The most important thing to notice is that tbl[key]=nil means deleting the entry from the table, while in python dict[key]=None is still a valid entry with None value.
-Here&rsquo;s the snippet you can launch in a lua interpreter and this is the catalog of python dictionary examples.
-    </div>
-    <a href="/2009/12/lua-for-pythoners-dictionary.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/12/lua-for-pythoners-lists.html" class="link black dim">
-        Lua for Pythoners - Lists
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-lately I&rsquo;m discovering Lua as general purpose language. Many people don&rsquo;t agree with lua being used as a general purpose language, many others (including a newbie like me) think Lua has such a simple syntax and powerful tables to become a full fledged language.
-I use a lot of Python, so I start from here: what Python does that Lua can&rsquo;t do almost in the same way? Read the question as it is, don&rsquo;t read &ldquo;what Python does that Lua can&rsquo;t do&rdquo;, it&rsquo;s different.
-    </div>
-    <a href="/2009/12/lua-for-pythoners-lists.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/11/mimaggia-cairo-tester.html" class="link black dim">
-        Mimaggia, cairo tester
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-From GNOME
-I&rsquo;ve created a simple pygtk project for testing cairo statements. It includes a sort of terminal where you write statements in a simple language. It features immediate preview of what you write.
-Say it&rsquo;s a new format for images.
-If you want to test it and see the code, ask me.
-    </div>
-    <a href="/2009/11/mimaggia-cairo-tester.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/11/there-are-many-python-toolkits-for.html" class="link black dim">
-        Python and RSA
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      There are many Python toolkits for crypto, so I hope I&rsquo;ve done the best choice (at least for now). This is a simple utility class for managing RSA keys, a sort of wrappera to the m2crypto class.
-import M2Crypto
-class RSA (object): def \_\_init\_\_ (self, bits=1024, padding=M2Crypto.RSA.pkcs1\_padding, exp=65537): self.bits = bits self.padding = padding self.exp = exp self.rsa = None def generate (self): self.rsa = M2Crypto.RSA.gen\_key( self.bits, self.exp, lambda x: None) def encrypt (self, s): c = &#34;&#34; bytes = self.
-    </div>
-    <a href="/2009/11/there-are-many-python-toolkits-for.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/10/debianapachetomcataxis.html" class="link black dim">
-        Debian&#43;Apache&#43;Tomcat&#43;Axis
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-one of the courses I&rsquo;m following at the university is &ldquo;Laboratorio di reti
-di calcolatori&rdquo; which uses the technologies (really technologies?????)
-listed in the post title. This is a little tutorial for making them works,
-with a little script for registering .wsdd files.
-- aptitude install apache2 tomcat6
-- download the binaries of axis 1.x (latest is 2.x, it&rsquo;s not used in our course) and xerces then unpack them.
-    </div>
-    <a href="/2009/10/debianapachetomcataxis.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/10/speeding-up-zsh-completion.html" class="link black dim">
-        Speeding up zsh completion
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-since I&rsquo;ve started using zsh, a great shell with great out of the box completion, one of the most boring issues was having a really slow completion. I can understand it could be slow to get a list of packages, remote files or command line options, but also paths were often slow to be completed. After lots of searches I&rsquo;ve ended up in adding this magic line to my ~/.
-    </div>
-    <a href="/2009/10/speeding-up-zsh-completion.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/08/new-gpg-key.html" class="link black dim">
-        New GPG key
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-due to some synchronization problems between my desktop and laptop, unfortunately I&rsquo;ve lost my GPG secret key. I was planning to renew my key after the SHA issues, but this way I can&rsquo;t neither revoke the old key nor sign the new key. So I please anybody having my pubkey to delete it:
-gpg &ndash;delete-key C29A9371
-I&rsquo;ve uploaded my new key as usual so you can get it:
-gpg &ndash;keyserver pgp.
-    </div>
-    <a href="/2009/08/new-gpg-key.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/08/spadi-source-code.html" class="link black dim">
-        Spadi source code
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-after I&rsquo;ve written really a few docs, and cleaned up some stuff, I&rsquo;ve published the code of both Spadi and Corraza on gitorious here. In the while, I&rsquo;ve added support for floors and closeable views.
-Help&hellip; help is needed.
-Stay tuned.
-    </div>
-    <a href="/2009/08/spadi-source-code.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-    </section>
-    <ul class="pagination pagination-default">
-      <li class="page-item">
-        <a href="/posts/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/7/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/6/" aria-label="Page 6" class="page-link" role="button">6</a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/7/" aria-label="Page 7" class="page-link" role="button">7</a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 8" class="page-link" role="button">8</a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/9/" aria-label="Page 9" class="page-link" role="button">9</a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/10/" aria-label="Page 10" class="page-link" role="button">10</a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/9/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/13/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul></article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
-    &copy;  Luca Bruno blog 2024 
-  </a>
-    <div>
-<div class="ananke-socials">
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
   
-</div>
-</div>
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+  
   </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
 </footer>
 
   </body>

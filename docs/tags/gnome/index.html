@@ -1,686 +1,373 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Luca Bruno blog</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="">
-    <meta name="generator" content="Hugo 0.125.2">
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<!doctype html>
 
 
 
-    
 
-    
-      
 
-    
 
-    
-    
-      <link href="/tags/gnome/index.xml" rel="alternate" type="application/rss+xml" title="Luca Bruno blog" />
-      <link href="/tags/gnome/index.xml" rel="feed" type="application/rss+xml" title="Luca Bruno blog" />
-      
-    
 
-    
-      <link rel="canonical" href="https://lucabrun.github.io/tags/gnome/">
-    
 
-    <meta property="og:url" content="https://lucabrun.github.io/tags/gnome/">
-  <meta property="og:site_name" content="Luca Bruno blog">
-  <meta property="og:title" content="Gnome">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Gnome">
-  <meta itemprop="dateModified" content="2014-03-23T16:10:00-07:00"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Gnome">
-<meta name="twitter:description" content="">
 
-	
-  </head>
 
-  <body class="ma0 avenir bg-near-white">
 
-    
 
-  <header>
-    <div class="pb3-m pb6-l bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Luca Bruno blog
-      
-    </a>
-    <div class="flex-l items-center">
-      
 
-      
-      
-<div class="ananke-socials">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
   
-</div>
+  <title>Gnome - Luca Bruno blog</title>
 
-    </div>
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  
+  <meta
+    name="description"
+    content="A personal blog"
+  />
+  <meta name="author" content="Luca Bruno blog" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.125.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Luca Bruno blog</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+
+
+<h1 class="mb-14">#Gnome</h1>
+
+
+
+
+
+
+
+ 
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Gtk3 hit-a-hint: mouseless navigation module</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Mar 23, 2014</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2014/03/gtk3-hit-hint-mouseless-navigation.html">Gtk3 hit-a-hint: mouseless navigation module</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Grab focus on Gtk Widget</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Nov 22, 2012</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2012/11/grab-focus-on-gtk-widget.html">Grab focus on Gtk Widget</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Using Mash with Vala</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jul 29, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/07/using-mash-with-vala.html">Using Mash with Vala</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Vala and Graphviz</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Mar 14, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/03/vala-and-graphviz.html">Vala and Graphviz</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Debian/GNOME bug triage ended</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Mar 3, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/03/debiangnome-bug-triage-ended.html">Debian/GNOME bug triage ended</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Vala 0.7.10 released</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Feb 4, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/02/vala-0710-released.html">Vala 0.7.10 released</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Aruanne, pdf reporting framework</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jul 21, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/07/aruanne-pdf-reporting-framework.html">Aruanne, pdf reporting framework</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">The less consuming radio player ever</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jun 20, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/06/less-consuming-radio-player-ever.html">The less consuming radio player ever</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Render tables with pangocairo like reportlab</h2>
+  <time class="text-xs antialiased opacity-60"
+    >May 27, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/05/render-tables-with-pangocairo-like.html">Render tables with pangocairo like reportlab</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Blogging from Epiphany WebKit</h2>
+  <time class="text-xs antialiased opacity-60"
+    >May 18, 2009</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2009/05/blogging-from-epiphany-webkit.html">Blogging from Epiphany WebKit</a>
+</section>
+
+
+
+
+<nav class="mt-14 flex">
+  
+  
+  <a class="btn ml-auto" href="/tags/gnome/page/2/"
+    >Next Page →</a
+  >
+  
 </nav>
 
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Gnome
-        </h1>
-        
-      </div>
-    </div>
-  </header>
 
-
-    <main class="pb7" role="main">
-      
-  <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “Gnome”</p>
-    </div>
-  </article>
-  <div class="mw8 center">
-    <section class="flex-ns flex-wrap justify-around mt5">
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2014/03/gtk3-hit-hint-mouseless-navigation.html" class="link black dim">
-        Gtk3 hit-a-hint: mouseless navigation module
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I present gtkhah, a gtk module for hit-a-hint mouseless navigation of gtk3 applications.
-It&rsquo;s been inspired by the various hit-a-hint browser extensions.
-Usage at the project homepage. Here&rsquo;s a quick screenshot of Gedit:
-    </div>
-    <a href="/2014/03/gtk3-hit-hint-mouseless-navigation.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2012/11/grab-focus-on-gtk-widget.html" class="link black dim">
-        Grab focus on Gtk Widget
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Many times I had to give focus to a newly created Gtk widget that still had to be mapped to screen. Since widget.grab_focus() does not work if the widget is not displayed on the screen, then I always used an idle source to delay the operation.
-Today I noticed that the idle may be too late: if the user is writing something, then some key strokes may be lost because the idle runs slightly after the widget has been mapped.
-    </div>
-    <a href="/2012/11/grab-focus-on-gtk-widget.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/07/using-mash-with-vala.html" class="link black dim">
-        Using Mash with Vala
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-recently Mash has been released. It is a library for reading models in PLY format and creating Clutter actors from them. For reference, Blender is able to export to PLY. It means you can draw your models with Blender and use Clutter as rendering engine.
-Clutter is a 3D canvas and animation toolkit while Blender is a 3D modelling suite.
-What I&rsquo;ve tested so far is porting the Monkey Viewer C example to Vala: code snippet and monkey PLY here.
-    </div>
-    <a href="/2010/07/using-mash-with-vala.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/03/vala-and-graphviz.html" class="link black dim">
-        Vala and Graphviz
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-it&rsquo;s often useful for Vala hackers to have a graphical representation of the code tree and control flow blocks. Therefore I&rsquo;ve created a simple application called Valag which generates four types of diagrams using Graphviz for each state of the Vala compiler.
-This is the first release, there&rsquo;re many things to fix and enhance (like command line options) but it is working quite good already to give support when hacking Vala.
-    </div>
-    <a href="/2010/03/vala-and-graphviz.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/03/debiangnome-bug-triage-ended.html" class="link black dim">
-        Debian/GNOME bug triage ended
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;m writing about the work done in the bug triage weekend of the Debian/GNOME team, started at 27th Feb and ended in 28th Feb.
-The result is great, 167 bugs have been closed and many more have been triaged and forwarded upstream.
-Thanks to everybody who contributed, especially to whom has done it for the first time (well, you can still continue working on the remaining bugs ;) ).
-    </div>
-    <a href="/2010/03/debiangnome-bug-triage-ended.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/02/vala-0710-released.html" class="link black dim">
-        Vala 0.7.10 released
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;m lately following the Vala development and finally we got a new release with plenty of bug fixes and enhancements which makes Vala even more interesting and usable as general purpose language.
-Here&rsquo;s the announcement.
-I&rsquo;d like to point you to the new Vala journal, a good resource to stay tuned with Vala changes periodically.
-News:
-* Support coalescing operator ??.
-* Support to_string and bitwise complement with enums.
-    </div>
-    <a href="/2010/02/vala-0710-released.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/07/aruanne-pdf-reporting-framework.html" class="link black dim">
-        Aruanne, pdf reporting framework
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-a while ago I&rsquo;ve been talking about pango cairo and how to generate pdf with a couple of tables.
-In the meantime I&rsquo;ve worked on it, improving and enhancing new kinds of elements. This has lead to the creation of a small project, a library providing a simple framework for generating mostly PDF reports (I haven&rsquo;t tried to generate SVG or something else yet).
-After a couple of release requests, I&rsquo;ve found finally the time to publish a sort of working code.
-    </div>
-    <a href="/2009/07/aruanne-pdf-reporting-framework.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/06/less-consuming-radio-player-ever.html" class="link black dim">
-        The less consuming radio player ever
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-multimedia always killed desktop performance, also audio with all such effect-based players out there. I&rsquo;ve been using deezer for a long time, but sometimes I&rsquo;m tired to see my desktop lagging.
-I don&rsquo;t need that, I need random music from internet while I&rsquo;m either programming or studying, and my computer has only 512mb ram and 2.4ghz amd64 (onLY??? yes nowadays it&rsquo;s a little amount).
-Let&rsquo;s see what we can do using gst-launch:
-    </div>
-    <a href="/2009/06/less-consuming-radio-player-ever.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/05/render-tables-with-pangocairo-like.html" class="link black dim">
-        Render tables with pangocairo like reportlab
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-lately I was wondering if there was any alternative to the well known reportlab python software for creating PDF reports. I immediately thought about Cairo. The only two problems are:
-Cairo doesn&rsquo;t create multiple pages No support for creating tables containing text, necessary for table-based reports I still can&rsquo;t realize how to achieve the first feature, but the second one could be solved using Pango layouts.
-The idea is to create the cells of the table using such layouts, so that the text get wrapped etc.
-    </div>
-    <a href="/2009/05/render-tables-with-pangocairo-like.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/05/blogging-from-epiphany-webkit.html" class="link black dim">
-        Blogging from Epiphany WebKit
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;ve been using Midori for a while. It&rsquo;s a great browser: innovative and light. However all my bookmarks and data are in Epiphany. Last week the new epiphany-webkit version has been uploaded in Debian Sid and I couldn&rsquo;t wait to test it. I&rsquo;m currently using it instead of gecko; it has still some issues but I begun living without it.
-    </div>
-    <a href="/2009/05/blogging-from-epiphany-webkit.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/04/create-pixbuf-from-cairo-surface.html" class="link black dim">
-        Create a GdkPixbuf from cairo surface
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-here&rsquo;s the inverted code snippet of the previous post.
-`w, h = surface.get_width(), surface.get_height()
-pixmap = gtk.gdk.Pixmap (None, w, h, 24)
-cr = pixmap.cairo_create ()
-cr.set_source_surface (surface, 0, 0)
-cr.paint ()
-pixbuf = gtk.gdk.Pixbuf (gtk.gdk.COLORSPACE_RGB, True, 8, w, h)
-pixbuf = pixbuf.get_from_drawable (pixmap, gtk.gdk.colormap_get_system(), 0, 0, 0, 0, w, h)`
-    </div>
-    <a href="/2009/04/create-pixbuf-from-cairo-surface.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/04/create-cairo-surface-from-pixbuf.html" class="link black dim">
-        Create a cairo surface from a pixbuf
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-sometimes in the code of a couple of projects I see some hard algorithms to transform a pixbuf in a cairo surface.
-Maybe most of people don&rsquo;t know that GdkCairoContext, contrarily to cairo_t, is created against a cairo context not a cairo surface:
-`surface = cairo.ImageSurface (cairo.FORMAT_ARGB32, pixbuf.get_width(), pixbuf.get_height())
-cr = cairo.Context (surface)
-gdkcr = gtk.gdk.CairoContext (cr)
-gdkcr.set_source_pixbuf (pixbuf)
-gdkcr.paint ()`
-Notice gtk.gdk.CairoContext (cr), which cr is not the surface.
-    </div>
-    <a href="/2009/04/create-cairo-surface-from-pixbuf.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/02/awesomeother-wrong-keyboard-layout.html" class="link black dim">
-        Awesome/other wrong keyboard layout
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-due to the high resource usage by Eclipse (I have to use that unfortunately because of my professor) I&rsquo;ve temporarly dropped GNOME and now I&rsquo;m using Awesome for a while.
-Ok let&rsquo;s say the problem: the keyboard. Do you have different languages, layouts and so on among several configurations (GNOME, X, &hellip;) and your keyboard layout is messed up with awesome?
-Just do it:
-setxkbmap -layout YOURLAYOUT
-Where YOURLAYOUT for me is it.
-    </div>
-    <a href="/2009/02/awesomeother-wrong-keyboard-layout.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2009/01/freespeak-030-has-been-released.html" class="link black dim">
-        FreeSpeak 0.3.0 has been released
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      FreeSpeak is a free (as in freedom, developed and released under the terms of GPL) frontend to online translator engines (such as Google, Yahoo, etc.). It is written in Python, it uses the GTK toolkit and some GNOME infrastructure features.
-This is a major enhancemenfts release.
-Overview of Changes from FreeSpeak 0.2.0 to FreeSpeak 0.3.0
-===========================================================
-* Project is now hosted at BerliOS.de: http://freespeak.berlios.de
-* Support for cancellating operations has been added
-    </div>
-    <a href="/2009/01/freespeak-030-has-been-released.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2008/12/global-keybinding-on-x.html" class="link black dim">
-        Global keybinding on X
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-lately I&rsquo;ve been looking for a way to create a desktop-wide keybinding for FreeSpeak.
-I first looked into Tomboy and Deskbar source codes but the egg was too huge to be adopted, and it would have brought C dependency which isn&rsquo;t always nice for a Python project.
-Then fargiolas pointed me to a blog post where I could find about gnome keybindings owned by gnome control center. Well that was only a mirage as it doesn&rsquo;t really grab the key but it&rsquo;s only a visual entry in the keyboard shortcuts preferences.
-    </div>
-    <a href="/2008/12/global-keybinding-on-x.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2008/12/aptitude-gtk-progress.html" class="link black dim">
-        Aptitude-gtk progress
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I was curious to see if aptitude-gtk was making some progress. I haven&rsquo;t followed the project since it&rsquo;s been merged into aptitude.
-Well, I found it more functional and complete. Here&rsquo;s a screenshot showing pending packages for upgrade after an update:
-From GNOME
-The team is definitely doing a good job. Hopefully I&rsquo;ll find the time to give some help as I&rsquo;m really interested in such full-featured GUI frontend.
-    </div>
-    <a href="/2008/12/aptitude-gtk-progress.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2008/11/freespeak-gains-translation-suggestions.html" class="link black dim">
-        FreeSpeak gains translation suggestions
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-it hasn&rsquo;t been a long time since FreeSpeak 0.2.0 has been released. One of the TODOs for the next release was to support open-tran, and more over translation suggestions for development.
-This is a screenshot of what&rsquo;s been included in the repository today:
-From GNOME
-FreeSpeak is a GNOME frontend to online translator engines.
-    </div>
-    <a href="/2008/11/freespeak-gains-translation-suggestions.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2008/11/freespeak-020-has-been-released.html" class="link black dim">
-        FreeSpeak 0.2.0 has been released
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-after some work in these weeks now I have released a new version of FreeSpeak.
-FreeSpeak is a free (as in freedom, developed and released under the terms of GPL) frontend to online translator engines (such as Google, Yahoo, etc.). It is written in Python, it uses the GTK toolkit and some GNOME infrastructure features
-.
-It&rsquo;s been rewritten almost from scratch so I think there&rsquo;s no need to post release notes here.
-    </div>
-    <a href="/2008/11/freespeak-020-has-been-released.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2008/11/single-app-instances-python-and-dbus.html" class="link black dim">
-        Single app instances, Python and DBus
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;m working on FreeSpeak lately and I needed to run the application once per session, as it&rsquo;s got a trayicon and a notebook (maybe windows with an applet is better?)
-I decided to use DBus for making the application run only a single instance; when you try to open it again it won&rsquo;t start another process, instead it will use the already running one.
-This is how I would create a generic single app instance with dbus-python:
-    </div>
-    <a href="/2008/11/single-app-instances-python-and-dbus.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2008/10/freespeak-gtkgnome-translator.html" class="link black dim">
-        FreeSpeak, a GTK&#43;/GNOME translator
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;ve worked on FreeSpeak a couple of years ago, a Python/GTK+/GNOME project to translate text and web pages by querying already existing online translation tools.
-PRO: It has been packed for Ubuntu and it has been publicized by a journal in Italy.
-CONS: It has been discontinued until now. In fact I restarted the project and I&rsquo;m doing a huge refactoring because of the ugly code I wrote in the past.
-    </div>
-    <a href="/2008/10/freespeak-gtkgnome-translator.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2008/09/gtk-apps-to-replace-gnome-files.html" class="link black dim">
-        GTK Apps to replace Gnome Files
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-everyone knows that gnomefiles has went offline with that boring redirect to osnews.com.
-Now many people is looking toward gtk-apps.org, I didn&rsquo;t know it before. It&rsquo;s looking really good.
-The only problems is that I had (and I guess I&rsquo;m not the only one) a few unmaintained projects on gnomefiles and they are now lost.
-I&rsquo;m wondering if it will be publicized a day by gtk.org to be something more official.
-    </div>
-    <a href="/2008/09/gtk-apps-to-replace-gnome-files.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2008/08/vagalume-gtk-and-lastfm.html" class="link black dim">
-        Vagalume, GTK&#43; and Last.fm
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Vagalume, GTK+ and Last.fm
-Originally uploaded by Lethalman
-I&rsquo;ve found this great gstreamer application to listen to the last.fm stations. It works perfectly, fully functional and up-to-date. Features several IM status updates, including telepathy. It&rsquo;s definitely good-looking with my dark theme.
-Homepage: http://vagalume.igalia.com/
-Last.fm group: http://www.last.fm/group/Vagalume
-    </div>
-    <a href="/2008/08/vagalume-gtk-and-lastfm.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2008/08/compiz-with-ati-rs480-on-debian.html" class="link black dim">
-        Compiz with ATI RS480 on Debian
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-after years that compositing has been introduced in our desktop, it&rsquo;s finally come the time to try it.
-Uninstall fglrx
-My video card is not supported very well with Mesa 7.0.x, in fact I&rsquo;ve been using the fglrx driver for a long time&hellip;. until now!
-I had to manually dpkg &ndash;purge all the related packages.
-Now it&rsquo;s better to rmmod fglrx.
-Install mesa 7.1 from experimental
-On #compiz-fusion some guys hinted me I should have used Mesa 7.
-    </div>
-    <a href="/2008/08/compiz-with-ati-rs480-on-debian.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2008/08/gnome-main-menu.html" class="link black dim">
-        Gnome main menu
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Gnome main menu
-Originally uploaded by Lethalman
-Hello,
-while I was playing with apt-cache I&rsquo;ve discovered a new kind of main menu in GNOME. It&rsquo;s being developed by SuSE. It feels nice, robust and innovative.
-The screenshot is showing the documents tab.
-To install, aptitude install gnome-main-menu and add the new applet.
-    </div>
-    <a href="/2008/08/gnome-main-menu.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2008/07/identica-is-worse.html" class="link black dim">
-        identi.ca is worse
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;m using Twitter in this week and the API works &ldquo;almost&rdquo; perfectly while the website is down most of the time.
-I&rsquo;ve recently heard about identi.ca, so I decided to try it.
-My first impression was bad, because I&rsquo;ve seen many redirects of the page, and DNS changes sometimes.
-But ok, I tried to register and again&hellip; I had problems. When I submitted the registration twice it just did nothing.
-    </div>
-    <a href="/2008/07/identica-is-worse.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2008/05/syx-gtk-and-threading.html" class="link black dim">
-        Syx, GTK&#43; and threading
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-you all know that Gtk+ has locks for the GUI when dealing with the X server and prevent async events to be sent. This is done by manually acquiring/releasing the lock on Gdk. Many Gtk+ ports don&rsquo;t do this automatically.
-Syx used gtk_main() into a thread and automatically put gdk enter/leave for each function in its wrapper. It would be somewhat ugly in Smalltalk code having to enter/leave each time.
-    </div>
-    <a href="/2008/05/syx-gtk-and-threading.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-    </section>
-  </div>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
-    &copy;  Luca Bruno blog 2024 
-  </a>
-    <div>
-<div class="ananke-socials">
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
   
-</div>
-</div>
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+  
   </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
 </footer>
 
   </body>

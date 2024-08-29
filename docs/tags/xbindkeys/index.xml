@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xbindkeys on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/xbindkeys/</link>
+    <link>http://localhost:1313/tags/xbindkeys/</link>
     <description>Recent content in Xbindkeys on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Jul 2014 14:05:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/xbindkeys/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/xbindkeys/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Debugging and fixing a wmctrl bug in NixOS</title>
-      <link>https://lucabrun.github.io/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html</link>
+      <link>http://localhost:1313/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html</link>
       <pubDate>Wed, 09 Jul 2014 14:05:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html</guid>
+      <guid>http://localhost:1313/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html</guid>
       <description>Without wmctrl I&amp;rsquo;m lost. I use it together with xbindkeys so that pressing a combination of keys will raise a window of the desktop (editor, shell, browser, chat, &amp;hellip;).&#xA;It turns out however that in NixOS wmctrl didn&amp;rsquo;t work well. I had 3 windows opened, and wmctrl -l only showed one. Since gnome3 is still young in nixos, the first thought was that mutter did something wrong when returning the list of clients, due to some possible packaging mistake.</description>
     </item>
     <item>
       <title>Switch window by name on Linux - alternative to Alt&#43;Tab</title>
-      <link>https://lucabrun.github.io/2013/03/switch-window-by-name-on-linux.html</link>
+      <link>http://localhost:1313/2013/03/switch-window-by-name-on-linux.html</link>
       <pubDate>Thu, 28 Mar 2013 04:24:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2013/03/switch-window-by-name-on-linux.html</guid>
+      <guid>http://localhost:1313/2013/03/switch-window-by-name-on-linux.html</guid>
       <description>Today I want to share a very simple script that works with most Linux window managers: switch window by name.&#xA;It works like this: you press Ctrl+Alt+M, then a dialog appears where you write part of the name of the window, and you&amp;rsquo;ll get switched to the window that matches the provided name.The string your provide will match part of window names in case-insensitive mode.&#xA;That means if you have &amp;ldquo;Foo - Mozilla Firefox&amp;rdquo; and type in &amp;ldquo;fire&amp;rdquo; you&amp;rsquo;ll switch to firefox.</description>
     </item>
   </channel>

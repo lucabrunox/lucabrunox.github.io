@@ -1,450 +1,373 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Luca Bruno blog</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="">
-    <meta name="generator" content="Hugo 0.125.2">
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<!doctype html>
 
 
 
-    
 
-    
-      
 
-    
 
-    
-    
-      <link href="/tags/vala/index.xml" rel="alternate" type="application/rss+xml" title="Luca Bruno blog" />
-      <link href="/tags/vala/index.xml" rel="feed" type="application/rss+xml" title="Luca Bruno blog" />
-      
-    
 
-    
-      <link rel="canonical" href="https://lucabrun.github.io/tags/vala/">
-    
 
-    <meta property="og:url" content="https://lucabrun.github.io/tags/vala/">
-  <meta property="og:site_name" content="Luca Bruno blog">
-  <meta property="og:title" content="Vala">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Vala">
-  <meta itemprop="dateModified" content="2014-03-23T16:10:00-07:00"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Vala">
-<meta name="twitter:description" content="">
 
-	
-  </head>
 
-  <body class="ma0 avenir bg-near-white">
 
-    
 
-  <header>
-    <div class="pb3-m pb6-l bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Luca Bruno blog
-      
-    </a>
-    <div class="flex-l items-center">
-      
 
-      
-      
-<div class="ananke-socials">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
   
-</div>
+  <title>Vala - Luca Bruno blog</title>
 
-    </div>
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  
+  <meta
+    name="description"
+    content="A personal blog"
+  />
+  <meta name="author" content="Luca Bruno blog" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.125.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Luca Bruno blog</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+
+
+<h1 class="mb-14">#Vala</h1>
+
+
+
+
+
+
+
+ 
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Gtk3 hit-a-hint: mouseless navigation module</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Mar 23, 2014</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2014/03/gtk3-hit-hint-mouseless-navigation.html">Gtk3 hit-a-hint: mouseless navigation module</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Build Vala applications with Shake build system</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Apr 6, 2013</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2013/04/build-vala-applications-with-shake.html">Build Vala applications with Shake build system</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Grab focus on Gtk Widget</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Nov 22, 2012</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2012/11/grab-focus-on-gtk-widget.html">Grab focus on Gtk Widget</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Vala language introduction on IRC</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Sep 8, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/09/vala-language-introduction-on-irc.html">Vala language introduction on IRC</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Python/Ruby like generators in Vala</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jul 9, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/07/pythonruby-like-generators-in-vala.html">Python/Ruby like generators in Vala</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Valag 1.2 released</h2>
+  <time class="text-xs antialiased opacity-60"
+    >May 14, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/05/vala-12-released.html">Valag 1.2 released</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Rubik&#39;s Cube 3D Game in Vala/Clutter</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Feb 9, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/02/rubiks-cube-game-in-valaclutter.html">Rubik&#39;s Cube 3D Game in Vala/Clutter</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Base64 and Quoted-Printable GConverters for GMua</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jan 14, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/01/base64-and-quoted-printable-gconverters.html">Base64 and Quoted-Printable GConverters for GMua</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Valag 1.1 released, graph generator for the Vala AST</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Dec 19, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/12/valag-11-released.html">Valag 1.1 released, graph generator for the Vala AST</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Maja - The Vala to Javascript compiler</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Dec 17, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/12/maja-vala-to-javascript-compiler.html">Maja - The Vala to Javascript compiler</a>
+</section>
+
+
+
+
+<nav class="mt-14 flex">
+  
+  
+  <a class="btn ml-auto" href="/tags/vala/page/2/"
+    >Next Page →</a
+  >
+  
 </nav>
 
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Vala
-        </h1>
-        
-      </div>
-    </div>
-  </header>
 
-
-    <main class="pb7" role="main">
-      
-  <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “Vala”</p>
-    </div>
-  </article>
-  <div class="mw8 center">
-    <section class="flex-ns flex-wrap justify-around mt5">
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2014/03/gtk3-hit-hint-mouseless-navigation.html" class="link black dim">
-        Gtk3 hit-a-hint: mouseless navigation module
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I present gtkhah, a gtk module for hit-a-hint mouseless navigation of gtk3 applications.
-It&rsquo;s been inspired by the various hit-a-hint browser extensions.
-Usage at the project homepage. Here&rsquo;s a quick screenshot of Gedit:
-    </div>
-    <a href="/2014/03/gtk3-hit-hint-mouseless-navigation.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2013/04/build-vala-applications-with-shake.html" class="link black dim">
-        Build Vala applications with Shake build system
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I&rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.
-First of all, you need to know that Shake is a library written in Haskell, and it&rsquo;s meant to be a better replacement for make. Let&rsquo;s start by installing cabal and then shake:
-apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.
-    </div>
-    <a href="/2013/04/build-vala-applications-with-shake.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2012/11/grab-focus-on-gtk-widget.html" class="link black dim">
-        Grab focus on Gtk Widget
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Many times I had to give focus to a newly created Gtk widget that still had to be mapped to screen. Since widget.grab_focus() does not work if the widget is not displayed on the screen, then I always used an idle source to delay the operation.
-Today I noticed that the idle may be too late: if the user is writing something, then some key strokes may be lost because the idle runs slightly after the widget has been mapped.
-    </div>
-    <a href="/2012/11/grab-focus-on-gtk-widget.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2011/09/vala-language-introduction-on-irc.html" class="link black dim">
-        Vala language introduction on IRC
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hi,
-I&rsquo;ve lately held an talk on IRC about the Vala programming language for the Ubuntu App Developer Week. I&rsquo;ve introduced the basics of the Vala language and its features.
-You can read the log of the talk here.
-    </div>
-    <a href="/2011/09/vala-language-introduction-on-irc.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2011/07/pythonruby-like-generators-in-vala.html" class="link black dim">
-        Python/Ruby like generators in Vala
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-the post below is copied straight from here.
-Here I&rsquo;ll show a cool snippet code making use Vala async functions and iterators for emulating Python/Ruby generators. Creating a generator is as simple as extending the Generator class and implementing the generate() method.
-abstract class Generator { private bool consumed; private G value; private SourceFunc callback; public Generator () { helper (); } private async void helper () { yield generate (); consumed \= true; } protected abstract async void generate (); protected async void feed (G value) { this.
-    </div>
-    <a href="/2011/07/pythonruby-like-generators-in-vala.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2011/05/vala-12-released.html" class="link black dim">
-        Valag 1.2 released
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;ve just released the 1.2 version of Valag, the graph generator for analyzing Vala code trees. Only relevant change is the fact that it now builds against libvala-0.14.
-More information and download at the Valag homepage.
-    </div>
-    <a href="/2011/05/vala-12-released.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2011/02/rubiks-cube-game-in-valaclutter.html" class="link black dim">
-        Rubik&#39;s Cube 3D Game in Vala/Clutter
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;ve written a simple program for playing with a Rubik&rsquo;s Cube using Vala and Clutter.
-It features:
-high simplicity in rotating cube slices and rotating the cube itself in a very natural manner shuffle the cube autosave the game Download and more usage information at the homepage&hellip; have fun :)
-    </div>
-    <a href="/2011/02/rubiks-cube-game-in-valaclutter.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2011/01/base64-and-quoted-printable-gconverters.html" class="link black dim">
-        Base64 and Quoted-Printable GConverters for GMua
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-lately I&rsquo;m writing GMua for educational purposes and for evaluating Vala, whose purpose is to simplify writing Mail User Agents or simple scripts, ala Java Mail.
-It currently parses IMAP (not yet complete) and has a graphical interface called Gutt (yes, inspired by Mutt) for testing.
-In order to parse MIME parts with base64 or quopri content-transfer-encoding I chose to implement a couple of GConverter (will use GMime a day, maybe when they switch to gio, not yet needed) in Vala that you can find here:
-    </div>
-    <a href="/2011/01/base64-and-quoted-printable-gconverters.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/12/valag-11-released.html" class="link black dim">
-        Valag 1.1 released, graph generator for the Vala AST
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-a new version of Valag, a graphviz generator for the Vala language AST, has been released.
-Changes since 1.0 version:
-Add &ndash;format and &ndash;prefix options. Update to latest libvala-0.12. Bug fixes. This new version also distributes the xdot.py program as a viewer for the generated graphs.
-More information and download at the Valag homepage.
-    </div>
-    <a href="/2010/12/valag-11-released.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/12/maja-vala-to-javascript-compiler.html" class="link black dim">
-        Maja - The Vala to Javascript compiler
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;ve just released the first version of Maja, the Vala to Javascript compiler. The mapping is not quite complete but you can do pretty much everything you could do with javascript directly. There are (still incomplete) bindings for the qooxdoo framework and the demo browser is being ported to vala successfully.
-Maja can be used in any environments, not only web browsers.
-Programming in Vala saves you from lots of type safety troubles (Javascript), lot of typing (Java) and the syntax is really enjoyable as it is quite close to the Javascript model.
-    </div>
-    <a href="/2010/12/maja-vala-to-javascript-compiler.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/07/using-mash-with-vala.html" class="link black dim">
-        Using Mash with Vala
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-recently Mash has been released. It is a library for reading models in PLY format and creating Clutter actors from them. For reference, Blender is able to export to PLY. It means you can draw your models with Blender and use Clutter as rendering engine.
-Clutter is a 3D canvas and animation toolkit while Blender is a 3D modelling suite.
-What I&rsquo;ve tested so far is porting the Monkey Viewer C example to Vala: code snippet and monkey PLY here.
-    </div>
-    <a href="/2010/07/using-mash-with-vala.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/07/mipsdis-mips32-disassembler.html" class="link black dim">
-        Mipsdis MIPS32 disassembler
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;ve written a MIPS32 (Release 2) disassembler for ELF files. It is not a simple disassembler, it&rsquo;s mostly made for reverse engineering proprietary boxes for educational purposes. It has been successfully tested on Vodafone Station which has Broadcom binaries. These boxes don&rsquo;t have a sections table, therefore normal disassemblers don&rsquo;t work. Mipsdis instead will guess the bounds of those sections (most important ones are TEXT and RODATA for strings).
-    </div>
-    <a href="/2010/07/mipsdis-mips32-disassembler.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/04/valagtkdoc-10.html" class="link black dim">
-        Valagtkdoc 1.0
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-yes&hellip; this is the nth program I&rsquo;m writing in this period. I hope this is the last one :)
-Valagtkdoc is a tool that integrates Vala with GTK-Doc for documentation generation.
-You can find download and example usage at the homepage.
-I think it&rsquo;s far from being perfect, and actually I haven&rsquo;t tried integrating it with autotools, but it shouldn&rsquo;t be that hard. Unfortunately, you have to somehow break the gtk-doc rule &ldquo;do not run it manually&rdquo; because valagtkdoc goes in the middle between gtkdoc-scan and gtkdoc-mkdb.
-    </div>
-    <a href="/2010/04/valagtkdoc-10.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/03/vala-and-graphviz.html" class="link black dim">
-        Vala and Graphviz
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-it&rsquo;s often useful for Vala hackers to have a graphical representation of the code tree and control flow blocks. Therefore I&rsquo;ve created a simple application called Valag which generates four types of diagrams using Graphviz for each state of the Vala compiler.
-This is the first release, there&rsquo;re many things to fix and enhance (like command line options) but it is working quite good already to give support when hacking Vala.
-    </div>
-    <a href="/2010/03/vala-and-graphviz.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/02/vala-0710-released.html" class="link black dim">
-        Vala 0.7.10 released
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;m lately following the Vala development and finally we got a new release with plenty of bug fixes and enhancements which makes Vala even more interesting and usable as general purpose language.
-Here&rsquo;s the announcement.
-I&rsquo;d like to point you to the new Vala journal, a good resource to stay tuned with Vala changes periodically.
-News:
-* Support coalescing operator ??.
-* Support to_string and bitwise complement with enums.
-    </div>
-    <a href="/2010/02/vala-0710-released.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/01/fetch-web-page-with-vala-and-soup.html" class="link black dim">
-        Fetch web page with Vala and Soup
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;m lately using the Vala language widely. I find it a great and well designed language.
-You may know I&rsquo;m the maintainer of Freespeak. This program is written in Python. Now I&rsquo;m rewriting it in Vala, both for providing a good and really simple API in C and for learning Vala.
-I will now paste a snippet from the new freespeak code that I use for creating a cancellable asyncronous operation for fetching a web page using libsoup either with a GET or a POST method.
-    </div>
-    <a href="/2010/01/fetch-web-page-with-vala-and-soup.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-    </section>
-  </div>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
-    &copy;  Luca Bruno blog 2024 
-  </a>
-    <div>
-<div class="ananke-socials">
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
   
-</div>
-</div>
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+  
   </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
 </footer>
 
   </body>

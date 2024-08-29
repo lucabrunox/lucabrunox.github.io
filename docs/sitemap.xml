@@ -2,795 +2,795 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lucabrun.github.io/tags/linux/</loc>
+    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2018-08-14T12:16:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2018-08-14T12:16:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/openvpn/</loc>
+    <loc>http://localhost:1313/tags/openvpn/</loc>
     <lastmod>2018-08-14T12:16:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2018/08/openvpn-server-with-multiple-clients.html</loc>
+    <loc>http://localhost:1313/2018/08/openvpn-server-with-multiple-clients.html</loc>
     <lastmod>2018-08-14T12:16:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2018-08-14T12:16:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2018-08-14T12:16:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2016/04/cheap-docker-images-with-nix_15.html</loc>
+    <loc>http://localhost:1313/2016/04/cheap-docker-images-with-nix_15.html</loc>
     <lastmod>2016-04-15T01:42:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/docker/</loc>
+    <loc>http://localhost:1313/tags/docker/</loc>
     <lastmod>2016-04-15T01:42:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/nix/</loc>
+    <loc>http://localhost:1313/tags/nix/</loc>
     <lastmod>2016-04-15T01:42:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/nixos/</loc>
+    <loc>http://localhost:1313/tags/nixos/</loc>
     <lastmod>2016-04-15T01:42:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/nixpkgs/</loc>
+    <loc>http://localhost:1313/tags/nixpkgs/</loc>
     <lastmod>2016-04-15T01:42:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/development/</loc>
+    <loc>http://localhost:1313/tags/development/</loc>
     <lastmod>2016-01-04T13:33:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/javascript/</loc>
+    <loc>http://localhost:1313/tags/javascript/</loc>
     <lastmod>2016-01-04T13:33:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/nodejs/</loc>
+    <loc>http://localhost:1313/tags/nodejs/</loc>
     <lastmod>2016-01-04T13:33:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/typescript/</loc>
+    <loc>http://localhost:1313/tags/typescript/</loc>
     <lastmod>2016-01-04T13:33:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2016/01/typescript-and-nodejs-im-sold.html</loc>
+    <loc>http://localhost:1313/2016/01/typescript-and-nodejs-im-sold.html</loc>
     <lastmod>2016-01-04T13:33:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2015/08/nix-pill-19-fundamentals-of-stdenv.html</loc>
+    <loc>http://localhost:1313/2015/08/nix-pill-19-fundamentals-of-stdenv.html</loc>
     <lastmod>2015-08-24T09:48:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/nixpills/</loc>
+    <loc>http://localhost:1313/tags/nixpills/</loc>
     <lastmod>2015-08-24T09:48:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/consul/</loc>
+    <loc>http://localhost:1313/tags/consul/</loc>
     <lastmod>2015-02-19T03:59:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/containers/</loc>
+    <loc>http://localhost:1313/tags/containers/</loc>
     <lastmod>2015-02-19T03:59:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2015/02/nixos-consul-nginx-and-containers.html</loc>
+    <loc>http://localhost:1313/2015/02/nixos-consul-nginx-and-containers.html</loc>
     <lastmod>2015-02-19T03:59:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2015/02/developing-in-golang-with-nix-package.html</loc>
+    <loc>http://localhost:1313/2015/02/developing-in-golang-with-nix-package.html</loc>
     <lastmod>2015-02-08T03:33:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/golang/</loc>
+    <loc>http://localhost:1313/tags/golang/</loc>
     <lastmod>2015-02-08T03:33:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2015/01/nix-pill-18-nix-store-paths.html</loc>
+    <loc>http://localhost:1313/2015/01/nix-pill-18-nix-store-paths.html</loc>
     <lastmod>2015-01-12T04:48:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/11/nix-pill-17-nixpkgs-overriding-packages.html</loc>
+    <loc>http://localhost:1313/2014/11/nix-pill-17-nixpkgs-overriding-packages.html</loc>
     <lastmod>2014-11-10T02:00:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/11/nix-pill-16-nixpkgs-parameters.html</loc>
+    <loc>http://localhost:1313/2014/11/nix-pill-16-nixpkgs-parameters.html</loc>
     <lastmod>2014-11-04T03:36:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/09/nix-pill-15-nix-search-paths.html</loc>
+    <loc>http://localhost:1313/2014/09/nix-pill-15-nix-search-paths.html</loc>
     <lastmod>2014-09-16T02:28:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/09/nix-pill-14-override-design-pattern.html</loc>
+    <loc>http://localhost:1313/2014/09/nix-pill-14-override-design-pattern.html</loc>
     <lastmod>2014-09-10T04:38:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/09/nix-pill-13-callpackage-design-pattern.html</loc>
+    <loc>http://localhost:1313/2014/09/nix-pill-13-callpackage-design-pattern.html</loc>
     <lastmod>2014-09-04T06:01:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/08/nix-pill-12-inputs-design-pattern.html</loc>
+    <loc>http://localhost:1313/2014/08/nix-pill-12-inputs-design-pattern.html</loc>
     <lastmod>2014-08-28T08:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/08/nix-pill-11-garbage-collector.html</loc>
+    <loc>http://localhost:1313/2014/08/nix-pill-11-garbage-collector.html</loc>
     <lastmod>2014-08-21T02:40:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/08/nix-pill-10-developing-with-nix-shell.html</loc>
+    <loc>http://localhost:1313/2014/08/nix-pill-10-developing-with-nix-shell.html</loc>
     <lastmod>2014-08-19T03:21:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/08/nix-pill-9-automatic-runtime.html</loc>
+    <loc>http://localhost:1313/2014/08/nix-pill-9-automatic-runtime.html</loc>
     <lastmod>2014-08-08T01:11:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/08/nix-pill-8-generic-builders.html</loc>
+    <loc>http://localhost:1313/2014/08/nix-pill-8-generic-builders.html</loc>
     <lastmod>2014-08-01T08:28:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/07/nix-pill-7-working-derivation.html</loc>
+    <loc>http://localhost:1313/2014/07/nix-pill-7-working-derivation.html</loc>
     <lastmod>2014-07-31T01:58:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/07/nix-pill-6-our-first-derivation.html</loc>
+    <loc>http://localhost:1313/2014/07/nix-pill-6-our-first-derivation.html</loc>
     <lastmod>2014-07-29T08:41:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/07/nix-pill-5-functions-and-imports.html</loc>
+    <loc>http://localhost:1313/2014/07/nix-pill-5-functions-and-imports.html</loc>
     <lastmod>2014-07-28T06:36:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/07/nix-pill-4-basics-of-language.html</loc>
+    <loc>http://localhost:1313/2014/07/nix-pill-4-basics-of-language.html</loc>
     <lastmod>2014-07-26T10:52:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/07/nix-pill-3-enter-environment.html</loc>
+    <loc>http://localhost:1313/2014/07/nix-pill-3-enter-environment.html</loc>
     <lastmod>2014-07-25T07:37:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/07/nix-pill-2-install-on-your-running.html</loc>
+    <loc>http://localhost:1313/2014/07/nix-pill-2-install-on-your-running.html</loc>
     <lastmod>2014-07-24T08:38:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/07/nix-pill-1-why-you-should-give-it-try.html</loc>
+    <loc>http://localhost:1313/2014/07/nix-pill-1-why-you-should-give-it-try.html</loc>
     <lastmod>2014-07-23T07:11:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html</loc>
+    <loc>http://localhost:1313/2014/07/debugging-and-fixing-wmctrl-bug-in-nixos.html</loc>
     <lastmod>2014-07-09T14:05:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/wmtrl/</loc>
+    <loc>http://localhost:1313/tags/wmtrl/</loc>
     <lastmod>2014-07-09T14:05:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/xbindkeys/</loc>
+    <loc>http://localhost:1313/tags/xbindkeys/</loc>
     <lastmod>2014-07-09T14:05:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/emacs/</loc>
+    <loc>http://localhost:1313/tags/emacs/</loc>
     <lastmod>2014-05-21T00:47:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/git/</loc>
+    <loc>http://localhost:1313/tags/git/</loc>
     <lastmod>2014-05-21T00:47:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/05/grep-in-git-with-emacs.html</loc>
+    <loc>http://localhost:1313/2014/05/grep-in-git-with-emacs.html</loc>
     <lastmod>2014-05-21T00:47:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/gnome/</loc>
+    <loc>http://localhost:1313/tags/gnome/</loc>
     <lastmod>2014-03-23T16:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/gtk/</loc>
+    <loc>http://localhost:1313/tags/gtk/</loc>
     <lastmod>2014-03-23T16:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/03/gtk3-hit-hint-mouseless-navigation.html</loc>
+    <loc>http://localhost:1313/2014/03/gtk3-hit-hint-mouseless-navigation.html</loc>
     <lastmod>2014-03-23T16:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/hit-a-hint/</loc>
+    <loc>http://localhost:1313/tags/hit-a-hint/</loc>
     <lastmod>2014-03-23T16:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/keyboard/</loc>
+    <loc>http://localhost:1313/tags/keyboard/</loc>
     <lastmod>2014-03-23T16:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/vala/</loc>
+    <loc>http://localhost:1313/tags/vala/</loc>
     <lastmod>2014-03-23T16:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/geometry/</loc>
+    <loc>http://localhost:1313/tags/geometry/</loc>
     <lastmod>2014-01-20T09:31:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/glpk/</loc>
+    <loc>http://localhost:1313/tags/glpk/</loc>
     <lastmod>2014-01-20T09:31:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2014/01/intersection-test-and-optimal.html</loc>
+    <loc>http://localhost:1313/2014/01/intersection-test-and-optimal.html</loc>
     <lastmod>2014-01-20T09:31:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/linear-programming/</loc>
+    <loc>http://localhost:1313/tags/linear-programming/</loc>
     <lastmod>2014-01-20T09:31:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/milp/</loc>
+    <loc>http://localhost:1313/tags/milp/</loc>
     <lastmod>2014-01-20T09:31:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/problem-solving/</loc>
+    <loc>http://localhost:1313/tags/problem-solving/</loc>
     <lastmod>2014-01-20T09:31:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/haskell/</loc>
+    <loc>http://localhost:1313/tags/haskell/</loc>
     <lastmod>2013-09-06T16:03:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/regex/</loc>
+    <loc>http://localhost:1313/tags/regex/</loc>
     <lastmod>2013-09-06T16:03:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2013/09/regex-in-haskell-patterns.html</loc>
+    <loc>http://localhost:1313/2013/09/regex-in-haskell-patterns.html</loc>
     <lastmod>2013-09-06T16:03:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/feeds/</loc>
+    <loc>http://localhost:1313/tags/feeds/</loc>
     <lastmod>2013-07-03T00:54:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2013/07/found-my-google-reader-alternative.html</loc>
+    <loc>http://localhost:1313/2013/07/found-my-google-reader-alternative.html</loc>
     <lastmod>2013-07-03T00:54:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/google/</loc>
+    <loc>http://localhost:1313/tags/google/</loc>
     <lastmod>2013-07-03T00:54:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/reader/</loc>
+    <loc>http://localhost:1313/tags/reader/</loc>
     <lastmod>2013-07-03T00:54:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/algorithms/</loc>
+    <loc>http://localhost:1313/tags/algorithms/</loc>
     <lastmod>2013-06-28T13:04:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/blog/</loc>
+    <loc>http://localhost:1313/tags/blog/</loc>
     <lastmod>2013-06-28T13:04:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/comments/</loc>
+    <loc>http://localhost:1313/tags/comments/</loc>
     <lastmod>2013-06-28T13:04:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2013/06/inline-commenting-system-for-blog-sites.html</loc>
+    <loc>http://localhost:1313/2013/06/inline-commenting-system-for-blog-sites.html</loc>
     <lastmod>2013-06-28T13:04:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2013/06/accessing-simple-private-fields-in-php.html</loc>
+    <loc>http://localhost:1313/2013/06/accessing-simple-private-fields-in-php.html</loc>
     <lastmod>2013-06-05T07:53:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/php/</loc>
+    <loc>http://localhost:1313/tags/php/</loc>
     <lastmod>2013-06-05T07:53:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html</loc>
+    <loc>http://localhost:1313/2013/04/build-vala-applications-with-shake.html</loc>
     <lastmod>2013-04-06T14:18:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/buildsys/</loc>
+    <loc>http://localhost:1313/tags/buildsys/</loc>
     <lastmod>2013-04-06T14:18:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/make/</loc>
+    <loc>http://localhost:1313/tags/make/</loc>
     <lastmod>2013-04-06T14:18:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/shake/</loc>
+    <loc>http://localhost:1313/tags/shake/</loc>
     <lastmod>2013-04-06T14:18:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/desktop/</loc>
+    <loc>http://localhost:1313/tags/desktop/</loc>
     <lastmod>2013-03-28T04:24:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2013/03/switch-window-by-name-on-linux.html</loc>
+    <loc>http://localhost:1313/2013/03/switch-window-by-name-on-linux.html</loc>
     <lastmod>2013-03-28T04:24:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/window-manager/</loc>
+    <loc>http://localhost:1313/tags/window-manager/</loc>
     <lastmod>2013-03-28T04:24:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/wmctrl/</loc>
+    <loc>http://localhost:1313/tags/wmctrl/</loc>
     <lastmod>2013-03-28T04:24:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/zenity/</loc>
+    <loc>http://localhost:1313/tags/zenity/</loc>
     <lastmod>2013-03-28T04:24:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/audio/</loc>
+    <loc>http://localhost:1313/tags/audio/</loc>
     <lastmod>2013-03-24T13:15:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/awesome/</loc>
+    <loc>http://localhost:1313/tags/awesome/</loc>
     <lastmod>2013-03-24T13:15:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2013/03/controlling-audio-volume-in-awesome-wm.html</loc>
+    <loc>http://localhost:1313/2013/03/controlling-audio-volume-in-awesome-wm.html</loc>
     <lastmod>2013-03-24T13:15:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/refactory/</loc>
+    <loc>http://localhost:1313/tags/refactory/</loc>
     <lastmod>2012-12-06T14:00:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2012/12/refactoryorg-is-down.html</loc>
+    <loc>http://localhost:1313/2012/12/refactoryorg-is-down.html</loc>
     <lastmod>2012-12-06T14:00:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2012/11/grab-focus-on-gtk-widget.html</loc>
+    <loc>http://localhost:1313/2012/11/grab-focus-on-gtk-widget.html</loc>
     <lastmod>2012-11-22T11:49:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2012/11/code-search-is-dead-long-live-code.html</loc>
+    <loc>http://localhost:1313/2012/11/code-search-is-dead-long-live-code.html</loc>
     <lastmod>2012-11-11T01:57:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/debian/</loc>
+    <loc>http://localhost:1313/tags/debian/</loc>
     <lastmod>2012-11-11T01:57:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/search/</loc>
+    <loc>http://localhost:1313/tags/search/</loc>
     <lastmod>2012-11-11T01:57:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/talk/</loc>
+    <loc>http://localhost:1313/tags/talk/</loc>
     <lastmod>2011-09-08T03:09:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/ubuntu/</loc>
+    <loc>http://localhost:1313/tags/ubuntu/</loc>
     <lastmod>2011-09-08T03:09:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/09/vala-language-introduction-on-irc.html</loc>
+    <loc>http://localhost:1313/2011/09/vala-language-introduction-on-irc.html</loc>
     <lastmod>2011-09-08T03:09:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/probability/</loc>
+    <loc>http://localhost:1313/tags/probability/</loc>
     <lastmod>2011-08-09T10:29:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/08/probability-of-union-of-independent.html</loc>
+    <loc>http://localhost:1313/2011/08/probability-of-union-of-independent.html</loc>
     <lastmod>2011-08-09T10:29:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/firefox/</loc>
+    <loc>http://localhost:1313/tags/firefox/</loc>
     <lastmod>2011-07-23T09:13:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/07/dear-firefox-5.html</loc>
+    <loc>http://localhost:1313/2011/07/dear-firefox-5.html</loc>
     <lastmod>2011-07-23T09:13:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/web/</loc>
+    <loc>http://localhost:1313/tags/web/</loc>
     <lastmod>2011-07-23T09:13:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/coroutine/</loc>
+    <loc>http://localhost:1313/tags/coroutine/</loc>
     <lastmod>2011-07-09T00:42:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/generator/</loc>
+    <loc>http://localhost:1313/tags/generator/</loc>
     <lastmod>2011-07-09T00:42:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/languages/</loc>
+    <loc>http://localhost:1313/tags/languages/</loc>
     <lastmod>2011-07-09T00:42:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/python/</loc>
+    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2011-07-09T00:42:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/07/pythonruby-like-generators-in-vala.html</loc>
+    <loc>http://localhost:1313/2011/07/pythonruby-like-generators-in-vala.html</loc>
     <lastmod>2011-07-09T00:42:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/ruby/</loc>
+    <loc>http://localhost:1313/tags/ruby/</loc>
     <lastmod>2011-07-09T00:42:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/07/why-im-still-using-emacs.html</loc>
+    <loc>http://localhost:1313/2011/07/why-im-still-using-emacs.html</loc>
     <lastmod>2011-07-05T03:29:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/bash/</loc>
+    <loc>http://localhost:1313/tags/bash/</loc>
     <lastmod>2011-06-02T03:04:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/wav/</loc>
+    <loc>http://localhost:1313/tags/wav/</loc>
     <lastmod>2011-06-02T03:04:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/06/writing-binary-files-with-bash.html</loc>
+    <loc>http://localhost:1313/2011/06/writing-binary-files-with-bash.html</loc>
     <lastmod>2011-06-02T03:04:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/05/complete-variables-with-cd-command-in.html</loc>
+    <loc>http://localhost:1313/2011/05/complete-variables-with-cd-command-in.html</loc>
     <lastmod>2011-05-27T05:51:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/completion/</loc>
+    <loc>http://localhost:1313/tags/completion/</loc>
     <lastmod>2011-05-27T05:51:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/decrew/</loc>
+    <loc>http://localhost:1313/tags/decrew/</loc>
     <lastmod>2011-05-22T14:59:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/05/enforce-facebook-chat-through-ssl.html</loc>
+    <loc>http://localhost:1313/2011/05/enforce-facebook-chat-through-ssl.html</loc>
     <lastmod>2011-05-22T14:59:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/facebook/</loc>
+    <loc>http://localhost:1313/tags/facebook/</loc>
     <lastmod>2011-05-22T14:59:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/sslguard/</loc>
+    <loc>http://localhost:1313/tags/sslguard/</loc>
     <lastmod>2011-05-22T14:59:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/graphviz/</loc>
+    <loc>http://localhost:1313/tags/graphviz/</loc>
     <lastmod>2011-05-14T03:11:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/valag/</loc>
+    <loc>http://localhost:1313/tags/valag/</loc>
     <lastmod>2011-05-14T03:11:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/05/vala-12-released.html</loc>
+    <loc>http://localhost:1313/2011/05/vala-12-released.html</loc>
     <lastmod>2011-05-14T03:11:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/02/bubble-sort-for-prolog.html</loc>
+    <loc>http://localhost:1313/2011/02/bubble-sort-for-prolog.html</loc>
     <lastmod>2011-02-24T10:30:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/comparison/</loc>
+    <loc>http://localhost:1313/tags/comparison/</loc>
     <lastmod>2011-02-24T10:30:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/logic-programming/</loc>
+    <loc>http://localhost:1313/tags/logic-programming/</loc>
     <lastmod>2011-02-24T10:30:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/prolog/</loc>
+    <loc>http://localhost:1313/tags/prolog/</loc>
     <lastmod>2011-02-24T10:30:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/sorting/</loc>
+    <loc>http://localhost:1313/tags/sorting/</loc>
     <lastmod>2011-02-24T10:30:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/aptitude/</loc>
+    <loc>http://localhost:1313/tags/aptitude/</loc>
     <lastmod>2011-02-19T13:17:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/02/aptitude-string-for-downgradable.html</loc>
+    <loc>http://localhost:1313/2011/02/aptitude-string-for-downgradable.html</loc>
     <lastmod>2011-02-19T13:17:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/matrices/</loc>
+    <loc>http://localhost:1313/tags/matrices/</loc>
     <lastmod>2011-02-15T12:20:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/02/matrix-transpose-with-prolog.html</loc>
+    <loc>http://localhost:1313/2011/02/matrix-transpose-with-prolog.html</loc>
     <lastmod>2011-02-15T12:20:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/bluetooth/</loc>
+    <loc>http://localhost:1313/tags/bluetooth/</loc>
     <lastmod>2011-02-09T07:10:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/02/bluetooth-simple-one-line-device.html</loc>
+    <loc>http://localhost:1313/2011/02/bluetooth-simple-one-line-device.html</loc>
     <lastmod>2011-02-09T07:10:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/bluez/</loc>
+    <loc>http://localhost:1313/tags/bluez/</loc>
     <lastmod>2011-02-09T07:10:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/dbus/</loc>
+    <loc>http://localhost:1313/tags/dbus/</loc>
     <lastmod>2011-02-09T07:10:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/clutter/</loc>
+    <loc>http://localhost:1313/tags/clutter/</loc>
     <lastmod>2011-02-09T00:37:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/game/</loc>
+    <loc>http://localhost:1313/tags/game/</loc>
     <lastmod>2011-02-09T00:37:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/02/rubiks-cube-game-in-valaclutter.html</loc>
+    <loc>http://localhost:1313/2011/02/rubiks-cube-game-in-valaclutter.html</loc>
     <lastmod>2011-02-09T00:37:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2011/01/base64-and-quoted-printable-gconverters.html</loc>
+    <loc>http://localhost:1313/2011/01/base64-and-quoted-printable-gconverters.html</loc>
     <lastmod>2011-01-14T23:55:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/gio/</loc>
+    <loc>http://localhost:1313/tags/gio/</loc>
     <lastmod>2011-01-14T23:55:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/gmua/</loc>
+    <loc>http://localhost:1313/tags/gmua/</loc>
     <lastmod>2011-01-14T23:55:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/mail/</loc>
+    <loc>http://localhost:1313/tags/mail/</loc>
     <lastmod>2011-01-14T23:55:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/mutt/</loc>
+    <loc>http://localhost:1313/tags/mutt/</loc>
     <lastmod>2011-01-14T23:55:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/12/valag-11-released.html</loc>
+    <loc>http://localhost:1313/2010/12/valag-11-released.html</loc>
     <lastmod>2010-12-19T04:19:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/maja/</loc>
+    <loc>http://localhost:1313/tags/maja/</loc>
     <lastmod>2010-12-17T10:42:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/12/maja-vala-to-javascript-compiler.html</loc>
+    <loc>http://localhost:1313/2010/12/maja-vala-to-javascript-compiler.html</loc>
     <lastmod>2010-12-17T10:42:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/duckduckgo/</loc>
+    <loc>http://localhost:1313/tags/duckduckgo/</loc>
     <lastmod>2010-09-15T05:16:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/09/duckduckgo-search-engine.html</loc>
+    <loc>http://localhost:1313/2010/09/duckduckgo-search-engine.html</loc>
     <lastmod>2010-09-15T05:16:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/yahoo/</loc>
+    <loc>http://localhost:1313/tags/yahoo/</loc>
     <lastmod>2010-09-15T05:16:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/08/debian-appreciation-day.html</loc>
+    <loc>http://localhost:1313/2010/08/debian-appreciation-day.html</loc>
     <lastmod>2010-08-16T05:26:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/07/using-mash-with-vala.html</loc>
+    <loc>http://localhost:1313/2010/07/using-mash-with-vala.html</loc>
     <lastmod>2010-07-29T06:22:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/mips/</loc>
+    <loc>http://localhost:1313/tags/mips/</loc>
     <lastmod>2010-07-29T02:28:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/mipsdis/</loc>
+    <loc>http://localhost:1313/tags/mipsdis/</loc>
     <lastmod>2010-07-29T02:28:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/07/mipsdis-mips32-disassembler.html</loc>
+    <loc>http://localhost:1313/2010/07/mipsdis-mips32-disassembler.html</loc>
     <lastmod>2010-07-29T02:28:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/reverse-engineering/</loc>
+    <loc>http://localhost:1313/tags/reverse-engineering/</loc>
     <lastmod>2010-07-29T02:28:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/06/idea-duplicated-again.html</loc>
+    <loc>http://localhost:1313/2010/06/idea-duplicated-again.html</loc>
     <lastmod>2010-06-18T01:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/security/</loc>
+    <loc>http://localhost:1313/tags/security/</loc>
     <lastmod>2010-06-18T01:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/ssl/</loc>
+    <loc>http://localhost:1313/tags/ssl/</loc>
     <lastmod>2010-06-18T01:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/aggregator/</loc>
+    <loc>http://localhost:1313/tags/aggregator/</loc>
     <lastmod>2010-05-02T12:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/05/google-reader-fail.html</loc>
+    <loc>http://localhost:1313/2010/05/google-reader-fail.html</loc>
     <lastmod>2010-05-02T12:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/rss/</loc>
+    <loc>http://localhost:1313/tags/rss/</loc>
     <lastmod>2010-05-02T12:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/gtkdoc/</loc>
+    <loc>http://localhost:1313/tags/gtkdoc/</loc>
     <lastmod>2010-04-02T08:14:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/valagtkdoc/</loc>
+    <loc>http://localhost:1313/tags/valagtkdoc/</loc>
     <lastmod>2010-04-02T08:14:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/04/valagtkdoc-10.html</loc>
+    <loc>http://localhost:1313/2010/04/valagtkdoc-10.html</loc>
     <lastmod>2010-04-02T08:14:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/dpkg/</loc>
+    <loc>http://localhost:1313/tags/dpkg/</loc>
     <lastmod>2010-03-16T13:05:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/tdpkg/</loc>
+    <loc>http://localhost:1313/tags/tdpkg/</loc>
     <lastmod>2010-03-16T13:05:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/03/tdpkg-and-some-news.html</loc>
+    <loc>http://localhost:1313/2010/03/tdpkg-and-some-news.html</loc>
     <lastmod>2010-03-16T13:05:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/03/tdpkg-speed-up-reading-dpkg-database.html</loc>
+    <loc>http://localhost:1313/2010/03/tdpkg-speed-up-reading-dpkg-database.html</loc>
     <lastmod>2010-03-15T13:21:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/03/vala-and-graphviz.html</loc>
+    <loc>http://localhost:1313/2010/03/vala-and-graphviz.html</loc>
     <lastmod>2010-03-14T04:37:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/03/google-search-wrong-again.html</loc>
+    <loc>http://localhost:1313/2010/03/google-search-wrong-again.html</loc>
     <lastmod>2010-03-05T04:37:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/03/debiangnome-bug-triage-ended.html</loc>
+    <loc>http://localhost:1313/2010/03/debiangnome-bug-triage-ended.html</loc>
     <lastmod>2010-03-03T01:51:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/gpg/</loc>
+    <loc>http://localhost:1313/tags/gpg/</loc>
     <lastmod>2010-02-16T03:11:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/networking/</loc>
+    <loc>http://localhost:1313/tags/networking/</loc>
     <lastmod>2010-02-16T03:11:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/rsa/</loc>
+    <loc>http://localhost:1313/tags/rsa/</loc>
     <lastmod>2010-02-16T03:11:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/sdchat/</loc>
+    <loc>http://localhost:1313/tags/sdchat/</loc>
     <lastmod>2010-02-16T03:11:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/02/secure-and-decentralized-chat.html</loc>
+    <loc>http://localhost:1313/2010/02/secure-and-decentralized-chat.html</loc>
     <lastmod>2010-02-16T03:11:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/02/vala-0710-released.html</loc>
+    <loc>http://localhost:1313/2010/02/vala-0710-released.html</loc>
     <lastmod>2010-02-04T12:43:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2010/01/fetch-web-page-with-vala-and-soup.html</loc>
+    <loc>http://localhost:1313/2010/01/fetch-web-page-with-vala-and-soup.html</loc>
     <lastmod>2010-01-24T03:04:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/soup/</loc>
+    <loc>http://localhost:1313/tags/soup/</loc>
     <lastmod>2010-01-24T03:04:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/12/merry-christmas.html</loc>
+    <loc>http://localhost:1313/2009/12/merry-christmas.html</loc>
     <lastmod>2009-12-25T01:23:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/holidays/</loc>
+    <loc>http://localhost:1313/tags/holidays/</loc>
     <lastmod>2009-12-25T01:23:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/12/facebook-and-berlusconi.html</loc>
+    <loc>http://localhost:1313/2009/12/facebook-and-berlusconi.html</loc>
     <lastmod>2009-12-14T09:38:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/italy/</loc>
+    <loc>http://localhost:1313/tags/italy/</loc>
     <lastmod>2009-12-14T09:38:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/mafia/</loc>
+    <loc>http://localhost:1313/tags/mafia/</loc>
     <lastmod>2009-12-14T09:38:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/lua/</loc>
+    <loc>http://localhost:1313/tags/lua/</loc>
     <lastmod>2009-12-14T04:15:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/12/lua-for-pythoners-dictionary.html</loc>
+    <loc>http://localhost:1313/2009/12/lua-for-pythoners-dictionary.html</loc>
     <lastmod>2009-12-14T04:15:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/12/lua-for-pythoners-lists.html</loc>
+    <loc>http://localhost:1313/2009/12/lua-for-pythoners-lists.html</loc>
     <lastmod>2009-12-13T05:58:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/cairo/</loc>
+    <loc>http://localhost:1313/tags/cairo/</loc>
     <lastmod>2009-11-27T04:21:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/mimaggia/</loc>
+    <loc>http://localhost:1313/tags/mimaggia/</loc>
     <lastmod>2009-11-27T04:21:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html</loc>
+    <loc>http://localhost:1313/2009/11/mimaggia-cairo-tester.html</loc>
     <lastmod>2009-11-27T04:21:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/crypto/</loc>
+    <loc>http://localhost:1313/tags/crypto/</loc>
     <lastmod>2009-11-14T06:34:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/11/there-are-many-python-toolkits-for.html</loc>
+    <loc>http://localhost:1313/2009/11/there-are-many-python-toolkits-for.html</loc>
     <lastmod>2009-11-14T06:34:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/apache/</loc>
+    <loc>http://localhost:1313/tags/apache/</loc>
     <lastmod>2009-10-09T06:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/axis/</loc>
+    <loc>http://localhost:1313/tags/axis/</loc>
     <lastmod>2009-10-09T06:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/10/debianapachetomcataxis.html</loc>
+    <loc>http://localhost:1313/2009/10/debianapachetomcataxis.html</loc>
     <lastmod>2009-10-09T06:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/java/</loc>
+    <loc>http://localhost:1313/tags/java/</loc>
     <lastmod>2009-10-09T06:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/tomcat/</loc>
+    <loc>http://localhost:1313/tags/tomcat/</loc>
     <lastmod>2009-10-09T06:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/unical/</loc>
+    <loc>http://localhost:1313/tags/unical/</loc>
     <lastmod>2009-10-09T06:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/web-services/</loc>
+    <loc>http://localhost:1313/tags/web-services/</loc>
     <lastmod>2009-10-09T06:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/performance/</loc>
+    <loc>http://localhost:1313/tags/performance/</loc>
     <lastmod>2009-10-07T14:23:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/10/speeding-up-zsh-completion.html</loc>
+    <loc>http://localhost:1313/2009/10/speeding-up-zsh-completion.html</loc>
     <lastmod>2009-10-07T14:23:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/zsh/</loc>
+    <loc>http://localhost:1313/tags/zsh/</loc>
     <lastmod>2009-10-07T14:23:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/08/new-gpg-key.html</loc>
+    <loc>http://localhost:1313/2009/08/new-gpg-key.html</loc>
     <lastmod>2009-08-29T05:46:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/archicad/</loc>
+    <loc>http://localhost:1313/tags/archicad/</loc>
     <lastmod>2009-08-09T11:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/corraza/</loc>
+    <loc>http://localhost:1313/tags/corraza/</loc>
     <lastmod>2009-08-09T11:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/opengl/</loc>
+    <loc>http://localhost:1313/tags/opengl/</loc>
     <lastmod>2009-08-09T11:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/spadi/</loc>
+    <loc>http://localhost:1313/tags/spadi/</loc>
     <lastmod>2009-08-09T11:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/08/spadi-source-code.html</loc>
+    <loc>http://localhost:1313/2009/08/spadi-source-code.html</loc>
     <lastmod>2009-08-09T11:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/08/constructing-free-archicad-alternative.html</loc>
+    <loc>http://localhost:1313/2009/08/constructing-free-archicad-alternative.html</loc>
     <lastmod>2009-08-06T04:02:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/ray-tracing/</loc>
+    <loc>http://localhost:1313/tags/ray-tracing/</loc>
     <lastmod>2009-08-06T04:02:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/aruanne/</loc>
+    <loc>http://localhost:1313/tags/aruanne/</loc>
     <lastmod>2009-07-21T23:34:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/07/aruanne-pdf-reporting-framework.html</loc>
+    <loc>http://localhost:1313/2009/07/aruanne-pdf-reporting-framework.html</loc>
     <lastmod>2009-07-21T23:34:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/pango/</loc>
+    <loc>http://localhost:1313/tags/pango/</loc>
     <lastmod>2009-07-21T23:34:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/pdf/</loc>
+    <loc>http://localhost:1313/tags/pdf/</loc>
     <lastmod>2009-07-21T23:34:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/report/</loc>
+    <loc>http://localhost:1313/tags/report/</loc>
     <lastmod>2009-07-21T23:34:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/gstreamer/</loc>
+    <loc>http://localhost:1313/tags/gstreamer/</loc>
     <lastmod>2009-06-20T13:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/media/</loc>
+    <loc>http://localhost:1313/tags/media/</loc>
     <lastmod>2009-06-20T13:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/06/less-consuming-radio-player-ever.html</loc>
+    <loc>http://localhost:1313/2009/06/less-consuming-radio-player-ever.html</loc>
     <lastmod>2009-06-20T13:10:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/smalltalk/</loc>
+    <loc>http://localhost:1313/tags/smalltalk/</loc>
     <lastmod>2009-05-29T15:45:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/syx/</loc>
+    <loc>http://localhost:1313/tags/syx/</loc>
     <lastmod>2009-05-29T15:45:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/05/syx-changes-web-and-git-hosting.html</loc>
+    <loc>http://localhost:1313/2009/05/syx-changes-web-and-git-hosting.html</loc>
     <lastmod>2009-05-29T15:45:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/05/render-tables-with-pangocairo-like.html</loc>
+    <loc>http://localhost:1313/2009/05/render-tables-with-pangocairo-like.html</loc>
     <lastmod>2009-05-27T14:22:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/05/blogging-from-epiphany-webkit.html</loc>
+    <loc>http://localhost:1313/2009/05/blogging-from-epiphany-webkit.html</loc>
     <lastmod>2009-05-18T11:33:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/webkit/</loc>
+    <loc>http://localhost:1313/tags/webkit/</loc>
     <lastmod>2009-05-18T11:33:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/04/create-pixbuf-from-cairo-surface.html</loc>
+    <loc>http://localhost:1313/2009/04/create-pixbuf-from-cairo-surface.html</loc>
     <lastmod>2009-04-26T10:40:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/04/create-cairo-surface-from-pixbuf.html</loc>
+    <loc>http://localhost:1313/2009/04/create-cairo-surface-from-pixbuf.html</loc>
     <lastmod>2009-04-25T02:03:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/02/awesomeother-wrong-keyboard-layout.html</loc>
+    <loc>http://localhost:1313/2009/02/awesomeother-wrong-keyboard-layout.html</loc>
     <lastmod>2009-02-27T15:12:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/02/jmf-and-mpeg.html</loc>
+    <loc>http://localhost:1313/2009/02/jmf-and-mpeg.html</loc>
     <lastmod>2009-02-24T14:11:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/freespeak/</loc>
+    <loc>http://localhost:1313/tags/freespeak/</loc>
     <lastmod>2009-01-10T02:42:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2009/01/freespeak-030-has-been-released.html</loc>
+    <loc>http://localhost:1313/2009/01/freespeak-030-has-been-released.html</loc>
     <lastmod>2009-01-10T02:42:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/12/mailmbox-to-mbox.html</loc>
+    <loc>http://localhost:1313/2008/12/mailmbox-to-mbox.html</loc>
     <lastmod>2008-12-26T10:54:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/12/global-keybinding-on-x.html</loc>
+    <loc>http://localhost:1313/2008/12/global-keybinding-on-x.html</loc>
     <lastmod>2008-12-21T01:52:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/xlib/</loc>
+    <loc>http://localhost:1313/tags/xlib/</loc>
     <lastmod>2008-12-21T01:52:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/12/aptitude-gtk-progress.html</loc>
+    <loc>http://localhost:1313/2008/12/aptitude-gtk-progress.html</loc>
     <lastmod>2008-12-01T14:58:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/11/freespeak-gains-translation-suggestions.html</loc>
+    <loc>http://localhost:1313/2008/11/freespeak-gains-translation-suggestions.html</loc>
     <lastmod>2008-11-30T03:47:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/11/freespeak-020-has-been-released.html</loc>
+    <loc>http://localhost:1313/2008/11/freespeak-020-has-been-released.html</loc>
     <lastmod>2008-11-28T03:57:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/11/replace-gtk-with-clutter-for-fun.html</loc>
+    <loc>http://localhost:1313/2008/11/replace-gtk-with-clutter-for-fun.html</loc>
     <lastmod>2008-11-23T12:38:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/11/single-app-instances-python-and-dbus.html</loc>
+    <loc>http://localhost:1313/2008/11/single-app-instances-python-and-dbus.html</loc>
     <lastmod>2008-11-16T10:01:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/10/pingfm-is-dead.html</loc>
+    <loc>http://localhost:1313/2008/10/pingfm-is-dead.html</loc>
     <lastmod>2008-10-20T13:39:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/social/</loc>
+    <loc>http://localhost:1313/tags/social/</loc>
     <lastmod>2008-10-20T13:39:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/10/freespeak-gtkgnome-translator.html</loc>
+    <loc>http://localhost:1313/2008/10/freespeak-gtkgnome-translator.html</loc>
     <lastmod>2008-10-14T14:31:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/10/how-to-contribute-to-apt.html</loc>
+    <loc>http://localhost:1313/2008/10/how-to-contribute-to-apt.html</loc>
     <lastmod>2008-10-10T09:12:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/09/debian-get-satisfaction.html</loc>
+    <loc>http://localhost:1313/2008/09/debian-get-satisfaction.html</loc>
     <lastmod>2008-09-11T00:59:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/09/gtk-apps-to-replace-gnome-files.html</loc>
+    <loc>http://localhost:1313/2008/09/gtk-apps-to-replace-gnome-files.html</loc>
     <lastmod>2008-09-08T10:20:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/08/where-are-you-yahoo-fire-eagle.html</loc>
+    <loc>http://localhost:1313/2008/08/where-are-you-yahoo-fire-eagle.html</loc>
     <lastmod>2008-08-23T02:24:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/08/cincom-industry-misinterpretations.html</loc>
+    <loc>http://localhost:1313/2008/08/cincom-industry-misinterpretations.html</loc>
     <lastmod>2008-08-16T17:07:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/08/interviewed-by-clubsmalltalk.html</loc>
+    <loc>http://localhost:1313/2008/08/interviewed-by-clubsmalltalk.html</loc>
     <lastmod>2008-08-16T04:05:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/last.fm/</loc>
+    <loc>http://localhost:1313/tags/last.fm/</loc>
     <lastmod>2008-08-16T03:28:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/08/vagalume-gtk-and-lastfm.html</loc>
+    <loc>http://localhost:1313/2008/08/vagalume-gtk-and-lastfm.html</loc>
     <lastmod>2008-08-16T03:28:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/08/compiz-with-ati-rs480-on-debian.html</loc>
+    <loc>http://localhost:1313/2008/08/compiz-with-ati-rs480-on-debian.html</loc>
     <lastmod>2008-08-11T13:41:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/08/istream.html</loc>
+    <loc>http://localhost:1313/2008/08/istream.html</loc>
     <lastmod>2008-08-07T10:24:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/08/gnome-main-menu.html</loc>
+    <loc>http://localhost:1313/2008/08/gnome-main-menu.html</loc>
     <lastmod>2008-08-07T10:09:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/08/kqemu-on-debian-amd64.html</loc>
+    <loc>http://localhost:1313/2008/08/kqemu-on-debian-amd64.html</loc>
     <lastmod>2008-08-07T09:07:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/08/debian-and-zd1211-wifi.html</loc>
+    <loc>http://localhost:1313/2008/08/debian-and-zd1211-wifi.html</loc>
     <lastmod>2008-08-06T09:08:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/07/syx-gaining-more-stability-and-speed.html</loc>
+    <loc>http://localhost:1313/2008/07/syx-gaining-more-stability-and-speed.html</loc>
     <lastmod>2008-07-13T07:00:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/07/identica-is-worse.html</loc>
+    <loc>http://localhost:1313/2008/07/identica-is-worse.html</loc>
     <lastmod>2008-07-03T10:35:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/tags/twitter/</loc>
+    <loc>http://localhost:1313/tags/twitter/</loc>
     <lastmod>2008-07-03T10:35:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/06/new-debian-tool-proposal.html</loc>
+    <loc>http://localhost:1313/2008/06/new-debian-tool-proposal.html</loc>
     <lastmod>2008-06-30T01:16:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/06/syx-017-has-been-released.html</loc>
+    <loc>http://localhost:1313/2008/06/syx-017-has-been-released.html</loc>
     <lastmod>2008-06-07T14:18:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/05/syx-gtk-and-threading.html</loc>
+    <loc>http://localhost:1313/2008/05/syx-gtk-and-threading.html</loc>
     <lastmod>2008-05-23T14:00:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/05/syx-manual.html</loc>
+    <loc>http://localhost:1313/2008/05/syx-manual.html</loc>
     <lastmod>2008-05-02T01:56:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/04/time-for-debian.html</loc>
+    <loc>http://localhost:1313/2008/04/time-for-debian.html</loc>
     <lastmod>2008-04-22T11:55:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/04/smalltalk-yx-toward-new-interpreter.html</loc>
+    <loc>http://localhost:1313/2008/04/smalltalk-yx-toward-new-interpreter.html</loc>
     <lastmod>2008-04-15T02:51:00-07:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/01/smalltalk-yx-016-has-been-released.html</loc>
+    <loc>http://localhost:1313/2008/01/smalltalk-yx-016-has-been-released.html</loc>
     <lastmod>2008-01-07T03:21:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2008/01/google-search-no-thanks-yahoo-hello.html</loc>
+    <loc>http://localhost:1313/2008/01/google-search-no-thanks-yahoo-hello.html</loc>
     <lastmod>2008-01-05T05:00:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2007/12/merry-christmas-hi-everyone-merry.html</loc>
+    <loc>http://localhost:1313/2007/12/merry-christmas-hi-everyone-merry.html</loc>
     <lastmod>2007-12-25T01:14:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2007/12/hello-world-in-console-and-gtk.html</loc>
+    <loc>http://localhost:1313/2007/12/hello-world-in-console-and-gtk.html</loc>
     <lastmod>2007-12-17T06:11:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/2007/12/syx-015-has-been-released.html</loc>
+    <loc>http://localhost:1313/2007/12/syx-015-has-been-released.html</loc>
     <lastmod>2007-12-14T11:04:00-08:00</lastmod>
   </url><url>
-    <loc>https://lucabrun.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>

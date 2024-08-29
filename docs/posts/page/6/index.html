@@ -1,352 +1,373 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Luca Bruno blog</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="">
-    <meta name="generator" content="Hugo 0.125.2">
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<!doctype html>
 
 
 
-    
 
-    
-      
 
-    
 
-    
-    
-      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Luca Bruno blog" />
-      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="Luca Bruno blog" />
-      
-    
 
-    
-      <link rel="canonical" href="https://lucabrun.github.io/posts/">
-    
 
-    <meta property="og:url" content="https://lucabrun.github.io/posts/">
-  <meta property="og:site_name" content="Luca Bruno blog">
-  <meta property="og:title" content="Posts">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Posts">
-  <meta itemprop="dateModified" content="2018-08-14T12:16:00-07:00"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Posts">
-<meta name="twitter:description" content="">
 
-	
-  </head>
 
-  <body class="ma0 avenir bg-near-white">
 
-    
 
-  <header>
-    <div class="pb3-m pb6-l bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Luca Bruno blog
-      
-    </a>
-    <div class="flex-l items-center">
-      
 
-      
-      
-<div class="ananke-socials">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
   
-</div>
+  <title>Posts - Luca Bruno blog</title>
 
-    </div>
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  
+  <meta
+    name="description"
+    content="A personal blog"
+  />
+  <meta name="author" content="Luca Bruno blog" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.125.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Luca Bruno blog</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Bluetooth simple one-line device connection pairing with Bluez</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Feb 9, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/02/bluetooth-simple-one-line-device.html">Bluetooth simple one-line device connection pairing with Bluez</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Rubik&#39;s Cube 3D Game in Vala/Clutter</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Feb 9, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/02/rubiks-cube-game-in-valaclutter.html">Rubik&#39;s Cube 3D Game in Vala/Clutter</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Base64 and Quoted-Printable GConverters for GMua</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jan 14, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/01/base64-and-quoted-printable-gconverters.html">Base64 and Quoted-Printable GConverters for GMua</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Valag 1.1 released, graph generator for the Vala AST</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Dec 19, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/12/valag-11-released.html">Valag 1.1 released, graph generator for the Vala AST</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Maja - The Vala to Javascript compiler</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Dec 17, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/12/maja-vala-to-javascript-compiler.html">Maja - The Vala to Javascript compiler</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">DuckDuckGo search engine</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Sep 15, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/09/duckduckgo-search-engine.html">DuckDuckGo search engine</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Debian Appreciation Day</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Aug 16, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/08/debian-appreciation-day.html">Debian Appreciation Day</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Using Mash with Vala</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jul 29, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/07/using-mash-with-vala.html">Using Mash with Vala</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Mipsdis MIPS32 disassembler</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jul 29, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/07/mipsdis-mips32-disassembler.html">Mipsdis MIPS32 disassembler</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Idea duplicated again</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jun 18, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/06/idea-duplicated-again.html">Idea duplicated again</a>
+</section>
+
+
+
+
+<nav class="mt-14 flex">
+  
+  <a class="btn" href="/posts/page/5/">← Prev Page</a>
+  
+  
+  <a class="btn ml-auto" href="/posts/page/7/"
+    >Next Page →</a
+  >
+  
 </nav>
 
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Posts
-        </h1>
-        
-      </div>
-    </div>
-  </header>
 
-
-    <main class="pb7" role="main">
-      
-  <article class="pa3 pa4-ns nested-copy-line-height">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
-    <section class="flex-ns flex-wrap justify-around mt5">
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2011/02/bluetooth-simple-one-line-device.html" class="link black dim">
-        Bluetooth simple one-line device connection pairing with Bluez
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;ve written a simple Python script using the Bluez (version 4.66) stack (thanks to http://shr-project.org/trac/wiki/Using) with this usage:
-python connect.py MACADDRESS PIN MOUNTPOINT
-Snippet code for connect.py is here. If the device is paired, it will be removed and unmounted.
-Disconnection is as easy with:
-python disconnect.py MACADDRESS MOUNTPOINT
-Snippet code for disconnect.py is here.
-Feel free to use the code also for other services, in this case my primary concern was to mount the file system.
-    </div>
-    <a href="/2011/02/bluetooth-simple-one-line-device.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2011/02/rubiks-cube-game-in-valaclutter.html" class="link black dim">
-        Rubik&#39;s Cube 3D Game in Vala/Clutter
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;ve written a simple program for playing with a Rubik&rsquo;s Cube using Vala and Clutter.
-It features:
-high simplicity in rotating cube slices and rotating the cube itself in a very natural manner shuffle the cube autosave the game Download and more usage information at the homepage&hellip; have fun :)
-    </div>
-    <a href="/2011/02/rubiks-cube-game-in-valaclutter.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2011/01/base64-and-quoted-printable-gconverters.html" class="link black dim">
-        Base64 and Quoted-Printable GConverters for GMua
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-lately I&rsquo;m writing GMua for educational purposes and for evaluating Vala, whose purpose is to simplify writing Mail User Agents or simple scripts, ala Java Mail.
-It currently parses IMAP (not yet complete) and has a graphical interface called Gutt (yes, inspired by Mutt) for testing.
-In order to parse MIME parts with base64 or quopri content-transfer-encoding I chose to implement a couple of GConverter (will use GMime a day, maybe when they switch to gio, not yet needed) in Vala that you can find here:
-    </div>
-    <a href="/2011/01/base64-and-quoted-printable-gconverters.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/12/valag-11-released.html" class="link black dim">
-        Valag 1.1 released, graph generator for the Vala AST
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-a new version of Valag, a graphviz generator for the Vala language AST, has been released.
-Changes since 1.0 version:
-Add &ndash;format and &ndash;prefix options. Update to latest libvala-0.12. Bug fixes. This new version also distributes the xdot.py program as a viewer for the generated graphs.
-More information and download at the Valag homepage.
-    </div>
-    <a href="/2010/12/valag-11-released.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/12/maja-vala-to-javascript-compiler.html" class="link black dim">
-        Maja - The Vala to Javascript compiler
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;ve just released the first version of Maja, the Vala to Javascript compiler. The mapping is not quite complete but you can do pretty much everything you could do with javascript directly. There are (still incomplete) bindings for the qooxdoo framework and the demo browser is being ported to vala successfully.
-Maja can be used in any environments, not only web browsers.
-Programming in Vala saves you from lots of type safety troubles (Javascript), lot of typing (Java) and the syntax is really enjoyable as it is quite close to the Javascript model.
-    </div>
-    <a href="/2010/12/maja-vala-to-javascript-compiler.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/09/duckduckgo-search-engine.html" class="link black dim">
-        DuckDuckGo search engine
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-in this post I&rsquo;d like to hint you a very nice search engine: DuckDuckGo. I&rsquo;ve been pointed out to this by a post here on why both Google and Yahoo suck (and why Google search does more).
-In older posts of mine you can find some examples on how Google search can miserably fail a search.
-The main problem with the two approaches is: Google (and Bing too) sorts by popularity, Yahoo by match.
-    </div>
-    <a href="/2010/09/duckduckgo-search-engine.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/08/debian-appreciation-day.html" class="link black dim">
-        Debian Appreciation Day
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-today is the Debian birthday. For this event a Debian Appreciation Day has been prepared to thank all the Debian organization, all the contributors, developers, teams and everything related to the universal operating system. If you want to thank Debian and make developers feel loved :P here&rsquo;s the page: thanks.debian.net.
-    </div>
-    <a href="/2010/08/debian-appreciation-day.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/07/using-mash-with-vala.html" class="link black dim">
-        Using Mash with Vala
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-recently Mash has been released. It is a library for reading models in PLY format and creating Clutter actors from them. For reference, Blender is able to export to PLY. It means you can draw your models with Blender and use Clutter as rendering engine.
-Clutter is a 3D canvas and animation toolkit while Blender is a 3D modelling suite.
-What I&rsquo;ve tested so far is porting the Monkey Viewer C example to Vala: code snippet and monkey PLY here.
-    </div>
-    <a href="/2010/07/using-mash-with-vala.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/07/mipsdis-mips32-disassembler.html" class="link black dim">
-        Mipsdis MIPS32 disassembler
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;ve written a MIPS32 (Release 2) disassembler for ELF files. It is not a simple disassembler, it&rsquo;s mostly made for reverse engineering proprietary boxes for educational purposes. It has been successfully tested on Vodafone Station which has Broadcom binaries. These boxes don&rsquo;t have a sections table, therefore normal disassemblers don&rsquo;t work. Mipsdis instead will guess the bounds of those sections (most important ones are TEXT and RODATA for strings).
-    </div>
-    <a href="/2010/07/mipsdis-mips32-disassembler.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/2010/06/idea-duplicated-again.html" class="link black dim">
-        Idea duplicated again
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello,
-I&rsquo;d like to point you to this firefox extension HTTPS Everywhere (June 17th, 2010) and SSLGuard which is also a firefox extension (first released Oct 14th, 2009).
-The code of the former extension is a lot more complicated and the result is not always quite the same as SSLGuard. In fact, while they support secure cookies and per-website custom rules, SSLGuard lets you add custom websites to be secured directly from a friendly graphical dialog.
-    </div>
-    <a href="/2010/06/idea-duplicated-again.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-    </section>
-    <ul class="pagination pagination-default">
-      <li class="page-item">
-        <a href="/posts/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/5/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 6" class="page-link" role="button">6</a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/7/" aria-label="Page 7" class="page-link" role="button">7</a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/8/" aria-label="Page 8" class="page-link" role="button">8</a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/7/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/posts/page/13/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul></article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
-    &copy;  Luca Bruno blog 2024 
-  </a>
-    <div>
-<div class="ananke-socials">
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
   
-</div>
-</div>
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+  
   </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
 </footer>
 
   </body>

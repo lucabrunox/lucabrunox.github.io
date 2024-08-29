@@ -1,153 +1,221 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Inline commenting system for blog sites | Luca Bruno blog</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="One side of the idea:
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Inline commenting system for blog sites - Luca Bruno blog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="One side of the idea:
 Lately I&rsquo;ve seen some comment systems that inline comments in the text itself, see an example here.
 Other side of the idea:
 I&rsquo;ve implemented a couple of unsupervised algorithms for news text extraction from web pages in Javascript, and they work generally well. They&rsquo;re also capable of splitting the news text into paragraphs and avoid image captions or other unrelated text.
 The idea:
-Merge the two ideas, as a new commenting service (like Disqus) for blogs, in a modern and interesting way.">
-    <meta name="generator" content="Hugo 0.125.2">
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
-
-
-
-    
-
-    
-      
-
-    
-
-    
-
-    
-      <link rel="canonical" href="https://lucabrun.github.io/2013/06/inline-commenting-system-for-blog-sites.html">
-    
-
-    <meta property="og:url" content="https://lucabrun.github.io/2013/06/inline-commenting-system-for-blog-sites.html">
-  <meta property="og:site_name" content="Luca Bruno blog">
-  <meta property="og:title" content="Inline commenting system for blog sites">
-  <meta property="og:description" content="One side of the idea:
-Lately I&amp;rsquo;ve seen some comment systems that inline comments in the text itself, see an example here.
-Other side of the idea:
-I&amp;rsquo;ve implemented a couple of unsupervised algorithms for news text extraction from web pages in Javascript, and they work generally well. They&amp;rsquo;re also capable of splitting the news text into paragraphs and avoid image captions or other unrelated text.
-The idea:
-Merge the two ideas, as a new commenting service (like Disqus) for blogs, in a modern and interesting way.">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-  <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2013-06-28T13:04:00-07:00">
-    <meta property="article:modified_time" content="2013-06-28T13:04:00-07:00">
-    <meta property="article:tag" content="Algorithms">
-    <meta property="article:tag" content="Javascript">
-    <meta property="article:tag" content="Blog">
-    <meta property="article:tag" content="Comments">
-
-  <meta itemprop="name" content="Inline commenting system for blog sites">
-  <meta itemprop="description" content="One side of the idea:
-Lately I&rsquo;ve seen some comment systems that inline comments in the text itself, see an example here.
-Other side of the idea:
-I&rsquo;ve implemented a couple of unsupervised algorithms for news text extraction from web pages in Javascript, and they work generally well. They&rsquo;re also capable of splitting the news text into paragraphs and avoid image captions or other unrelated text.
-The idea:
-Merge the two ideas, as a new commenting service (like Disqus) for blogs, in a modern and interesting way.">
-  <meta itemprop="datePublished" content="2013-06-28T13:04:00-07:00">
-  <meta itemprop="dateModified" content="2013-06-28T13:04:00-07:00">
-  <meta itemprop="wordCount" content="418">
-  <meta itemprop="keywords" content="Algorithms,Javascript,Blog,Comments"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Inline commenting system for blog sites">
-<meta name="twitter:description" content="One side of the idea:
-Lately I&rsquo;ve seen some comment systems that inline comments in the text itself, see an example here.
-Other side of the idea:
-I&rsquo;ve implemented a couple of unsupervised algorithms for news text extraction from web pages in Javascript, and they work generally well. They&rsquo;re also capable of splitting the news text into paragraphs and avoid image captions or other unrelated text.
-The idea:
-Merge the two ideas, as a new commenting service (like Disqus) for blogs, in a modern and interesting way.">
-
-	
-  </head>
-
-  <body class="ma0 avenir bg-near-white">
-
-    
-   
+Merge the two ideas, as a new commenting service (like Disqus) for blogs, in a modern and interesting way." />
+  <meta name="author" content="Luca Bruno blog" />
   
 
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Luca Bruno blog
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      
-<div class="ananke-socials">
   
-</div>
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
-    </div>
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.125.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Luca Bruno blog</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
-</nav>
 
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Inline commenting system for blog sites</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Jun 28, 2013</time>
+      
+      
+      
+      
     </div>
+    
   </header>
 
-
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        Posts
-      </aside>
-      
-
-
-
-
-
-
-
-
-
-
-  <div id="sharing" class="mt3 ananke-socials">
-    
-  </div>
-
-
-      <h1 class="f1 athelas mt3 mb1">Inline commenting system for blog sites</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2013-06-28T13:04:00-07:00">June 28, 2013</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><em>One side of the idea:</em><br>
+  <section><p><em>One side of the idea:</em><br>
 Lately I&rsquo;ve seen some comment systems that inline comments in the text itself, see an <a href="http://book.realworldhaskell.org/read/functional-programming.html">example here</a>.</p>
 <p><em>Other side of the idea:</em><br>
 I&rsquo;ve implemented a couple of <a href="http://dl.acm.org/citation.cfm?id=1998149">unsupervised</a> <a href="http://www.hpl.hp.com/techreports/2009/HPL-2009-185.pdf">algorithms</a> for news text extraction from web pages in Javascript, and they work generally well. They&rsquo;re also capable of splitting the news text into paragraphs and avoid image captions or other unrelated text.</p>
@@ -169,75 +237,94 @@ Merge the two ideas, as a new commenting service (like Disqus) for blogs, in a m
 <li>If a paragraph is edited/deleted, what happens to the comments? One solution is to not show them in the text, but add a button &ldquo;Show obsolete comments&rdquo; at the buttom of the page, or rather show them unconditionally.</li>
 <li>The unsupervised algorithm may fail to identify the post. In that case, the blogger may fall back to manually define the DOM element containing the article.</li>
 </ul>
-<ul class="pa0">
+</section>
+
   
-   <li class="list di">
-     <a href="/tags/algorithms/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Algorithms</a>
-   </li>
   
-   <li class="list di">
-     <a href="/tags/javascript/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Javascript</a>
-   </li>
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/algorithms"
+      >algorithms</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/javascript"
+      >javascript</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/blog"
+      >blog</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/comments"
+      >comments</a
+    >
+    
+  </footer>
   
-   <li class="list di">
-     <a href="/tags/blog/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Blog</a>
-   </li>
+
   
-   <li class="list di">
-     <a href="/tags/comments/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Comments</a>
-   </li>
   
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
-    </div>
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2013/07/found-my-google-reader-alternative.html"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Found my google reader alternative: the old reader</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2013/06/accessing-simple-private-fields-in-php.html"
+      ><span>Accessing simple private fields in PHP</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
 
-    <aside class="w-30-l mt6-l">
+  
+  
+
+  
+  
+
+  
 
 
+  
+</article>
 
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/2012/12/refactoryorg-is-down.html">Refactory.org is down</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2011/08/probability-of-union-of-independent.html">Probability of a union of independent events algorithm</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2011/02/bubble-sort-for-prolog.html">Bubble sort for prolog</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2011/02/matrix-transpose-with-prolog.html">Matrix transpose with Prolog</a>
-        </li>
-	    
-    </ul>
-</div>
-
-</aside>
-
-  </article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
-    &copy;  Luca Bruno blog 2024 
-  </a>
-    <div>
-<div class="ananke-socials">
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
   
-</div>
-</div>
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+  
   </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
 </footer>
 
   </body>

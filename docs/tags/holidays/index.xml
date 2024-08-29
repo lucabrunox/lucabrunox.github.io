@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Holidays on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/holidays/</link>
+    <link>http://localhost:1313/tags/holidays/</link>
     <description>Recent content in Holidays on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 25 Dec 2009 01:23:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/holidays/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/holidays/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Happy Holidays</title>
-      <link>https://lucabrun.github.io/2009/12/merry-christmas.html</link>
+      <link>http://localhost:1313/2009/12/merry-christmas.html</link>
       <pubDate>Fri, 25 Dec 2009 01:23:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/12/merry-christmas.html</guid>
+      <guid>http://localhost:1313/2009/12/merry-christmas.html</guid>
       <description>I wish you all a Merry Christmas and a Happy New Year!</description>
     </item>
   </channel>

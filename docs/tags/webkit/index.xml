@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Webkit on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/webkit/</link>
+    <link>http://localhost:1313/tags/webkit/</link>
     <description>Recent content in Webkit on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 May 2009 11:33:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/webkit/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/webkit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blogging from Epiphany WebKit</title>
-      <link>https://lucabrun.github.io/2009/05/blogging-from-epiphany-webkit.html</link>
+      <link>http://localhost:1313/2009/05/blogging-from-epiphany-webkit.html</link>
       <pubDate>Mon, 18 May 2009 11:33:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2009/05/blogging-from-epiphany-webkit.html</guid>
+      <guid>http://localhost:1313/2009/05/blogging-from-epiphany-webkit.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;ve been using Midori for a while. It&amp;rsquo;s a great browser: innovative and light. However all my bookmarks and data are in Epiphany. Last week the new epiphany-webkit version has been uploaded in Debian Sid and I couldn&amp;rsquo;t wait to test it. I&amp;rsquo;m currently using it instead of gecko; it has still some issues but I begun living without it.</description>
     </item>
   </channel>

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Desktop on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/desktop/</link>
+    <link>http://localhost:1313/tags/desktop/</link>
     <description>Recent content in Desktop on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Mar 2013 04:24:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/desktop/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/desktop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Switch window by name on Linux - alternative to Alt&#43;Tab</title>
-      <link>https://lucabrun.github.io/2013/03/switch-window-by-name-on-linux.html</link>
+      <link>http://localhost:1313/2013/03/switch-window-by-name-on-linux.html</link>
       <pubDate>Thu, 28 Mar 2013 04:24:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2013/03/switch-window-by-name-on-linux.html</guid>
+      <guid>http://localhost:1313/2013/03/switch-window-by-name-on-linux.html</guid>
       <description>Today I want to share a very simple script that works with most Linux window managers: switch window by name.&#xA;It works like this: you press Ctrl+Alt+M, then a dialog appears where you write part of the name of the window, and you&amp;rsquo;ll get switched to the window that matches the provided name.The string your provide will match part of window names in case-insensitive mode.&#xA;That means if you have &amp;ldquo;Foo - Mozilla Firefox&amp;rdquo; and type in &amp;ldquo;fire&amp;rdquo; you&amp;rsquo;ll switch to firefox.</description>
     </item>
     <item>
       <title>Controlling audio volume in Awesome WM</title>
-      <link>https://lucabrun.github.io/2013/03/controlling-audio-volume-in-awesome-wm.html</link>
+      <link>http://localhost:1313/2013/03/controlling-audio-volume-in-awesome-wm.html</link>
       <pubDate>Sun, 24 Mar 2013 13:15:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2013/03/controlling-audio-volume-in-awesome-wm.html</guid>
+      <guid>http://localhost:1313/2013/03/controlling-audio-volume-in-awesome-wm.html</guid>
       <description>I use awesome on my eeepc because it&amp;rsquo;s much space and resource saving.&#xA;There are several possibilities for controlling volume in the Awesome window manager.&#xA;Today I&amp;rsquo;d like to share my way of doing it: using amixer for controlling the volume, and naughty for notifying the user.&#xA;Start by defining the following in your rc.lua (source discussion here):&#xA;volnotify = {}&#xA;volnotify.id = nil&#xA;function volnotify:notify (msg)&#xA;self.id = naughty.notify({ text = msg, timeout = 1, replaces_id = self.</description>
     </item>
   </channel>

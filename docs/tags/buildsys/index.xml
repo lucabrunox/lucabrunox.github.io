@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Buildsys on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/buildsys/</link>
+    <link>http://localhost:1313/tags/buildsys/</link>
     <description>Recent content in Buildsys on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 06 Apr 2013 14:18:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/buildsys/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/buildsys/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Build Vala applications with Shake build system</title>
-      <link>https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html</link>
+      <link>http://localhost:1313/2013/04/build-vala-applications-with-shake.html</link>
       <pubDate>Sat, 06 Apr 2013 14:18:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2013/04/build-vala-applications-with-shake.html</guid>
+      <guid>http://localhost:1313/2013/04/build-vala-applications-with-shake.html</guid>
       <description>I&amp;rsquo;m going to introduce you a very nice alternative to make: the Shake build system, by setting up a builder for your Vala application project.&#xA;First of all, you need to know that Shake is a library written in Haskell, and it&amp;rsquo;s meant to be a better replacement for make. Let&amp;rsquo;s start by installing cabal and then shake:&#xA;apt-get install cabal-install cabal update cabal install shake TL;DR; this is the final Build.</description>
     </item>
   </channel>

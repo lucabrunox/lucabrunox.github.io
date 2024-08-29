@@ -1,272 +1,319 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Mimaggia, cairo tester | Luca Bruno blog</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Hello,
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Mimaggia, cairo tester - Luca Bruno blog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Hello,
 From GNOME
 I&rsquo;ve created a simple pygtk project for testing cairo statements. It includes a sort of terminal where you write statements in a simple language. It features immediate preview of what you write.
 Say it&rsquo;s a new format for images.
-If you want to test it and see the code, ask me.">
-    <meta name="generator" content="Hugo 0.125.2">
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
-
-
-
-    
-
-    
-      
-
-    
-
-    
-
-    
-      <link rel="canonical" href="https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html">
-    
-
-    <meta property="og:url" content="https://lucabrun.github.io/2009/11/mimaggia-cairo-tester.html">
-  <meta property="og:site_name" content="Luca Bruno blog">
-  <meta property="og:title" content="Mimaggia, cairo tester">
-  <meta property="og:description" content="Hello,
-From GNOME
-I&amp;rsquo;ve created a simple pygtk project for testing cairo statements. It includes a sort of terminal where you write statements in a simple language. It features immediate preview of what you write.
-Say it&amp;rsquo;s a new format for images.
-If you want to test it and see the code, ask me.">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-  <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2009-11-27T04:21:00-08:00">
-    <meta property="article:modified_time" content="2009-11-27T04:21:00-08:00">
-    <meta property="article:tag" content="Gtk">
-    <meta property="article:tag" content="Python">
-    <meta property="article:tag" content="Mimaggia">
-    <meta property="article:tag" content="Cairo">
-    <meta property="article:tag" content="Development">
-
-  <meta itemprop="name" content="Mimaggia, cairo tester">
-  <meta itemprop="description" content="Hello,
-From GNOME
-I&rsquo;ve created a simple pygtk project for testing cairo statements. It includes a sort of terminal where you write statements in a simple language. It features immediate preview of what you write.
-Say it&rsquo;s a new format for images.
-If you want to test it and see the code, ask me.">
-  <meta itemprop="datePublished" content="2009-11-27T04:21:00-08:00">
-  <meta itemprop="dateModified" content="2009-11-27T04:21:00-08:00">
-  <meta itemprop="wordCount" content="54">
-  <meta itemprop="keywords" content="Gtk,Python,Mimaggia,Cairo,Development"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Mimaggia, cairo tester">
-<meta name="twitter:description" content="Hello,
-From GNOME
-I&rsquo;ve created a simple pygtk project for testing cairo statements. It includes a sort of terminal where you write statements in a simple language. It features immediate preview of what you write.
-Say it&rsquo;s a new format for images.
-If you want to test it and see the code, ask me.">
-
-	
-  </head>
-
-  <body class="ma0 avenir bg-near-white">
-
-    
-   
+If you want to test it and see the code, ask me." />
+  <meta name="author" content="Luca Bruno blog" />
   
 
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Luca Bruno blog
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      
-<div class="ananke-socials">
   
-</div>
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
-    </div>
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.125.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Luca Bruno blog</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
-</nav>
 
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Mimaggia, cairo tester</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Nov 27, 2009</time>
+      
+      
+      
+      
     </div>
+    
   </header>
 
-
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        Posts
-      </aside>
-      
-
-
-
-
-
-
-
-
-
-
-  <div id="sharing" class="mt3 ananke-socials">
-    
-  </div>
-
-
-      <h1 class="f1 athelas mt3 mb1">Mimaggia, cairo tester</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2009-11-27T04:21:00-08:00">November 27, 2009</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Hello,</p>
+  <section><p>Hello,</p>
 <p><a href="http://picasaweb.google.com/lh/photo/eame-pQdBfqL7fex8ocG1Q?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgz-BwuZl9ao6qcFVZQ_yiUARWTdFLEoaFcHOsp1QfJtfb0-ZW-3G2rqZ6MlztnERE13Dp9PP7AL78Seh_6MoApv3GhmFHcbLY1uLs2lZS54rk4nO0ozST8cGIs_9tzVV3jB7Q1/s144/Screenshot-Mimaggia.png" alt=""></a></p>
 <p>From <a href="http://picasaweb.google.com/lethalman88/GNOME?feat=embedwebsite">GNOME</a></p>
 <p>I&rsquo;ve created a simple pygtk project for testing cairo statements. It includes a sort of terminal where you write statements in a simple language. It features immediate preview of what you write.</p>
 <p>Say it&rsquo;s a new format for images.<br>
 If you want to test it and see the code, ask me.</p>
-<ul class="pa0">
+</section>
+
   
-   <li class="list di">
-     <a href="/tags/gtk/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Gtk</a>
-   </li>
   
-   <li class="list di">
-     <a href="/tags/python/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
-   </li>
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/gtk"
+      >gtk</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/python"
+      >python</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/mimaggia"
+      >mimaggia</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/cairo"
+      >cairo</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/development"
+      >development</a
+    >
+    
+  </footer>
   
-   <li class="list di">
-     <a href="/tags/mimaggia/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Mimaggia</a>
-   </li>
+
   
-   <li class="list di">
-     <a href="/tags/cairo/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Cairo</a>
-   </li>
   
-   <li class="list di">
-     <a href="/tags/development/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Development</a>
-   </li>
   
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
-    </div>
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2009/12/lua-for-pythoners-lists.html"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Lua for Pythoners - Lists</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2009/11/there-are-many-python-toolkits-for.html"
+      ><span>Python and RSA</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
 
-    <aside class="w-30-l mt6-l">
+  
+  
+
+  
+  
+
+  
 
 
+  
+</article>
 
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/2009/08/spadi-source-code.html">Spadi source code</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2009/08/constructing-free-archicad-alternative.html">Constructing a free ArchiCAD alternative</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2009/07/aruanne-pdf-reporting-framework.html">Aruanne, pdf reporting framework</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/12/global-keybinding-on-x.html">Global keybinding on X</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/11/replace-gtk-with-clutter-for-fun.html">Replace GTK&#43; with Clutter for fun</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/11/single-app-instances-python-and-dbus.html">Single app instances, Python and DBus</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2009/11/there-are-many-python-toolkits-for.html">Python and RSA</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2009/04/create-pixbuf-from-cairo-surface.html">Create a GdkPixbuf from cairo surface</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2009/01/freespeak-030-has-been-released.html">FreeSpeak 0.3.0 has been released</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/12/aptitude-gtk-progress.html">Aptitude-gtk progress</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/11/freespeak-gains-translation-suggestions.html">FreeSpeak gains translation suggestions</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/11/freespeak-020-has-been-released.html">FreeSpeak 0.2.0 has been released</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/10/freespeak-gtkgnome-translator.html">FreeSpeak, a GTK&#43;/GNOME translator</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/09/gtk-apps-to-replace-gnome-files.html">GTK Apps to replace Gnome Files</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/2008/05/syx-gtk-and-threading.html">Syx, GTK&#43; and threading</a>
-        </li>
-	    
-    </ul>
-</div>
-
-</aside>
-
-  </article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lucabrun.github.io/" >
-    &copy;  Luca Bruno blog 2024 
-  </a>
-    <div>
-<div class="ananke-socials">
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
   
-</div>
-</div>
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Luca Bruno blog</a>
+  
   </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
 </footer>
 
   </body>

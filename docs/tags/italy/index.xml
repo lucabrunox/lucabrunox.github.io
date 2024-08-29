@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Italy on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/italy/</link>
+    <link>http://localhost:1313/tags/italy/</link>
     <description>Recent content in Italy on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Dec 2009 09:38:00 -0800</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/italy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/italy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Facebook and Berlusconi</title>
-      <link>https://lucabrun.github.io/2009/12/facebook-and-berlusconi.html</link>
+      <link>http://localhost:1313/2009/12/facebook-and-berlusconi.html</link>
       <pubDate>Mon, 14 Dec 2009 09:38:00 -0800</pubDate>
-      <guid>https://lucabrun.github.io/2009/12/facebook-and-berlusconi.html</guid>
+      <guid>http://localhost:1313/2009/12/facebook-and-berlusconi.html</guid>
       <description>Hello,&#xA;today many people are getting subscribed (with NO authorization) automatically to this group: Sosteniamo SILVIO BERLUSCONI contro i FAN di massimo tartaglia. You have NO notification that you&amp;rsquo;ve been subscribed to this group.&#xA;Also consider the geographic position (screenshot) of the group contact.&#xA;Also consider that the group can&amp;rsquo;t be signaled to facebook, because the feature looks like out of service.&#xA;It&amp;rsquo;s clearly a mafia group, beware of!</description>
     </item>
   </channel>

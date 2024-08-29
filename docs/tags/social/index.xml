@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Social on Luca Bruno blog</title>
-    <link>https://lucabrun.github.io/tags/social/</link>
+    <link>http://localhost:1313/tags/social/</link>
     <description>Recent content in Social on Luca Bruno blog</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Oct 2008 13:39:00 -0700</lastBuildDate>
-    <atom:link href="https://lucabrun.github.io/tags/social/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/social/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ping.fm is dead</title>
-      <link>https://lucabrun.github.io/2008/10/pingfm-is-dead.html</link>
+      <link>http://localhost:1313/2008/10/pingfm-is-dead.html</link>
       <pubDate>Mon, 20 Oct 2008 13:39:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/10/pingfm-is-dead.html</guid>
+      <guid>http://localhost:1313/2008/10/pingfm-is-dead.html</guid>
       <description>Hello,&#xA;lately I&amp;rsquo;ve been using ping.fm for a couple of weeks because I&amp;rsquo;ve found it really useful.&#xA;Today I&amp;rsquo;ve tried to update my status through sending a mail but I received delivery failures&amp;hellip; I then discovered that ping.fm is dead!</description>
     </item>
     <item>
       <title>Where are you? Yahoo! Fire Eagle</title>
-      <link>https://lucabrun.github.io/2008/08/where-are-you-yahoo-fire-eagle.html</link>
+      <link>http://localhost:1313/2008/08/where-are-you-yahoo-fire-eagle.html</link>
       <pubDate>Sat, 23 Aug 2008 02:24:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/08/where-are-you-yahoo-fire-eagle.html</guid>
+      <guid>http://localhost:1313/2008/08/where-are-you-yahoo-fire-eagle.html</guid>
       <description>Hello,&#xA;the Twitter question was &amp;ldquo;What are you doing?&amp;rdquo;. The new question is now &amp;ldquo;Where are you?&amp;rdquo;&#xA;Yahoo! has launched a sort of social application called Fire Eagle for updating your location and share it across other web services.</description>
     </item>
     <item>
       <title>identi.ca is worse</title>
-      <link>https://lucabrun.github.io/2008/07/identica-is-worse.html</link>
+      <link>http://localhost:1313/2008/07/identica-is-worse.html</link>
       <pubDate>Thu, 03 Jul 2008 10:35:00 -0700</pubDate>
-      <guid>https://lucabrun.github.io/2008/07/identica-is-worse.html</guid>
+      <guid>http://localhost:1313/2008/07/identica-is-worse.html</guid>
       <description>Hello,&#xA;I&amp;rsquo;m using Twitter in this week and the API works &amp;ldquo;almost&amp;rdquo; perfectly while the website is down most of the time.&#xA;I&amp;rsquo;ve recently heard about identi.ca, so I decided to try it.&#xA;My first impression was bad, because I&amp;rsquo;ve seen many redirects of the page, and DNS changes sometimes.&#xA;But ok, I tried to register and again&amp;hellip; I had problems. When I submitted the registration twice it just did nothing.</description>
     </item>
   </channel>
