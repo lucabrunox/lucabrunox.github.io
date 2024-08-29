@@ -20,6 +20,48 @@ If you want to try this, the first step is to [install Nix](http://nixos.org/nix
   
 Here's the `redis.nix` snippet:  
   
+```
+{ pkgs ? import <nixpkgs> {} }:
+
+with pkgs;
+let
+  entrypoint = writeScript "entrypoint.sh" ''
+    #!${stdenv.shell}
+    set -e
+    # allow the container to be started with `--user`
+    if [ "$1" = "redis-server" -a "$(${coreutils}/bin/id -u)" = "0" ]; then
+      chown -R redis .
+      exec ${goPackages.gosu.bin}/bin/gosu redis "$BASH_SOURCE" "$@"
+    fi
+    exec "$@"
+  '';
+in
+dockerTools.buildImage {
+  name = "redis";
+  runAsRoot = ''
+    #!${stdenv.shell}
+    ${dockerTools.shadowSetup}
+    groupadd -r redis
+    useradd -r -g redis -d /data -M redis
+    mkdir /data
+    chown redis:redis /data
+  '';
+
+  contents = [ redis ];
+
+  config = {
+    Cmd = [ "redis-server" ];
+    Entrypoint = [ entrypoint ];
+    ExposedPorts = {
+      "6379/tcp" = {};
+    };
+    WorkingDir = "/data";
+    Volumes = {
+      "/data" = {};
+    };
+  };
+}
+```
   
 Build it with: `nix-build redis.nix`  
 Load it with: `docker load < result`  
@@ -37,6 +79,34 @@ A smaller image
 ---------------
 
 We can cut the size down to **25mb** by avoid using id from coreutils. As an example we'll always launch redis without the entrypoint:  
+
+```
+{ pkgs ? import <nixpkgs> {} }:
+
+with pkgs;
+dockerTools.buildImage {
+  name = "redis";
+  runAsRoot = ''
+    #!${stdenv.shell}
+    ${dockerTools.shadowSetup}
+    groupadd -r redis
+    useradd -r -g redis -d /data -M redis
+    mkdir /data
+    chown redis:redis /data
+  '';
+
+  config = {
+    Cmd = [ "${goPackages.gosu.bin}/bin/gosu" "redis" "${redis}/bin/redis-server" ];
+    ExposedPorts = {
+      "6379/tcp" = {};
+    };
+    WorkingDir = "/data";
+    Volumes = {
+      "/data" = {};
+    };
+  };
+}
+```
   
   
 You might ask: but coreutils is still needed for the `chown`, `mkdir` and other commands like that!  
@@ -49,6 +119,45 @@ Using a different redis version
 -------------------------------
 
 Let's say we want to build a Docker image with Redis 2.8.23. First we want to write a package (or _derivation_ in Nix land) for it, and then use that inside the image:  
+
+```
+{ pkgs ? import <nixpkgs> {} }:
+
+with pkgs;
+let
+  redis = pkgs.redis.overrideDerivation (attrs: rec {
+    name = "redis-2.8.23";
+    src = fetchurl {
+      url = "http://download.redis.io/releases/${name}.tar.gz";
+      sha256 = "1kjsx79jhhssh5k9v17s9mifaclkl6mfsrsv0cvi583qyiw9gizk";
+    };
+  });
+in
+dockerTools.buildImage {
+  name = "redis";
+  tag = "2.8.23";
+
+  runAsRoot = ''
+    #!${stdenv.shell}
+    ${dockerTools.shadowSetup}
+    groupadd -r redis
+    useradd -r -g redis -d /data -M redis
+    mkdir /data
+    chown redis:redis /data
+  '';
+
+  config = {
+    Cmd = [ "${goPackages.gosu.bin}/bin/gosu" "redis" "${redis}/bin/redis-server" ];
+    ExposedPorts = {
+      "6379/tcp" = {};
+    };
+    WorkingDir = "/data";
+    Volumes = {
+      "/data" = {};
+    };
+  };
+}
+```
   
   
 Note we also added the tag 2.8.23 to the resulting image. And that's it. The beauty is that we reuse the same redis expression from nixpkgs, but we override only the version to build.  
@@ -57,6 +166,60 @@ A generic build
 ---------------
 
 There's more you can do with Nix. Being a language, it's possible to create a generic function for building Redis images given a specific package:  
+
+```
+{ pkgs ? import <nixpkgs> {} }:
+
+with pkgs;
+let
+  redis_3_0_7 = pkgs.redis.overrideDerivation (attrs: rec {
+    version = "3.0.7";
+    name = "redis-${version}";
+    src = fetchurl {
+      url = "http://download.redis.io/releases/${name}.tar.gz";
+      sha256 = "08vzfdr67gp3lvk770qpax2c5g2sx8hn6p64jn3jddrvxb2939xj";
+    };
+  });
+
+  redis_2_8_23 = pkgs.redis.overrideDerivation (attrs: rec {
+    version = "2.8.23";
+    name = "redis-${version}";
+    src = fetchurl {
+      url = "http://download.redis.io/releases/${name}.tar.gz";
+      sha256 = "1kjsx79jhhssh5k9v17s9mifaclkl6mfsrsv0cvi583qyiw9gizk";
+    };
+  });
+
+  redisImage = redis: dockerTools.buildImage {
+    name = "redis";
+    tag = redis.version;
+
+    runAsRoot = ''
+      #!${stdenv.shell}
+      ${dockerTools.shadowSetup}
+      groupadd -r redis
+      useradd -r -g redis -d /data -M redis
+      mkdir /data
+      chown redis:redis /data
+    '';
+
+    config = {
+      Cmd = [ "${goPackages.gosu.bin}/bin/gosu" "redis" "${redis}/bin/redis-server" ];
+      ExposedPorts = {
+        "6379/tcp" = {};
+      };
+      WorkingDir = "/data";
+      Volumes = {
+        "/data" = {};
+      };
+    };
+  };
+
+in {
+  redisDocker_3_0_7  = redisImage redis_3_0_7;
+  redisDocker_2_8_23 = redisImage redis_2_8_23;
+}
+```
   
   
 We created a "redisImage" function that takes a "redis" parameter as input, and returns a Docker image as output.  
@@ -76,6 +239,68 @@ One of the selling points of Docker is reusing an existing image to add more stu
 Nix comes with a completely different set of packages compared to other distros, with its own toolchain and glibc version. This doesn't mean it's not possible to base a new image off an existing Debian image for instance.  
   
 By using `dockerTools.pullImage` it's also possible to pull images from the Docker hub.  
+
+```
+{ pkgs ? import <nixpkgs> {} }:
+
+with pkgs;
+let
+  redis_3_0_7 = pkgs.redis.overrideDerivation (attrs: rec {
+    version = "3.0.7";
+    name = "redis-${version}";
+    src = fetchurl {
+      url = "http://download.redis.io/releases/${name}.tar.gz";
+      sha256 = "08vzfdr67gp3lvk770qpax2c5g2sx8hn6p64jn3jddrvxb2939xj";
+    };
+  });
+
+  redis_2_8_23 = pkgs.redis.overrideDerivation (attrs: rec {
+    version = "2.8.23";
+    name = "redis-${version}";
+    src = fetchurl {
+      url = "http://download.redis.io/releases/${name}.tar.gz";
+      sha256 = "1kjsx79jhhssh5k9v17s9mifaclkl6mfsrsv0cvi583qyiw9gizk";
+    };
+  });
+
+  redisImage = redis: baseImage: dockerTools.buildImage {
+    name = "redis";
+    tag = redis.version;
+    fromImage = baseImage;
+
+    runAsRoot = ''
+      #!${stdenv.shell}
+      export PATH=/bin:/usr/bin:/sbin:/usr/sbin:$PATH
+      ${if baseImage == null then dockerTools.shadowSetup else ""}
+      groupadd -r redis
+      useradd -r -g redis -d /data -M redis
+      mkdir /data
+      chown redis:redis /data
+    '';
+
+    config = {
+      Cmd = [ "${goPackages.gosu.bin}/bin/gosu" "redis" "${redis}/bin/redis-server" ];
+      ExposedPorts = {
+        "6379/tcp" = {};
+      };
+      WorkingDir = "/data";
+      Volumes = {
+        "/data" = {};
+      };
+    };
+  };
+
+  debianImage = dockerTools.pullImage {
+    imageName = "debian";
+    sha256 = "08w22gx6hmmq75rybqzrxs03nzq2k39lrcj291yhsc08p9d9l9cj";
+  };
+
+in {
+  redisDocker_3_0_7  = redisImage redis_3_0_7 null;
+  redisDocker_2_8_23 = redisImage redis_2_8_23 null;
+  redisOnDebian = redisImage redis_3_0_7 debianImage;
+}
+```
   
   
 Build it with: `nix-build redis-generic.nix -A redisOnDebian`.  
