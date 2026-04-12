@@ -120,31 +120,22 @@
             var W = this.scale.width;
             var H = this.scale.height;
 
+            // On mobile we hide the bottom buttons, so use full height
             var isMobile = !this.sys.game.device.os.desktop;
+            var playH = isMobile ? H : H * 0.95;
+            // sidebar for next piece and score
+            var sideW = W * 0.28;
+            var boardW = W - sideW;
 
-            if (isMobile) {
-                // Mobile: board uses full width, no sidebar column, no padding
-                BLOCK = Math.floor(Math.min(W / COLS, H / ROWS));
-                BOARD_X = Math.floor((W - BLOCK * COLS) / 2);
-                BOARD_Y = 0;
-                // Sidebar overlays on the right portion of the board
-                this.sideX = BOARD_X + BLOCK * COLS - Math.floor(BLOCK * 3.5);
-                this.sideY = 4;
-            } else {
-                var playH = H * 0.95;
-                // sidebar for next piece and score
-                var sideW = W * 0.28;
-                var boardW = W - sideW;
+            BLOCK = Math.floor(Math.min(boardW / COLS, playH / ROWS));
+            BOARD_X = Math.floor((boardW - BLOCK * COLS) / 2);
+            BOARD_Y = Math.floor((playH - BLOCK * ROWS) / 2);
+            if (BOARD_Y < 4) BOARD_Y = 4;
 
-                BLOCK = Math.floor(Math.min(boardW / COLS, playH / ROWS));
-                BOARD_X = Math.floor((boardW - BLOCK * COLS) / 2);
-                BOARD_Y = Math.floor((playH - BLOCK * ROWS) / 2);
-                if (BOARD_Y < 4) BOARD_Y = 4;
-                this.sideX = BOARD_X + BLOCK * COLS + Math.floor(sideW * 0.12);
-                this.sideY = BOARD_Y;
-            }
+            this.sideX = BOARD_X + BLOCK * COLS + Math.floor(sideW * 0.12);
+            this.sideY = BOARD_Y;
             this.isMobile = isMobile;
-            this.playH = isMobile ? H : H * 0.95;
+            this.playH = playH;
         },
 
         // ── Game state ──
@@ -663,11 +654,6 @@
             var sy = this.sideY;
             var fontSize = Math.max(12, Math.floor(BLOCK * 0.7));
 
-            // On mobile, use smaller font for compact overlay
-            if (this.isMobile) {
-                fontSize = Math.max(10, Math.floor(BLOCK * 0.45));
-            }
-
             // ── Destroy old text objects ──
             if (this._uiTexts) {
                 for (var t = 0; t < this._uiTexts.length; t++) {
@@ -686,13 +672,6 @@
                 fontSize: Math.floor(fontSize * 0.85) + 'px',
                 color: '#aaaaaa'
             };
-
-            // On mobile, draw semi-transparent background behind sidebar overlay
-            if (this.isMobile) {
-                var bgH = fontSize * 16 + Math.floor(BLOCK * 0.65) * 2 + 16;
-                g.fillStyle(0x000000, 0.55);
-                g.fillRect(sx - 4, sy - 2, W - sx + 4, bgH);
-            }
 
             // Score
             this._uiTexts.push(this.add.text(sx, sy, 'SCORE', labelStyle));
