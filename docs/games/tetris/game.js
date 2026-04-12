@@ -107,6 +107,12 @@
             this.setupInput();
             this.drawBoard();
             this.drawUI();
+
+            var self = this;
+            this.scale.on('resize', function (gameSize) {
+                self.computeLayout();
+                if (!self.gameOver) self.drawEverything();
+            });
         },
 
         // ── Layout ──
@@ -154,7 +160,7 @@
             this.dropInterval = DROP_INTERVAL_INITIAL;
             this.softDrop = false;
             this.lockDelay = 0;
-            this.lockLimit = 250;
+            this.lockLimit = 150;
             this.moved = false;
             this.holdPiece = null;
             this.holdUsed = false;
@@ -709,7 +715,7 @@
                 fontSize: Math.floor(fontSize * 0.7) + 'px',
                 color: '#666666'
             };
-            var versionText = this.add.text(W - 4, 4, 'v5', versionStyle).setOrigin(1, 0);
+            var versionText = this.add.text(W - 4, 4, 'v6', versionStyle).setOrigin(1, 0);
             this._uiTexts.push(versionText);
 
             // Touch buttons
@@ -800,10 +806,9 @@
         parent: 'game-container',
         backgroundColor: '#111111',
         scale: {
-            mode: Phaser.Scale.FIT,
-            autoCenter: Phaser.Scale.CENTER_BOTH,
-            width: window.innerWidth,
-            height: window.innerHeight
+            mode: Phaser.Scale.RESIZE,
+            width: '100%',
+            height: '100%'
         },
         scene: [GameScene],
         input: {
