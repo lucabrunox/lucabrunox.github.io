@@ -116,7 +116,7 @@
 
             // On mobile we hide the bottom buttons, so use full height
             var isMobile = !this.sys.game.device.os.desktop;
-            var playH = H * 0.95;
+            var playH = isMobile ? H : H * 0.95;
             // sidebar for next piece and score
             var sideW = W * 0.28;
             var boardW = W - sideW;
@@ -340,7 +340,9 @@
             if (this.isMobile) {
                 // Mobile: drag-based controls, tap to rotate, no bottom panel
                 var lastDragX;
-                var dragThreshold = BLOCK * 0.5;
+                var lastDragY;
+                var lastDragTime;
+                var dragThreshold = BLOCK * 0.8;
                 var swipeDownThreshold = 30;
                 var isDragging = false;
 
@@ -349,6 +351,8 @@
                     startY = pointer.y;
                     startTime = pointer.time;
                     lastDragX = pointer.x;
+                    lastDragY = pointer.y;
+                    lastDragTime = pointer.time;
                     isDragging = false;
                 });
 
@@ -370,18 +374,28 @@
                         isDragging = true;
                     }
 
-                    // Vertical: if dragging down, enable soft drop
+                    // Vertical: if dragging down, enable soft drop with speed based on drag velocity
                     var dy = pointer.y - startY;
                     if (dy > swipeDownThreshold) {
                         self.softDrop = true;
                         isDragging = true;
+                        var dragDy = pointer.y - lastDragY;
+                        var dragDt = pointer.time - lastDragTime;
+                        if (dragDt > 0 && dragDy > 0) {
+                            var velocity = dragDy / dragDt;
+                            self.softDropInterval = Math.max(15, Math.floor(SOFT_DROP_INTERVAL / (1 + velocity * 2)));
+                        }
                     } else {
                         self.softDrop = false;
+                        self.softDropInterval = SOFT_DROP_INTERVAL;
                     }
+                    lastDragY = pointer.y;
+                    lastDragTime = pointer.time;
                 });
 
                 this.input.on('pointerup', function (pointer) {
                     self.softDrop = false;
+                    self.softDropInterval = SOFT_DROP_INTERVAL;
 
                     if (self.gameOver) {
                         var dx = pointer.x - startX;
@@ -516,7 +530,7 @@
                 return;
             }
 
-            var interval = this.softDrop ? SOFT_DROP_INTERVAL : this.dropInterval;
+            var interval = this.softDrop ? (this.softDropInterval || SOFT_DROP_INTERVAL) : this.dropInterval;
             this.dropTimer += delta;
 
             if (this.dropTimer >= interval) {
