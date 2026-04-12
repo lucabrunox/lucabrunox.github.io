@@ -11,6 +11,8 @@
     var DROP_INTERVAL_INITIAL = 800;   // ms per row at level 1
     var DROP_INTERVAL_MIN = 50;
     var SOFT_DROP_INTERVAL = 50;
+    var HARD_DROP_SCORE_PER_ROW = 2;
+    var SOFT_DROP_SCORE_PER_ROW = 1;
     var LINES_PER_LEVEL = 10;
     var LINE_SCORES = [0, 100, 300, 500, 800];
 
@@ -226,7 +228,7 @@
         },
 
         hardDrop: function () {
-            while (this.moveDown()) { this.score += 2; }
+            while (this.moveDown()) { this.score += HARD_DROP_SCORE_PER_ROW; }
             this.lockPiece();
         },
 
@@ -420,7 +422,7 @@
                     }
                 } else {
                     this.lockDelay = 0;
-                    if (this.softDrop) this.score += 1;
+                    if (this.softDrop) this.score += SOFT_DROP_SCORE_PER_ROW;
                 }
             }
 
