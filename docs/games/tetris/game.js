@@ -13,7 +13,7 @@
     var SOFT_DROP_INTERVAL = 50;
     var HARD_DROP_SCORE_PER_ROW = 2;
     var SOFT_DROP_SCORE_PER_ROW = 1;
-    var LINES_PER_LEVEL = 10;
+    var LINES_PER_LEVEL = 5;
     var LINE_SCORES = [0, 100, 300, 500, 800];
 
     var COLORS = {
@@ -129,12 +129,8 @@
 
             BLOCK = Math.floor(Math.min(boardW / COLS, playH / ROWS));
             BOARD_X = Math.floor((boardW - BLOCK * COLS) / 2);
-            if (isMobile) {
-                BOARD_Y = 0;
-            } else {
-                BOARD_Y = Math.floor((playH - BLOCK * ROWS) / 2);
-                if (BOARD_Y < 4) BOARD_Y = 4;
-            }
+            BOARD_Y = Math.floor((playH - BLOCK * ROWS) / 2);
+            if (BOARD_Y < 4) BOARD_Y = 4;
 
             this.sideX = BOARD_X + BLOCK * COLS + Math.floor(sideW * 0.12);
             this.sideY = BOARD_Y;
@@ -160,7 +156,7 @@
             this.dropInterval = DROP_INTERVAL_INITIAL;
             this.softDrop = false;
             this.lockDelay = 0;
-            this.lockLimit = 150;
+            this.lockLimit = 70;
             this.moved = false;
             this.holdPiece = null;
             this.holdUsed = false;
@@ -715,7 +711,7 @@
                 fontSize: Math.floor(fontSize * 0.7) + 'px',
                 color: '#666666'
             };
-            var versionText = this.add.text(W - 4, 4, 'v6', versionStyle).setOrigin(1, 0);
+            var versionText = this.add.text(W - 4, 4, 'v7', versionStyle).setOrigin(1, 0);
             this._uiTexts.push(versionText);
 
             // Touch buttons
