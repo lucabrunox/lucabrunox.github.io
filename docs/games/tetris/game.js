@@ -114,9 +114,9 @@
             var W = this.scale.width;
             var H = this.scale.height;
 
-            // Reserve bottom 15% for touch buttons on mobile
+            // On mobile we hide the bottom buttons, so use full height
             var isMobile = !this.sys.game.device.os.desktop;
-            var playH = isMobile ? H * 0.80 : H * 0.95;
+            var playH = H * 0.95;
             // sidebar for next piece and score
             var sideW = W * 0.28;
             var boardW = W - sideW;
@@ -311,71 +311,144 @@
         setupTouch: function () {
             var self = this;
             var startX, startY, startTime;
-            var swipeThreshold = 30;
             var tapThreshold = 15;
-            var btnH = Math.floor(this.scale.height * 0.18);
-            var btnY = this.scale.height - btnH;
-            var W = this.scale.width;
 
-            // Touch buttons layout (bottom strip):
-            //  [←] [↻] [↓] [⤓] [→]
-            this.touchBtns = [];
-            var labels = ['←', '↻', '↓', '⤓', '→'];
-            var actions = ['left', 'rotate', 'down', 'drop', 'right'];
-            var btnW = Math.floor(W / labels.length);
+            if (this.isMobile) {
+                // Mobile: drag-based controls, tap to rotate, no bottom panel
+                var lastDragX;
+                var dragThreshold = BLOCK * 0.5;
+                var swipeDownThreshold = 30;
+                var isDragging = false;
 
-            for (var i = 0; i < labels.length; i++) {
-                this.touchBtns.push({
-                    x: btnW * i,
-                    y: btnY,
-                    w: btnW,
-                    h: btnH,
-                    label: labels[i],
-                    action: actions[i]
+                this.input.on('pointerdown', function (pointer) {
+                    startX = pointer.x;
+                    startY = pointer.y;
+                    startTime = pointer.time;
+                    lastDragX = pointer.x;
+                    isDragging = false;
                 });
-            }
 
-            // Also detect swipes on the play area
-            this.input.on('pointerdown', function (pointer) {
-                startX = pointer.x;
-                startY = pointer.y;
-                startTime = pointer.time;
+                this.input.on('pointermove', function (pointer) {
+                    if (self.gameOver || self.paused) return;
 
-                // Check touch buttons
-                if (pointer.y >= btnY) {
-                    for (var b = 0; b < self.touchBtns.length; b++) {
-                        var btn = self.touchBtns[b];
-                        if (pointer.x >= btn.x && pointer.x < btn.x + btn.w) {
-                            self.handleButtonAction(btn.action);
-                            return;
+                    // Horizontal: move piece based on drag distance
+                    var dx = pointer.x - lastDragX;
+                    while (dx > dragThreshold) {
+                        self.moveRight();
+                        lastDragX += dragThreshold;
+                        dx -= dragThreshold;
+                        isDragging = true;
+                    }
+                    while (dx < -dragThreshold) {
+                        self.moveLeft();
+                        lastDragX -= dragThreshold;
+                        dx += dragThreshold;
+                        isDragging = true;
+                    }
+
+                    // Vertical: if dragging down, enable soft drop
+                    var dy = pointer.y - startY;
+                    if (dy > swipeDownThreshold) {
+                        self.softDrop = true;
+                        isDragging = true;
+                    } else {
+                        self.softDrop = false;
+                    }
+                });
+
+                this.input.on('pointerup', function (pointer) {
+                    self.softDrop = false;
+
+                    if (self.gameOver) {
+                        var dx = pointer.x - startX;
+                        var dy = pointer.y - startY;
+                        var dt = pointer.time - startTime;
+                        if (Math.abs(dx) < tapThreshold && Math.abs(dy) < tapThreshold && dt < 300) {
+                            self.resetGame();
+                            self.drawBoard();
+                            self.drawUI();
+                        }
+                        return;
+                    }
+                    if (self.paused) return;
+
+                    var dx = pointer.x - startX;
+                    var dy = pointer.y - startY;
+                    var dt = pointer.time - startTime;
+                    var absDx = Math.abs(dx);
+                    var absDy = Math.abs(dy);
+
+                    // Tap → rotate (only if we didn't drag)
+                    if (!isDragging && absDx < tapThreshold && absDy < tapThreshold && dt < 300) {
+                        self.rotatePiece(1);
+                    }
+                });
+            } else {
+                // Desktop: on-screen buttons + swipe detection
+                var swipeThreshold = 30;
+                var btnH = Math.floor(this.scale.height * 0.18);
+                var btnY = this.scale.height - btnH;
+                var W = this.scale.width;
+
+                // Touch buttons layout (bottom strip):
+                //  [←] [↻] [↓] [⤓] [→]
+                this.touchBtns = [];
+                var labels = ['←', '↻', '↓', '⤓', '→'];
+                var actions = ['left', 'rotate', 'down', 'drop', 'right'];
+                var btnW = Math.floor(W / labels.length);
+
+                for (var i = 0; i < labels.length; i++) {
+                    this.touchBtns.push({
+                        x: btnW * i,
+                        y: btnY,
+                        w: btnW,
+                        h: btnH,
+                        label: labels[i],
+                        action: actions[i]
+                    });
+                }
+
+                this.input.on('pointerdown', function (pointer) {
+                    startX = pointer.x;
+                    startY = pointer.y;
+                    startTime = pointer.time;
+
+                    // Check touch buttons
+                    if (pointer.y >= btnY) {
+                        for (var b = 0; b < self.touchBtns.length; b++) {
+                            var btn = self.touchBtns[b];
+                            if (pointer.x >= btn.x && pointer.x < btn.x + btn.w) {
+                                self.handleButtonAction(btn.action);
+                                return;
+                            }
                         }
                     }
-                }
-            });
+                });
 
-            this.input.on('pointerup', function (pointer) {
-                if (self.gameOver || self.paused) return;
-                if (pointer.y >= btnY) {
-                    self.softDrop = false;
-                    return;
-                }
+                this.input.on('pointerup', function (pointer) {
+                    if (self.gameOver || self.paused) return;
+                    if (pointer.y >= btnY) {
+                        self.softDrop = false;
+                        return;
+                    }
 
-                var dx = pointer.x - startX;
-                var dy = pointer.y - startY;
-                var dt = pointer.time - startTime;
-                var absDx = Math.abs(dx);
-                var absDy = Math.abs(dy);
+                    var dx = pointer.x - startX;
+                    var dy = pointer.y - startY;
+                    var dt = pointer.time - startTime;
+                    var absDx = Math.abs(dx);
+                    var absDy = Math.abs(dy);
 
-                if (absDx < tapThreshold && absDy < tapThreshold && dt < 300) {
-                    // Tap → rotate
-                    self.rotatePiece(1);
-                } else if (absDx > absDy && absDx > swipeThreshold) {
-                    if (dx < 0) self.moveLeft();
-                    else self.moveRight();
-                } else if (absDy > swipeThreshold) {
-                    if (dy > 0) self.hardDrop();
-                }
-            });
+                    if (absDx < tapThreshold && absDy < tapThreshold && dt < 300) {
+                        // Tap → rotate
+                        self.rotatePiece(1);
+                    } else if (absDx > absDy && absDx > swipeThreshold) {
+                        if (dx < 0) self.moveLeft();
+                        else self.moveRight();
+                    } else if (absDy > swipeThreshold) {
+                        if (dy > 0) self.hardDrop();
+                    }
+                });
+            }
         },
 
         handleButtonAction: function (action) {
@@ -600,7 +673,8 @@
                     color: '#88ff88',
                     align: 'center'
                 };
-                var t3 = this.add.text(W / 2, H / 2 + fontSize * 2.5, 'Press R or tap ↻ to restart', restartStyle).setOrigin(0.5);
+                var restartMsg = this.isMobile ? 'Tap to restart' : 'Press R or tap \u21bb to restart';
+                var t3 = this.add.text(W / 2, H / 2 + fontSize * 2.5, restartMsg, restartStyle).setOrigin(0.5);
                 this._uiTexts.push(t1, t2, t3);
             }
 
