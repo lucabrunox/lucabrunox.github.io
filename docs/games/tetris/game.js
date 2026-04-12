@@ -152,6 +152,8 @@
             this.lockDelay = 0;
             this.lockLimit = 500;
             this.moved = false;
+            this.holdPiece = null;
+            this.holdUsed = false;
         },
 
         popBag: function () {
@@ -238,6 +240,25 @@
             return gy;
         },
 
+        holdCurrentPiece: function () {
+            if (this.holdUsed) return;
+            this.holdUsed = true;
+            if (this.holdPiece === null) {
+                this.holdPiece = this.current;
+                this.spawnPiece();
+            } else {
+                var tmp = this.holdPiece;
+                this.holdPiece = this.current;
+                this.current = tmp;
+                this.rotation = 0;
+                this.px = Math.floor((COLS - 4) / 2);
+                this.py = 0;
+            }
+            this.dropTimer = 0;
+            this.lockDelay = 0;
+            this.moved = false;
+        },
+
         lockPiece: function () {
             var c = this.cells();
             for (var i = 0; i < c.length; i++) {
@@ -252,6 +273,7 @@
             this.dropTimer = 0;
             this.lockDelay = 0;
             this.moved = false;
+            this.holdUsed = false;
         },
 
         clearLines: function () {
@@ -287,6 +309,7 @@
             this.keyX = this.input.keyboard.addKey('X');
             this.keyP = this.input.keyboard.addKey('P');
             this.keyR = this.input.keyboard.addKey('R');
+            this.keyC = this.input.keyboard.addKey('C');
             this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
             this.input.keyboard.on('keydown-LEFT', function () { if (!self.gameOver && !self.paused) self.moveLeft(); });
@@ -297,6 +320,7 @@
             this.input.keyboard.on('keyup-DOWN', function () { self.softDrop = false; });
             this.input.keyboard.on('keydown-Z', function () { if (!self.gameOver && !self.paused) self.rotatePiece(-1); });
             this.input.keyboard.on('keydown-X', function () { if (!self.gameOver && !self.paused) self.rotatePiece(1); });
+            this.input.keyboard.on('keydown-C', function () { if (!self.gameOver && !self.paused) self.holdCurrentPiece(); });
             this.input.keyboard.on('keydown-P', function () { if (!self.gameOver) self.paused = !self.paused; });
             this.input.keyboard.on('keydown-R', function () {
                 self.resetGame();
@@ -378,9 +402,15 @@
                     var absDx = Math.abs(dx);
                     var absDy = Math.abs(dy);
 
-                    // Tap → rotate (only if we didn't drag)
+                    // Tap → rotate or hold (only if we didn't drag)
                     if (!isDragging && absDx < tapThreshold && absDy < tapThreshold && dt < 300) {
-                        self.rotatePiece(1);
+                        if (self.holdBoxBounds &&
+                            pointer.x >= self.holdBoxBounds.x && pointer.x <= self.holdBoxBounds.x + self.holdBoxBounds.w &&
+                            pointer.y >= self.holdBoxBounds.y && pointer.y <= self.holdBoxBounds.y + self.holdBoxBounds.h) {
+                            self.holdCurrentPiece();
+                        } else {
+                            self.rotatePiece(1);
+                        }
                     }
                 });
             } else {
@@ -412,6 +442,14 @@
                     startX = pointer.x;
                     startY = pointer.y;
                     startTime = pointer.time;
+
+                    // Check hold box tap
+                    if (self.holdBoxBounds && !self.gameOver && !self.paused &&
+                        pointer.x >= self.holdBoxBounds.x && pointer.x <= self.holdBoxBounds.x + self.holdBoxBounds.w &&
+                        pointer.y >= self.holdBoxBounds.y && pointer.y <= self.holdBoxBounds.y + self.holdBoxBounds.h) {
+                        self.holdCurrentPiece();
+                        return;
+                    }
 
                     // Check touch buttons
                     if (pointer.y >= btnY) {
@@ -630,6 +668,31 @@
             this._uiTexts.push(this.add.text(sx, sy + fontSize * 9, 'NEXT', labelStyle));
             this.drawNextPiece(g, sx, sy + fontSize * 10.5);
 
+            // Hold piece
+            var holdY = sy + fontSize * 14;
+            this._uiTexts.push(this.add.text(sx, holdY, 'HOLD', labelStyle));
+            // Draw hold box background
+            var holdBoxS = Math.floor(BLOCK * 0.65);
+            var holdBoxW = holdBoxS * 4 + 4;
+            var holdBoxH = holdBoxS * 2 + 4;
+            var holdBoxX = sx;
+            var holdBoxY = holdY + fontSize * 1.5;
+            this.holdBoxBounds = { x: holdBoxX - 2, y: holdBoxY - 2, w: holdBoxW + 4, h: holdBoxH + 4 };
+            g.lineStyle(1, 0x444444, 0.5);
+            g.strokeRect(holdBoxX - 2, holdBoxY - 2, holdBoxW + 4, holdBoxH + 4);
+            if (this.holdPiece) {
+                this.drawPreviewPiece(g, this.holdPiece, holdBoxX, holdBoxY, this.holdUsed ? 0.4 : 1);
+            }
+
+            // Version
+            var versionStyle = {
+                fontFamily: 'monospace',
+                fontSize: Math.floor(fontSize * 0.7) + 'px',
+                color: '#666666'
+            };
+            var versionText = this.add.text(W - 4, 4, 'v3', versionStyle).setOrigin(1, 0);
+            this._uiTexts.push(versionText);
+
             // Touch buttons
             if (this.touchBtns) {
                 var btnFontSize = Math.max(18, Math.floor(this.touchBtns[0].h * 0.45));
@@ -694,15 +757,19 @@
         },
 
         drawNextPiece: function (g, ox, oy) {
-            var cells = ROTATIONS[this.nextPiece][0];
-            var color = COLORS[this.nextPiece];
+            this.drawPreviewPiece(g, this.nextPiece, ox, oy, 1);
+        },
+
+        drawPreviewPiece: function (g, pieceName, ox, oy, alpha) {
+            var cells = ROTATIONS[pieceName][0];
+            var color = COLORS[pieceName];
             var s = Math.floor(BLOCK * 0.65);
             var pad = 1;
 
             for (var i = 0; i < cells.length; i++) {
                 var x = ox + cells[i][0] * s;
                 var y = oy + cells[i][1] * s;
-                g.fillStyle(color, 1);
+                g.fillStyle(color, alpha);
                 g.fillRect(x + pad, y + pad, s - pad * 2, s - pad * 2);
             }
         }
