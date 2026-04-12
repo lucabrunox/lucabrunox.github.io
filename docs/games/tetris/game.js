@@ -382,6 +382,7 @@
                         var dragDy = pointer.y - lastDragY;
                         var dragDt = pointer.time - lastDragTime;
                         if (dragDt > 0 && dragDy > 0) {
+                            // velocity in px/ms; slow ~0.05, fast ~2+; maps to interval 50ms→15ms
                             var velocity = dragDy / dragDt;
                             self.softDropInterval = Math.max(15, Math.floor(SOFT_DROP_INTERVAL / (1 + velocity * 2)));
                         }
