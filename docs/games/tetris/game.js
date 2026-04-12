@@ -129,8 +129,12 @@
 
             BLOCK = Math.floor(Math.min(boardW / COLS, playH / ROWS));
             BOARD_X = Math.floor((boardW - BLOCK * COLS) / 2);
-            BOARD_Y = Math.floor((playH - BLOCK * ROWS) / 2);
-            if (BOARD_Y < 4) BOARD_Y = 4;
+            if (isMobile) {
+                BOARD_Y = 0;
+            } else {
+                BOARD_Y = Math.floor((playH - BLOCK * ROWS) / 2);
+                if (BOARD_Y < 4) BOARD_Y = 4;
+            }
 
             this.sideX = BOARD_X + BLOCK * COLS + Math.floor(sideW * 0.12);
             this.sideY = BOARD_Y;
@@ -573,9 +577,12 @@
             var g = this.boardGfx;
             g.clear();
 
+            // Board rectangle height: full screen height on mobile, grid height otherwise
+            var boardH = this.isMobile ? this.scale.height : BLOCK * ROWS;
+
             // Background
             g.fillStyle(0x000000, 1);
-            g.fillRect(BOARD_X, BOARD_Y, BLOCK * COLS, BLOCK * ROWS);
+            g.fillRect(BOARD_X, BOARD_Y, BLOCK * COLS, boardH);
 
             // Grid lines
             g.lineStyle(1, 0x222222, 0.6);
@@ -599,7 +606,7 @@
 
             // Border
             g.lineStyle(2, 0x666666, 1);
-            g.strokeRect(BOARD_X, BOARD_Y, BLOCK * COLS, BLOCK * ROWS);
+            g.strokeRect(BOARD_X, BOARD_Y, BLOCK * COLS, boardH);
         },
 
         drawBlock: function (g, col, row, color, alpha) {
