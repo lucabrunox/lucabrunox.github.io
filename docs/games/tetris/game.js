@@ -295,7 +295,7 @@
                 this.score += LINE_SCORES[cleared] * this.level;
                 this.level = Math.floor(this.lines / LINES_PER_LEVEL) + 1;
                 this.dropInterval = Math.max(DROP_INTERVAL_MIN,
-                    DROP_INTERVAL_INITIAL - (this.level - 1) * 60);
+                    DROP_INTERVAL_INITIAL - (this.level - 1) * 90);
             }
         },
 
@@ -705,7 +705,7 @@
                 fontSize: Math.floor(fontSize * 0.7) + 'px',
                 color: '#666666'
             };
-            var versionText = this.add.text(W - 4, 4, 'v3', versionStyle).setOrigin(1, 0);
+            var versionText = this.add.text(W - 4, 4, 'v4', versionStyle).setOrigin(1, 0);
             this._uiTexts.push(versionText);
 
             // Touch buttons
