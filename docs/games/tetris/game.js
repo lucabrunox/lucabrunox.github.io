@@ -114,9 +114,9 @@
             var W = this.scale.width;
             var H = this.scale.height;
 
-            // Reserve bottom 15% for touch buttons on mobile
+            // On mobile we hide the bottom buttons, so use full height
             var isMobile = !this.sys.game.device.os.desktop;
-            var playH = isMobile ? H * 0.80 : H * 0.95;
+            var playH = H * 0.95;
             // sidebar for next piece and score
             var sideW = W * 0.28;
             var boardW = W - sideW;
@@ -152,6 +152,8 @@
             this.lockDelay = 0;
             this.lockLimit = 500;
             this.moved = false;
+            this.holdPiece = null;
+            this.holdUsed = false;
         },
 
         popBag: function () {
@@ -238,6 +240,25 @@
             return gy;
         },
 
+        holdCurrentPiece: function () {
+            if (this.holdUsed) return;
+            this.holdUsed = true;
+            if (this.holdPiece === null) {
+                this.holdPiece = this.current;
+                this.spawnPiece();
+            } else {
+                var tmp = this.holdPiece;
+                this.holdPiece = this.current;
+                this.current = tmp;
+                this.rotation = 0;
+                this.px = Math.floor((COLS - 4) / 2);
+                this.py = 0;
+            }
+            this.dropTimer = 0;
+            this.lockDelay = 0;
+            this.moved = false;
+        },
+
         lockPiece: function () {
             var c = this.cells();
             for (var i = 0; i < c.length; i++) {
@@ -252,6 +273,7 @@
             this.dropTimer = 0;
             this.lockDelay = 0;
             this.moved = false;
+            this.holdUsed = false;
         },
 
         clearLines: function () {
@@ -287,6 +309,7 @@
             this.keyX = this.input.keyboard.addKey('X');
             this.keyP = this.input.keyboard.addKey('P');
             this.keyR = this.input.keyboard.addKey('R');
+            this.keyC = this.input.keyboard.addKey('C');
             this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
             this.input.keyboard.on('keydown-LEFT', function () { if (!self.gameOver && !self.paused) self.moveLeft(); });
@@ -297,6 +320,7 @@
             this.input.keyboard.on('keyup-DOWN', function () { self.softDrop = false; });
             this.input.keyboard.on('keydown-Z', function () { if (!self.gameOver && !self.paused) self.rotatePiece(-1); });
             this.input.keyboard.on('keydown-X', function () { if (!self.gameOver && !self.paused) self.rotatePiece(1); });
+            this.input.keyboard.on('keydown-C', function () { if (!self.gameOver && !self.paused) self.holdCurrentPiece(); });
             this.input.keyboard.on('keydown-P', function () { if (!self.gameOver) self.paused = !self.paused; });
             this.input.keyboard.on('keydown-R', function () {
                 self.resetGame();
@@ -311,71 +335,158 @@
         setupTouch: function () {
             var self = this;
             var startX, startY, startTime;
-            var swipeThreshold = 30;
             var tapThreshold = 15;
-            var btnH = Math.floor(this.scale.height * 0.18);
-            var btnY = this.scale.height - btnH;
-            var W = this.scale.width;
 
-            // Touch buttons layout (bottom strip):
-            //  [←] [↻] [↓] [⤓] [→]
-            this.touchBtns = [];
-            var labels = ['←', '↻', '↓', '⤓', '→'];
-            var actions = ['left', 'rotate', 'down', 'drop', 'right'];
-            var btnW = Math.floor(W / labels.length);
+            if (this.isMobile) {
+                // Mobile: drag-based controls, tap to rotate, no bottom panel
+                var lastDragX;
+                var dragThreshold = BLOCK * 0.5;
+                var swipeDownThreshold = 30;
+                var isDragging = false;
 
-            for (var i = 0; i < labels.length; i++) {
-                this.touchBtns.push({
-                    x: btnW * i,
-                    y: btnY,
-                    w: btnW,
-                    h: btnH,
-                    label: labels[i],
-                    action: actions[i]
+                this.input.on('pointerdown', function (pointer) {
+                    startX = pointer.x;
+                    startY = pointer.y;
+                    startTime = pointer.time;
+                    lastDragX = pointer.x;
+                    isDragging = false;
                 });
-            }
 
-            // Also detect swipes on the play area
-            this.input.on('pointerdown', function (pointer) {
-                startX = pointer.x;
-                startY = pointer.y;
-                startTime = pointer.time;
+                this.input.on('pointermove', function (pointer) {
+                    if (self.gameOver || self.paused) return;
 
-                // Check touch buttons
-                if (pointer.y >= btnY) {
-                    for (var b = 0; b < self.touchBtns.length; b++) {
-                        var btn = self.touchBtns[b];
-                        if (pointer.x >= btn.x && pointer.x < btn.x + btn.w) {
-                            self.handleButtonAction(btn.action);
-                            return;
+                    // Horizontal: move piece based on drag distance
+                    var dx = pointer.x - lastDragX;
+                    while (dx > dragThreshold) {
+                        self.moveRight();
+                        lastDragX += dragThreshold;
+                        dx -= dragThreshold;
+                        isDragging = true;
+                    }
+                    while (dx < -dragThreshold) {
+                        self.moveLeft();
+                        lastDragX -= dragThreshold;
+                        dx += dragThreshold;
+                        isDragging = true;
+                    }
+
+                    // Vertical: if dragging down, enable soft drop
+                    var dy = pointer.y - startY;
+                    if (dy > swipeDownThreshold) {
+                        self.softDrop = true;
+                        isDragging = true;
+                    } else {
+                        self.softDrop = false;
+                    }
+                });
+
+                this.input.on('pointerup', function (pointer) {
+                    self.softDrop = false;
+
+                    if (self.gameOver) {
+                        var dx = pointer.x - startX;
+                        var dy = pointer.y - startY;
+                        var dt = pointer.time - startTime;
+                        if (Math.abs(dx) < tapThreshold && Math.abs(dy) < tapThreshold && dt < 300) {
+                            self.resetGame();
+                            self.drawBoard();
+                            self.drawUI();
+                        }
+                        return;
+                    }
+                    if (self.paused) return;
+
+                    var dx = pointer.x - startX;
+                    var dy = pointer.y - startY;
+                    var dt = pointer.time - startTime;
+                    var absDx = Math.abs(dx);
+                    var absDy = Math.abs(dy);
+
+                    // Tap → rotate or hold (only if we didn't drag)
+                    if (!isDragging && absDx < tapThreshold && absDy < tapThreshold && dt < 300) {
+                        if (self.holdBoxBounds &&
+                            pointer.x >= self.holdBoxBounds.x && pointer.x <= self.holdBoxBounds.x + self.holdBoxBounds.w &&
+                            pointer.y >= self.holdBoxBounds.y && pointer.y <= self.holdBoxBounds.y + self.holdBoxBounds.h) {
+                            self.holdCurrentPiece();
+                        } else {
+                            self.rotatePiece(1);
                         }
                     }
-                }
-            });
+                });
+            } else {
+                // Desktop: on-screen buttons + swipe detection
+                var swipeThreshold = 30;
+                var btnH = Math.floor(this.scale.height * 0.18);
+                var btnY = this.scale.height - btnH;
+                var W = this.scale.width;
 
-            this.input.on('pointerup', function (pointer) {
-                if (self.gameOver || self.paused) return;
-                if (pointer.y >= btnY) {
-                    self.softDrop = false;
-                    return;
+                // Touch buttons layout (bottom strip):
+                //  [←] [↻] [↓] [⤓] [→]
+                this.touchBtns = [];
+                var labels = ['←', '↻', '↓', '⤓', '→'];
+                var actions = ['left', 'rotate', 'down', 'drop', 'right'];
+                var btnW = Math.floor(W / labels.length);
+
+                for (var i = 0; i < labels.length; i++) {
+                    this.touchBtns.push({
+                        x: btnW * i,
+                        y: btnY,
+                        w: btnW,
+                        h: btnH,
+                        label: labels[i],
+                        action: actions[i]
+                    });
                 }
 
-                var dx = pointer.x - startX;
-                var dy = pointer.y - startY;
-                var dt = pointer.time - startTime;
-                var absDx = Math.abs(dx);
-                var absDy = Math.abs(dy);
+                this.input.on('pointerdown', function (pointer) {
+                    startX = pointer.x;
+                    startY = pointer.y;
+                    startTime = pointer.time;
 
-                if (absDx < tapThreshold && absDy < tapThreshold && dt < 300) {
-                    // Tap → rotate
-                    self.rotatePiece(1);
-                } else if (absDx > absDy && absDx > swipeThreshold) {
-                    if (dx < 0) self.moveLeft();
-                    else self.moveRight();
-                } else if (absDy > swipeThreshold) {
-                    if (dy > 0) self.hardDrop();
-                }
-            });
+                    // Check hold box tap
+                    if (self.holdBoxBounds && !self.gameOver && !self.paused &&
+                        pointer.x >= self.holdBoxBounds.x && pointer.x <= self.holdBoxBounds.x + self.holdBoxBounds.w &&
+                        pointer.y >= self.holdBoxBounds.y && pointer.y <= self.holdBoxBounds.y + self.holdBoxBounds.h) {
+                        self.holdCurrentPiece();
+                        return;
+                    }
+
+                    // Check touch buttons
+                    if (pointer.y >= btnY) {
+                        for (var b = 0; b < self.touchBtns.length; b++) {
+                            var btn = self.touchBtns[b];
+                            if (pointer.x >= btn.x && pointer.x < btn.x + btn.w) {
+                                self.handleButtonAction(btn.action);
+                                return;
+                            }
+                        }
+                    }
+                });
+
+                this.input.on('pointerup', function (pointer) {
+                    if (self.gameOver || self.paused) return;
+                    if (pointer.y >= btnY) {
+                        self.softDrop = false;
+                        return;
+                    }
+
+                    var dx = pointer.x - startX;
+                    var dy = pointer.y - startY;
+                    var dt = pointer.time - startTime;
+                    var absDx = Math.abs(dx);
+                    var absDy = Math.abs(dy);
+
+                    if (absDx < tapThreshold && absDy < tapThreshold && dt < 300) {
+                        // Tap → rotate
+                        self.rotatePiece(1);
+                    } else if (absDx > absDy && absDx > swipeThreshold) {
+                        if (dx < 0) self.moveLeft();
+                        else self.moveRight();
+                    } else if (absDy > swipeThreshold) {
+                        if (dy > 0) self.hardDrop();
+                    }
+                });
+            }
         },
 
         handleButtonAction: function (action) {
@@ -557,6 +668,31 @@
             this._uiTexts.push(this.add.text(sx, sy + fontSize * 9, 'NEXT', labelStyle));
             this.drawNextPiece(g, sx, sy + fontSize * 10.5);
 
+            // Hold piece
+            var holdY = sy + fontSize * 14;
+            this._uiTexts.push(this.add.text(sx, holdY, 'HOLD', labelStyle));
+            // Draw hold box background
+            var holdBoxS = Math.floor(BLOCK * 0.65);
+            var holdBoxW = holdBoxS * 4 + 4;
+            var holdBoxH = holdBoxS * 2 + 4;
+            var holdBoxX = sx;
+            var holdBoxY = holdY + fontSize * 1.5;
+            this.holdBoxBounds = { x: holdBoxX - 2, y: holdBoxY - 2, w: holdBoxW + 4, h: holdBoxH + 4 };
+            g.lineStyle(1, 0x444444, 0.5);
+            g.strokeRect(holdBoxX - 2, holdBoxY - 2, holdBoxW + 4, holdBoxH + 4);
+            if (this.holdPiece) {
+                this.drawPreviewPiece(g, this.holdPiece, holdBoxX, holdBoxY, this.holdUsed ? 0.4 : 1);
+            }
+
+            // Version
+            var versionStyle = {
+                fontFamily: 'monospace',
+                fontSize: Math.floor(fontSize * 0.7) + 'px',
+                color: '#666666'
+            };
+            var versionText = this.add.text(W - 4, 4, 'v3', versionStyle).setOrigin(1, 0);
+            this._uiTexts.push(versionText);
+
             // Touch buttons
             if (this.touchBtns) {
                 var btnFontSize = Math.max(18, Math.floor(this.touchBtns[0].h * 0.45));
@@ -600,7 +736,8 @@
                     color: '#88ff88',
                     align: 'center'
                 };
-                var t3 = this.add.text(W / 2, H / 2 + fontSize * 2.5, 'Press R or tap ↻ to restart', restartStyle).setOrigin(0.5);
+                var restartMsg = this.isMobile ? 'Tap to restart' : 'Press R or tap \u21bb to restart';
+                var t3 = this.add.text(W / 2, H / 2 + fontSize * 2.5, restartMsg, restartStyle).setOrigin(0.5);
                 this._uiTexts.push(t1, t2, t3);
             }
 
@@ -620,15 +757,19 @@
         },
 
         drawNextPiece: function (g, ox, oy) {
-            var cells = ROTATIONS[this.nextPiece][0];
-            var color = COLORS[this.nextPiece];
+            this.drawPreviewPiece(g, this.nextPiece, ox, oy, 1);
+        },
+
+        drawPreviewPiece: function (g, pieceName, ox, oy, alpha) {
+            var cells = ROTATIONS[pieceName][0];
+            var color = COLORS[pieceName];
             var s = Math.floor(BLOCK * 0.65);
             var pad = 1;
 
             for (var i = 0; i < cells.length; i++) {
                 var x = ox + cells[i][0] * s;
                 var y = oy + cells[i][1] * s;
-                g.fillStyle(color, 1);
+                g.fillStyle(color, alpha);
                 g.fillRect(x + pad, y + pad, s - pad * 2, s - pad * 2);
             }
         }
