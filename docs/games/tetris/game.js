@@ -120,9 +120,8 @@
             var W = this.scale.width;
             var H = this.scale.height;
 
-            // On mobile we hide the bottom buttons, so use full height
             var isMobile = !this.sys.game.device.os.desktop;
-            var playH = isMobile ? H : H * 0.95;
+            var playH = H;
             // sidebar for next piece and score
             var sideW = W * 0.28;
             var boardW = W - sideW;
@@ -435,29 +434,8 @@
                     }
                 });
             } else {
-                // Desktop: on-screen buttons + swipe detection
+                // Desktop: keyboard + swipe detection (no overlay buttons)
                 var swipeThreshold = 30;
-                var btnH = Math.floor(this.scale.height * 0.18);
-                var btnY = this.scale.height - btnH;
-                var W = this.scale.width;
-
-                // Touch buttons layout (bottom strip):
-                //  [←] [↻] [↓] [⤓] [→]
-                this.touchBtns = [];
-                var labels = ['←', '↻', '↓', '⤓', '→'];
-                var actions = ['left', 'rotate', 'down', 'drop', 'right'];
-                var btnW = Math.floor(W / labels.length);
-
-                for (var i = 0; i < labels.length; i++) {
-                    this.touchBtns.push({
-                        x: btnW * i,
-                        y: btnY,
-                        w: btnW,
-                        h: btnH,
-                        label: labels[i],
-                        action: actions[i]
-                    });
-                }
 
                 this.input.on('pointerdown', function (pointer) {
                     startX = pointer.x;
@@ -471,25 +449,10 @@
                         self.holdCurrentPiece();
                         return;
                     }
-
-                    // Check touch buttons
-                    if (pointer.y >= btnY) {
-                        for (var b = 0; b < self.touchBtns.length; b++) {
-                            var btn = self.touchBtns[b];
-                            if (pointer.x >= btn.x && pointer.x < btn.x + btn.w) {
-                                self.handleButtonAction(btn.action);
-                                return;
-                            }
-                        }
-                    }
                 });
 
                 this.input.on('pointerup', function (pointer) {
                     if (self.gameOver || self.paused) return;
-                    if (pointer.y >= btnY) {
-                        self.softDrop = false;
-                        return;
-                    }
 
                     var dx = pointer.x - startX;
                     var dy = pointer.y - startY;
@@ -507,26 +470,6 @@
                         if (dy > 0) self.hardDrop();
                     }
                 });
-            }
-        },
-
-        handleButtonAction: function (action) {
-            if (this.gameOver) {
-                if (action === 'rotate') {
-                    this.resetGame();
-                    this.drawBoard();
-                    this.drawUI();
-                }
-                return;
-            }
-            if (this.paused) return;
-
-            switch (action) {
-                case 'left': this.moveLeft(); break;
-                case 'right': this.moveRight(); break;
-                case 'rotate': this.rotatePiece(1); break;
-                case 'down': this.softDrop = true; break;
-                case 'drop': this.hardDrop(); break;
             }
         },
 
@@ -713,30 +656,6 @@
             };
             var versionText = this.add.text(W - 4, 4, 'v7', versionStyle).setOrigin(1, 0);
             this._uiTexts.push(versionText);
-
-            // Touch buttons
-            if (this.touchBtns) {
-                var btnFontSize = Math.max(18, Math.floor(this.touchBtns[0].h * 0.45));
-                for (var b = 0; b < this.touchBtns.length; b++) {
-                    var btn = this.touchBtns[b];
-                    g.fillStyle(0x222222, 0.85);
-                    g.fillRect(btn.x, btn.y, btn.w, btn.h);
-                    g.lineStyle(1, 0x444444, 1);
-                    g.strokeRect(btn.x, btn.y, btn.w, btn.h);
-
-                    var txt = this.add.text(
-                        btn.x + btn.w / 2,
-                        btn.y + btn.h / 2,
-                        btn.label,
-                        {
-                            fontFamily: 'monospace',
-                            fontSize: btnFontSize + 'px',
-                            color: '#cccccc'
-                        }
-                    ).setOrigin(0.5);
-                    this._uiTexts.push(txt);
-                }
-            }
 
             // Game over overlay
             if (this.gameOver) {
